@@ -19,9 +19,9 @@ Open http://localhost:8080
 
 ## Deploy
 
-Not deployed yet. The live WordPress site at davidcoen.it is unchanged.
+**Live since 2026-07-20.** Static site at root; WordPress preserved under `/legacy/` (URLs unchanged via root `index.php` bootstrap).
 
-When ready: upload files to `public_html` or replace WordPress after review.
+See [`docs/migration-plan.md`](docs/migration-plan.md). Deploy script: `scripts/migrate-deploy.py` (already executed).
 
 ## Pages
 

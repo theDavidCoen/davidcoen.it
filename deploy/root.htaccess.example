@@ -1,11 +1,7 @@
 # davidcoen.it — root .htaccess (static site + WordPress in /legacy/)
 #
-# Copy to public_html/.htaccess after:
-#   1. WordPress moved to public_html/legacy/
-#   2. Static files deployed to public_html/
-#   3. index.php bootstrap copied from deploy/index.php.example
-#
-# LiteSpeed and Apache compatible.
+# Static files served when present. All other requests bootstrap WordPress
+# via index.php (WordPress codex: own directory, site URL at root).
 
 DirectoryIndex index.html index.php
 
@@ -13,22 +9,20 @@ DirectoryIndex index.html index.php
 RewriteEngine On
 RewriteBase /
 
-# Pass Authorization header to WordPress
 RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
 
-# --- Static site: serve existing files and directories as-is ---
+# Serve existing files and directories (static site, ebook/, .well-known/, …)
 RewriteCond %{REQUEST_FILENAME} -f [OR]
 RewriteCond %{REQUEST_FILENAME} -d
 RewriteRule ^ - [L]
 
-# --- WordPress admin under /legacy/ (direct access) ---
-RewriteRule ^legacy/ - [L]
-
-# --- Everything else: internal rewrite to WordPress subdirectory ---
-# Browser URL stays e.g. /news/ — no visible /legacy/ prefix.
-RewriteRule ^(.*)$ legacy/$1 [L,QSA]
+# WordPress front controller
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
 </IfModule>
 
-# Optional: redirect old utility pages to new static equivalents (uncomment if desired)
+# Optional legacy page redirects (uncomment when ready)
 # RewriteRule ^privacy-policy/?$ /privacy.html [R=301,L]
 # RewriteRule ^payment-processor/?$ /accept-bitcoin.html [R=301,L]

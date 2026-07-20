@@ -162,5 +162,5 @@ Use 301 in `root.htaccess`. Do **not** redirect `/news/` or post slugs.
 |------|--------|
 | URL inventory | Done |
 | Deploy templates | Done |
-| Staging rehearsal | **Not started** |
-| Production cutover | **Not started** |
+| Staging rehearsal | Done (production cutover) |
+| Production cutover | **Done — 2026-07-20** |
