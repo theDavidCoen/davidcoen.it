@@ -50,6 +50,7 @@ One-off migration script (already run on production): [`scripts/migrate-deploy.p
 
 ## Assets
 
+- `assets/og-social.jpg` — social share card (1200×630, Open Graph / Twitter)
 - `assets/david-coen.jpg` — portrait photo (About section, JPEG fallback)
 - `assets/david-coen.webp` — portrait WebP
 - `assets/apple-touch-icon.png` — iOS home screen icon

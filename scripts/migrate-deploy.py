@@ -54,6 +54,8 @@ STATIC_PATHS = [
     "css/style.css",
     "js/cookie-consent.js",
     "js/theme-toggle.js",
+    "assets/og-social.jpg",
+    "assets/og-social.webp",
     "assets/david-coen.jpg",
     "assets/david-coen.webp",
     "assets/apple-touch-icon.png",
