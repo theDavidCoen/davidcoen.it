@@ -7,8 +7,12 @@
 
 <IfModule mod_rewrite.c>
 RewriteEngine On
-RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
 RewriteBase /legacy/
+
+# Admin must load via root bootstrap (/wp-admin/), not directly under /legacy/
+RewriteRule ^wp-admin/?(.*)$ /wp-admin/$1 [R=301,L]
+
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
 RewriteRule ^index\.php$ - [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d

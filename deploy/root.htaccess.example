@@ -8,6 +8,10 @@ RewriteBase /
 
 RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
 
+# Admin under /legacy/wp-admin/ bypasses root bootstrap — send to /wp-admin/
+RewriteCond %{THE_REQUEST} \s/legacy/wp-admin/?(.*) [NC]
+RewriteRule ^ /wp-admin/%1 [R=301,L]
+
 # /legacy/ is not a public page (static home is /)
 RewriteCond %{THE_REQUEST} \s/legacy/?[\s?] [NC]
 RewriteRule ^legacy/?$ / [R=301,L]
