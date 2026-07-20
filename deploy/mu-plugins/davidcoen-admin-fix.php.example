@@ -1,0 +1,74 @@
+<?php
+/**
+ * Must-use plugin for legacy WordPress under /legacy/.
+ * Copy to legacy/wp-content/mu-plugins/davidcoen-admin-fix.php
+ */
+@ini_set('memory_limit', '768M');
+
+if (!function_exists('ecl_isSearchEngine')) {
+    function ecl_isSearchEngine() { return false; }
+}
+
+add_filter('option_active_plugins', function (array $plugins): array {
+    $uri = $_SERVER['REQUEST_URI'] ?? '';
+    if (strpos($uri, '/wp-admin/') === false) {
+        return $plugins;
+    }
+    if (strpos($uri, 'post.php') === false && strpos($uri, 'post-new.php') === false) {
+        return $plugins;
+    }
+
+    $disable = array(
+        'woocommerce/woocommerce.php',
+        'woocommerce-pdf-invoices-packing-slips/woocommerce-pdf-invoices-packingslips.php',
+        'btcpay-for-woocommerce/class-wc-gateway-btcpay.php',
+        'opennode-for-woocommerce/opennode.php',
+        'woo-fiscalita-italiana/woo-fiscalita-italiana.php',
+        'js_composer/js_composer.php',
+        'darkmysite/darkmysite.php',
+        'wordpress-seo/wp-seo.php',
+        'wp-smushit/wp-smush.php',
+        'litespeed-cache/litespeed-cache.php',
+        'onesignal-free-web-push-notifications/onesignal.php',
+        'wp-gdpr-compliance/wp-gdpr-compliance.php',
+    );
+
+    return array_values(array_filter($plugins, static function ($p) use ($disable) {
+        return !in_array($p, $disable, true);
+    }));
+}, 1);
+
+// Root-level admin/login URLs (WP core lives in /legacy/).
+add_filter('admin_url', function ($url, $path, $blog_id) {
+    $path = is_string($path) ? ltrim($path, '/') : '';
+    return home_url('/wp-admin/' . $path);
+}, 10, 3);
+
+add_filter('login_url', function ($login_url, $redirect, $force_reauth) {
+    $url = home_url('/wp-login.php');
+    if (!empty($redirect)) {
+        $url = add_query_arg('redirect_to', urlencode($redirect), $url);
+    }
+    if ($force_reauth) {
+        $url = add_query_arg('reauth', '1', $url);
+    }
+    return $url;
+}, 10, 3);
+
+add_filter('site_url', function ($url, $path, $scheme, $blog_id) {
+    if ($path && (strpos($path, 'wp-login.php') === 0 || strpos($path, 'wp-admin') === 0)) {
+        return home_url('/' . ltrim($path, '/'));
+    }
+    return $url;
+}, 10, 4);
+
+register_shutdown_function(function () {
+    $uri = $_SERVER['REQUEST_URI'] ?? '';
+    if (strpos($uri, 'post.php') === false) {
+        return;
+    }
+    $error = error_get_last();
+    if ($error && in_array($error['type'], array(E_ERROR, E_PARSE, E_CORE_ERROR, E_COMPILE_ERROR), true)) {
+        error_log('[davidcoen-admin-fix] post.php fatal: ' . $error['message'] . ' in ' . $error['file'] . ':' . $error['line']);
+    }
+});

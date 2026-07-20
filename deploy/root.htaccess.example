@@ -8,6 +8,10 @@ RewriteBase /
 
 RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
 
+# Prefer /wp-admin/ over /legacy/wp-admin/
+RewriteCond %{THE_REQUEST} \s/+legacy/wp-admin/ [NC]
+RewriteRule ^legacy/wp-admin/?(.*)$ /wp-admin/$1 [R=301,L]
+
 # WordPress admin/login — physical files under legacy/
 RewriteRule ^wp-admin/?(.*)$ legacy/wp-admin/$1 [L]
 RewriteRule ^wp-login\.php$ legacy/wp-login.php [L]

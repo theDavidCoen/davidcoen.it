@@ -1,0 +1,14 @@
+// Add to legacy/wp-config.php after DB settings, before "That's all, stop editing!"
+
+define('WP_HOME', 'https://davidcoen.it');
+define('WP_SITEURL', 'https://davidcoen.it/legacy');
+
+define('WP_MEMORY_LIMIT', '768M');
+define('WP_MAX_MEMORY_LIMIT', '768M');
+@ini_set('memory_limit', '768M');
+
+// Required when admin is accessed via /wp-admin/ but core lives in /legacy/.
+define('COOKIEPATH', '/');
+define('SITECOOKIEPATH', '/');
+define('ADMIN_COOKIE_PATH', '/');
+define('PLUGINS_COOKIE_PATH', '/');

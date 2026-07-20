@@ -7,6 +7,15 @@
 
 <IfModule mod_rewrite.c>
 RewriteEngine On
+
+# Use /wp-admin/ URLs (root rewrites to legacy/wp-admin/)
+RewriteCond %{THE_REQUEST} \s/+legacy/wp-admin/ [NC]
+RewriteRule ^wp-admin/?(.*)$ /wp-admin/$1 [R=301,L]
+
+# Use /wp-login.php instead of /legacy/wp-login.php
+RewriteCond %{THE_REQUEST} \s/+legacy/wp-login\.php [NC]
+RewriteRule ^wp-login\.php$ /wp-login.php [R=301,L,QSA]
+
 RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
 RewriteBase /legacy/
 RewriteRule ^index\.php$ - [L]
