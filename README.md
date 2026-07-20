@@ -1,27 +1,46 @@
 # davidcoen.it
 
-Minimal static personal site — work in progress, local only.
+Static personal site at [davidcoen.it](https://davidcoen.it), with legacy WordPress preserved under `/legacy/` for existing content and admin.
 
 ## Stack
 
-- Plain HTML / CSS / JS
-- No build step required
-- GDPR-friendly cookie banner (localStorage only, no trackers)
+- Plain HTML / CSS / JS — no build step
+- Light / dark theme toggle (`js/theme-toggle.js`, `localStorage`)
+- GDPR-friendly cookie banner (`js/cookie-consent.js`, no trackers)
+- Legacy WordPress 7.x in `public_html/legacy/` (PHP 8.1, Mr. Tailor + WooCommerce)
+
+## Live layout
+
+| URL | Serves |
+|-----|--------|
+| `/` | Static homepage (`index.html`) |
+| `/privacy.html`, `/accept-bitcoin.html` | Static pages |
+| `/news/`, `/feed/`, posts, categories, shop | WordPress (via root `index.php` bootstrap) |
+
+Production cutover completed **2026-07-20**.
 
 ## Preview locally
 
 ```bash
-cd /home/david/Documenti/davidcoen.it
+cd /path/to/davidcoen.it
 python -m http.server 8080
 ```
 
-Open http://localhost:8080
+Open http://localhost:8080 (static pages only; WordPress routes need the live server stack).
 
-## Deploy
+## Deploy templates
 
-**Live since 2026-07-20.** Static site at root; WordPress preserved under `/legacy/` (URLs unchanged via root `index.php` bootstrap).
+Configuration examples for the shared-hosting setup:
 
-See [`docs/migration-plan.md`](docs/migration-plan.md). Deploy script: `scripts/migrate-deploy.py` (already executed).
+| File | Purpose |
+|------|---------|
+| [`deploy/root.htaccess.example`](deploy/root.htaccess.example) | Static files + WordPress bootstrap + `/wp-admin/` routing |
+| [`deploy/legacy.htaccess.example`](deploy/legacy.htaccess.example) | PHP 8.1 handler, redirect legacy admin/login URLs |
+| [`deploy/index.php.example`](deploy/index.php.example) | Front-end WordPress bootstrap at site root |
+| [`deploy/wp-config-snippet.example`](deploy/wp-config-snippet.example) | `WP_HOME` / `WP_SITEURL`, memory, cookie paths |
+| [`deploy/mu-plugins/davidcoen-admin-fix.php.example`](deploy/mu-plugins/davidcoen-admin-fix.php.example) | Admin URL fixes, editor memory relief |
+
+One-off migration script (already run on production): [`scripts/migrate-deploy.py`](scripts/migrate-deploy.py).
 
 ## Pages
 
@@ -36,12 +55,14 @@ See [`docs/migration-plan.md`](docs/migration-plan.md). Deploy script: `scripts/
 
 ## Links policy
 
-All links from the current site are preserved in `index.html`, except internal shop / account URLs (omitted by choice).
+External and legacy WordPress links (news, blog posts, categories) are kept in `index.html`. Internal shop / account URLs are omitted by choice.
 
-Legacy WordPress pages (news, blog posts, categories) remain linked until content is migrated.
+## Migration docs
 
-## Migration (WordPress → static at root)
+- [`docs/migration-plan.md`](docs/migration-plan.md) — cutover strategy and checklist
+- [`docs/wp-url-inventory.md`](docs/wp-url-inventory.md) — legacy URL inventory
 
-See [`docs/migration-plan.md`](docs/migration-plan.md) and [`docs/wp-url-inventory.md`](docs/wp-url-inventory.md).
+## Repo notes
 
-Deploy templates live in `deploy/` (`.htaccess` examples, WordPress bootstrap). **Production cutover not started.**
+- `backups/` is gitignored (contains server snapshots and secrets)
+- Do not commit live `wp-config.php` or FTP credentials
