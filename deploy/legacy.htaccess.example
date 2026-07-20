@@ -1,7 +1,9 @@
 # WordPress .htaccess inside public_html/legacy/
-#
-# Replace RewriteBase / with /legacy/ after moving WordPress.
-# Regenerate via WP admin: Settings → Permalinks → Save.
+# PHP 8.1 required — PHP 8.4 breaks older Mr. Tailor / WooCommerce admin code.
+
+<IfModule mime_module>
+  AddHandler application/x-httpd-alt-php81___lsphp .php
+</IfModule>
 
 <IfModule mod_rewrite.c>
 RewriteEngine On

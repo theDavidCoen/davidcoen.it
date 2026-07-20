@@ -1,7 +1,4 @@
-# davidcoen.it — root .htaccess (static site + WordPress in /legacy/)
-#
-# Static files served when present. All other requests bootstrap WordPress
-# via index.php (WordPress codex: own directory, site URL at root).
+# davidcoen.it root htaccess — static site + WordPress bootstrap
 
 DirectoryIndex index.html index.php
 
@@ -11,18 +8,16 @@ RewriteBase /
 
 RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
 
-# Serve existing files and directories (static site, ebook/, .well-known/, …)
+# /legacy/ is not a public page (static home is /)
+RewriteCond %{THE_REQUEST} \s/legacy/?[\s?] [NC]
+RewriteRule ^legacy/?$ / [R=301,L]
+
 RewriteCond %{REQUEST_FILENAME} -f [OR]
 RewriteCond %{REQUEST_FILENAME} -d
 RewriteRule ^ - [L]
 
-# WordPress front controller
 RewriteRule ^index\.php$ - [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule . /index.php [L]
 </IfModule>
-
-# Optional legacy page redirects (uncomment when ready)
-# RewriteRule ^privacy-policy/?$ /privacy.html [R=301,L]
-# RewriteRule ^payment-processor/?$ /accept-bitcoin.html [R=301,L]
