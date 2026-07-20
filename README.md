@@ -39,3 +39,9 @@ When ready: upload files to `public_html` or replace WordPress after review.
 All links from the current site are preserved in `index.html`, except internal shop / account URLs (omitted by choice).
 
 Legacy WordPress pages (news, blog posts, categories) remain linked until content is migrated.
+
+## Migration (WordPress → static at root)
+
+See [`docs/migration-plan.md`](docs/migration-plan.md) and [`docs/wp-url-inventory.md`](docs/wp-url-inventory.md).
+
+Deploy templates live in `deploy/` (`.htaccess` examples, WordPress bootstrap). **Production cutover not started.**

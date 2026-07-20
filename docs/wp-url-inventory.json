@@ -1,0 +1,3449 @@
+{
+  "summary": {
+    "posts": 49,
+    "pages": 29,
+    "categories": 15,
+    "feeds": 8,
+    "archives": 20,
+    "other": 97,
+    "errors": 0
+  },
+  "inventory": {
+    "posts": [
+      "https://davidcoen.it/21-milioni-di-bitcoin/",
+      "https://davidcoen.it/a-need-a-patron/",
+      "https://davidcoen.it/abcore/",
+      "https://davidcoen.it/bitcoin-economic-policy/",
+      "https://davidcoen.it/bitcoin-is-not-deflationary/",
+      "https://davidcoen.it/bitcoin-non-e-deflattivo/",
+      "https://davidcoen.it/che-cose-il-bitcoin-ma-soprattutto-perche-bitcoin/",
+      "https://davidcoen.it/che-cose-il-bitcoin/",
+      "https://davidcoen.it/ciclo-di-lezioni-sul-bitcoin/",
+      "https://davidcoen.it/come-vendere-stellar-per-euro-o-bitcoin/",
+      "https://davidcoen.it/da-euro-in-moneta-a-euro-digitale-grazie-a-bitcoin-lightning-network-lightning-atm-lastbit-cards/",
+      "https://davidcoen.it/deo-grazias-il-network-bitcoin-e-congestionato/",
+      "https://davidcoen.it/exodus-wallet-trezor-t-la-recensione/",
+      "https://davidcoen.it/from-euro-coin-to-digital-euro-thanks-to-bitcoin-lightning-network-lightning-atm-lastbit-cards/",
+      "https://davidcoen.it/fungibilita/",
+      "https://davidcoen.it/getusedtobitcoin-unestensione-per-le-conversioni-automatiche/",
+      "https://davidcoen.it/hablemos-de-bitcoin-con-david-coen/",
+      "https://davidcoen.it/hd-wallet/",
+      "https://davidcoen.it/i-corsi-fuffa-sulla-blockchain-che-non-vi-renderanno-esperti/",
+      "https://davidcoen.it/il-bitcoin-e-open-source-cosa-significa/",
+      "https://davidcoen.it/international-system-is-and-bitcoin-an-analogy/",
+      "https://davidcoen.it/introduzione-al-bitcoin-lezione-gratuita/",
+      "https://davidcoen.it/la-blockchain-non-esiste/",
+      "https://davidcoen.it/la-blockchain-per-la-filiera-produttiva/",
+      "https://davidcoen.it/la-decentralizzazione-di-un-sistema-monetario/",
+      "https://davidcoen.it/lightning-network-fee-market/",
+      "https://davidcoen.it/lnp-bp-english/",
+      "https://davidcoen.it/lnp-bp/",
+      "https://davidcoen.it/mio-account/",
+      "https://davidcoen.it/nip05creator/",
+      "https://davidcoen.it/nostr-broadcast/",
+      "https://davidcoen.it/parole-in-liberta-bitcoin-con-giacomo-zucco-mir-liponi-federico-tenga-e-federico-spitaleri/",
+      "https://davidcoen.it/parole-in-liberta-edge-wallet-e-bitcoin/",
+      "https://davidcoen.it/perche-non-dovremmo-avere-atm-di-bitcoin/",
+      "https://davidcoen.it/politica-economica-bitcoin/",
+      "https://davidcoen.it/privacy-policy/",
+      "https://davidcoen.it/quanto-mi-costa-inviare-bitcoin-un-mito-da-sfatare/",
+      "https://davidcoen.it/ringraziamenti-e-osservazioni-post-cryptocoinference-2018/",
+      "https://davidcoen.it/shoes-in-bitcoin-23-lightning-network-with-david-coen/",
+      "https://davidcoen.it/sistema-internazionale-si-e-bitcoin-unanalogia/",
+      "https://davidcoen.it/smartphone-facile-ebook-pay-with-bitcoin/",
+      "https://davidcoen.it/something-big-is-coming/",
+      "https://davidcoen.it/the-blockchain-doesnt-exist/",
+      "https://davidcoen.it/token-vs-coin-c-differenza-76a27b48ca9d/",
+      "https://davidcoen.it/token-vs-coin/",
+      "https://davidcoen.it/trump-ha-ragione-i-bitcoin-sono-creati-dal-nulla/",
+      "https://davidcoen.it/uno-sguardo-all-innovazione-nello-stack-tecnologico-di-bitcoin-7c794ca58522/",
+      "https://davidcoen.it/visa-mastercard-e-america-express-bloccano-i-pagamenti-verso-pornhub-piano-b/",
+      "https://davidcoen.it/wallet-spv/"
+    ],
+    "pages": [
+      "https://davidcoen.it/",
+      "https://davidcoen.it/cart/",
+      "https://davidcoen.it/categoria-prodotto/bitcoin-collection/",
+      "https://davidcoen.it/categoria-prodotto/libri/",
+      "https://davidcoen.it/comments/feed/",
+      "https://davidcoen.it/contact/",
+      "https://davidcoen.it/feed/",
+      "https://davidcoen.it/payment-processor/",
+      "https://davidcoen.it/private-key-recovery/",
+      "https://davidcoen.it/shop/",
+      "https://davidcoen.it/shop/bitcoin-digital-gold/",
+      "https://davidcoen.it/shop/bitcoin-in-math-we-trust/",
+      "https://davidcoen.it/shop/bitcoin-maximalist-colored/",
+      "https://davidcoen.it/shop/bitcoin-maximalist/",
+      "https://davidcoen.it/shop/bitcoin-money/",
+      "https://davidcoen.it/shop/btcpay-full-solution/",
+      "https://davidcoen.it/shop/consulenza-tinkl/",
+      "https://davidcoen.it/shop/feed/",
+      "https://davidcoen.it/shop/la-moneta-bitcoin/",
+      "https://davidcoen.it/shop/laszlos-pizza-test-digital-copy/",
+      "https://davidcoen.it/shop/lightning-network-bitcoin-without-blockchain/",
+      "https://davidcoen.it/shop/simple-pos-website-plugin/",
+      "https://davidcoen.it/shop/simple-pos/",
+      "https://davidcoen.it/shop/smartphone-facile-ebook-btc/",
+      "https://davidcoen.it/shop/smartphone-facile-ebook/",
+      "https://davidcoen.it/shop/smartphone-facile/",
+      "https://davidcoen.it/shop/the-bitcoin-standard-the-decentralized-alternative-to-central-banking/",
+      "https://davidcoen.it/shop/trezor-model-t/",
+      "https://davidcoen.it/xmlrpc.php"
+    ],
+    "categories": [
+      "https://davidcoen.it/category/eventi/",
+      "https://davidcoen.it/category/eventi/feed/",
+      "https://davidcoen.it/category/guide-pratiche/",
+      "https://davidcoen.it/category/guide-pratiche/feed/",
+      "https://davidcoen.it/category/il-punto-di-vista/",
+      "https://davidcoen.it/category/il-punto-di-vista/feed/",
+      "https://davidcoen.it/category/il-punto-di-vista/page/2/",
+      "https://davidcoen.it/category/indispensabili/",
+      "https://davidcoen.it/category/indispensabili/feed/",
+      "https://davidcoen.it/category/jokes/",
+      "https://davidcoen.it/category/libri/",
+      "https://davidcoen.it/category/libri/feed/",
+      "https://davidcoen.it/category/uncategorized/",
+      "https://davidcoen.it/category/videos-interviews/",
+      "https://davidcoen.it/category/videos-interviews/feed/"
+    ],
+    "feeds": [
+      "https://davidcoen.it/category/eventi/feed/",
+      "https://davidcoen.it/category/guide-pratiche/feed/",
+      "https://davidcoen.it/category/il-punto-di-vista/feed/",
+      "https://davidcoen.it/category/indispensabili/feed/",
+      "https://davidcoen.it/category/libri/feed/",
+      "https://davidcoen.it/category/videos-interviews/feed/",
+      "https://davidcoen.it/feed/",
+      "https://davidcoen.it/news/feed/"
+    ],
+    "archives": [
+      "https://davidcoen.it/",
+      "https://davidcoen.it/news/",
+      "https://davidcoen.it/news/page/2/",
+      "https://davidcoen.it/news/page/3/",
+      "https://davidcoen.it/news/page/4/",
+      "https://davidcoen.it/news/page/5/",
+      "https://davidcoen.it/page/10/",
+      "https://davidcoen.it/page/11/",
+      "https://davidcoen.it/page/12/",
+      "https://davidcoen.it/page/13/",
+      "https://davidcoen.it/page/14/",
+      "https://davidcoen.it/page/15/",
+      "https://davidcoen.it/page/2/",
+      "https://davidcoen.it/page/3/",
+      "https://davidcoen.it/page/4/",
+      "https://davidcoen.it/page/5/",
+      "https://davidcoen.it/page/6/",
+      "https://davidcoen.it/page/7/",
+      "https://davidcoen.it/page/8/",
+      "https://davidcoen.it/page/9/"
+    ],
+    "other": [
+      "https://davidcoen.it/abc-pricing-sitemap.xml",
+      "https://davidcoen.it/category-sitemap.xml",
+      "https://davidcoen.it/page-sitemap.xml",
+      "https://davidcoen.it/post-sitemap.xml",
+      "https://davidcoen.it/post_tag-sitemap.xml",
+      "https://davidcoen.it/product-sitemap.xml",
+      "https://davidcoen.it/product_cat-sitemap.xml",
+      "https://davidcoen.it/tag/abcore/",
+      "https://davidcoen.it/tag/amazon/",
+      "https://davidcoen.it/tag/android/",
+      "https://davidcoen.it/tag/bitcoin-core/",
+      "https://davidcoen.it/tag/bitcoin/",
+      "https://davidcoen.it/tag/blockchain/",
+      "https://davidcoen.it/tag/coinbase/",
+      "https://davidcoen.it/tag/congestion/",
+      "https://davidcoen.it/tag/crypto-coinference/",
+      "https://davidcoen.it/tag/deflation/",
+      "https://davidcoen.it/tag/deflazione/",
+      "https://davidcoen.it/tag/distributed-ledger/",
+      "https://davidcoen.it/tag/divisibilita/",
+      "https://davidcoen.it/tag/dollaro/",
+      "https://davidcoen.it/tag/economic-policy/",
+      "https://davidcoen.it/tag/edge-wallet/",
+      "https://davidcoen.it/tag/electrum/",
+      "https://davidcoen.it/tag/exodus/",
+      "https://davidcoen.it/tag/fee-market/",
+      "https://davidcoen.it/tag/full-node/",
+      "https://davidcoen.it/tag/fungibilita/",
+      "https://davidcoen.it/tag/hd-wallet/",
+      "https://davidcoen.it/tag/inflation/",
+      "https://davidcoen.it/tag/inflazione/",
+      "https://davidcoen.it/tag/international-system/",
+      "https://davidcoen.it/tag/lezione-gratuita/",
+      "https://davidcoen.it/tag/lightning-network/",
+      "https://davidcoen.it/tag/liquidita/",
+      "https://davidcoen.it/tag/lnp-bp/",
+      "https://davidcoen.it/tag/maximalism/",
+      "https://davidcoen.it/tag/maximalist/",
+      "https://davidcoen.it/tag/patron/",
+      "https://davidcoen.it/tag/politica-economica/",
+      "https://davidcoen.it/tag/satoshi/",
+      "https://davidcoen.it/tag/sistema-internazionale/",
+      "https://davidcoen.it/tag/sistema-monetario/",
+      "https://davidcoen.it/tag/spv-clients/",
+      "https://davidcoen.it/tag/spv/",
+      "https://davidcoen.it/tag/stellar/",
+      "https://davidcoen.it/tag/supply/",
+      "https://davidcoen.it/tag/trezor/",
+      "https://davidcoen.it/tag/wallet-gerarchico-deterministico/",
+      "https://davidcoen.it/wp-content/plugins/contact-form-7/includes/css/styles.css",
+      "https://davidcoen.it/wp-content/plugins/custom-twitter-feeds/css/ctf-styles.min.css",
+      "https://davidcoen.it/wp-content/plugins/darkmysite/assets/css/client_main.css",
+      "https://davidcoen.it/wp-content/plugins/eu-cookie-law/css/style.css",
+      "https://davidcoen.it/wp-content/plugins/jquery-smooth-scroll/css/style.css",
+      "https://davidcoen.it/wp-content/plugins/js_composer/assets/css/js_composer.min.css",
+      "https://davidcoen.it/wp-content/plugins/js_composer/assets/lib/vendor/dist/@fortawesome/fontawesome-free/css/all.min.css",
+      "https://davidcoen.it/wp-content/plugins/js_composer/assets/lib/vendor/dist/@fortawesome/fontawesome-free/css/v4-shims.min.css",
+      "https://davidcoen.it/wp-content/plugins/mr-tailor-extender/includes/addons/assets/css/wc-category-header-image.css",
+      "https://davidcoen.it/wp-content/plugins/mr-tailor-extender/includes/gbt-blocks/banner/assets/css/style.css",
+      "https://davidcoen.it/wp-content/plugins/mr-tailor-extender/includes/gbt-blocks/posts_grid/assets/css/frontend/style.css",
+      "https://davidcoen.it/wp-content/plugins/mr-tailor-extender/includes/gbt-blocks/posts_slider/assets/css/style.css",
+      "https://davidcoen.it/wp-content/plugins/mr-tailor-extender/includes/shortcodes/assets/css/banner.css",
+      "https://davidcoen.it/wp-content/plugins/mr-tailor-extender/includes/social-media/assets/css/social-media.css",
+      "https://davidcoen.it/wp-content/plugins/mr-tailor-extender/includes/social-sharing/assets/css/social-sharing.css",
+      "https://davidcoen.it/wp-content/plugins/simple-lightbox/client/css/app.css",
+      "https://davidcoen.it/wp-content/plugins/tablepress/css/default.min.css",
+      "https://davidcoen.it/wp-content/plugins/woocommerce/assets/client/blocks/wc-blocks.css",
+      "https://davidcoen.it/wp-content/plugins/woocommerce/assets/css/select2.css",
+      "https://davidcoen.it/wp-content/plugins/woocommerce/assets/css/woocommerce-layout.css",
+      "https://davidcoen.it/wp-content/plugins/woocommerce/assets/css/woocommerce-smallscreen.css",
+      "https://davidcoen.it/wp-content/plugins/woocommerce/assets/css/woocommerce.css",
+      "https://davidcoen.it/wp-content/plugins/wp-facebook-reviews/public/css/wprev-public_template1.css",
+      "https://davidcoen.it/wp-content/plugins/wp-facebook-reviews/public/css/wprev_w3.css",
+      "https://davidcoen.it/wp-content/plugins/wp-facebook-reviews/public/css/wprs_unslider-dots.css",
+      "https://davidcoen.it/wp-content/plugins/wp-facebook-reviews/public/css/wprs_unslider.css",
+      "https://davidcoen.it/wp-content/plugins/wp-gdpr-compliance/assets/css/front.min.css",
+      "https://davidcoen.it/wp-content/plugins/wp-google-places-review-slider/public/css/wprev-public_combine.css",
+      "https://davidcoen.it/wp-content/plugins/wp-google-search/wgs2.css",
+      "https://davidcoen.it/wp-content/themes/mrtailor/css/_vendor/swiper/swiper.min.css",
+      "https://davidcoen.it/wp-content/themes/mrtailor/css/styles.css",
+      "https://davidcoen.it/wp-content/themes/mrtailor/favicon.png",
+      "https://davidcoen.it/wp-content/themes/mrtailor/style.css",
+      "https://davidcoen.it/wp-content/uploads/font-awesome/v6.2.0/css/svg-with-js.css",
+      "https://davidcoen.it/wp-json/",
+      "https://davidcoen.it/wp-json/oembed/1.0/embed/",
+      "https://davidcoen.it/wp-json/wp/v2/categories/166/",
+      "https://davidcoen.it/wp-json/wp/v2/categories/219/",
+      "https://davidcoen.it/wp-json/wp/v2/categories/36/",
+      "https://davidcoen.it/wp-json/wp/v2/categories/43/",
+      "https://davidcoen.it/wp-json/wp/v2/categories/48/",
+      "https://davidcoen.it/wp-json/wp/v2/categories/51/",
+      "https://davidcoen.it/wp-json/wp/v2/pages/133/",
+      "https://davidcoen.it/wp-json/wp/v2/pages/6/",
+      "https://davidcoen.it/wp-json/wp/v2/pages/648432/",
+      "https://davidcoen.it/wp-json/wp/v2/pages/648567/",
+      "https://davidcoen.it/wp-json/wp/v2/pages/648789/",
+      "https://davidcoen.it/wpb_gutenberg_param-sitemap.xml"
+    ],
+    "errors": []
+  },
+  "details": {
+    "posts": {
+      "https://davidcoen.it/21-milioni-di-bitcoin/": {
+        "sources": [
+          "rss:https://davidcoen.it/feed/?paged=2",
+          "link-from:/category/il-punto-di-vista/",
+          "link-from:/news/page/2/"
+        ]
+      },
+      "https://davidcoen.it/a-need-a-patron/": {
+        "sources": [
+          "rss:https://davidcoen.it/feed/?paged=2",
+          "link-from:/category/libri/",
+          "link-from:/news/page/2/"
+        ]
+      },
+      "https://davidcoen.it/abcore/": {
+        "sources": [
+          "rss:https://davidcoen.it/feed/?paged=4",
+          "link-from:/category/guide-pratiche/",
+          "link-from:/news/page/4/"
+        ]
+      },
+      "https://davidcoen.it/bitcoin-economic-policy/": {
+        "sources": [
+          "rss:https://davidcoen.it/feed/?paged=2",
+          "link-from:/category/il-punto-di-vista/",
+          "link-from:/news/page/2/"
+        ]
+      },
+      "https://davidcoen.it/bitcoin-is-not-deflationary/": {
+        "sources": [
+          "rss:https://davidcoen.it/feed/?paged=2",
+          "link-from:/category/il-punto-di-vista/",
+          "link-from:/news/page/2/"
+        ]
+      },
+      "https://davidcoen.it/bitcoin-non-e-deflattivo/": {
+        "sources": [
+          "rss:https://davidcoen.it/feed/?paged=2",
+          "link-from:/category/il-punto-di-vista/",
+          "link-from:/news/page/2/"
+        ]
+      },
+      "https://davidcoen.it/che-cose-il-bitcoin-ma-soprattutto-perche-bitcoin/": {
+        "sources": [
+          "rss:https://davidcoen.it/feed/?paged=4",
+          "link-from:/category/indispensabili/",
+          "link-from:/news/page/4/"
+        ]
+      },
+      "https://davidcoen.it/che-cose-il-bitcoin/": {
+        "sources": [
+          "rss:https://davidcoen.it/feed/?paged=5",
+          "link-from:/category/indispensabili/",
+          "link-from:/news/page/5/"
+        ]
+      },
+      "https://davidcoen.it/ciclo-di-lezioni-sul-bitcoin/": {
+        "sources": [
+          "rss:https://davidcoen.it/feed/?paged=4",
+          "link-from:/category/eventi/",
+          "link-from:/news/page/4/"
+        ]
+      },
+      "https://davidcoen.it/come-vendere-stellar-per-euro-o-bitcoin/": {
+        "sources": [
+          "rss:https://davidcoen.it/feed/?paged=3",
+          "link-from:/category/guide-pratiche/",
+          "link-from:/news/page/3/"
+        ]
+      },
+      "https://davidcoen.it/da-euro-in-moneta-a-euro-digitale-grazie-a-bitcoin-lightning-network-lightning-atm-lastbit-cards/": {
+        "sources": [
+          "rss:https://davidcoen.it/feed/?paged=1",
+          "link-from:/news/",
+          "link-from:/category/eventi/",
+          "link-from:/category/guide-pratiche/",
+          "link-from:/category/il-punto-di-vista/",
+          "link-from:/category/indispensabili/",
+          "link-from:/category/libri/",
+          "link-from:/category/videos-interviews/",
+          "link-from:/feed/",
+          "link-from:/news/page/2/",
+          "link-from:/news/page/3/",
+          "link-from:/news/page/4/",
+          "link-from:/news/page/5/"
+        ]
+      },
+      "https://davidcoen.it/deo-grazias-il-network-bitcoin-e-congestionato/": {
+        "sources": [
+          "rss:https://davidcoen.it/feed/?paged=1",
+          "link-from:/news/",
+          "link-from:/category/il-punto-di-vista/",
+          "link-from:/feed/"
+        ]
+      },
+      "https://davidcoen.it/exodus-wallet-trezor-t-la-recensione/": {
+        "sources": [
+          "rss:https://davidcoen.it/feed/?paged=3",
+          "link-from:/category/guide-pratiche/",
+          "link-from:/news/page/3/"
+        ]
+      },
+      "https://davidcoen.it/from-euro-coin-to-digital-euro-thanks-to-bitcoin-lightning-network-lightning-atm-lastbit-cards/": {
+        "sources": [
+          "rss:https://davidcoen.it/feed/?paged=1",
+          "link-from:/news/",
+          "link-from:/category/eventi/",
+          "link-from:/category/guide-pratiche/",
+          "link-from:/category/il-punto-di-vista/",
+          "link-from:/category/indispensabili/",
+          "link-from:/category/libri/",
+          "link-from:/category/videos-interviews/",
+          "link-from:/feed/",
+          "link-from:/news/page/2/",
+          "link-from:/news/page/3/",
+          "link-from:/news/page/4/",
+          "link-from:/news/page/5/"
+        ]
+      },
+      "https://davidcoen.it/fungibilita/": {
+        "sources": [
+          "rss:https://davidcoen.it/feed/?paged=3",
+          "link-from:/category/indispensabili/",
+          "link-from:/news/page/3/"
+        ]
+      },
+      "https://davidcoen.it/getusedtobitcoin-unestensione-per-le-conversioni-automatiche/": {
+        "sources": [
+          "rss:https://davidcoen.it/feed/?paged=3",
+          "link-from:/category/guide-pratiche/",
+          "link-from:/news/page/3/"
+        ]
+      },
+      "https://davidcoen.it/hablemos-de-bitcoin-con-david-coen/": {
+        "sources": [
+          "rss:https://davidcoen.it/feed/?paged=1",
+          "link-from:/news/",
+          "link-from:/category/videos-interviews/",
+          "link-from:/feed/"
+        ]
+      },
+      "https://davidcoen.it/hd-wallet/": {
+        "sources": [
+          "rss:https://davidcoen.it/feed/?paged=3",
+          "link-from:/news/",
+          "link-from:/category/eventi/",
+          "link-from:/category/guide-pratiche/",
+          "link-from:/category/il-punto-di-vista/",
+          "link-from:/category/indispensabili/",
+          "link-from:/category/libri/",
+          "link-from:/category/videos-interviews/",
+          "link-from:/news/page/2/",
+          "link-from:/news/page/3/",
+          "link-from:/news/page/4/",
+          "link-from:/news/page/5/"
+        ]
+      },
+      "https://davidcoen.it/i-corsi-fuffa-sulla-blockchain-che-non-vi-renderanno-esperti/": {
+        "sources": [
+          "rss:https://davidcoen.it/feed/?paged=2",
+          "link-from:/news/page/2/"
+        ]
+      },
+      "https://davidcoen.it/il-bitcoin-e-open-source-cosa-significa/": {
+        "sources": [
+          "rss:https://davidcoen.it/feed/?paged=4",
+          "link-from:/category/indispensabili/",
+          "link-from:/news/page/4/"
+        ]
+      },
+      "https://davidcoen.it/international-system-is-and-bitcoin-an-analogy/": {
+        "sources": [
+          "rss:https://davidcoen.it/feed/?paged=3",
+          "link-from:/news/page/3/"
+        ]
+      },
+      "https://davidcoen.it/introduzione-al-bitcoin-lezione-gratuita/": {
+        "sources": [
+          "rss:https://davidcoen.it/feed/?paged=4",
+          "link-from:/category/eventi/",
+          "link-from:/news/page/4/"
+        ]
+      },
+      "https://davidcoen.it/la-blockchain-non-esiste/": {
+        "sources": [
+          "rss:https://davidcoen.it/feed/?paged=4",
+          "link-from:/news/page/4/"
+        ]
+      },
+      "https://davidcoen.it/la-blockchain-per-la-filiera-produttiva/": {
+        "sources": [
+          "rss:https://davidcoen.it/feed/?paged=4",
+          "link-from:/news/page/4/"
+        ]
+      },
+      "https://davidcoen.it/la-decentralizzazione-di-un-sistema-monetario/": {
+        "sources": [
+          "rss:https://davidcoen.it/feed/?paged=3",
+          "link-from:/news/page/3/"
+        ]
+      },
+      "https://davidcoen.it/lightning-network-fee-market/": {
+        "sources": [
+          "rss:https://davidcoen.it/feed/?paged=1",
+          "link-from:/news/",
+          "link-from:/category/eventi/",
+          "link-from:/category/guide-pratiche/",
+          "link-from:/category/il-punto-di-vista/",
+          "link-from:/category/indispensabili/",
+          "link-from:/category/libri/",
+          "link-from:/category/videos-interviews/",
+          "link-from:/feed/",
+          "link-from:/news/page/2/",
+          "link-from:/news/page/3/",
+          "link-from:/news/page/4/",
+          "link-from:/news/page/5/"
+        ]
+      },
+      "https://davidcoen.it/lnp-bp-english/": {
+        "sources": [
+          "rss:https://davidcoen.it/feed/?paged=2",
+          "link-from:/category/il-punto-di-vista/",
+          "link-from:/news/page/2/"
+        ]
+      },
+      "https://davidcoen.it/lnp-bp/": {
+        "sources": [
+          "rss:https://davidcoen.it/feed/?paged=2",
+          "link-from:/category/il-punto-di-vista/",
+          "link-from:/news/page/2/"
+        ]
+      },
+      "https://davidcoen.it/mio-account/": {
+        "sources": [
+          "link-from:/",
+          "link-from:/news/",
+          "link-from:/category/eventi/",
+          "link-from:/category/guide-pratiche/",
+          "link-from:/category/il-punto-di-vista/",
+          "link-from:/category/indispensabili/",
+          "link-from:/category/libri/",
+          "link-from:/category/videos-interviews/",
+          "link-from:/contact/",
+          "link-from:/payment-processor/",
+          "link-from:/private-key-recovery/",
+          "link-from:/shop/",
+          "link-from:/cart/",
+          "link-from:/checkout/",
+          "link-from:/news/page/2/",
+          "link-from:/page/2/",
+          "link-from:/news/page/3/",
+          "link-from:/page/3/",
+          "link-from:/news/page/4/",
+          "link-from:/page/4/",
+          "link-from:/news/page/5/",
+          "link-from:/page/5/",
+          "link-from:/page/6/",
+          "link-from:/page/7/",
+          "link-from:/page/8/",
+          "link-from:/page/9/",
+          "link-from:/page/10/",
+          "link-from:/page/11/",
+          "link-from:/page/12/",
+          "link-from:/page/13/",
+          "link-from:/page/14/",
+          "link-from:/page/15/"
+        ]
+      },
+      "https://davidcoen.it/nip05creator/": {
+        "sources": [
+          "link-from:/",
+          "link-from:/page/2/",
+          "link-from:/page/3/",
+          "link-from:/page/4/",
+          "link-from:/page/5/",
+          "link-from:/page/6/",
+          "link-from:/page/7/",
+          "link-from:/page/8/",
+          "link-from:/page/9/",
+          "link-from:/page/10/",
+          "link-from:/page/11/",
+          "link-from:/page/12/",
+          "link-from:/page/13/",
+          "link-from:/page/14/",
+          "link-from:/page/15/"
+        ]
+      },
+      "https://davidcoen.it/nostr-broadcast/": {
+        "sources": [
+          "link-from:/",
+          "link-from:/page/2/",
+          "link-from:/page/3/",
+          "link-from:/page/4/",
+          "link-from:/page/5/",
+          "link-from:/page/6/",
+          "link-from:/page/7/",
+          "link-from:/page/8/",
+          "link-from:/page/9/",
+          "link-from:/page/10/",
+          "link-from:/page/11/",
+          "link-from:/page/12/",
+          "link-from:/page/13/",
+          "link-from:/page/14/",
+          "link-from:/page/15/"
+        ]
+      },
+      "https://davidcoen.it/parole-in-liberta-bitcoin-con-giacomo-zucco-mir-liponi-federico-tenga-e-federico-spitaleri/": {
+        "sources": [
+          "rss:https://davidcoen.it/feed/?paged=1",
+          "link-from:/news/",
+          "link-from:/category/eventi/",
+          "link-from:/category/guide-pratiche/",
+          "link-from:/category/il-punto-di-vista/",
+          "link-from:/category/indispensabili/",
+          "link-from:/category/libri/",
+          "link-from:/category/videos-interviews/",
+          "link-from:/feed/",
+          "link-from:/news/page/2/",
+          "link-from:/news/page/3/",
+          "link-from:/news/page/4/",
+          "link-from:/news/page/5/"
+        ]
+      },
+      "https://davidcoen.it/parole-in-liberta-edge-wallet-e-bitcoin/": {
+        "sources": [
+          "rss:https://davidcoen.it/feed/?paged=1",
+          "link-from:/news/",
+          "link-from:/category/videos-interviews/",
+          "link-from:/feed/"
+        ]
+      },
+      "https://davidcoen.it/perche-non-dovremmo-avere-atm-di-bitcoin/": {
+        "sources": [
+          "rss:https://davidcoen.it/feed/?paged=5",
+          "link-from:/news/page/5/"
+        ]
+      },
+      "https://davidcoen.it/politica-economica-bitcoin/": {
+        "sources": [
+          "rss:https://davidcoen.it/feed/?paged=2",
+          "link-from:/category/il-punto-di-vista/",
+          "link-from:/news/page/2/"
+        ]
+      },
+      "https://davidcoen.it/privacy-policy/": {
+        "sources": [
+          "link-from:/",
+          "link-from:/news/",
+          "link-from:/category/eventi/",
+          "link-from:/category/guide-pratiche/",
+          "link-from:/category/il-punto-di-vista/",
+          "link-from:/category/indispensabili/",
+          "link-from:/category/libri/",
+          "link-from:/category/videos-interviews/",
+          "link-from:/contact/",
+          "link-from:/payment-processor/",
+          "link-from:/private-key-recovery/",
+          "link-from:/shop/",
+          "link-from:/cart/",
+          "link-from:/checkout/",
+          "link-from:/news/page/2/",
+          "link-from:/page/2/",
+          "link-from:/news/page/3/",
+          "link-from:/page/3/",
+          "link-from:/news/page/4/",
+          "link-from:/page/4/",
+          "link-from:/news/page/5/",
+          "link-from:/page/5/",
+          "link-from:/page/6/",
+          "link-from:/page/7/",
+          "link-from:/page/8/",
+          "link-from:/page/9/",
+          "link-from:/page/10/",
+          "link-from:/page/11/",
+          "link-from:/page/12/",
+          "link-from:/page/13/",
+          "link-from:/page/14/",
+          "link-from:/page/15/"
+        ]
+      },
+      "https://davidcoen.it/quanto-mi-costa-inviare-bitcoin-un-mito-da-sfatare/": {
+        "sources": [
+          "rss:https://davidcoen.it/feed/?paged=1",
+          "link-from:/news/",
+          "link-from:/category/guide-pratiche/",
+          "link-from:/feed/"
+        ]
+      },
+      "https://davidcoen.it/ringraziamenti-e-osservazioni-post-cryptocoinference-2018/": {
+        "sources": [
+          "rss:https://davidcoen.it/feed/?paged=4",
+          "link-from:/news/page/4/"
+        ]
+      },
+      "https://davidcoen.it/shoes-in-bitcoin-23-lightning-network-with-david-coen/": {
+        "sources": [
+          "rss:https://davidcoen.it/feed/?paged=1",
+          "link-from:/news/",
+          "link-from:/category/eventi/",
+          "link-from:/category/guide-pratiche/",
+          "link-from:/category/il-punto-di-vista/",
+          "link-from:/category/indispensabili/",
+          "link-from:/category/libri/",
+          "link-from:/category/videos-interviews/",
+          "link-from:/feed/",
+          "link-from:/news/page/2/",
+          "link-from:/news/page/3/",
+          "link-from:/news/page/4/",
+          "link-from:/news/page/5/"
+        ]
+      },
+      "https://davidcoen.it/sistema-internazionale-si-e-bitcoin-unanalogia/": {
+        "sources": [
+          "rss:https://davidcoen.it/feed/?paged=3",
+          "link-from:/news/page/3/"
+        ]
+      },
+      "https://davidcoen.it/smartphone-facile-ebook-pay-with-bitcoin/": {
+        "sources": [
+          "rss:https://davidcoen.it/feed/?paged=3",
+          "link-from:/category/libri/",
+          "link-from:/news/page/3/"
+        ]
+      },
+      "https://davidcoen.it/something-big-is-coming/": {
+        "sources": [
+          "rss:https://davidcoen.it/feed/?paged=5",
+          "link-from:/news/page/5/"
+        ]
+      },
+      "https://davidcoen.it/the-blockchain-doesnt-exist/": {
+        "sources": [
+          "rss:https://davidcoen.it/feed/?paged=4",
+          "link-from:/news/page/4/"
+        ]
+      },
+      "https://davidcoen.it/token-vs-coin-c-differenza-76a27b48ca9d/": {
+        "sources": [
+          "rss:https://davidcoen.it/feed/?paged=5",
+          "link-from:/news/page/5/"
+        ]
+      },
+      "https://davidcoen.it/token-vs-coin/": {
+        "sources": [
+          "rss:https://davidcoen.it/feed/?paged=5",
+          "link-from:/category/indispensabili/",
+          "link-from:/news/page/5/"
+        ]
+      },
+      "https://davidcoen.it/trump-ha-ragione-i-bitcoin-sono-creati-dal-nulla/": {
+        "sources": [
+          "rss:https://davidcoen.it/feed/?paged=3",
+          "link-from:/news/page/3/"
+        ]
+      },
+      "https://davidcoen.it/uno-sguardo-all-innovazione-nello-stack-tecnologico-di-bitcoin-7c794ca58522/": {
+        "sources": [
+          "rss:https://davidcoen.it/feed/?paged=2",
+          "link-from:/category/indispensabili/",
+          "link-from:/news/page/2/"
+        ]
+      },
+      "https://davidcoen.it/visa-mastercard-e-america-express-bloccano-i-pagamenti-verso-pornhub-piano-b/": {
+        "sources": [
+          "rss:https://davidcoen.it/feed/?paged=1",
+          "link-from:/news/",
+          "link-from:/category/eventi/",
+          "link-from:/category/guide-pratiche/",
+          "link-from:/category/il-punto-di-vista/",
+          "link-from:/category/indispensabili/",
+          "link-from:/category/libri/",
+          "link-from:/category/videos-interviews/",
+          "link-from:/feed/",
+          "link-from:/news/page/2/",
+          "link-from:/news/page/3/",
+          "link-from:/news/page/4/",
+          "link-from:/news/page/5/"
+        ]
+      },
+      "https://davidcoen.it/wallet-spv/": {
+        "sources": [
+          "rss:https://davidcoen.it/feed/?paged=4",
+          "link-from:/category/indispensabili/",
+          "link-from:/news/page/4/"
+        ]
+      }
+    },
+    "pages": {
+      "https://davidcoen.it/": {
+        "sources": [
+          "link-from:/",
+          "link-from:/news/",
+          "link-from:/category/eventi/",
+          "link-from:/category/guide-pratiche/",
+          "link-from:/category/il-punto-di-vista/",
+          "link-from:/category/indispensabili/",
+          "link-from:/category/libri/",
+          "link-from:/category/videos-interviews/",
+          "link-from:/contact/",
+          "link-from:/payment-processor/",
+          "link-from:/private-key-recovery/",
+          "link-from:/shop/",
+          "link-from:/cart/",
+          "link-from:/checkout/",
+          "link-from:/feed/",
+          "link-from:/news/page/2/",
+          "link-from:/page/2/",
+          "link-from:/news/page/3/",
+          "link-from:/page/3/",
+          "link-from:/news/page/4/",
+          "link-from:/page/4/",
+          "link-from:/news/page/5/",
+          "link-from:/page/5/",
+          "link-from:/page/6/",
+          "link-from:/page/7/",
+          "link-from:/page/8/",
+          "link-from:/page/9/",
+          "link-from:/page/10/",
+          "link-from:/page/11/",
+          "link-from:/page/12/",
+          "link-from:/page/13/",
+          "link-from:/page/14/",
+          "link-from:/page/15/"
+        ]
+      },
+      "https://davidcoen.it/cart/": {
+        "sources": [
+          "crawl:/cart/",
+          "crawl:/checkout/"
+        ]
+      },
+      "https://davidcoen.it/categoria-prodotto/bitcoin-collection/": {
+        "sources": [
+          "link-from:/shop/"
+        ]
+      },
+      "https://davidcoen.it/categoria-prodotto/libri/": {
+        "sources": [
+          "link-from:/shop/"
+        ]
+      },
+      "https://davidcoen.it/comments/feed/": {
+        "sources": [
+          "link-from:/",
+          "link-from:/news/",
+          "link-from:/category/eventi/",
+          "link-from:/category/guide-pratiche/",
+          "link-from:/category/il-punto-di-vista/",
+          "link-from:/category/indispensabili/",
+          "link-from:/category/libri/",
+          "link-from:/category/videos-interviews/",
+          "link-from:/contact/",
+          "link-from:/payment-processor/",
+          "link-from:/private-key-recovery/",
+          "link-from:/shop/",
+          "link-from:/cart/",
+          "link-from:/checkout/",
+          "link-from:/news/page/2/",
+          "link-from:/page/2/",
+          "link-from:/news/page/3/",
+          "link-from:/page/3/",
+          "link-from:/news/page/4/",
+          "link-from:/page/4/",
+          "link-from:/news/page/5/",
+          "link-from:/page/5/",
+          "link-from:/page/6/",
+          "link-from:/page/7/",
+          "link-from:/page/8/",
+          "link-from:/page/9/",
+          "link-from:/page/10/",
+          "link-from:/page/11/",
+          "link-from:/page/12/",
+          "link-from:/page/13/",
+          "link-from:/page/14/",
+          "link-from:/page/15/"
+        ]
+      },
+      "https://davidcoen.it/contact/": {
+        "sources": [
+          "link-from:/",
+          "link-from:/news/",
+          "link-from:/category/eventi/",
+          "link-from:/category/guide-pratiche/",
+          "link-from:/category/il-punto-di-vista/",
+          "link-from:/category/indispensabili/",
+          "link-from:/category/libri/",
+          "link-from:/category/videos-interviews/",
+          "crawl:/contact/",
+          "link-from:/contact/",
+          "link-from:/payment-processor/",
+          "link-from:/private-key-recovery/",
+          "link-from:/shop/",
+          "link-from:/cart/",
+          "link-from:/checkout/",
+          "link-from:/news/page/2/",
+          "link-from:/page/2/",
+          "link-from:/news/page/3/",
+          "link-from:/page/3/",
+          "link-from:/news/page/4/",
+          "link-from:/page/4/",
+          "link-from:/news/page/5/",
+          "link-from:/page/5/",
+          "link-from:/page/6/",
+          "link-from:/page/7/",
+          "link-from:/page/8/",
+          "link-from:/page/9/",
+          "link-from:/page/10/",
+          "link-from:/page/11/",
+          "link-from:/page/12/",
+          "link-from:/page/13/",
+          "link-from:/page/14/",
+          "link-from:/page/15/"
+        ]
+      },
+      "https://davidcoen.it/feed/": {
+        "sources": [
+          "link-from:/",
+          "link-from:/news/",
+          "link-from:/category/eventi/",
+          "link-from:/category/guide-pratiche/",
+          "link-from:/category/il-punto-di-vista/",
+          "link-from:/category/indispensabili/",
+          "link-from:/category/libri/",
+          "link-from:/category/videos-interviews/",
+          "link-from:/contact/",
+          "link-from:/payment-processor/",
+          "link-from:/private-key-recovery/",
+          "link-from:/shop/",
+          "link-from:/cart/",
+          "link-from:/checkout/",
+          "link-from:/feed/",
+          "link-from:/news/page/2/",
+          "link-from:/page/2/",
+          "link-from:/news/page/3/",
+          "link-from:/page/3/",
+          "link-from:/news/page/4/",
+          "link-from:/page/4/",
+          "link-from:/news/page/5/",
+          "link-from:/page/5/",
+          "link-from:/page/6/",
+          "link-from:/page/7/",
+          "link-from:/page/8/",
+          "link-from:/page/9/",
+          "link-from:/page/10/",
+          "link-from:/page/11/",
+          "link-from:/page/12/",
+          "link-from:/page/13/",
+          "link-from:/page/14/",
+          "link-from:/page/15/"
+        ]
+      },
+      "https://davidcoen.it/payment-processor/": {
+        "sources": [
+          "link-from:/",
+          "link-from:/news/",
+          "link-from:/category/eventi/",
+          "link-from:/category/guide-pratiche/",
+          "link-from:/category/il-punto-di-vista/",
+          "link-from:/category/indispensabili/",
+          "link-from:/category/libri/",
+          "link-from:/category/videos-interviews/",
+          "link-from:/contact/",
+          "crawl:/payment-processor/",
+          "link-from:/payment-processor/",
+          "link-from:/private-key-recovery/",
+          "link-from:/shop/",
+          "link-from:/cart/",
+          "link-from:/checkout/",
+          "link-from:/news/page/2/",
+          "link-from:/page/2/",
+          "link-from:/news/page/3/",
+          "link-from:/page/3/",
+          "link-from:/news/page/4/",
+          "link-from:/page/4/",
+          "link-from:/news/page/5/",
+          "link-from:/page/5/",
+          "link-from:/page/6/",
+          "link-from:/page/7/",
+          "link-from:/page/8/",
+          "link-from:/page/9/",
+          "link-from:/page/10/",
+          "link-from:/page/11/",
+          "link-from:/page/12/",
+          "link-from:/page/13/",
+          "link-from:/page/14/",
+          "link-from:/page/15/"
+        ]
+      },
+      "https://davidcoen.it/private-key-recovery/": {
+        "sources": [
+          "link-from:/",
+          "link-from:/news/",
+          "link-from:/category/eventi/",
+          "link-from:/category/guide-pratiche/",
+          "link-from:/category/il-punto-di-vista/",
+          "link-from:/category/indispensabili/",
+          "link-from:/category/libri/",
+          "link-from:/category/videos-interviews/",
+          "link-from:/contact/",
+          "link-from:/payment-processor/",
+          "crawl:/private-key-recovery/",
+          "link-from:/private-key-recovery/",
+          "link-from:/shop/",
+          "link-from:/cart/",
+          "link-from:/checkout/",
+          "link-from:/news/page/2/",
+          "link-from:/page/2/",
+          "link-from:/news/page/3/",
+          "link-from:/page/3/",
+          "link-from:/news/page/4/",
+          "link-from:/page/4/",
+          "link-from:/news/page/5/",
+          "link-from:/page/5/",
+          "link-from:/page/6/",
+          "link-from:/page/7/",
+          "link-from:/page/8/",
+          "link-from:/page/9/",
+          "link-from:/page/10/",
+          "link-from:/page/11/",
+          "link-from:/page/12/",
+          "link-from:/page/13/",
+          "link-from:/page/14/",
+          "link-from:/page/15/"
+        ]
+      },
+      "https://davidcoen.it/shop/": {
+        "sources": [
+          "link-from:/",
+          "link-from:/news/",
+          "link-from:/category/eventi/",
+          "link-from:/category/guide-pratiche/",
+          "link-from:/category/il-punto-di-vista/",
+          "link-from:/category/indispensabili/",
+          "link-from:/category/libri/",
+          "link-from:/category/videos-interviews/",
+          "link-from:/contact/",
+          "link-from:/payment-processor/",
+          "link-from:/private-key-recovery/",
+          "crawl:/shop/",
+          "link-from:/shop/",
+          "link-from:/cart/",
+          "link-from:/checkout/",
+          "link-from:/news/page/2/",
+          "link-from:/page/2/",
+          "link-from:/news/page/3/",
+          "link-from:/page/3/",
+          "link-from:/news/page/4/",
+          "link-from:/page/4/",
+          "link-from:/news/page/5/",
+          "link-from:/page/5/",
+          "link-from:/page/6/",
+          "link-from:/page/7/",
+          "link-from:/page/8/",
+          "link-from:/page/9/",
+          "link-from:/page/10/",
+          "link-from:/page/11/",
+          "link-from:/page/12/",
+          "link-from:/page/13/",
+          "link-from:/page/14/",
+          "link-from:/page/15/"
+        ]
+      },
+      "https://davidcoen.it/shop/bitcoin-digital-gold/": {
+        "sources": [
+          "link-from:/shop/"
+        ]
+      },
+      "https://davidcoen.it/shop/bitcoin-in-math-we-trust/": {
+        "sources": [
+          "link-from:/shop/"
+        ]
+      },
+      "https://davidcoen.it/shop/bitcoin-maximalist-colored/": {
+        "sources": [
+          "link-from:/shop/"
+        ]
+      },
+      "https://davidcoen.it/shop/bitcoin-maximalist/": {
+        "sources": [
+          "link-from:/shop/"
+        ]
+      },
+      "https://davidcoen.it/shop/bitcoin-money/": {
+        "sources": [
+          "link-from:/shop/"
+        ]
+      },
+      "https://davidcoen.it/shop/btcpay-full-solution/": {
+        "sources": [
+          "link-from:/news/",
+          "link-from:/category/eventi/",
+          "link-from:/category/guide-pratiche/",
+          "link-from:/category/il-punto-di-vista/",
+          "link-from:/category/indispensabili/",
+          "link-from:/category/libri/",
+          "link-from:/category/videos-interviews/",
+          "link-from:/shop/",
+          "link-from:/news/page/2/",
+          "link-from:/news/page/3/",
+          "link-from:/news/page/4/",
+          "link-from:/news/page/5/"
+        ]
+      },
+      "https://davidcoen.it/shop/consulenza-tinkl/": {
+        "sources": [
+          "link-from:/news/",
+          "link-from:/category/eventi/",
+          "link-from:/category/guide-pratiche/",
+          "link-from:/category/il-punto-di-vista/",
+          "link-from:/category/indispensabili/",
+          "link-from:/category/libri/",
+          "link-from:/category/videos-interviews/",
+          "link-from:/shop/",
+          "link-from:/news/page/2/",
+          "link-from:/news/page/3/",
+          "link-from:/news/page/4/",
+          "link-from:/news/page/5/"
+        ]
+      },
+      "https://davidcoen.it/shop/feed/": {
+        "sources": [
+          "link-from:/shop/"
+        ]
+      },
+      "https://davidcoen.it/shop/la-moneta-bitcoin/": {
+        "sources": [
+          "link-from:/shop/"
+        ]
+      },
+      "https://davidcoen.it/shop/laszlos-pizza-test-digital-copy/": {
+        "sources": [
+          "link-from:/shop/"
+        ]
+      },
+      "https://davidcoen.it/shop/lightning-network-bitcoin-without-blockchain/": {
+        "sources": [
+          "link-from:/shop/"
+        ]
+      },
+      "https://davidcoen.it/shop/simple-pos-website-plugin/": {
+        "sources": [
+          "link-from:/news/",
+          "link-from:/category/eventi/",
+          "link-from:/category/guide-pratiche/",
+          "link-from:/category/il-punto-di-vista/",
+          "link-from:/category/indispensabili/",
+          "link-from:/category/libri/",
+          "link-from:/category/videos-interviews/",
+          "link-from:/shop/",
+          "link-from:/news/page/2/",
+          "link-from:/news/page/3/",
+          "link-from:/news/page/4/",
+          "link-from:/news/page/5/"
+        ]
+      },
+      "https://davidcoen.it/shop/simple-pos/": {
+        "sources": [
+          "link-from:/news/",
+          "link-from:/category/eventi/",
+          "link-from:/category/guide-pratiche/",
+          "link-from:/category/il-punto-di-vista/",
+          "link-from:/category/indispensabili/",
+          "link-from:/category/libri/",
+          "link-from:/category/videos-interviews/",
+          "link-from:/shop/",
+          "link-from:/news/page/2/",
+          "link-from:/news/page/3/",
+          "link-from:/news/page/4/",
+          "link-from:/news/page/5/"
+        ]
+      },
+      "https://davidcoen.it/shop/smartphone-facile-ebook-btc/": {
+        "sources": [
+          "link-from:/shop/"
+        ]
+      },
+      "https://davidcoen.it/shop/smartphone-facile-ebook/": {
+        "sources": [
+          "link-from:/shop/"
+        ]
+      },
+      "https://davidcoen.it/shop/smartphone-facile/": {
+        "sources": [
+          "link-from:/shop/"
+        ]
+      },
+      "https://davidcoen.it/shop/the-bitcoin-standard-the-decentralized-alternative-to-central-banking/": {
+        "sources": [
+          "link-from:/shop/"
+        ]
+      },
+      "https://davidcoen.it/shop/trezor-model-t/": {
+        "sources": [
+          "link-from:/shop/"
+        ]
+      },
+      "https://davidcoen.it/xmlrpc.php": {
+        "sources": [
+          "link-from:/",
+          "link-from:/news/",
+          "link-from:/category/eventi/",
+          "link-from:/category/guide-pratiche/",
+          "link-from:/category/il-punto-di-vista/",
+          "link-from:/category/indispensabili/",
+          "link-from:/category/libri/",
+          "link-from:/category/videos-interviews/",
+          "link-from:/contact/",
+          "link-from:/payment-processor/",
+          "link-from:/private-key-recovery/",
+          "link-from:/shop/",
+          "link-from:/cart/",
+          "link-from:/checkout/",
+          "link-from:/news/page/2/",
+          "link-from:/page/2/",
+          "link-from:/news/page/3/",
+          "link-from:/page/3/",
+          "link-from:/news/page/4/",
+          "link-from:/page/4/",
+          "link-from:/news/page/5/",
+          "link-from:/page/5/",
+          "link-from:/page/6/",
+          "link-from:/page/7/",
+          "link-from:/page/8/",
+          "link-from:/page/9/",
+          "link-from:/page/10/",
+          "link-from:/page/11/",
+          "link-from:/page/12/",
+          "link-from:/page/13/",
+          "link-from:/page/14/",
+          "link-from:/page/15/"
+        ]
+      }
+    },
+    "categories": {
+      "https://davidcoen.it/category/eventi/": {
+        "sources": [
+          "link-from:/news/",
+          "crawl:/category/eventi/",
+          "link-from:/category/eventi/",
+          "link-from:/category/guide-pratiche/",
+          "link-from:/category/il-punto-di-vista/",
+          "link-from:/category/indispensabili/",
+          "link-from:/category/libri/",
+          "link-from:/category/videos-interviews/",
+          "link-from:/news/page/2/",
+          "link-from:/news/page/3/",
+          "link-from:/news/page/4/",
+          "link-from:/news/page/5/"
+        ]
+      },
+      "https://davidcoen.it/category/eventi/feed/": {
+        "sources": [
+          "link-from:/category/eventi/"
+        ]
+      },
+      "https://davidcoen.it/category/guide-pratiche/": {
+        "sources": [
+          "link-from:/news/",
+          "link-from:/category/eventi/",
+          "crawl:/category/guide-pratiche/",
+          "link-from:/category/guide-pratiche/",
+          "link-from:/category/il-punto-di-vista/",
+          "link-from:/category/indispensabili/",
+          "link-from:/category/libri/",
+          "link-from:/category/videos-interviews/",
+          "link-from:/news/page/2/",
+          "link-from:/news/page/3/",
+          "link-from:/news/page/4/",
+          "link-from:/news/page/5/"
+        ]
+      },
+      "https://davidcoen.it/category/guide-pratiche/feed/": {
+        "sources": [
+          "link-from:/category/guide-pratiche/"
+        ]
+      },
+      "https://davidcoen.it/category/il-punto-di-vista/": {
+        "sources": [
+          "link-from:/news/",
+          "link-from:/category/eventi/",
+          "link-from:/category/guide-pratiche/",
+          "crawl:/category/il-punto-di-vista/",
+          "link-from:/category/il-punto-di-vista/",
+          "link-from:/category/indispensabili/",
+          "link-from:/category/libri/",
+          "link-from:/category/videos-interviews/",
+          "link-from:/news/page/2/",
+          "link-from:/news/page/3/",
+          "link-from:/news/page/4/",
+          "link-from:/news/page/5/"
+        ]
+      },
+      "https://davidcoen.it/category/il-punto-di-vista/feed/": {
+        "sources": [
+          "link-from:/category/il-punto-di-vista/"
+        ]
+      },
+      "https://davidcoen.it/category/il-punto-di-vista/page/2/": {
+        "sources": [
+          "link-from:/category/il-punto-di-vista/"
+        ]
+      },
+      "https://davidcoen.it/category/indispensabili/": {
+        "sources": [
+          "link-from:/news/",
+          "link-from:/category/eventi/",
+          "link-from:/category/guide-pratiche/",
+          "link-from:/category/il-punto-di-vista/",
+          "crawl:/category/indispensabili/",
+          "link-from:/category/indispensabili/",
+          "link-from:/category/libri/",
+          "link-from:/category/videos-interviews/",
+          "link-from:/news/page/2/",
+          "link-from:/news/page/3/",
+          "link-from:/news/page/4/",
+          "link-from:/news/page/5/"
+        ]
+      },
+      "https://davidcoen.it/category/indispensabili/feed/": {
+        "sources": [
+          "link-from:/category/indispensabili/"
+        ]
+      },
+      "https://davidcoen.it/category/jokes/": {
+        "sources": [
+          "link-from:/news/",
+          "link-from:/category/eventi/",
+          "link-from:/category/guide-pratiche/",
+          "link-from:/category/il-punto-di-vista/",
+          "link-from:/category/indispensabili/",
+          "link-from:/category/libri/",
+          "link-from:/category/videos-interviews/",
+          "link-from:/news/page/2/",
+          "link-from:/news/page/3/",
+          "link-from:/news/page/4/",
+          "link-from:/news/page/5/"
+        ]
+      },
+      "https://davidcoen.it/category/libri/": {
+        "sources": [
+          "link-from:/news/",
+          "link-from:/category/eventi/",
+          "link-from:/category/guide-pratiche/",
+          "link-from:/category/il-punto-di-vista/",
+          "link-from:/category/indispensabili/",
+          "crawl:/category/libri/",
+          "link-from:/category/libri/",
+          "link-from:/category/videos-interviews/",
+          "link-from:/news/page/2/",
+          "link-from:/news/page/3/",
+          "link-from:/news/page/4/",
+          "link-from:/news/page/5/"
+        ]
+      },
+      "https://davidcoen.it/category/libri/feed/": {
+        "sources": [
+          "link-from:/category/libri/"
+        ]
+      },
+      "https://davidcoen.it/category/uncategorized/": {
+        "sources": [
+          "link-from:/news/",
+          "link-from:/category/eventi/",
+          "link-from:/category/guide-pratiche/",
+          "link-from:/category/il-punto-di-vista/",
+          "link-from:/category/indispensabili/",
+          "link-from:/category/libri/",
+          "link-from:/category/videos-interviews/",
+          "link-from:/news/page/2/",
+          "link-from:/news/page/3/",
+          "link-from:/news/page/4/",
+          "link-from:/news/page/5/"
+        ]
+      },
+      "https://davidcoen.it/category/videos-interviews/": {
+        "sources": [
+          "link-from:/news/",
+          "link-from:/category/eventi/",
+          "link-from:/category/guide-pratiche/",
+          "link-from:/category/il-punto-di-vista/",
+          "link-from:/category/indispensabili/",
+          "link-from:/category/libri/",
+          "crawl:/category/videos-interviews/",
+          "link-from:/category/videos-interviews/",
+          "link-from:/news/page/2/",
+          "link-from:/news/page/3/",
+          "link-from:/news/page/4/",
+          "link-from:/news/page/5/"
+        ]
+      },
+      "https://davidcoen.it/category/videos-interviews/feed/": {
+        "sources": [
+          "link-from:/category/videos-interviews/"
+        ]
+      }
+    },
+    "feeds": {
+      "https://davidcoen.it/category/eventi/feed/": {
+        "sources": [
+          "feed-list"
+        ]
+      },
+      "https://davidcoen.it/category/guide-pratiche/feed/": {
+        "sources": [
+          "feed-list"
+        ]
+      },
+      "https://davidcoen.it/category/il-punto-di-vista/feed/": {
+        "sources": [
+          "feed-list"
+        ]
+      },
+      "https://davidcoen.it/category/indispensabili/feed/": {
+        "sources": [
+          "feed-list"
+        ]
+      },
+      "https://davidcoen.it/category/libri/feed/": {
+        "sources": [
+          "feed-list"
+        ]
+      },
+      "https://davidcoen.it/category/videos-interviews/feed/": {
+        "sources": [
+          "feed-list"
+        ]
+      },
+      "https://davidcoen.it/feed/": {
+        "sources": [
+          "feed-list",
+          "crawl:/feed/"
+        ]
+      },
+      "https://davidcoen.it/news/feed/": {
+        "sources": [
+          "feed-list"
+        ]
+      }
+    },
+    "archives": {
+      "https://davidcoen.it/": {
+        "sources": [
+          "crawl:/"
+        ]
+      },
+      "https://davidcoen.it/news/": {
+        "sources": [
+          "link-from:/",
+          "crawl:/news/",
+          "link-from:/news/",
+          "link-from:/category/eventi/",
+          "link-from:/category/guide-pratiche/",
+          "link-from:/category/il-punto-di-vista/",
+          "link-from:/category/indispensabili/",
+          "link-from:/category/libri/",
+          "link-from:/category/videos-interviews/",
+          "link-from:/contact/",
+          "link-from:/payment-processor/",
+          "link-from:/private-key-recovery/",
+          "link-from:/shop/",
+          "link-from:/cart/",
+          "link-from:/checkout/",
+          "link-from:/news/page/2/",
+          "link-from:/page/2/",
+          "link-from:/news/page/3/",
+          "link-from:/page/3/",
+          "link-from:/news/page/4/",
+          "link-from:/page/4/",
+          "link-from:/news/page/5/",
+          "link-from:/page/5/",
+          "link-from:/page/6/",
+          "link-from:/page/7/",
+          "link-from:/page/8/",
+          "link-from:/page/9/",
+          "link-from:/page/10/",
+          "link-from:/page/11/",
+          "link-from:/page/12/",
+          "link-from:/page/13/",
+          "link-from:/page/14/",
+          "link-from:/page/15/"
+        ]
+      },
+      "https://davidcoen.it/news/page/2/": {
+        "sources": [
+          "link-from:/news/",
+          "crawl:/news/page/2/",
+          "link-from:/news/page/2/",
+          "link-from:/news/page/3/"
+        ]
+      },
+      "https://davidcoen.it/news/page/3/": {
+        "sources": [
+          "link-from:/news/page/2/",
+          "crawl:/news/page/3/",
+          "link-from:/news/page/3/",
+          "link-from:/news/page/4/"
+        ]
+      },
+      "https://davidcoen.it/news/page/4/": {
+        "sources": [
+          "link-from:/news/page/3/",
+          "crawl:/news/page/4/",
+          "link-from:/news/page/4/",
+          "link-from:/news/page/5/"
+        ]
+      },
+      "https://davidcoen.it/news/page/5/": {
+        "sources": [
+          "link-from:/news/page/4/",
+          "crawl:/news/page/5/",
+          "link-from:/news/page/5/"
+        ]
+      },
+      "https://davidcoen.it/page/10/": {
+        "sources": [
+          "crawl:/page/10/"
+        ]
+      },
+      "https://davidcoen.it/page/11/": {
+        "sources": [
+          "crawl:/page/11/"
+        ]
+      },
+      "https://davidcoen.it/page/12/": {
+        "sources": [
+          "crawl:/page/12/"
+        ]
+      },
+      "https://davidcoen.it/page/13/": {
+        "sources": [
+          "crawl:/page/13/"
+        ]
+      },
+      "https://davidcoen.it/page/14/": {
+        "sources": [
+          "crawl:/page/14/"
+        ]
+      },
+      "https://davidcoen.it/page/15/": {
+        "sources": [
+          "crawl:/page/15/"
+        ]
+      },
+      "https://davidcoen.it/page/2/": {
+        "sources": [
+          "crawl:/page/2/"
+        ]
+      },
+      "https://davidcoen.it/page/3/": {
+        "sources": [
+          "crawl:/page/3/"
+        ]
+      },
+      "https://davidcoen.it/page/4/": {
+        "sources": [
+          "crawl:/page/4/"
+        ]
+      },
+      "https://davidcoen.it/page/5/": {
+        "sources": [
+          "crawl:/page/5/"
+        ]
+      },
+      "https://davidcoen.it/page/6/": {
+        "sources": [
+          "crawl:/page/6/"
+        ]
+      },
+      "https://davidcoen.it/page/7/": {
+        "sources": [
+          "crawl:/page/7/"
+        ]
+      },
+      "https://davidcoen.it/page/8/": {
+        "sources": [
+          "crawl:/page/8/"
+        ]
+      },
+      "https://davidcoen.it/page/9/": {
+        "sources": [
+          "crawl:/page/9/"
+        ]
+      }
+    },
+    "other": {
+      "https://davidcoen.it/abc-pricing-sitemap.xml": {
+        "sources": [
+          "wp-sitemap.xml",
+          "sitemap_index.xml"
+        ]
+      },
+      "https://davidcoen.it/category-sitemap.xml": {
+        "sources": [
+          "wp-sitemap.xml",
+          "sitemap_index.xml"
+        ]
+      },
+      "https://davidcoen.it/page-sitemap.xml": {
+        "sources": [
+          "wp-sitemap.xml",
+          "sitemap_index.xml"
+        ]
+      },
+      "https://davidcoen.it/post-sitemap.xml": {
+        "sources": [
+          "wp-sitemap.xml",
+          "sitemap_index.xml"
+        ]
+      },
+      "https://davidcoen.it/post_tag-sitemap.xml": {
+        "sources": [
+          "wp-sitemap.xml",
+          "sitemap_index.xml"
+        ]
+      },
+      "https://davidcoen.it/product-sitemap.xml": {
+        "sources": [
+          "wp-sitemap.xml",
+          "sitemap_index.xml"
+        ]
+      },
+      "https://davidcoen.it/product_cat-sitemap.xml": {
+        "sources": [
+          "wp-sitemap.xml",
+          "sitemap_index.xml"
+        ]
+      },
+      "https://davidcoen.it/tag/abcore/": {
+        "sources": [
+          "link-from:/news/",
+          "link-from:/category/eventi/",
+          "link-from:/category/guide-pratiche/",
+          "link-from:/category/il-punto-di-vista/",
+          "link-from:/category/indispensabili/",
+          "link-from:/category/libri/",
+          "link-from:/category/videos-interviews/",
+          "link-from:/news/page/2/",
+          "link-from:/news/page/3/",
+          "link-from:/news/page/4/",
+          "link-from:/news/page/5/"
+        ]
+      },
+      "https://davidcoen.it/tag/amazon/": {
+        "sources": [
+          "link-from:/news/",
+          "link-from:/category/eventi/",
+          "link-from:/category/guide-pratiche/",
+          "link-from:/category/il-punto-di-vista/",
+          "link-from:/category/indispensabili/",
+          "link-from:/category/libri/",
+          "link-from:/category/videos-interviews/",
+          "link-from:/news/page/2/",
+          "link-from:/news/page/3/",
+          "link-from:/news/page/4/",
+          "link-from:/news/page/5/"
+        ]
+      },
+      "https://davidcoen.it/tag/android/": {
+        "sources": [
+          "link-from:/news/",
+          "link-from:/category/eventi/",
+          "link-from:/category/guide-pratiche/",
+          "link-from:/category/il-punto-di-vista/",
+          "link-from:/category/indispensabili/",
+          "link-from:/category/libri/",
+          "link-from:/category/videos-interviews/",
+          "link-from:/news/page/2/",
+          "link-from:/news/page/3/",
+          "link-from:/news/page/4/",
+          "link-from:/news/page/5/"
+        ]
+      },
+      "https://davidcoen.it/tag/bitcoin-core/": {
+        "sources": [
+          "link-from:/news/",
+          "link-from:/category/eventi/",
+          "link-from:/category/guide-pratiche/",
+          "link-from:/category/il-punto-di-vista/",
+          "link-from:/category/indispensabili/",
+          "link-from:/category/libri/",
+          "link-from:/category/videos-interviews/",
+          "link-from:/news/page/2/",
+          "link-from:/news/page/3/",
+          "link-from:/news/page/4/",
+          "link-from:/news/page/5/"
+        ]
+      },
+      "https://davidcoen.it/tag/bitcoin/": {
+        "sources": [
+          "link-from:/news/",
+          "link-from:/category/eventi/",
+          "link-from:/category/guide-pratiche/",
+          "link-from:/category/il-punto-di-vista/",
+          "link-from:/category/indispensabili/",
+          "link-from:/category/libri/",
+          "link-from:/category/videos-interviews/",
+          "link-from:/news/page/2/",
+          "link-from:/news/page/3/",
+          "link-from:/news/page/4/",
+          "link-from:/news/page/5/"
+        ]
+      },
+      "https://davidcoen.it/tag/blockchain/": {
+        "sources": [
+          "link-from:/news/",
+          "link-from:/category/eventi/",
+          "link-from:/category/guide-pratiche/",
+          "link-from:/category/il-punto-di-vista/",
+          "link-from:/category/indispensabili/",
+          "link-from:/category/libri/",
+          "link-from:/category/videos-interviews/",
+          "link-from:/news/page/2/",
+          "link-from:/news/page/3/",
+          "link-from:/news/page/4/",
+          "link-from:/news/page/5/"
+        ]
+      },
+      "https://davidcoen.it/tag/coinbase/": {
+        "sources": [
+          "link-from:/news/",
+          "link-from:/category/eventi/",
+          "link-from:/category/guide-pratiche/",
+          "link-from:/category/il-punto-di-vista/",
+          "link-from:/category/indispensabili/",
+          "link-from:/category/libri/",
+          "link-from:/category/videos-interviews/",
+          "link-from:/news/page/2/",
+          "link-from:/news/page/3/",
+          "link-from:/news/page/4/",
+          "link-from:/news/page/5/"
+        ]
+      },
+      "https://davidcoen.it/tag/congestion/": {
+        "sources": [
+          "link-from:/news/",
+          "link-from:/category/eventi/",
+          "link-from:/category/guide-pratiche/",
+          "link-from:/category/il-punto-di-vista/",
+          "link-from:/category/indispensabili/",
+          "link-from:/category/libri/",
+          "link-from:/category/videos-interviews/",
+          "link-from:/news/page/2/",
+          "link-from:/news/page/3/",
+          "link-from:/news/page/4/",
+          "link-from:/news/page/5/"
+        ]
+      },
+      "https://davidcoen.it/tag/crypto-coinference/": {
+        "sources": [
+          "link-from:/news/",
+          "link-from:/category/eventi/",
+          "link-from:/category/guide-pratiche/",
+          "link-from:/category/il-punto-di-vista/",
+          "link-from:/category/indispensabili/",
+          "link-from:/category/libri/",
+          "link-from:/category/videos-interviews/",
+          "link-from:/news/page/2/",
+          "link-from:/news/page/3/",
+          "link-from:/news/page/4/",
+          "link-from:/news/page/5/"
+        ]
+      },
+      "https://davidcoen.it/tag/deflation/": {
+        "sources": [
+          "link-from:/news/",
+          "link-from:/category/eventi/",
+          "link-from:/category/guide-pratiche/",
+          "link-from:/category/il-punto-di-vista/",
+          "link-from:/category/indispensabili/",
+          "link-from:/category/libri/",
+          "link-from:/category/videos-interviews/",
+          "link-from:/news/page/2/",
+          "link-from:/news/page/3/",
+          "link-from:/news/page/4/",
+          "link-from:/news/page/5/"
+        ]
+      },
+      "https://davidcoen.it/tag/deflazione/": {
+        "sources": [
+          "link-from:/news/",
+          "link-from:/category/eventi/",
+          "link-from:/category/guide-pratiche/",
+          "link-from:/category/il-punto-di-vista/",
+          "link-from:/category/indispensabili/",
+          "link-from:/category/libri/",
+          "link-from:/category/videos-interviews/",
+          "link-from:/news/page/2/",
+          "link-from:/news/page/3/",
+          "link-from:/news/page/4/",
+          "link-from:/news/page/5/"
+        ]
+      },
+      "https://davidcoen.it/tag/distributed-ledger/": {
+        "sources": [
+          "link-from:/news/",
+          "link-from:/category/eventi/",
+          "link-from:/category/guide-pratiche/",
+          "link-from:/category/il-punto-di-vista/",
+          "link-from:/category/indispensabili/",
+          "link-from:/category/libri/",
+          "link-from:/category/videos-interviews/",
+          "link-from:/news/page/2/",
+          "link-from:/news/page/3/",
+          "link-from:/news/page/4/",
+          "link-from:/news/page/5/"
+        ]
+      },
+      "https://davidcoen.it/tag/divisibilita/": {
+        "sources": [
+          "link-from:/news/",
+          "link-from:/category/eventi/",
+          "link-from:/category/guide-pratiche/",
+          "link-from:/category/il-punto-di-vista/",
+          "link-from:/category/indispensabili/",
+          "link-from:/category/libri/",
+          "link-from:/category/videos-interviews/",
+          "link-from:/news/page/2/",
+          "link-from:/news/page/3/",
+          "link-from:/news/page/4/",
+          "link-from:/news/page/5/"
+        ]
+      },
+      "https://davidcoen.it/tag/dollaro/": {
+        "sources": [
+          "link-from:/news/",
+          "link-from:/category/eventi/",
+          "link-from:/category/guide-pratiche/",
+          "link-from:/category/il-punto-di-vista/",
+          "link-from:/category/indispensabili/",
+          "link-from:/category/libri/",
+          "link-from:/category/videos-interviews/",
+          "link-from:/news/page/2/",
+          "link-from:/news/page/3/",
+          "link-from:/news/page/4/",
+          "link-from:/news/page/5/"
+        ]
+      },
+      "https://davidcoen.it/tag/economic-policy/": {
+        "sources": [
+          "link-from:/news/",
+          "link-from:/category/eventi/",
+          "link-from:/category/guide-pratiche/",
+          "link-from:/category/il-punto-di-vista/",
+          "link-from:/category/indispensabili/",
+          "link-from:/category/libri/",
+          "link-from:/category/videos-interviews/",
+          "link-from:/news/page/2/",
+          "link-from:/news/page/3/",
+          "link-from:/news/page/4/",
+          "link-from:/news/page/5/"
+        ]
+      },
+      "https://davidcoen.it/tag/edge-wallet/": {
+        "sources": [
+          "link-from:/news/",
+          "link-from:/category/eventi/",
+          "link-from:/category/guide-pratiche/",
+          "link-from:/category/il-punto-di-vista/",
+          "link-from:/category/indispensabili/",
+          "link-from:/category/libri/",
+          "link-from:/category/videos-interviews/",
+          "link-from:/news/page/2/",
+          "link-from:/news/page/3/",
+          "link-from:/news/page/4/",
+          "link-from:/news/page/5/"
+        ]
+      },
+      "https://davidcoen.it/tag/electrum/": {
+        "sources": [
+          "link-from:/news/",
+          "link-from:/category/eventi/",
+          "link-from:/category/guide-pratiche/",
+          "link-from:/category/il-punto-di-vista/",
+          "link-from:/category/indispensabili/",
+          "link-from:/category/libri/",
+          "link-from:/category/videos-interviews/",
+          "link-from:/news/page/2/",
+          "link-from:/news/page/3/",
+          "link-from:/news/page/4/",
+          "link-from:/news/page/5/"
+        ]
+      },
+      "https://davidcoen.it/tag/exodus/": {
+        "sources": [
+          "link-from:/news/",
+          "link-from:/category/eventi/",
+          "link-from:/category/guide-pratiche/",
+          "link-from:/category/il-punto-di-vista/",
+          "link-from:/category/indispensabili/",
+          "link-from:/category/libri/",
+          "link-from:/category/videos-interviews/",
+          "link-from:/news/page/2/",
+          "link-from:/news/page/3/",
+          "link-from:/news/page/4/",
+          "link-from:/news/page/5/"
+        ]
+      },
+      "https://davidcoen.it/tag/fee-market/": {
+        "sources": [
+          "link-from:/news/",
+          "link-from:/category/eventi/",
+          "link-from:/category/guide-pratiche/",
+          "link-from:/category/il-punto-di-vista/",
+          "link-from:/category/indispensabili/",
+          "link-from:/category/libri/",
+          "link-from:/category/videos-interviews/",
+          "link-from:/news/page/2/",
+          "link-from:/news/page/3/",
+          "link-from:/news/page/4/",
+          "link-from:/news/page/5/"
+        ]
+      },
+      "https://davidcoen.it/tag/full-node/": {
+        "sources": [
+          "link-from:/news/",
+          "link-from:/category/eventi/",
+          "link-from:/category/guide-pratiche/",
+          "link-from:/category/il-punto-di-vista/",
+          "link-from:/category/indispensabili/",
+          "link-from:/category/libri/",
+          "link-from:/category/videos-interviews/",
+          "link-from:/news/page/2/",
+          "link-from:/news/page/3/",
+          "link-from:/news/page/4/",
+          "link-from:/news/page/5/"
+        ]
+      },
+      "https://davidcoen.it/tag/fungibilita/": {
+        "sources": [
+          "link-from:/news/",
+          "link-from:/category/eventi/",
+          "link-from:/category/guide-pratiche/",
+          "link-from:/category/il-punto-di-vista/",
+          "link-from:/category/indispensabili/",
+          "link-from:/category/libri/",
+          "link-from:/category/videos-interviews/",
+          "link-from:/news/page/2/",
+          "link-from:/news/page/3/",
+          "link-from:/news/page/4/",
+          "link-from:/news/page/5/"
+        ]
+      },
+      "https://davidcoen.it/tag/hd-wallet/": {
+        "sources": [
+          "link-from:/news/",
+          "link-from:/category/eventi/",
+          "link-from:/category/guide-pratiche/",
+          "link-from:/category/il-punto-di-vista/",
+          "link-from:/category/indispensabili/",
+          "link-from:/category/libri/",
+          "link-from:/category/videos-interviews/",
+          "link-from:/news/page/2/",
+          "link-from:/news/page/3/",
+          "link-from:/news/page/4/",
+          "link-from:/news/page/5/"
+        ]
+      },
+      "https://davidcoen.it/tag/inflation/": {
+        "sources": [
+          "link-from:/news/",
+          "link-from:/category/eventi/",
+          "link-from:/category/guide-pratiche/",
+          "link-from:/category/il-punto-di-vista/",
+          "link-from:/category/indispensabili/",
+          "link-from:/category/libri/",
+          "link-from:/category/videos-interviews/",
+          "link-from:/news/page/2/",
+          "link-from:/news/page/3/",
+          "link-from:/news/page/4/",
+          "link-from:/news/page/5/"
+        ]
+      },
+      "https://davidcoen.it/tag/inflazione/": {
+        "sources": [
+          "link-from:/news/",
+          "link-from:/category/eventi/",
+          "link-from:/category/guide-pratiche/",
+          "link-from:/category/il-punto-di-vista/",
+          "link-from:/category/indispensabili/",
+          "link-from:/category/libri/",
+          "link-from:/category/videos-interviews/",
+          "link-from:/news/page/2/",
+          "link-from:/news/page/3/",
+          "link-from:/news/page/4/",
+          "link-from:/news/page/5/"
+        ]
+      },
+      "https://davidcoen.it/tag/international-system/": {
+        "sources": [
+          "link-from:/news/",
+          "link-from:/category/eventi/",
+          "link-from:/category/guide-pratiche/",
+          "link-from:/category/il-punto-di-vista/",
+          "link-from:/category/indispensabili/",
+          "link-from:/category/libri/",
+          "link-from:/category/videos-interviews/",
+          "link-from:/news/page/2/",
+          "link-from:/news/page/3/",
+          "link-from:/news/page/4/",
+          "link-from:/news/page/5/"
+        ]
+      },
+      "https://davidcoen.it/tag/lezione-gratuita/": {
+        "sources": [
+          "link-from:/news/",
+          "link-from:/category/eventi/",
+          "link-from:/category/guide-pratiche/",
+          "link-from:/category/il-punto-di-vista/",
+          "link-from:/category/indispensabili/",
+          "link-from:/category/libri/",
+          "link-from:/category/videos-interviews/",
+          "link-from:/news/page/2/",
+          "link-from:/news/page/3/",
+          "link-from:/news/page/4/",
+          "link-from:/news/page/5/"
+        ]
+      },
+      "https://davidcoen.it/tag/lightning-network/": {
+        "sources": [
+          "link-from:/news/",
+          "link-from:/category/eventi/",
+          "link-from:/category/guide-pratiche/",
+          "link-from:/category/il-punto-di-vista/",
+          "link-from:/category/indispensabili/",
+          "link-from:/category/libri/",
+          "link-from:/category/videos-interviews/",
+          "link-from:/news/page/2/",
+          "link-from:/news/page/3/",
+          "link-from:/news/page/4/",
+          "link-from:/news/page/5/"
+        ]
+      },
+      "https://davidcoen.it/tag/liquidita/": {
+        "sources": [
+          "link-from:/news/",
+          "link-from:/category/eventi/",
+          "link-from:/category/guide-pratiche/",
+          "link-from:/category/il-punto-di-vista/",
+          "link-from:/category/indispensabili/",
+          "link-from:/category/libri/",
+          "link-from:/category/videos-interviews/",
+          "link-from:/news/page/2/",
+          "link-from:/news/page/3/",
+          "link-from:/news/page/4/",
+          "link-from:/news/page/5/"
+        ]
+      },
+      "https://davidcoen.it/tag/lnp-bp/": {
+        "sources": [
+          "link-from:/news/",
+          "link-from:/category/eventi/",
+          "link-from:/category/guide-pratiche/",
+          "link-from:/category/il-punto-di-vista/",
+          "link-from:/category/indispensabili/",
+          "link-from:/category/libri/",
+          "link-from:/category/videos-interviews/",
+          "link-from:/news/page/2/",
+          "link-from:/news/page/3/",
+          "link-from:/news/page/4/",
+          "link-from:/news/page/5/"
+        ]
+      },
+      "https://davidcoen.it/tag/maximalism/": {
+        "sources": [
+          "link-from:/news/",
+          "link-from:/category/eventi/",
+          "link-from:/category/guide-pratiche/",
+          "link-from:/category/il-punto-di-vista/",
+          "link-from:/category/indispensabili/",
+          "link-from:/category/libri/",
+          "link-from:/category/videos-interviews/",
+          "link-from:/news/page/2/",
+          "link-from:/news/page/3/",
+          "link-from:/news/page/4/",
+          "link-from:/news/page/5/"
+        ]
+      },
+      "https://davidcoen.it/tag/maximalist/": {
+        "sources": [
+          "link-from:/news/",
+          "link-from:/category/eventi/",
+          "link-from:/category/guide-pratiche/",
+          "link-from:/category/il-punto-di-vista/",
+          "link-from:/category/indispensabili/",
+          "link-from:/category/libri/",
+          "link-from:/category/videos-interviews/",
+          "link-from:/news/page/2/",
+          "link-from:/news/page/3/",
+          "link-from:/news/page/4/",
+          "link-from:/news/page/5/"
+        ]
+      },
+      "https://davidcoen.it/tag/patron/": {
+        "sources": [
+          "link-from:/news/",
+          "link-from:/category/eventi/",
+          "link-from:/category/guide-pratiche/",
+          "link-from:/category/il-punto-di-vista/",
+          "link-from:/category/indispensabili/",
+          "link-from:/category/libri/",
+          "link-from:/category/videos-interviews/",
+          "link-from:/news/page/2/",
+          "link-from:/news/page/3/",
+          "link-from:/news/page/4/",
+          "link-from:/news/page/5/"
+        ]
+      },
+      "https://davidcoen.it/tag/politica-economica/": {
+        "sources": [
+          "link-from:/news/",
+          "link-from:/category/eventi/",
+          "link-from:/category/guide-pratiche/",
+          "link-from:/category/il-punto-di-vista/",
+          "link-from:/category/indispensabili/",
+          "link-from:/category/libri/",
+          "link-from:/category/videos-interviews/",
+          "link-from:/news/page/2/",
+          "link-from:/news/page/3/",
+          "link-from:/news/page/4/",
+          "link-from:/news/page/5/"
+        ]
+      },
+      "https://davidcoen.it/tag/satoshi/": {
+        "sources": [
+          "link-from:/news/",
+          "link-from:/category/eventi/",
+          "link-from:/category/guide-pratiche/",
+          "link-from:/category/il-punto-di-vista/",
+          "link-from:/category/indispensabili/",
+          "link-from:/category/libri/",
+          "link-from:/category/videos-interviews/",
+          "link-from:/news/page/2/",
+          "link-from:/news/page/3/",
+          "link-from:/news/page/4/",
+          "link-from:/news/page/5/"
+        ]
+      },
+      "https://davidcoen.it/tag/sistema-internazionale/": {
+        "sources": [
+          "link-from:/news/",
+          "link-from:/category/eventi/",
+          "link-from:/category/guide-pratiche/",
+          "link-from:/category/il-punto-di-vista/",
+          "link-from:/category/indispensabili/",
+          "link-from:/category/libri/",
+          "link-from:/category/videos-interviews/",
+          "link-from:/news/page/2/",
+          "link-from:/news/page/3/",
+          "link-from:/news/page/4/",
+          "link-from:/news/page/5/"
+        ]
+      },
+      "https://davidcoen.it/tag/sistema-monetario/": {
+        "sources": [
+          "link-from:/news/",
+          "link-from:/category/eventi/",
+          "link-from:/category/guide-pratiche/",
+          "link-from:/category/il-punto-di-vista/",
+          "link-from:/category/indispensabili/",
+          "link-from:/category/libri/",
+          "link-from:/category/videos-interviews/",
+          "link-from:/news/page/2/",
+          "link-from:/news/page/3/",
+          "link-from:/news/page/4/",
+          "link-from:/news/page/5/"
+        ]
+      },
+      "https://davidcoen.it/tag/spv-clients/": {
+        "sources": [
+          "link-from:/news/",
+          "link-from:/category/eventi/",
+          "link-from:/category/guide-pratiche/",
+          "link-from:/category/il-punto-di-vista/",
+          "link-from:/category/indispensabili/",
+          "link-from:/category/libri/",
+          "link-from:/category/videos-interviews/",
+          "link-from:/news/page/2/",
+          "link-from:/news/page/3/",
+          "link-from:/news/page/4/",
+          "link-from:/news/page/5/"
+        ]
+      },
+      "https://davidcoen.it/tag/spv/": {
+        "sources": [
+          "link-from:/news/",
+          "link-from:/category/eventi/",
+          "link-from:/category/guide-pratiche/",
+          "link-from:/category/il-punto-di-vista/",
+          "link-from:/category/indispensabili/",
+          "link-from:/category/libri/",
+          "link-from:/category/videos-interviews/",
+          "link-from:/news/page/2/",
+          "link-from:/news/page/3/",
+          "link-from:/news/page/4/",
+          "link-from:/news/page/5/"
+        ]
+      },
+      "https://davidcoen.it/tag/stellar/": {
+        "sources": [
+          "link-from:/news/",
+          "link-from:/category/eventi/",
+          "link-from:/category/guide-pratiche/",
+          "link-from:/category/il-punto-di-vista/",
+          "link-from:/category/indispensabili/",
+          "link-from:/category/libri/",
+          "link-from:/category/videos-interviews/",
+          "link-from:/news/page/2/",
+          "link-from:/news/page/3/",
+          "link-from:/news/page/4/",
+          "link-from:/news/page/5/"
+        ]
+      },
+      "https://davidcoen.it/tag/supply/": {
+        "sources": [
+          "link-from:/news/",
+          "link-from:/category/eventi/",
+          "link-from:/category/guide-pratiche/",
+          "link-from:/category/il-punto-di-vista/",
+          "link-from:/category/indispensabili/",
+          "link-from:/category/libri/",
+          "link-from:/category/videos-interviews/",
+          "link-from:/news/page/2/",
+          "link-from:/news/page/3/",
+          "link-from:/news/page/4/",
+          "link-from:/news/page/5/"
+        ]
+      },
+      "https://davidcoen.it/tag/trezor/": {
+        "sources": [
+          "link-from:/news/",
+          "link-from:/category/eventi/",
+          "link-from:/category/guide-pratiche/",
+          "link-from:/category/il-punto-di-vista/",
+          "link-from:/category/indispensabili/",
+          "link-from:/category/libri/",
+          "link-from:/category/videos-interviews/",
+          "link-from:/news/page/2/",
+          "link-from:/news/page/3/",
+          "link-from:/news/page/4/",
+          "link-from:/news/page/5/"
+        ]
+      },
+      "https://davidcoen.it/tag/wallet-gerarchico-deterministico/": {
+        "sources": [
+          "link-from:/news/",
+          "link-from:/category/eventi/",
+          "link-from:/category/guide-pratiche/",
+          "link-from:/category/il-punto-di-vista/",
+          "link-from:/category/indispensabili/",
+          "link-from:/category/libri/",
+          "link-from:/category/videos-interviews/",
+          "link-from:/news/page/2/",
+          "link-from:/news/page/3/",
+          "link-from:/news/page/4/",
+          "link-from:/news/page/5/"
+        ]
+      },
+      "https://davidcoen.it/wp-content/plugins/contact-form-7/includes/css/styles.css": {
+        "sources": [
+          "link-from:/",
+          "link-from:/news/",
+          "link-from:/category/eventi/",
+          "link-from:/category/guide-pratiche/",
+          "link-from:/category/il-punto-di-vista/",
+          "link-from:/category/indispensabili/",
+          "link-from:/category/libri/",
+          "link-from:/category/videos-interviews/",
+          "link-from:/contact/",
+          "link-from:/payment-processor/",
+          "link-from:/private-key-recovery/",
+          "link-from:/shop/",
+          "link-from:/cart/",
+          "link-from:/checkout/",
+          "link-from:/news/page/2/",
+          "link-from:/page/2/",
+          "link-from:/news/page/3/",
+          "link-from:/page/3/",
+          "link-from:/news/page/4/",
+          "link-from:/page/4/",
+          "link-from:/news/page/5/",
+          "link-from:/page/5/",
+          "link-from:/page/6/",
+          "link-from:/page/7/",
+          "link-from:/page/8/",
+          "link-from:/page/9/",
+          "link-from:/page/10/",
+          "link-from:/page/11/",
+          "link-from:/page/12/",
+          "link-from:/page/13/",
+          "link-from:/page/14/",
+          "link-from:/page/15/"
+        ]
+      },
+      "https://davidcoen.it/wp-content/plugins/custom-twitter-feeds/css/ctf-styles.min.css": {
+        "sources": [
+          "link-from:/",
+          "link-from:/news/",
+          "link-from:/category/eventi/",
+          "link-from:/category/guide-pratiche/",
+          "link-from:/category/il-punto-di-vista/",
+          "link-from:/category/indispensabili/",
+          "link-from:/category/libri/",
+          "link-from:/category/videos-interviews/",
+          "link-from:/contact/",
+          "link-from:/payment-processor/",
+          "link-from:/private-key-recovery/",
+          "link-from:/shop/",
+          "link-from:/cart/",
+          "link-from:/checkout/",
+          "link-from:/news/page/2/",
+          "link-from:/page/2/",
+          "link-from:/news/page/3/",
+          "link-from:/page/3/",
+          "link-from:/news/page/4/",
+          "link-from:/page/4/",
+          "link-from:/news/page/5/",
+          "link-from:/page/5/",
+          "link-from:/page/6/",
+          "link-from:/page/7/",
+          "link-from:/page/8/",
+          "link-from:/page/9/",
+          "link-from:/page/10/",
+          "link-from:/page/11/",
+          "link-from:/page/12/",
+          "link-from:/page/13/",
+          "link-from:/page/14/",
+          "link-from:/page/15/"
+        ]
+      },
+      "https://davidcoen.it/wp-content/plugins/darkmysite/assets/css/client_main.css": {
+        "sources": [
+          "link-from:/",
+          "link-from:/news/",
+          "link-from:/category/eventi/",
+          "link-from:/category/guide-pratiche/",
+          "link-from:/category/il-punto-di-vista/",
+          "link-from:/category/indispensabili/",
+          "link-from:/category/libri/",
+          "link-from:/category/videos-interviews/",
+          "link-from:/contact/",
+          "link-from:/payment-processor/",
+          "link-from:/private-key-recovery/",
+          "link-from:/shop/",
+          "link-from:/cart/",
+          "link-from:/checkout/",
+          "link-from:/news/page/2/",
+          "link-from:/page/2/",
+          "link-from:/news/page/3/",
+          "link-from:/page/3/",
+          "link-from:/news/page/4/",
+          "link-from:/page/4/",
+          "link-from:/news/page/5/",
+          "link-from:/page/5/",
+          "link-from:/page/6/",
+          "link-from:/page/7/",
+          "link-from:/page/8/",
+          "link-from:/page/9/",
+          "link-from:/page/10/",
+          "link-from:/page/11/",
+          "link-from:/page/12/",
+          "link-from:/page/13/",
+          "link-from:/page/14/",
+          "link-from:/page/15/"
+        ]
+      },
+      "https://davidcoen.it/wp-content/plugins/eu-cookie-law/css/style.css": {
+        "sources": [
+          "link-from:/",
+          "link-from:/news/",
+          "link-from:/category/eventi/",
+          "link-from:/category/guide-pratiche/",
+          "link-from:/category/il-punto-di-vista/",
+          "link-from:/category/indispensabili/",
+          "link-from:/category/libri/",
+          "link-from:/category/videos-interviews/",
+          "link-from:/contact/",
+          "link-from:/payment-processor/",
+          "link-from:/private-key-recovery/",
+          "link-from:/shop/",
+          "link-from:/cart/",
+          "link-from:/checkout/",
+          "link-from:/news/page/2/",
+          "link-from:/page/2/",
+          "link-from:/news/page/3/",
+          "link-from:/page/3/",
+          "link-from:/news/page/4/",
+          "link-from:/page/4/",
+          "link-from:/news/page/5/",
+          "link-from:/page/5/",
+          "link-from:/page/6/",
+          "link-from:/page/7/",
+          "link-from:/page/8/",
+          "link-from:/page/9/",
+          "link-from:/page/10/",
+          "link-from:/page/11/",
+          "link-from:/page/12/",
+          "link-from:/page/13/",
+          "link-from:/page/14/",
+          "link-from:/page/15/"
+        ]
+      },
+      "https://davidcoen.it/wp-content/plugins/jquery-smooth-scroll/css/style.css": {
+        "sources": [
+          "link-from:/",
+          "link-from:/news/",
+          "link-from:/category/eventi/",
+          "link-from:/category/guide-pratiche/",
+          "link-from:/category/il-punto-di-vista/",
+          "link-from:/category/indispensabili/",
+          "link-from:/category/libri/",
+          "link-from:/category/videos-interviews/",
+          "link-from:/contact/",
+          "link-from:/payment-processor/",
+          "link-from:/private-key-recovery/",
+          "link-from:/shop/",
+          "link-from:/cart/",
+          "link-from:/checkout/",
+          "link-from:/news/page/2/",
+          "link-from:/page/2/",
+          "link-from:/news/page/3/",
+          "link-from:/page/3/",
+          "link-from:/news/page/4/",
+          "link-from:/page/4/",
+          "link-from:/news/page/5/",
+          "link-from:/page/5/",
+          "link-from:/page/6/",
+          "link-from:/page/7/",
+          "link-from:/page/8/",
+          "link-from:/page/9/",
+          "link-from:/page/10/",
+          "link-from:/page/11/",
+          "link-from:/page/12/",
+          "link-from:/page/13/",
+          "link-from:/page/14/",
+          "link-from:/page/15/"
+        ]
+      },
+      "https://davidcoen.it/wp-content/plugins/js_composer/assets/css/js_composer.min.css": {
+        "sources": [
+          "link-from:/",
+          "link-from:/news/",
+          "link-from:/category/libri/",
+          "link-from:/category/videos-interviews/",
+          "link-from:/contact/",
+          "link-from:/payment-processor/",
+          "link-from:/private-key-recovery/",
+          "link-from:/shop/",
+          "link-from:/page/2/",
+          "link-from:/news/page/3/",
+          "link-from:/page/3/",
+          "link-from:/page/4/",
+          "link-from:/page/5/",
+          "link-from:/page/6/",
+          "link-from:/page/7/",
+          "link-from:/page/8/",
+          "link-from:/page/9/",
+          "link-from:/page/10/",
+          "link-from:/page/11/",
+          "link-from:/page/12/",
+          "link-from:/page/13/",
+          "link-from:/page/14/",
+          "link-from:/page/15/"
+        ]
+      },
+      "https://davidcoen.it/wp-content/plugins/js_composer/assets/lib/vendor/dist/@fortawesome/fontawesome-free/css/all.min.css": {
+        "sources": [
+          "link-from:/payment-processor/"
+        ]
+      },
+      "https://davidcoen.it/wp-content/plugins/js_composer/assets/lib/vendor/dist/@fortawesome/fontawesome-free/css/v4-shims.min.css": {
+        "sources": [
+          "link-from:/payment-processor/"
+        ]
+      },
+      "https://davidcoen.it/wp-content/plugins/mr-tailor-extender/includes/addons/assets/css/wc-category-header-image.css": {
+        "sources": [
+          "link-from:/",
+          "link-from:/news/",
+          "link-from:/category/eventi/",
+          "link-from:/category/guide-pratiche/",
+          "link-from:/category/il-punto-di-vista/",
+          "link-from:/category/indispensabili/",
+          "link-from:/category/libri/",
+          "link-from:/category/videos-interviews/",
+          "link-from:/contact/",
+          "link-from:/payment-processor/",
+          "link-from:/private-key-recovery/",
+          "link-from:/shop/",
+          "link-from:/cart/",
+          "link-from:/checkout/",
+          "link-from:/news/page/2/",
+          "link-from:/page/2/",
+          "link-from:/news/page/3/",
+          "link-from:/page/3/",
+          "link-from:/news/page/4/",
+          "link-from:/page/4/",
+          "link-from:/news/page/5/",
+          "link-from:/page/5/",
+          "link-from:/page/6/",
+          "link-from:/page/7/",
+          "link-from:/page/8/",
+          "link-from:/page/9/",
+          "link-from:/page/10/",
+          "link-from:/page/11/",
+          "link-from:/page/12/",
+          "link-from:/page/13/",
+          "link-from:/page/14/",
+          "link-from:/page/15/"
+        ]
+      },
+      "https://davidcoen.it/wp-content/plugins/mr-tailor-extender/includes/gbt-blocks/banner/assets/css/style.css": {
+        "sources": [
+          "link-from:/",
+          "link-from:/news/",
+          "link-from:/category/eventi/",
+          "link-from:/category/guide-pratiche/",
+          "link-from:/category/il-punto-di-vista/",
+          "link-from:/category/indispensabili/",
+          "link-from:/category/libri/",
+          "link-from:/category/videos-interviews/",
+          "link-from:/contact/",
+          "link-from:/payment-processor/",
+          "link-from:/private-key-recovery/",
+          "link-from:/shop/",
+          "link-from:/cart/",
+          "link-from:/checkout/",
+          "link-from:/news/page/2/",
+          "link-from:/page/2/",
+          "link-from:/news/page/3/",
+          "link-from:/page/3/",
+          "link-from:/news/page/4/",
+          "link-from:/page/4/",
+          "link-from:/news/page/5/",
+          "link-from:/page/5/",
+          "link-from:/page/6/",
+          "link-from:/page/7/",
+          "link-from:/page/8/",
+          "link-from:/page/9/",
+          "link-from:/page/10/",
+          "link-from:/page/11/",
+          "link-from:/page/12/",
+          "link-from:/page/13/",
+          "link-from:/page/14/",
+          "link-from:/page/15/"
+        ]
+      },
+      "https://davidcoen.it/wp-content/plugins/mr-tailor-extender/includes/gbt-blocks/posts_grid/assets/css/frontend/style.css": {
+        "sources": [
+          "link-from:/",
+          "link-from:/news/",
+          "link-from:/category/eventi/",
+          "link-from:/category/guide-pratiche/",
+          "link-from:/category/il-punto-di-vista/",
+          "link-from:/category/indispensabili/",
+          "link-from:/category/libri/",
+          "link-from:/category/videos-interviews/",
+          "link-from:/contact/",
+          "link-from:/payment-processor/",
+          "link-from:/private-key-recovery/",
+          "link-from:/shop/",
+          "link-from:/cart/",
+          "link-from:/checkout/",
+          "link-from:/news/page/2/",
+          "link-from:/page/2/",
+          "link-from:/news/page/3/",
+          "link-from:/page/3/",
+          "link-from:/news/page/4/",
+          "link-from:/page/4/",
+          "link-from:/news/page/5/",
+          "link-from:/page/5/",
+          "link-from:/page/6/",
+          "link-from:/page/7/",
+          "link-from:/page/8/",
+          "link-from:/page/9/",
+          "link-from:/page/10/",
+          "link-from:/page/11/",
+          "link-from:/page/12/",
+          "link-from:/page/13/",
+          "link-from:/page/14/",
+          "link-from:/page/15/"
+        ]
+      },
+      "https://davidcoen.it/wp-content/plugins/mr-tailor-extender/includes/gbt-blocks/posts_slider/assets/css/style.css": {
+        "sources": [
+          "link-from:/",
+          "link-from:/news/",
+          "link-from:/category/eventi/",
+          "link-from:/category/guide-pratiche/",
+          "link-from:/category/il-punto-di-vista/",
+          "link-from:/category/indispensabili/",
+          "link-from:/category/libri/",
+          "link-from:/category/videos-interviews/",
+          "link-from:/contact/",
+          "link-from:/payment-processor/",
+          "link-from:/private-key-recovery/",
+          "link-from:/shop/",
+          "link-from:/cart/",
+          "link-from:/checkout/",
+          "link-from:/news/page/2/",
+          "link-from:/page/2/",
+          "link-from:/news/page/3/",
+          "link-from:/page/3/",
+          "link-from:/news/page/4/",
+          "link-from:/page/4/",
+          "link-from:/news/page/5/",
+          "link-from:/page/5/",
+          "link-from:/page/6/",
+          "link-from:/page/7/",
+          "link-from:/page/8/",
+          "link-from:/page/9/",
+          "link-from:/page/10/",
+          "link-from:/page/11/",
+          "link-from:/page/12/",
+          "link-from:/page/13/",
+          "link-from:/page/14/",
+          "link-from:/page/15/"
+        ]
+      },
+      "https://davidcoen.it/wp-content/plugins/mr-tailor-extender/includes/shortcodes/assets/css/banner.css": {
+        "sources": [
+          "link-from:/",
+          "link-from:/shop/",
+          "link-from:/page/2/",
+          "link-from:/page/3/",
+          "link-from:/page/4/",
+          "link-from:/page/5/",
+          "link-from:/page/6/",
+          "link-from:/page/7/",
+          "link-from:/page/8/",
+          "link-from:/page/9/",
+          "link-from:/page/10/",
+          "link-from:/page/11/",
+          "link-from:/page/12/",
+          "link-from:/page/13/",
+          "link-from:/page/14/",
+          "link-from:/page/15/"
+        ]
+      },
+      "https://davidcoen.it/wp-content/plugins/mr-tailor-extender/includes/social-media/assets/css/social-media.css": {
+        "sources": [
+          "link-from:/",
+          "link-from:/news/",
+          "link-from:/category/eventi/",
+          "link-from:/category/guide-pratiche/",
+          "link-from:/category/il-punto-di-vista/",
+          "link-from:/category/indispensabili/",
+          "link-from:/category/libri/",
+          "link-from:/category/videos-interviews/",
+          "link-from:/contact/",
+          "link-from:/payment-processor/",
+          "link-from:/private-key-recovery/",
+          "link-from:/shop/",
+          "link-from:/cart/",
+          "link-from:/checkout/",
+          "link-from:/news/page/2/",
+          "link-from:/page/2/",
+          "link-from:/news/page/3/",
+          "link-from:/page/3/",
+          "link-from:/news/page/4/",
+          "link-from:/page/4/",
+          "link-from:/news/page/5/",
+          "link-from:/page/5/",
+          "link-from:/page/6/",
+          "link-from:/page/7/",
+          "link-from:/page/8/",
+          "link-from:/page/9/",
+          "link-from:/page/10/",
+          "link-from:/page/11/",
+          "link-from:/page/12/",
+          "link-from:/page/13/",
+          "link-from:/page/14/",
+          "link-from:/page/15/"
+        ]
+      },
+      "https://davidcoen.it/wp-content/plugins/mr-tailor-extender/includes/social-sharing/assets/css/social-sharing.css": {
+        "sources": [
+          "link-from:/",
+          "link-from:/news/",
+          "link-from:/category/eventi/",
+          "link-from:/category/guide-pratiche/",
+          "link-from:/category/il-punto-di-vista/",
+          "link-from:/category/indispensabili/",
+          "link-from:/category/libri/",
+          "link-from:/category/videos-interviews/",
+          "link-from:/contact/",
+          "link-from:/payment-processor/",
+          "link-from:/private-key-recovery/",
+          "link-from:/shop/",
+          "link-from:/cart/",
+          "link-from:/checkout/",
+          "link-from:/news/page/2/",
+          "link-from:/page/2/",
+          "link-from:/news/page/3/",
+          "link-from:/page/3/",
+          "link-from:/news/page/4/",
+          "link-from:/page/4/",
+          "link-from:/news/page/5/",
+          "link-from:/page/5/",
+          "link-from:/page/6/",
+          "link-from:/page/7/",
+          "link-from:/page/8/",
+          "link-from:/page/9/",
+          "link-from:/page/10/",
+          "link-from:/page/11/",
+          "link-from:/page/12/",
+          "link-from:/page/13/",
+          "link-from:/page/14/",
+          "link-from:/page/15/"
+        ]
+      },
+      "https://davidcoen.it/wp-content/plugins/simple-lightbox/client/css/app.css": {
+        "sources": [
+          "link-from:/",
+          "link-from:/news/",
+          "link-from:/category/eventi/",
+          "link-from:/category/guide-pratiche/",
+          "link-from:/category/il-punto-di-vista/",
+          "link-from:/category/indispensabili/",
+          "link-from:/category/libri/",
+          "link-from:/category/videos-interviews/",
+          "link-from:/contact/",
+          "link-from:/payment-processor/",
+          "link-from:/private-key-recovery/",
+          "link-from:/shop/",
+          "link-from:/cart/",
+          "link-from:/checkout/",
+          "link-from:/news/page/2/",
+          "link-from:/page/2/",
+          "link-from:/news/page/3/",
+          "link-from:/page/3/",
+          "link-from:/news/page/4/",
+          "link-from:/page/4/",
+          "link-from:/news/page/5/",
+          "link-from:/page/5/",
+          "link-from:/page/6/",
+          "link-from:/page/7/",
+          "link-from:/page/8/",
+          "link-from:/page/9/",
+          "link-from:/page/10/",
+          "link-from:/page/11/",
+          "link-from:/page/12/",
+          "link-from:/page/13/",
+          "link-from:/page/14/",
+          "link-from:/page/15/"
+        ]
+      },
+      "https://davidcoen.it/wp-content/plugins/tablepress/css/default.min.css": {
+        "sources": [
+          "link-from:/",
+          "link-from:/news/",
+          "link-from:/category/eventi/",
+          "link-from:/category/guide-pratiche/",
+          "link-from:/category/il-punto-di-vista/",
+          "link-from:/category/indispensabili/",
+          "link-from:/category/libri/",
+          "link-from:/category/videos-interviews/",
+          "link-from:/contact/",
+          "link-from:/payment-processor/",
+          "link-from:/private-key-recovery/",
+          "link-from:/shop/",
+          "link-from:/cart/",
+          "link-from:/checkout/",
+          "link-from:/news/page/2/",
+          "link-from:/page/2/",
+          "link-from:/news/page/3/",
+          "link-from:/page/3/",
+          "link-from:/news/page/4/",
+          "link-from:/page/4/",
+          "link-from:/news/page/5/",
+          "link-from:/page/5/",
+          "link-from:/page/6/",
+          "link-from:/page/7/",
+          "link-from:/page/8/",
+          "link-from:/page/9/",
+          "link-from:/page/10/",
+          "link-from:/page/11/",
+          "link-from:/page/12/",
+          "link-from:/page/13/",
+          "link-from:/page/14/",
+          "link-from:/page/15/"
+        ]
+      },
+      "https://davidcoen.it/wp-content/plugins/woocommerce/assets/client/blocks/wc-blocks.css": {
+        "sources": [
+          "link-from:/",
+          "link-from:/news/",
+          "link-from:/category/eventi/",
+          "link-from:/category/guide-pratiche/",
+          "link-from:/category/il-punto-di-vista/",
+          "link-from:/category/indispensabili/",
+          "link-from:/category/libri/",
+          "link-from:/category/videos-interviews/",
+          "link-from:/contact/",
+          "link-from:/payment-processor/",
+          "link-from:/private-key-recovery/",
+          "link-from:/shop/",
+          "link-from:/cart/",
+          "link-from:/checkout/",
+          "link-from:/news/page/2/",
+          "link-from:/page/2/",
+          "link-from:/news/page/3/",
+          "link-from:/page/3/",
+          "link-from:/news/page/4/",
+          "link-from:/page/4/",
+          "link-from:/news/page/5/",
+          "link-from:/page/5/",
+          "link-from:/page/6/",
+          "link-from:/page/7/",
+          "link-from:/page/8/",
+          "link-from:/page/9/",
+          "link-from:/page/10/",
+          "link-from:/page/11/",
+          "link-from:/page/12/",
+          "link-from:/page/13/",
+          "link-from:/page/14/",
+          "link-from:/page/15/"
+        ]
+      },
+      "https://davidcoen.it/wp-content/plugins/woocommerce/assets/css/select2.css": {
+        "sources": [
+          "link-from:/cart/",
+          "link-from:/checkout/"
+        ]
+      },
+      "https://davidcoen.it/wp-content/plugins/woocommerce/assets/css/woocommerce-layout.css": {
+        "sources": [
+          "link-from:/",
+          "link-from:/news/",
+          "link-from:/category/eventi/",
+          "link-from:/category/guide-pratiche/",
+          "link-from:/category/il-punto-di-vista/",
+          "link-from:/category/indispensabili/",
+          "link-from:/category/libri/",
+          "link-from:/category/videos-interviews/",
+          "link-from:/contact/",
+          "link-from:/payment-processor/",
+          "link-from:/private-key-recovery/",
+          "link-from:/shop/",
+          "link-from:/cart/",
+          "link-from:/checkout/",
+          "link-from:/news/page/2/",
+          "link-from:/page/2/",
+          "link-from:/news/page/3/",
+          "link-from:/page/3/",
+          "link-from:/news/page/4/",
+          "link-from:/page/4/",
+          "link-from:/news/page/5/",
+          "link-from:/page/5/",
+          "link-from:/page/6/",
+          "link-from:/page/7/",
+          "link-from:/page/8/",
+          "link-from:/page/9/",
+          "link-from:/page/10/",
+          "link-from:/page/11/",
+          "link-from:/page/12/",
+          "link-from:/page/13/",
+          "link-from:/page/14/",
+          "link-from:/page/15/"
+        ]
+      },
+      "https://davidcoen.it/wp-content/plugins/woocommerce/assets/css/woocommerce-smallscreen.css": {
+        "sources": [
+          "link-from:/",
+          "link-from:/news/",
+          "link-from:/category/eventi/",
+          "link-from:/category/guide-pratiche/",
+          "link-from:/category/il-punto-di-vista/",
+          "link-from:/category/indispensabili/",
+          "link-from:/category/libri/",
+          "link-from:/category/videos-interviews/",
+          "link-from:/contact/",
+          "link-from:/payment-processor/",
+          "link-from:/private-key-recovery/",
+          "link-from:/shop/",
+          "link-from:/cart/",
+          "link-from:/checkout/",
+          "link-from:/news/page/2/",
+          "link-from:/page/2/",
+          "link-from:/news/page/3/",
+          "link-from:/page/3/",
+          "link-from:/news/page/4/",
+          "link-from:/page/4/",
+          "link-from:/news/page/5/",
+          "link-from:/page/5/",
+          "link-from:/page/6/",
+          "link-from:/page/7/",
+          "link-from:/page/8/",
+          "link-from:/page/9/",
+          "link-from:/page/10/",
+          "link-from:/page/11/",
+          "link-from:/page/12/",
+          "link-from:/page/13/",
+          "link-from:/page/14/",
+          "link-from:/page/15/"
+        ]
+      },
+      "https://davidcoen.it/wp-content/plugins/woocommerce/assets/css/woocommerce.css": {
+        "sources": [
+          "link-from:/",
+          "link-from:/news/",
+          "link-from:/category/eventi/",
+          "link-from:/category/guide-pratiche/",
+          "link-from:/category/il-punto-di-vista/",
+          "link-from:/category/indispensabili/",
+          "link-from:/category/libri/",
+          "link-from:/category/videos-interviews/",
+          "link-from:/contact/",
+          "link-from:/payment-processor/",
+          "link-from:/private-key-recovery/",
+          "link-from:/shop/",
+          "link-from:/cart/",
+          "link-from:/checkout/",
+          "link-from:/news/page/2/",
+          "link-from:/page/2/",
+          "link-from:/news/page/3/",
+          "link-from:/page/3/",
+          "link-from:/news/page/4/",
+          "link-from:/page/4/",
+          "link-from:/news/page/5/",
+          "link-from:/page/5/",
+          "link-from:/page/6/",
+          "link-from:/page/7/",
+          "link-from:/page/8/",
+          "link-from:/page/9/",
+          "link-from:/page/10/",
+          "link-from:/page/11/",
+          "link-from:/page/12/",
+          "link-from:/page/13/",
+          "link-from:/page/14/",
+          "link-from:/page/15/"
+        ]
+      },
+      "https://davidcoen.it/wp-content/plugins/wp-facebook-reviews/public/css/wprev-public_template1.css": {
+        "sources": [
+          "link-from:/",
+          "link-from:/news/",
+          "link-from:/category/eventi/",
+          "link-from:/category/guide-pratiche/",
+          "link-from:/category/il-punto-di-vista/",
+          "link-from:/category/indispensabili/",
+          "link-from:/category/libri/",
+          "link-from:/category/videos-interviews/",
+          "link-from:/contact/",
+          "link-from:/payment-processor/",
+          "link-from:/private-key-recovery/",
+          "link-from:/shop/",
+          "link-from:/cart/",
+          "link-from:/checkout/",
+          "link-from:/news/page/2/",
+          "link-from:/page/2/",
+          "link-from:/news/page/3/",
+          "link-from:/page/3/",
+          "link-from:/news/page/4/",
+          "link-from:/page/4/",
+          "link-from:/news/page/5/",
+          "link-from:/page/5/",
+          "link-from:/page/6/",
+          "link-from:/page/7/",
+          "link-from:/page/8/",
+          "link-from:/page/9/",
+          "link-from:/page/10/",
+          "link-from:/page/11/",
+          "link-from:/page/12/",
+          "link-from:/page/13/",
+          "link-from:/page/14/",
+          "link-from:/page/15/"
+        ]
+      },
+      "https://davidcoen.it/wp-content/plugins/wp-facebook-reviews/public/css/wprev_w3.css": {
+        "sources": [
+          "link-from:/",
+          "link-from:/news/",
+          "link-from:/category/eventi/",
+          "link-from:/category/guide-pratiche/",
+          "link-from:/category/il-punto-di-vista/",
+          "link-from:/category/indispensabili/",
+          "link-from:/category/libri/",
+          "link-from:/category/videos-interviews/",
+          "link-from:/contact/",
+          "link-from:/payment-processor/",
+          "link-from:/private-key-recovery/",
+          "link-from:/shop/",
+          "link-from:/cart/",
+          "link-from:/checkout/",
+          "link-from:/news/page/2/",
+          "link-from:/page/2/",
+          "link-from:/news/page/3/",
+          "link-from:/page/3/",
+          "link-from:/news/page/4/",
+          "link-from:/page/4/",
+          "link-from:/news/page/5/",
+          "link-from:/page/5/",
+          "link-from:/page/6/",
+          "link-from:/page/7/",
+          "link-from:/page/8/",
+          "link-from:/page/9/",
+          "link-from:/page/10/",
+          "link-from:/page/11/",
+          "link-from:/page/12/",
+          "link-from:/page/13/",
+          "link-from:/page/14/",
+          "link-from:/page/15/"
+        ]
+      },
+      "https://davidcoen.it/wp-content/plugins/wp-facebook-reviews/public/css/wprs_unslider-dots.css": {
+        "sources": [
+          "link-from:/",
+          "link-from:/news/",
+          "link-from:/category/eventi/",
+          "link-from:/category/guide-pratiche/",
+          "link-from:/category/il-punto-di-vista/",
+          "link-from:/category/indispensabili/",
+          "link-from:/category/libri/",
+          "link-from:/category/videos-interviews/",
+          "link-from:/contact/",
+          "link-from:/payment-processor/",
+          "link-from:/private-key-recovery/",
+          "link-from:/shop/",
+          "link-from:/cart/",
+          "link-from:/checkout/",
+          "link-from:/news/page/2/",
+          "link-from:/page/2/",
+          "link-from:/news/page/3/",
+          "link-from:/page/3/",
+          "link-from:/news/page/4/",
+          "link-from:/page/4/",
+          "link-from:/news/page/5/",
+          "link-from:/page/5/",
+          "link-from:/page/6/",
+          "link-from:/page/7/",
+          "link-from:/page/8/",
+          "link-from:/page/9/",
+          "link-from:/page/10/",
+          "link-from:/page/11/",
+          "link-from:/page/12/",
+          "link-from:/page/13/",
+          "link-from:/page/14/",
+          "link-from:/page/15/"
+        ]
+      },
+      "https://davidcoen.it/wp-content/plugins/wp-facebook-reviews/public/css/wprs_unslider.css": {
+        "sources": [
+          "link-from:/",
+          "link-from:/news/",
+          "link-from:/category/eventi/",
+          "link-from:/category/guide-pratiche/",
+          "link-from:/category/il-punto-di-vista/",
+          "link-from:/category/indispensabili/",
+          "link-from:/category/libri/",
+          "link-from:/category/videos-interviews/",
+          "link-from:/contact/",
+          "link-from:/payment-processor/",
+          "link-from:/private-key-recovery/",
+          "link-from:/shop/",
+          "link-from:/cart/",
+          "link-from:/checkout/",
+          "link-from:/news/page/2/",
+          "link-from:/page/2/",
+          "link-from:/news/page/3/",
+          "link-from:/page/3/",
+          "link-from:/news/page/4/",
+          "link-from:/page/4/",
+          "link-from:/news/page/5/",
+          "link-from:/page/5/",
+          "link-from:/page/6/",
+          "link-from:/page/7/",
+          "link-from:/page/8/",
+          "link-from:/page/9/",
+          "link-from:/page/10/",
+          "link-from:/page/11/",
+          "link-from:/page/12/",
+          "link-from:/page/13/",
+          "link-from:/page/14/",
+          "link-from:/page/15/"
+        ]
+      },
+      "https://davidcoen.it/wp-content/plugins/wp-gdpr-compliance/assets/css/front.min.css": {
+        "sources": [
+          "link-from:/",
+          "link-from:/news/",
+          "link-from:/category/eventi/",
+          "link-from:/category/guide-pratiche/",
+          "link-from:/category/il-punto-di-vista/",
+          "link-from:/category/indispensabili/",
+          "link-from:/category/libri/",
+          "link-from:/category/videos-interviews/",
+          "link-from:/contact/",
+          "link-from:/payment-processor/",
+          "link-from:/private-key-recovery/",
+          "link-from:/shop/",
+          "link-from:/cart/",
+          "link-from:/checkout/",
+          "link-from:/news/page/2/",
+          "link-from:/page/2/",
+          "link-from:/news/page/3/",
+          "link-from:/page/3/",
+          "link-from:/news/page/4/",
+          "link-from:/page/4/",
+          "link-from:/news/page/5/",
+          "link-from:/page/5/",
+          "link-from:/page/6/",
+          "link-from:/page/7/",
+          "link-from:/page/8/",
+          "link-from:/page/9/",
+          "link-from:/page/10/",
+          "link-from:/page/11/",
+          "link-from:/page/12/",
+          "link-from:/page/13/",
+          "link-from:/page/14/",
+          "link-from:/page/15/"
+        ]
+      },
+      "https://davidcoen.it/wp-content/plugins/wp-google-places-review-slider/public/css/wprev-public_combine.css": {
+        "sources": [
+          "link-from:/",
+          "link-from:/news/",
+          "link-from:/category/eventi/",
+          "link-from:/category/guide-pratiche/",
+          "link-from:/category/il-punto-di-vista/",
+          "link-from:/category/indispensabili/",
+          "link-from:/category/libri/",
+          "link-from:/category/videos-interviews/",
+          "link-from:/contact/",
+          "link-from:/payment-processor/",
+          "link-from:/private-key-recovery/",
+          "link-from:/shop/",
+          "link-from:/cart/",
+          "link-from:/checkout/",
+          "link-from:/news/page/2/",
+          "link-from:/page/2/",
+          "link-from:/news/page/3/",
+          "link-from:/page/3/",
+          "link-from:/news/page/4/",
+          "link-from:/page/4/",
+          "link-from:/news/page/5/",
+          "link-from:/page/5/",
+          "link-from:/page/6/",
+          "link-from:/page/7/",
+          "link-from:/page/8/",
+          "link-from:/page/9/",
+          "link-from:/page/10/",
+          "link-from:/page/11/",
+          "link-from:/page/12/",
+          "link-from:/page/13/",
+          "link-from:/page/14/",
+          "link-from:/page/15/"
+        ]
+      },
+      "https://davidcoen.it/wp-content/plugins/wp-google-search/wgs2.css": {
+        "sources": [
+          "link-from:/",
+          "link-from:/news/",
+          "link-from:/category/eventi/",
+          "link-from:/category/guide-pratiche/",
+          "link-from:/category/il-punto-di-vista/",
+          "link-from:/category/indispensabili/",
+          "link-from:/category/libri/",
+          "link-from:/category/videos-interviews/",
+          "link-from:/contact/",
+          "link-from:/payment-processor/",
+          "link-from:/private-key-recovery/",
+          "link-from:/shop/",
+          "link-from:/cart/",
+          "link-from:/checkout/",
+          "link-from:/news/page/2/",
+          "link-from:/page/2/",
+          "link-from:/news/page/3/",
+          "link-from:/page/3/",
+          "link-from:/news/page/4/",
+          "link-from:/page/4/",
+          "link-from:/news/page/5/",
+          "link-from:/page/5/",
+          "link-from:/page/6/",
+          "link-from:/page/7/",
+          "link-from:/page/8/",
+          "link-from:/page/9/",
+          "link-from:/page/10/",
+          "link-from:/page/11/",
+          "link-from:/page/12/",
+          "link-from:/page/13/",
+          "link-from:/page/14/",
+          "link-from:/page/15/"
+        ]
+      },
+      "https://davidcoen.it/wp-content/themes/mrtailor/css/_vendor/swiper/swiper.min.css": {
+        "sources": [
+          "link-from:/",
+          "link-from:/news/",
+          "link-from:/category/eventi/",
+          "link-from:/category/guide-pratiche/",
+          "link-from:/category/il-punto-di-vista/",
+          "link-from:/category/indispensabili/",
+          "link-from:/category/libri/",
+          "link-from:/category/videos-interviews/",
+          "link-from:/contact/",
+          "link-from:/payment-processor/",
+          "link-from:/private-key-recovery/",
+          "link-from:/shop/",
+          "link-from:/cart/",
+          "link-from:/checkout/",
+          "link-from:/news/page/2/",
+          "link-from:/page/2/",
+          "link-from:/news/page/3/",
+          "link-from:/page/3/",
+          "link-from:/news/page/4/",
+          "link-from:/page/4/",
+          "link-from:/news/page/5/",
+          "link-from:/page/5/",
+          "link-from:/page/6/",
+          "link-from:/page/7/",
+          "link-from:/page/8/",
+          "link-from:/page/9/",
+          "link-from:/page/10/",
+          "link-from:/page/11/",
+          "link-from:/page/12/",
+          "link-from:/page/13/",
+          "link-from:/page/14/",
+          "link-from:/page/15/"
+        ]
+      },
+      "https://davidcoen.it/wp-content/themes/mrtailor/css/styles.css": {
+        "sources": [
+          "link-from:/",
+          "link-from:/news/",
+          "link-from:/category/eventi/",
+          "link-from:/category/guide-pratiche/",
+          "link-from:/category/il-punto-di-vista/",
+          "link-from:/category/indispensabili/",
+          "link-from:/category/libri/",
+          "link-from:/category/videos-interviews/",
+          "link-from:/contact/",
+          "link-from:/payment-processor/",
+          "link-from:/private-key-recovery/",
+          "link-from:/shop/",
+          "link-from:/cart/",
+          "link-from:/checkout/",
+          "link-from:/news/page/2/",
+          "link-from:/page/2/",
+          "link-from:/news/page/3/",
+          "link-from:/page/3/",
+          "link-from:/news/page/4/",
+          "link-from:/page/4/",
+          "link-from:/news/page/5/",
+          "link-from:/page/5/",
+          "link-from:/page/6/",
+          "link-from:/page/7/",
+          "link-from:/page/8/",
+          "link-from:/page/9/",
+          "link-from:/page/10/",
+          "link-from:/page/11/",
+          "link-from:/page/12/",
+          "link-from:/page/13/",
+          "link-from:/page/14/",
+          "link-from:/page/15/"
+        ]
+      },
+      "https://davidcoen.it/wp-content/themes/mrtailor/favicon.png": {
+        "sources": [
+          "link-from:/",
+          "link-from:/news/",
+          "link-from:/category/eventi/",
+          "link-from:/category/guide-pratiche/",
+          "link-from:/category/il-punto-di-vista/",
+          "link-from:/category/indispensabili/",
+          "link-from:/category/libri/",
+          "link-from:/category/videos-interviews/",
+          "link-from:/contact/",
+          "link-from:/payment-processor/",
+          "link-from:/private-key-recovery/",
+          "link-from:/shop/",
+          "link-from:/cart/",
+          "link-from:/checkout/",
+          "link-from:/news/page/2/",
+          "link-from:/page/2/",
+          "link-from:/news/page/3/",
+          "link-from:/page/3/",
+          "link-from:/news/page/4/",
+          "link-from:/page/4/",
+          "link-from:/news/page/5/",
+          "link-from:/page/5/",
+          "link-from:/page/6/",
+          "link-from:/page/7/",
+          "link-from:/page/8/",
+          "link-from:/page/9/",
+          "link-from:/page/10/",
+          "link-from:/page/11/",
+          "link-from:/page/12/",
+          "link-from:/page/13/",
+          "link-from:/page/14/",
+          "link-from:/page/15/"
+        ]
+      },
+      "https://davidcoen.it/wp-content/themes/mrtailor/style.css": {
+        "sources": [
+          "link-from:/",
+          "link-from:/news/",
+          "link-from:/category/eventi/",
+          "link-from:/category/guide-pratiche/",
+          "link-from:/category/il-punto-di-vista/",
+          "link-from:/category/indispensabili/",
+          "link-from:/category/libri/",
+          "link-from:/category/videos-interviews/",
+          "link-from:/contact/",
+          "link-from:/payment-processor/",
+          "link-from:/private-key-recovery/",
+          "link-from:/shop/",
+          "link-from:/cart/",
+          "link-from:/checkout/",
+          "link-from:/news/page/2/",
+          "link-from:/page/2/",
+          "link-from:/news/page/3/",
+          "link-from:/page/3/",
+          "link-from:/news/page/4/",
+          "link-from:/page/4/",
+          "link-from:/news/page/5/",
+          "link-from:/page/5/",
+          "link-from:/page/6/",
+          "link-from:/page/7/",
+          "link-from:/page/8/",
+          "link-from:/page/9/",
+          "link-from:/page/10/",
+          "link-from:/page/11/",
+          "link-from:/page/12/",
+          "link-from:/page/13/",
+          "link-from:/page/14/",
+          "link-from:/page/15/"
+        ]
+      },
+      "https://davidcoen.it/wp-content/uploads/font-awesome/v6.2.0/css/svg-with-js.css": {
+        "sources": [
+          "link-from:/",
+          "link-from:/news/",
+          "link-from:/category/eventi/",
+          "link-from:/category/guide-pratiche/",
+          "link-from:/category/il-punto-di-vista/",
+          "link-from:/category/indispensabili/",
+          "link-from:/category/libri/",
+          "link-from:/category/videos-interviews/",
+          "link-from:/contact/",
+          "link-from:/payment-processor/",
+          "link-from:/private-key-recovery/",
+          "link-from:/shop/",
+          "link-from:/cart/",
+          "link-from:/checkout/",
+          "link-from:/news/page/2/",
+          "link-from:/page/2/",
+          "link-from:/news/page/3/",
+          "link-from:/page/3/",
+          "link-from:/news/page/4/",
+          "link-from:/page/4/",
+          "link-from:/news/page/5/",
+          "link-from:/page/5/",
+          "link-from:/page/6/",
+          "link-from:/page/7/",
+          "link-from:/page/8/",
+          "link-from:/page/9/",
+          "link-from:/page/10/",
+          "link-from:/page/11/",
+          "link-from:/page/12/",
+          "link-from:/page/13/",
+          "link-from:/page/14/",
+          "link-from:/page/15/"
+        ]
+      },
+      "https://davidcoen.it/wp-json/": {
+        "sources": [
+          "link-from:/",
+          "link-from:/news/",
+          "link-from:/category/eventi/",
+          "link-from:/category/guide-pratiche/",
+          "link-from:/category/il-punto-di-vista/",
+          "link-from:/category/indispensabili/",
+          "link-from:/category/libri/",
+          "link-from:/category/videos-interviews/",
+          "link-from:/contact/",
+          "link-from:/payment-processor/",
+          "link-from:/private-key-recovery/",
+          "link-from:/shop/",
+          "link-from:/cart/",
+          "link-from:/checkout/",
+          "link-from:/news/page/2/",
+          "link-from:/page/2/",
+          "link-from:/news/page/3/",
+          "link-from:/page/3/",
+          "link-from:/news/page/4/",
+          "link-from:/page/4/",
+          "link-from:/news/page/5/",
+          "link-from:/page/5/",
+          "link-from:/page/6/",
+          "link-from:/page/7/",
+          "link-from:/page/8/",
+          "link-from:/page/9/",
+          "link-from:/page/10/",
+          "link-from:/page/11/",
+          "link-from:/page/12/",
+          "link-from:/page/13/",
+          "link-from:/page/14/",
+          "link-from:/page/15/"
+        ]
+      },
+      "https://davidcoen.it/wp-json/oembed/1.0/embed/": {
+        "sources": [
+          "link-from:/",
+          "link-from:/contact/",
+          "link-from:/payment-processor/",
+          "link-from:/private-key-recovery/",
+          "link-from:/cart/",
+          "link-from:/checkout/",
+          "link-from:/page/2/",
+          "link-from:/page/3/",
+          "link-from:/page/4/",
+          "link-from:/page/5/",
+          "link-from:/page/6/",
+          "link-from:/page/7/",
+          "link-from:/page/8/",
+          "link-from:/page/9/",
+          "link-from:/page/10/",
+          "link-from:/page/11/",
+          "link-from:/page/12/",
+          "link-from:/page/13/",
+          "link-from:/page/14/",
+          "link-from:/page/15/"
+        ]
+      },
+      "https://davidcoen.it/wp-json/wp/v2/categories/166/": {
+        "sources": [
+          "link-from:/category/libri/"
+        ]
+      },
+      "https://davidcoen.it/wp-json/wp/v2/categories/219/": {
+        "sources": [
+          "link-from:/category/videos-interviews/"
+        ]
+      },
+      "https://davidcoen.it/wp-json/wp/v2/categories/36/": {
+        "sources": [
+          "link-from:/category/guide-pratiche/"
+        ]
+      },
+      "https://davidcoen.it/wp-json/wp/v2/categories/43/": {
+        "sources": [
+          "link-from:/category/indispensabili/"
+        ]
+      },
+      "https://davidcoen.it/wp-json/wp/v2/categories/48/": {
+        "sources": [
+          "link-from:/category/il-punto-di-vista/"
+        ]
+      },
+      "https://davidcoen.it/wp-json/wp/v2/categories/51/": {
+        "sources": [
+          "link-from:/category/eventi/"
+        ]
+      },
+      "https://davidcoen.it/wp-json/wp/v2/pages/133/": {
+        "sources": [
+          "link-from:/contact/"
+        ]
+      },
+      "https://davidcoen.it/wp-json/wp/v2/pages/6/": {
+        "sources": [
+          "link-from:/cart/",
+          "link-from:/checkout/"
+        ]
+      },
+      "https://davidcoen.it/wp-json/wp/v2/pages/648432/": {
+        "sources": [
+          "link-from:/",
+          "link-from:/page/2/",
+          "link-from:/page/3/",
+          "link-from:/page/4/",
+          "link-from:/page/5/",
+          "link-from:/page/6/",
+          "link-from:/page/7/",
+          "link-from:/page/8/",
+          "link-from:/page/9/",
+          "link-from:/page/10/",
+          "link-from:/page/11/",
+          "link-from:/page/12/",
+          "link-from:/page/13/",
+          "link-from:/page/14/",
+          "link-from:/page/15/"
+        ]
+      },
+      "https://davidcoen.it/wp-json/wp/v2/pages/648567/": {
+        "sources": [
+          "link-from:/payment-processor/"
+        ]
+      },
+      "https://davidcoen.it/wp-json/wp/v2/pages/648789/": {
+        "sources": [
+          "link-from:/private-key-recovery/"
+        ]
+      },
+      "https://davidcoen.it/wpb_gutenberg_param-sitemap.xml": {
+        "sources": [
+          "wp-sitemap.xml",
+          "sitemap_index.xml"
+        ]
+      }
+    }
+  },
+  "errors": []
+}

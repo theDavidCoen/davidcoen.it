@@ -1,0 +1,11 @@
+<?php
+/**
+ * WordPress bootstrap for davidcoen.it
+ *
+ * Copy to public_html/index.php AFTER moving WordPress to public_html/legacy/
+ *
+ * Used only when mod_rewrite sends a non-static request here.
+ * The static homepage is index.html (DirectoryIndex prefers it for /).
+ */
+define('WP_USE_THEMES', true);
+require __DIR__ . '/legacy/wp-blog-header.php';

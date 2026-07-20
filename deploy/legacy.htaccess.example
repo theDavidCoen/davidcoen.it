@@ -1,0 +1,14 @@
+# WordPress .htaccess inside public_html/legacy/
+#
+# Replace RewriteBase / with /legacy/ after moving WordPress.
+# Regenerate via WP admin: Settings → Permalinks → Save.
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+RewriteBase /legacy/
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /legacy/index.php [L]
+</IfModule>

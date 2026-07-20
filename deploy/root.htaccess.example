@@ -1,0 +1,34 @@
+# davidcoen.it — root .htaccess (static site + WordPress in /legacy/)
+#
+# Copy to public_html/.htaccess after:
+#   1. WordPress moved to public_html/legacy/
+#   2. Static files deployed to public_html/
+#   3. index.php bootstrap copied from deploy/index.php.example
+#
+# LiteSpeed and Apache compatible.
+
+DirectoryIndex index.html index.php
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+
+# Pass Authorization header to WordPress
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
+# --- Static site: serve existing files and directories as-is ---
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# --- WordPress admin under /legacy/ (direct access) ---
+RewriteRule ^legacy/ - [L]
+
+# --- Everything else: internal rewrite to WordPress subdirectory ---
+# Browser URL stays e.g. /news/ — no visible /legacy/ prefix.
+RewriteRule ^(.*)$ legacy/$1 [L,QSA]
+</IfModule>
+
+# Optional: redirect old utility pages to new static equivalents (uncomment if desired)
+# RewriteRule ^privacy-policy/?$ /privacy.html [R=301,L]
+# RewriteRule ^payment-processor/?$ /accept-bitcoin.html [R=301,L]
