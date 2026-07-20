@@ -62,6 +62,12 @@ add_filter('site_url', function ($url, $path, $scheme, $blog_id) {
     return $url;
 }, 10, 4);
 
+// Unified favicon on legacy WordPress pages (Mr Tailor ships its own icon).
+add_action('wp_head', function () {
+    echo '<link rel="icon" href="' . esc_url(home_url('/favicon.ico')) . '" sizes="any">' . "\n";
+    echo '<link rel="apple-touch-icon" href="' . esc_url(home_url('/assets/apple-touch-icon.png')) . '">' . "\n";
+}, 1);
+
 register_shutdown_function(function () {
     $uri = $_SERVER['REQUEST_URI'] ?? '';
     if (strpos($uri, 'post.php') === false) {
