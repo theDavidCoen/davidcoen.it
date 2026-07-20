@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <script>
+    (function () {
+      var theme = localStorage.getItem("davidcoen_theme");
+      if (theme === "light" || theme === "dark") {
+        document.documentElement.setAttribute("data-theme", theme);
+      }
+    })();
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>David Coen — Quality Assurance, Support, Bitcoin &amp; Lightning</title>
+  <meta name="description" content="David Coen — Quality Assurance and Support at Edge Wallet, Bitcoin and Lightning Network advocate, BTCPay operator, and open-source tooling.">
+  <meta name="author" content="David Coen">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://davidcoen.it/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="David Coen">
+  <meta property="og:description" content="Quality Assurance · Support · Bitcoin · Lightning Network">
+  <meta property="og:url" content="https://davidcoen.it/">
+  <meta property="og:image" content="https://davidcoen.it/assets/david-coen.jpg">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:creator" content="@thedavidcoen">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="assets/logo-light.png" type="image/png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "David Coen",
+    "url": "https://davidcoen.it/",
+    "email": "info@davidcoen.it",
+    "image": "https://davidcoen.it/assets/david-coen.jpg",
+    "jobTitle": "Software QA Tester & Support",
+    "worksFor": [
+      { "@type": "Organization", "name": "Edge", "url": "https://edge.app/" },
+      { "@type": "Organization", "name": "AKRLabs", "url": "https://arklabs.xyz/" }
+    ],
+    "knowsAbout": ["Software Quality Assurance", "Customer Support", "Bitcoin", "Lightning Network", "BTCPay Server"],
+    "sameAs": [
+      "https://www.facebook.com/theDavidCoen/",
+      "https://twitter.com/thedavidcoen",
+      "https://www.youtube.com/channel/UC-S8wqi8zBjGaA6ObBz3V1A",
+      "https://github.com/theDavidCoen",
+      "https://www.linkedin.com/in/coendavid",
+      "https://nostr.davidcoen.it/"
+    ]
+  }
+  </script>
+</head>
+<body>
+  <main class="wrap">
+    <header class="site-header">
+      <div class="header-top">
+        <a class="site-title" href="./">David Coen</a>
+        <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Switch to dark theme">
+          <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9 7 7 0 0 1-9-9Z"/></svg>
+          <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true" hidden><path d="M12 18a6 6 0 1 0 0-12 6 6 0 0 0 0 12Zm0 4a1 1 0 0 1-1-1v-1.1a1 1 0 1 1 2 0V21a1 1 0 0 1-1 1Zm0-18a1 1 0 0 1-1-1V1a1 1 0 1 1 2 0v1.1a1 1 0 0 1-1 1Zm10 9a1 1 0 0 1-1 1h-1.1a1 1 0 1 1 0-2H21a1 1 0 0 1 1 1ZM4.1 12a1 1 0 0 1-1 1H2a1 1 0 1 1 0-2h1.1a1 1 0 0 1 1 1Zm14.7 6.7a1 1 0 0 1 0 1.4l-.8.8a1 1 0 1 1-1.4-1.4l.8-.8a1 1 0 0 1 1.4 0ZM6.5 6.5a1 1 0 0 1 0 1.4l-.8.8A1 1 0 1 1 4.3 7.3l.8-.8a1 1 0 0 1 1.4 0Zm12 0 .8.8a1 1 0 0 1-1.4 1.4l-.8-.8a1 1 0 0 1 1.4-1.4ZM6.5 17.5l-.8.8a1 1 0 0 1-1.4-1.4l.8-.8a1 1 0 0 1 1.4 1.4Z"/></svg>
+        </button>
+      </div>
+      <p class="tagline">Quality Assurance · Support · Bitcoin · Lightning Network</p>
+      <nav class="site-nav" aria-label="Primary">
+        <ul>
+          <li><a href="#work">Work</a></li>
+          <li><a href="#bitcoin">Bitcoin</a></li>
+          <li><a href="#tools">Tools</a></li>
+          <li><a href="#writing">Writing</a></li>
+          <li><a href="#news">News</a></li>
+          <li><a href="#connect">Connect</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section id="intro" aria-labelledby="intro-heading">
+      <h2 id="intro-heading">About</h2>
+      <p class="lead">
+        IT consultant, Bitcoin and Lightning Network advocate (LNP/BP), author of
+        <em>Q/A about Bitcoin</em>, and operator of open-source infrastructure.
+        I help people and teams ship reliable software around Bitcoin and self-custody.
+      </p>
+      <p class="muted">
+        Learn about my work, explore Bitcoin and Lightning resources, book a call,
+        or reach out for consulting and support.
+      </p>
+      <figure class="about-photo">
+        <img src="assets/david-coen.jpg" alt="Portrait of David Coen" width="838" height="905" loading="lazy" decoding="async">
+      </figure>
+    </section>
+
+    <section id="work" aria-labelledby="work-heading">
+      <h2 id="work-heading">What I do</h2>
+
+      <h3>Edge Wallet — QA &amp; Support</h3>
+      <p>
+        Quality assurance and customer support for <a href="https://edge.app/">Edge Wallet</a>,
+        a zero-knowledge mobile app with self-custody wallets across many blockchains.
+      </p>
+      <ul>
+        <li><strong>QA</strong> — iOS and Android staging and production builds; end-to-end flows
+          (swaps, buy/sell, wallet sync, multi-chain sends); chain-specific issues across UTXO,
+          account-based, EVM, and privacy coins — filed in Asana with clear repro steps.</li>
+        <li><strong>Support</strong> — <a href="https://support.edge.app/">Intercom</a>, voucher workflows,
+          Help Center articles; internal tooling on
+          <a href="https://resources.davidcoen.it/">resources.davidcoen.it</a>.</li>
+        <li><strong>AI &amp; automation</strong> — train and maintain Prudence, Edge’s AI support agent:
+          Guidance and escalation playbooks, <a href="https://www.intercom.com/">Fin</a> data connectors for on-chain transaction lookup,
+          health reporting, and tools that keep the knowledge base aligned with releases.</li>
+      </ul>
+
+      <h3>AKRLabs — Consulting</h3>
+      <p>
+        I consult for <a href="https://arklabs.xyz/">AKRLabs</a> on Bitcoin products including
+        <a href="https://arkadeos.com/">Arkade</a>, Fulmine, and BTCPay-related integrations —
+        engineering, QA, and product support alongside the core team.
+      </p>
+    </section>
+
+    <section id="bitcoin" aria-labelledby="bitcoin-heading">
+      <h2 id="bitcoin-heading">Bitcoin &amp; Lightning</h2>
+      <p>
+        I run infrastructure and publish practical resources for merchants, developers, and advocates.
+        I accept Bitcoin and help others do the same.
+      </p>
+
+      <h3>BTCPay Server</h3>
+      <ul>
+        <li><a href="accept-bitcoin.html">Accept Bitcoin</a> — overview and merchant setup</li>
+        <li><a href="https://btcpay.davidcoen.it/">btcpay.davidcoen.it</a> — payment processor (on-chain invoices; shared Lightning coming)</li>
+        <li><a href="https://status.davidcoen.it/">status.davidcoen.it</a> — server status</li>
+      </ul>
+
+      <h3>Lightning Network node</h3>
+      <p class="muted">Open a channel using either URI:</p>
+      <ul>
+        <li class="mono">02e74c09ca720c891221164424651f62176a4737a4b2fd4f75a5befee127e90b9e@170.75.160.17:9735</li>
+        <li class="mono">02e74c09ca720c891221164424651f62176a4737a4b2fd4f75a5befee127e90b9e@76yxjhon45bmnzafi26q2ow2a35vuk7qegnbg4o5ua4gkxbbe5zdwwid.onion:9735</li>
+      </ul>
+
+      <h3>Payments &amp; donations</h3>
+      <ul>
+        <li><a href="https://calendly.com/thedavidcoen">Book a 30 or 60 minute call</a></li>
+        <li><a href="https://dl.edge.app/?af=davidcoen-it">Download Edge Wallet</a></li>
+      </ul>
+
+      <h3>Useful links</h3>
+      <ul>
+        <li><a href="https://blockchair.com/bitcoin">BTC explorer (Blockchair)</a></li>
+        <li><a href="https://mempool.space/">Bitcoin fees &amp; mempool</a></li>
+        <li><a href="https://www.bitcoinblockhalf.com/">Bitcoin halving</a></li>
+        <li><a href="https://nostr.davidcoen.it/">Nostr profile</a></li>
+      </ul>
+    </section>
+
+    <section id="tools" aria-labelledby="tools-heading">
+      <h2 id="tools-heading">Tools &amp; resources</h2>
+      <p>
+        An incomplete list of tools I use daily for QA, support, and Bitcoin work — some external,
+        many <a href="https://opensource.org/osd">open source</a> and built by me. Bitcoin utilities,
+        Nostr helpers, GitHub projects, SEPA/IBAN checkers, and more live on
+        <a class="tools-link" href="https://resources.davidcoen.it/">resources.davidcoen.it</a>.
+      </p>
+    </section>
+
+    <section id="writing" aria-labelledby="writing-heading">
+      <h2 id="writing-heading">Writing &amp; media</h2>
+      <ul>
+        <li><a href="http://smartphone.davidcoen.it/">Book: Smartphone Facile</a></li>
+        <li><a href="https://qabitcoin.davidcoen.it/">Book: Q/A about Bitcoin</a></li>
+        <li><a href="https://github.com/theDavidCoen/Q-A-about-Bitcoin">Q/A about Bitcoin (GitHub)</a></li>
+        <li><a href="https://davidcoen.it/news/">News &amp; blog</a></li>
+        <li><a href="https://davidcoen.it/feed/">RSS feed</a></li>
+      </ul>
+    </section>
+
+    <section id="news" aria-labelledby="news-heading">
+      <h2 id="news-heading">News categories</h2>
+      <ul>
+        <li><a href="https://davidcoen.it/category/eventi/">Eventi</a></li>
+        <li><a href="https://davidcoen.it/category/guide-pratiche/">Guide pratiche</a></li>
+        <li><a href="https://davidcoen.it/category/il-punto-di-vista/">Il punto di vista</a></li>
+        <li><a href="https://davidcoen.it/category/indispensabili/">Indispensabili</a></li>
+        <li><a href="https://davidcoen.it/category/libri/">Libri</a></li>
+        <li><a href="https://davidcoen.it/category/videos-interviews/">Videos / Interviews</a></li>
+      </ul>
+    </section>
+
+    <section id="connect" aria-labelledby="connect-heading">
+      <h2 id="connect-heading">Connect</h2>
+      <ul class="connect-list">
+        <li>
+          <a class="connect-link" href="mailto:info@davidcoen.it">
+            <svg class="connect-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5L4 8V6l8 5 8-5v2Z"/></svg>
+            info@davidcoen.it
+          </a>
+        </li>
+        <li>
+          <a class="connect-link" href="https://calendly.com/thedavidcoen">
+            <svg class="connect-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2a1 1 0 0 1 1 1v1h8V3a1 1 0 1 1 2 0v1h1a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1V3a1 1 0 0 1 1-1Zm12 8H5v10h14V10Zm-2 3v2h2v-2h-2Zm-4 0v2h2v-2h-2Zm-4 0v2h2v-2H9Z"/></svg>
+            Calendly — book a date
+          </a>
+        </li>
+        <li>
+          <a class="connect-link" href="https://twitter.com/thedavidcoen">
+            <svg class="connect-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M16.6 3H19l-6.2 7.1L20 21h-5.5l-4.3-5.6L5.8 21H3.4l6.6-7.5L3 3h5.6l3.9 5.2L16.6 3Zm-1.9 16h1.5L8.5 5H6.9l7.8 14Z"/></svg>
+            Twitter / X
+          </a>
+        </li>
+        <li>
+          <a class="connect-link" href="https://www.linkedin.com/in/coendavid">
+            <svg class="connect-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1-.02 5 2.5 2.5 0 0 1 .02-5ZM3 8.75h4v12H3v-12Zm7 0h3.8v1.64h.05c.53-1 1.82-2.05 3.75-2.05 4.01 0 4.75 2.64 4.75 6.07v6.34h-4v-5.62c0-1.34-.03-3.07-1.87-3.07-1.87 0-2.16 1.46-2.16 2.97v5.72H10V8.75Z"/></svg>
+            LinkedIn
+          </a>
+        </li>
+        <li>
+          <a class="connect-link" href="https://www.facebook.com/theDavidCoen/">
+            <svg class="connect-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 3h4a1 1 0 0 1 1 1v3h-3a2 2 0 0 0-2 2v3h5l-1 4h-4v9h-4v-9H7v-4h3V9a6 6 0 0 1 6-6Z"/></svg>
+            Facebook
+          </a>
+        </li>
+        <li>
+          <a class="connect-link" href="https://www.youtube.com/channel/UC-S8wqi8zBjGaA6ObBz3V1A">
+            <svg class="connect-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21.6 7.2a2.5 2.5 0 0 0-1.76-1.77C18.08 5 12 5 12 5s-6.08 0-7.84.43A2.5 2.5 0 0 0 2.4 7.2 26 26 0 0 0 2 12a26 26 0 0 0 .4 4.8 2.5 2.5 0 0 0 1.76 1.77C5.92 19 12 19 12 19s6.08 0 7.84-.43a2.5 2.5 0 0 0 1.76-1.77A26 26 0 0 0 22 12a26 26 0 0 0-.4-4.8ZM10 15.5v-7l6 3.5-6 3.5Z"/></svg>
+            YouTube
+          </a>
+        </li>
+        <li>
+          <a class="connect-link" href="https://github.com/theDavidCoen">
+            <svg class="connect-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.15-1.1-1.46-1.1-1.46-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.89 1.53 2.34 1.09 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02a9.6 9.6 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.69-4.57 4.93.36.31.68.92.68 1.86v2.76c0 .27.18.58.69.48A10 10 0 0 0 12 2Z"/></svg>
+            GitHub
+          </a>
+        </li>
+        <li>
+          <a class="connect-link" href="nostr:npub149mp2m0q8prpdys7x2lusv2vceraxwzr4ajf6tv3l24my3gtszxsncas0t7">
+            <svg class="connect-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5h3.2l3.8 5.6V5H16v14h-3.2l-3.8-5.6V19H6V5z"/></svg>
+            Nostr
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <footer class="site-footer">
+      <p>
+        © <span id="year"></span> David Coen ·
+        <a href="privacy.html">Privacy &amp; cookies</a> ·
+        <a href="mailto:info@davidcoen.it">info@davidcoen.it</a>
+      </p>
+      <p class="muted">Comunicazione e Immagine di David Coen — Italy / EU</p>
+    </footer>
+  </main>
+
+  <div id="cookie-banner" class="cookie-banner" role="dialog" aria-labelledby="cookie-title" aria-live="polite" hidden>
+    <p id="cookie-title">
+      <strong>No cookies here.</strong> This site sets zero HTTP cookies — no analytics, no ads, no trackers.
+      We only save your choice in local storage so this notice stays dismissed.
+      <a href="privacy.html">Privacy policy</a>
+    </p>
+    <div class="cookie-actions">
+      <button type="button" id="cookie-dismiss" class="btn-primary">Got it</button>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+  <script src="js/theme-toggle.js" defer></script>
+  <script src="js/cookie-consent.js" defer></script>
+</body>
+</html>

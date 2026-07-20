@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <script>
+    (function () {
+      var theme = localStorage.getItem("davidcoen_theme");
+      if (theme === "light" || theme === "dark") {
+        document.documentElement.setAttribute("data-theme", theme);
+      }
+    })();
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Accept Bitcoin — David Coen</title>
+  <meta name="description" content="Accept Bitcoin payments and keep bitcoin. BTCPay Server hosted by David Coen — non-custodial, open source, merchant-ready.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://davidcoen.it/accept-bitcoin.html">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="assets/logo-light.png" type="image/png">
+</head>
+<body>
+  <main class="wrap subpage">
+    <header class="site-header">
+      <div class="header-top">
+        <a class="site-title" href="index.html">David Coen</a>
+        <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Switch to dark theme">
+          <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9 7 7 0 0 1-9-9Z"/></svg>
+          <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true" hidden><path d="M12 18a6 6 0 1 0 0-12 6 6 0 0 0 0 12Zm0 4a1 1 0 0 1-1-1v-1.1a1 1 0 1 1 2 0V21a1 1 0 0 1-1 1Zm0-18a1 1 0 0 1-1-1V1a1 1 0 1 1 2 0v1.1a1 1 0 0 1-1 1Zm10 9a1 1 0 0 1-1 1h-1.1a1 1 0 1 1 0-2H21a1 1 0 0 1 1 1ZM4.1 12a1 1 0 0 1-1 1H2a1 1 0 1 1 0-2h1.1a1 1 0 0 1 1 1Zm14.7 6.7a1 1 0 0 1 0 1.4l-.8.8a1 1 0 1 1-1.4-1.4l.8-.8a1 1 0 0 1 1.4 0ZM6.5 6.5a1 1 0 0 1 0 1.4l-.8.8A1 1 0 1 1 4.3 7.3l.8-.8a1 1 0 0 1 1.4 0Zm12 0 .8.8a1 1 0 0 1-1.4 1.4l-.8-.8a1 1 0 0 1 1.4-1.4ZM6.5 17.5l-.8.8a1 1 0 0 1-1.4-1.4l.8-.8a1 1 0 0 1 1.4 1.4Z"/></svg>
+        </button>
+      </div>
+      <p class="tagline">Quality Assurance · Support · Bitcoin · Lightning Network</p>
+    </header>
+
+    <h1>Accept Bitcoin</h1>
+    <p class="lead">
+      Accept Bitcoin payments and <strong>keep bitcoin</strong> instead of converting to fiat.
+      I run a free, non-custodial <a href="https://btcpayserver.org/">BTCPay Server</a> instance
+      for merchants and independent professionals worldwide.
+    </p>
+
+    <h2>Are you a merchant?</h2>
+    <p>
+      With this setup you can accept Bitcoin on-chain from customers worldwide. Funds arrive
+      directly in <strong>your own wallet</strong> — I never hold your keys or your money.
+    </p>
+
+    <h2>How it works</h2>
+    <ul>
+      <li>A user-friendly Bitcoin checkout page for your customers.</li>
+      <li>Manage invoices, generate reports, and search payments easily.</li>
+      <li>Link your wallet (e.g. an xpub from <a href="https://edge.app/">Edge Wallet</a>) so payments land in your account.</li>
+      <li>BTCPay Server is open-source Bitcoin infrastructure — not a money transmitter. I do not see, manage, or broadcast transactions on your behalf.</li>
+    </ul>
+
+    <h2>My server</h2>
+    <ul>
+      <li><a href="https://btcpay.davidcoen.it/">btcpay.davidcoen.it</a> — create an account and generate on-chain invoices</li>
+      <li><a href="https://status.davidcoen.it/">status.davidcoen.it</a> — uptime and service status</li>
+    </ul>
+    <p>
+      Shared Lightning support is planned. On-chain Bitcoin is available today.
+    </p>
+
+    <h2>Free vs. supported setup</h2>
+    <p>
+      You can use the server for free if you are comfortable configuring BTCPay yourself.
+      If you prefer a ready-to-use solution, I offer setup help as a Bitcoin consultant —
+      <a href="mailto:info@davidcoen.it">email me</a> or
+      <a href="https://calendly.com/thedavidcoen">book a call</a>.
+    </p>
+
+    <h2>Learn more</h2>
+    <ul>
+      <li><a href="https://edge.app/blog/crypto-basics/getting-paid-in-bitcoin/">Getting paid in bitcoin</a> (Edge blog)</li>
+    </ul>
+
+    <footer class="site-footer">
+      <p>
+        <a href="index.html">Home</a> ·
+        <a href="privacy.html">Privacy &amp; cookies</a> ·
+        <a href="mailto:info@davidcoen.it">info@davidcoen.it</a>
+      </p>
+    </footer>
+  </main>
+
+  <div id="cookie-banner" class="cookie-banner" role="dialog" aria-labelledby="cookie-title" aria-live="polite" hidden>
+    <p id="cookie-title">
+      <strong>No cookies here.</strong> This site sets zero HTTP cookies — no analytics, no ads, no trackers.
+      We only save your choice in local storage so this notice stays dismissed.
+      <a href="privacy.html">Privacy policy</a>
+    </p>
+    <div class="cookie-actions">
+      <button type="button" id="cookie-dismiss" class="btn-primary">Got it</button>
+    </div>
+  </div>
+  <script src="js/theme-toggle.js" defer></script>
+  <script src="js/cookie-consent.js" defer></script>
+</body>
+</html>

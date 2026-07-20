@@ -1,0 +1,41 @@
+# davidcoen.it
+
+Minimal static personal site — work in progress, local only.
+
+## Stack
+
+- Plain HTML / CSS / JS
+- No build step required
+- GDPR-friendly cookie banner (localStorage only, no trackers)
+
+## Preview locally
+
+```bash
+cd /home/david/Documenti/davidcoen.it
+python -m http.server 8080
+```
+
+Open http://localhost:8080
+
+## Deploy
+
+Not deployed yet. The live WordPress site at davidcoen.it is unchanged.
+
+When ready: upload files to `public_html` or replace WordPress after review.
+
+## Pages
+
+- `index.html` — homepage
+- `accept-bitcoin.html` — BTCPay / merchant overview (internal)
+- `privacy.html` — GDPR privacy policy
+
+## Assets
+
+- `assets/david-coen.jpg` — portrait photo (About section)
+- `assets/logo-light.png` — favicon
+
+## Links policy
+
+All links from the current site are preserved in `index.html`, except internal shop / account URLs (omitted by choice).
+
+Legacy WordPress pages (news, blog posts, categories) remain linked until content is migrated.
