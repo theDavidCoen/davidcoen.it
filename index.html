@@ -25,7 +25,9 @@
   <meta name="twitter:card" content="summary">
   <meta name="twitter:creator" content="@thedavidcoen">
   <link rel="stylesheet" href="css/style.css">
-  <link rel="icon" href="assets/logo-light.png" type="image/png">
+  <link rel="preload" as="image" href="assets/david-coen.webp" type="image/webp">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -86,7 +88,10 @@
         or reach out for consulting and support.
       </p>
       <figure class="about-photo">
-        <img src="assets/david-coen.jpg" alt="Portrait of David Coen" width="838" height="905" loading="lazy" decoding="async">
+        <picture>
+          <source srcset="assets/david-coen.webp" type="image/webp">
+          <img src="assets/david-coen.jpg" alt="Portrait of David Coen" width="838" height="905" fetchpriority="high" decoding="async">
+        </picture>
       </figure>
     </section>
 

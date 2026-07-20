@@ -55,7 +55,10 @@ STATIC_PATHS = [
     "js/cookie-consent.js",
     "js/theme-toggle.js",
     "assets/david-coen.jpg",
-    "assets/logo-light.png",
+    "assets/david-coen.webp",
+    "assets/apple-touch-icon.png",
+    "assets/favicon.ico",
+    "favicon.ico",
 ]
 
 TESTS = [

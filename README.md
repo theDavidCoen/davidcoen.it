@@ -50,8 +50,10 @@ One-off migration script (already run on production): [`scripts/migrate-deploy.p
 
 ## Assets
 
-- `assets/david-coen.jpg` — portrait photo (About section)
-- `assets/logo-light.png` — favicon
+- `assets/david-coen.jpg` — portrait photo (About section, JPEG fallback)
+- `assets/david-coen.webp` — portrait WebP
+- `assets/apple-touch-icon.png` — iOS home screen icon
+- `favicon.ico` — site favicon (root)
 
 ## Links policy
 
