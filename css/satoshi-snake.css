@@ -1,0 +1,179 @@
+/* Satoshi Snake easter egg — namespaced (ss-*) */
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  flex-shrink: 0;
+}
+
+.ss-trigger {
+  margin: 0;
+  padding: 0.15rem;
+  border: 0;
+  background: transparent;
+  color: var(--fg);
+  cursor: pointer;
+  line-height: 0;
+  transition: opacity 0.15s ease;
+}
+
+.ss-trigger:hover,
+.ss-trigger:focus-visible {
+  opacity: 0.72;
+}
+
+.ss-trigger-glyph {
+  display: block;
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1;
+  transform: rotate(14deg);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+.ss-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.ss-modal.is-open {
+  display: flex;
+}
+
+.ss-modal[hidden] {
+  display: none !important;
+}
+
+body.ss-modal-open {
+  overflow: hidden;
+}
+
+.ss-backdrop {
+  position: absolute;
+  inset: 0;
+  background: color-mix(in srgb, var(--fg) 35%, transparent);
+}
+
+.ss-panel {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 24rem);
+  padding: 1.25rem 1.25rem 1rem;
+  border-radius: 0.2rem;
+  background: var(--bg);
+  color: var(--fg);
+  border: 1px solid var(--border);
+}
+
+.ss-close {
+  position: absolute;
+  top: 0.65rem;
+  right: 0.65rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.ss-close:hover,
+.ss-close:focus-visible {
+  color: var(--fg);
+  opacity: 0.72;
+}
+
+.ss-title {
+  margin: 0 1.5rem 0.35rem 0;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.ss-score {
+  margin: 0 0 0.85rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.ss-score span {
+  color: var(--fg);
+}
+
+.ss-canvas-wrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0.75rem;
+}
+
+#ss-canvas {
+  display: block;
+  border: 1px solid var(--border);
+  border-radius: 0.2rem;
+  background: var(--bg);
+  touch-action: none;
+}
+
+.ss-gameover {
+  text-align: center;
+  padding: 1.25rem 0.5rem 0.5rem;
+}
+
+.ss-gameover[hidden] {
+  display: none !important;
+}
+
+.ss-gameover-title {
+  margin: 0 0 0.35rem;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.ss-gameover-score {
+  margin: 0 0 1rem;
+  font-size: 0.88rem;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.ss-gameover-score span {
+  color: var(--fg);
+}
+
+.ss-replay {
+  font: inherit;
+  cursor: pointer;
+  border: 0;
+  border-radius: 0.25rem;
+  padding: 0.4rem 0.85rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+  background: var(--fg);
+  color: var(--bg);
+}
+
+.ss-replay:hover,
+.ss-replay:focus-visible {
+  opacity: 0.72;
+}
+
+.ss-hint {
+  margin: 0;
+  font-size: 0.75rem;
+  color: var(--muted);
+  text-align: center;
+}

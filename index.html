@@ -34,6 +34,7 @@
   <meta name="twitter:image" content="https://davidcoen.it/assets/og-social.jpg?v=2">
   <meta name="twitter:image:alt" content="David Coen — Quality Assurance, Support, Bitcoin and Lightning Network">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/satoshi-snake.css">
   <link rel="preload" as="image" href="assets/david-coen.webp" type="image/webp">
   <link rel="icon" href="favicon.ico?v=3" sizes="any">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
@@ -67,10 +68,15 @@
     <header class="site-header">
       <div class="header-top">
         <a class="site-title" href="./">David Coen</a>
-        <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Switch to dark theme">
-          <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9 7 7 0 0 1-9-9Z"/></svg>
-          <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true" hidden><path d="M12 18a6 6 0 1 0 0-12 6 6 0 0 0 0 12Zm0 4a1 1 0 0 1-1-1v-1.1a1 1 0 1 1 2 0V21a1 1 0 0 1-1 1Zm0-18a1 1 0 0 1-1-1V1a1 1 0 1 1 2 0v1.1a1 1 0 0 1-1 1Zm10 9a1 1 0 0 1-1 1h-1.1a1 1 0 1 1 0-2H21a1 1 0 0 1 1 1ZM4.1 12a1 1 0 0 1-1 1H2a1 1 0 1 1 0-2h1.1a1 1 0 0 1 1 1Zm14.7 6.7a1 1 0 0 1 0 1.4l-.8.8a1 1 0 1 1-1.4-1.4l.8-.8a1 1 0 0 1 1.4 0ZM6.5 6.5a1 1 0 0 1 0 1.4l-.8.8A1 1 0 1 1 4.3 7.3l.8-.8a1 1 0 0 1 1.4 0Zm12 0 .8.8a1 1 0 0 1-1.4 1.4l-.8-.8a1 1 0 0 1 1.4-1.4ZM6.5 17.5l-.8.8a1 1 0 0 1-1.4-1.4l.8-.8a1 1 0 0 1 1.4 1.4Z"/></svg>
-        </button>
+        <div class="header-actions">
+          <button type="button" class="ss-trigger" id="satoshi-snake-trigger" aria-label="Satoshi Snake" title="Satoshi Snake">
+            <span class="ss-trigger-glyph" aria-hidden="true">&#8383;</span>
+          </button>
+          <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Switch to dark theme">
+            <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9 7 7 0 0 1-9-9Z"/></svg>
+            <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true" hidden><path d="M12 18a6 6 0 1 0 0-12 6 6 0 0 0 0 12Zm0 4a1 1 0 0 1-1-1v-1.1a1 1 0 1 1 2 0V21a1 1 0 0 1-1 1Zm0-18a1 1 0 0 1-1-1V1a1 1 0 1 1 2 0v1.1a1 1 0 0 1-1 1Zm10 9a1 1 0 0 1-1 1h-1.1a1 1 0 1 1 0-2H21a1 1 0 0 1 1 1ZM4.1 12a1 1 0 0 1-1 1H2a1 1 0 1 1 0-2h1.1a1 1 0 0 1 1 1Zm14.7 6.7a1 1 0 0 1 0 1.4l-.8.8a1 1 0 1 1-1.4-1.4l.8-.8a1 1 0 0 1 1.4 0ZM6.5 6.5a1 1 0 0 1 0 1.4l-.8.8A1 1 0 1 1 4.3 7.3l.8-.8a1 1 0 0 1 1.4 0Zm12 0 .8.8a1 1 0 0 1-1.4 1.4l-.8-.8a1 1 0 0 1 1.4-1.4ZM6.5 17.5l-.8.8a1 1 0 0 1-1.4-1.4l.8-.8a1 1 0 0 1 1.4 1.4Z"/></svg>
+          </button>
+        </div>
       </div>
       <p class="tagline">Quality Assurance · Support · Bitcoin · Lightning Network</p>
       <nav class="site-nav" aria-label="Primary">
@@ -265,6 +271,24 @@
     </footer>
   </main>
 
+  <div id="satoshi-snake-modal" class="ss-modal" hidden aria-hidden="true" role="dialog" aria-labelledby="ss-title" aria-modal="true">
+    <div class="ss-backdrop"></div>
+    <div class="ss-panel">
+      <button type="button" class="ss-close" aria-label="Close">&times;</button>
+      <h2 id="ss-title" class="ss-title">Satoshi Snake</h2>
+      <p class="ss-score">Satoshi: <span id="ss-score">0</span></p>
+      <div class="ss-canvas-wrap">
+        <canvas id="ss-canvas" width="320" height="320" aria-label="Satoshi Snake game board"></canvas>
+      </div>
+      <div id="ss-gameover" class="ss-gameover" hidden>
+        <p class="ss-gameover-title">Game Over</p>
+        <p class="ss-gameover-score">Satoshi: <span id="ss-final">0</span></p>
+        <button type="button" id="ss-replay" class="ss-replay">Play again</button>
+      </div>
+      <p class="ss-hint">Arrows / WASD · swipe on mobile</p>
+    </div>
+  </div>
+
   <div id="cookie-banner" class="cookie-banner" role="dialog" aria-labelledby="cookie-title" aria-live="polite" hidden>
     <p id="cookie-title">
       <strong>No cookies here.</strong> This site sets zero HTTP cookies — no analytics, no ads, no trackers.
@@ -280,6 +304,7 @@
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
   <script src="js/theme-toggle.js" defer></script>
+  <script src="js/satoshi-snake.js" defer></script>
   <script src="js/cookie-consent.js" defer></script>
 </body>
 </html>
