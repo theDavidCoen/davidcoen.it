@@ -2,6 +2,8 @@
 
 Static personal site at [davidcoen.it](https://davidcoen.it), with legacy WordPress preserved under `/legacy/` for existing content and admin.
 
+A **static Tor mirror** runs on homelab portable (`192.168.1.104`). Clearnet hosting is unchanged (shared hosting).
+
 ## Stack
 
 - Plain HTML / CSS / JS — no build step
@@ -19,6 +21,40 @@ Static personal site at [davidcoen.it](https://davidcoen.it), with legacy WordPr
 
 Production cutover completed **2026-07-20**.
 
+## Tor mirror
+
+| | |
+|--|--|
+| Host | `192.168.1.104` (`~/davidcoen-tor`, Docker: nginx + Tor) |
+| Onion | `http://pbe365sjbt5iycvku6no7zwxw7lcspflaucwiudqzkxvrvcbboxyykad.onion/` |
+| Scope | Static pages only (no WordPress) |
+| Uptime | Only while the portable is awake/online |
+
+Clearnet advertises the onion via the `Onion-Location` HTTP header and `<meta http-equiv="onion-location">` so Tor Browser can suggest switching.
+
+Stack files: [`deploy/portable-tor/`](deploy/portable-tor/). Hostname file: [`deploy/onion-hostname`](deploy/onion-hostname).
+
+First-time setup on the portable:
+
+```bash
+./scripts/setup-portable-tor.sh
+```
+
+## Deploy (clearnet + Tor copy)
+
+After editing the static site:
+
+```bash
+python3 scripts/deploy.py
+```
+
+| Target | Method |
+|--------|--------|
+| Clearnet (shared hosting) | FTP (FileZilla sitemanager) |
+| Portable Tor copy | `rsync` over SSH → `david@192.168.1.104:~/davidcoen-tor/html/` |
+
+Useful flags: `--clearnet-only`, `--portable-only`, `--stack` (also sync compose files).
+
 ## Preview locally
 
 ```bash
@@ -34,11 +70,12 @@ Configuration examples for the shared-hosting setup:
 
 | File | Purpose |
 |------|---------|
-| [`deploy/root.htaccess.example`](deploy/root.htaccess.example) | Static files + WordPress bootstrap + `/wp-admin/` routing |
+| [`deploy/root.htaccess.example`](deploy/root.htaccess.example) | Static files + WordPress bootstrap + Onion-Location |
 | [`deploy/legacy.htaccess.example`](deploy/legacy.htaccess.example) | PHP 8.1 handler, redirect legacy admin/login URLs |
 | [`deploy/index.php.example`](deploy/index.php.example) | Front-end WordPress bootstrap at site root |
 | [`deploy/wp-config-snippet.example`](deploy/wp-config-snippet.example) | `WP_HOME` / `WP_SITEURL`, memory, cookie paths |
 | [`deploy/mu-plugins/davidcoen-admin-fix.php.example`](deploy/mu-plugins/davidcoen-admin-fix.php.example) | Admin URL fixes, editor memory relief |
+| [`deploy/portable-tor/`](deploy/portable-tor/) | Docker nginx + Tor Hidden Service on `.104` |
 
 One-off migration script (already run on production): [`scripts/migrate-deploy.py`](scripts/migrate-deploy.py).
 
@@ -69,3 +106,4 @@ External and legacy WordPress links (news, blog posts, categories) are kept in `
 
 - `backups/` is gitignored (contains server snapshots and secrets)
 - Do not commit live `wp-config.php` or FTP credentials
+- Tor private keys stay in the Docker volume on `.104` — never commit them

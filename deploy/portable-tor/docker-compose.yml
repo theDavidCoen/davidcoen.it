@@ -1,0 +1,32 @@
+# Static davidcoen.it Tor mirror on homelab portable (192.168.1.104).
+# Clearnet davidcoen.it stays on shared hosting — this stack is onion-only.
+
+services:
+  web:
+    image: nginx:alpine
+    restart: unless-stopped
+    volumes:
+      - ./html:/usr/share/nginx/html:ro
+      - ./nginx-default.conf:/etc/nginx/conf.d/default.conf:ro
+    networks:
+      - onion
+    # No host ports: only the Tor container reaches this service.
+
+  tor:
+    build:
+      context: .
+      dockerfile: Dockerfile.tor
+    restart: unless-stopped
+    volumes:
+      - tor-davidcoen:/var/lib/tor
+    depends_on:
+      - web
+    networks:
+      - onion
+
+volumes:
+  tor-davidcoen:
+
+networks:
+  onion:
+    driver: bridge

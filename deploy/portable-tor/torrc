@@ -1,0 +1,9 @@
+## Tor Hidden Service — davidcoen.it static copy (homelab portable)
+## HiddenServicePort targets the compose service name "web".
+
+SocksPort 0
+RunAsDaemon 0
+DataDirectory /var/lib/tor
+
+HiddenServiceDir /var/lib/tor/davidcoen/
+HiddenServicePort 80 web:80

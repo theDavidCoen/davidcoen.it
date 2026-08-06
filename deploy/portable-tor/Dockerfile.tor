@@ -1,0 +1,15 @@
+FROM debian:bookworm-slim
+
+RUN apt-get update \
+    && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends tor \
+    && rm -rf /var/lib/apt/lists/* \
+    && mkdir -p /var/lib/tor/davidcoen \
+    && chown -R debian-tor:debian-tor /var/lib/tor \
+    && chmod 700 /var/lib/tor /var/lib/tor/davidcoen
+
+COPY torrc /etc/tor/torrc
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod 755 /entrypoint.sh
+
+USER debian-tor
+ENTRYPOINT ["/entrypoint.sh"]

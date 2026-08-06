@@ -1,0 +1,14 @@
+# Example system nginx vhost (alternative to Docker).
+# Prefer deploy/portable-tor/docker-compose.yml on 192.168.1.104.
+
+server {
+    listen 127.0.0.1:8088;
+    server_name _;
+    root /var/www/davidcoen.it;
+    index index.html;
+    server_tokens off;
+
+    location / {
+        try_files $uri $uri/ =404;
+    }
+}

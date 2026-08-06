@@ -1,0 +1,5 @@
+## Example Tor Hidden Service snippet for /etc/tor/torrc
+## (Docker path uses deploy/portable-tor/torrc instead.)
+
+# HiddenServiceDir /var/lib/tor/davidcoen/
+# HiddenServicePort 80 127.0.0.1:8088

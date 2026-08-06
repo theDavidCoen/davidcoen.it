@@ -19,6 +19,8 @@ ExpiresByType text/html "access plus 1 hour"
 <FilesMatch "\.(css|js|jpg|jpeg|png|gif|webp|svg|ico)$">
 Header set Cache-Control "public, max-age=31536000, immutable"
 </FilesMatch>
+# Tor Browser suggestion — replace ONION_HOST_PLACEHOLDER via scripts/deploy.py
+Header always set Onion-Location "http://ONION_HOST_PLACEHOLDER%{REQUEST_URI}s"
 </IfModule>
 
 <IfModule mod_rewrite.c>
