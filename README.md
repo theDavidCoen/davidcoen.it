@@ -30,6 +30,8 @@ Production cutover completed **2026-07-20**.
 | Scope | Static pages only (no WordPress) |
 | Uptime | Only while the portable is awake/online |
 
+The Tor mirror serves the same static tree as clearnet, including **`/resources/`** (all tools). Client-side tools work; pages that call clearnet-only APIs (mempool.space, BTCPay, etc.) may be limited over Tor.
+
 Clearnet advertises the onion via the `Onion-Location` HTTP header and `<meta http-equiv="onion-location">` so Tor Browser can suggest switching.
 
 Stack files: [`deploy/portable-tor/`](deploy/portable-tor/). Hostname file: [`deploy/onion-hostname`](deploy/onion-hostname).
@@ -51,7 +53,7 @@ python3 scripts/deploy.py
 | Target | Method |
 |--------|--------|
 | Clearnet (shared hosting) | FTP (FileZilla sitemanager) |
-| Portable Tor copy | `rsync` over SSH → `$PORTABLE_HOST:$PORTABLE_DIR/html/` |
+| Portable Tor copy | `rsync` over SSH → `$PORTABLE_HOST:$PORTABLE_DIR/html/` (site + `resources/`) |
 
 Set deploy targets via environment (or your shell profile):
 

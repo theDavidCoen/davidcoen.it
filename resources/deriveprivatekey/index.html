@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <script>
+    (function () {
+      var theme = localStorage.getItem("davidcoen_theme");
+      if (theme === "light" || theme === "dark") {
+        document.documentElement.setAttribute("data-theme", theme);
+      }
+    })();
+  </script>
+    <script src="https://cdn.jsdelivr.net/npm/bip39@3.0.0/bip39.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/hdkey@1.0.0/lib/hdkey.js"></script>
+    <link rel="stylesheet" href="/resources/shared/site.css">
+</head>
+<body>
+  <main class="wrap">
+    <div id="tool-header"></div>
+    
+    <p>Enter a 24-word BIP39 seed phrase:</p>
+    <textarea id="seedPhraseInput" rows="4" cols="50"></textarea>
+    <p>Enter an optional passphrase:</p>
+    <input type="text" id="passphraseInput">
+    <p>Select a derivation path:</p>
+    <select id="derivationPathInput">
+      <option value="BIP32">BIP32</option>
+      <option value="BIP44">BIP44</option>
+      <option value="BIP49">BIP49</option>
+      <option value="BIP84">BIP84</option>
+    </select>
+    <br><br>
+    <button onclick="generatePrivateKey()">Generate Private Key</button>
+    <br><br>
+    <p>Private Key:</p>
+    <p id="privateKeyOutput"></p>
+
+    <script>
+      function generatePrivateKey() {
+        var seedPhrase = document.getElementById("seedPhraseInput").value;
+        console.log("Seed Phrase:", seedPhrase);
+
+        var passphrase = document.getElementById("passphraseInput").value;
+        console.log("Passphrase:", passphrase);
+
+        var derivationPath = document.getElementById("derivationPathInput").value;
+        console.log("Derivation Path:", derivationPath);
+
+        var seed = bip39.mnemonicToSeedSync(seedPhrase, passphrase);
+        console.log("Seed:", seed);
+
+        var masterKey = hdkey.fromMasterSeed(seed);
+        console.log("Master Key:", masterKey);
+
+        var path;
+        switch (derivationPath) {
+          case "BIP32":
+            path = "m/0'/0'/0'";
+            break;
+          case "BIP44":
+            path = "m/44'/0'/0'/0/0";
+            break;
+          case "BIP49":
+            path = "m/49'/0'/0'/0/0";
+            break;
+          case "BIP84":
+            path = "m/84'/0'/0'/0/0";
+            break;
+        }
+        console.log("Path:", path);
+
+        var derivedKey = masterKey.derivePath(path);
+        console.log("Derived Key:", derivedKey);
+
+        var privateKey = derivedKey.privateKey.toString("hex");
+        console.log("Private Key:", privateKey);
+
+        document.getElementById("privateKeyOutput").innerHTML = privateKey;
+      }
+    </script>
+  </main>
+  <script src="/resources/shared/site.js"></script>
+  <script>
+    ResourcesSite.mountToolHeader({
+      title: 'Bitcoin Private Key Generator',
+      clientSide: true,
+    });
+  </script>
+  <script src="/resources/shared/theme-toggle.js" defer></script>
+</body>
+</html>
+</html>

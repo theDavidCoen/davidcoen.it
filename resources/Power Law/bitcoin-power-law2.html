@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bitcoin Power Law Price Tool</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background: #0d0d0d;
+      color: #ffffff;
+      text-align: center;
+    }
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+    .container {
+      max-width: 600px;
+      margin: auto;
+      padding: 20px;
+      background: #1a1a1a;
+      border-radius: 16px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.08);
+    }
+    input, button {
+      width: 100%;
+      padding: 14px;
+      margin: 10px 0;
+      font-size: 1.2rem;
+      border-radius: 10px;
+      border: none;
+    }
+    input {
+      background: #2b2b2b;
+      color: white;
+    }
+    button {
+      background: #ff9900;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    button:hover {
+      background: #e68a00;
+    }
+    .result-box {
+      margin-top: 20px;
+      padding: 15px;
+      background: #262626;
+      border-radius: 12px;
+      font-size: 1.3rem;
+    }
+    .goals {
+      margin-top: 30px;
+      padding: 20px;
+      background: #1f1f1f;
+      border-radius: 14px;
+    }
+    .goal-item {
+      font-size: 1.2rem;
+      margin: 8px 0;
+    }
+    footer {
+      margin-top: 40px;
+      font-size: 0.9rem;
+      opacity: 0.6;
+    }
+  </style>
+</head>
+<body>
+  <h1>Bitcoin Power Law Price Predictor</h1>
+  <div class="container">
+    <p>Enter a date to estimate Bitcoin price using Giovanni Santostasi's Power Law:</p>
+    <input type="date" id="dateInput" />
+    <button onclick="calculatePrice()">Calculate</button>
+
+    <div id="result" class="result-box"></div>
+    <div id="currentData" class="result-box"></div>
+
+    <div class="goals">
+      <h2>Long‑Term Goals</h2>
+      <div class="goal-item">$1,000,000</div>
+      <div class="goal-item">$10,000,000</div>
+      <div class="goal-item">$100,000,000</div>
+    </div>
+  </div>
+
+  <footer>
+    Tool based on the Bitcoin Power Law by Giovanni Santostasi. Built for educational purposes.
+  </footer>
+
+  <script>
+    const genesis = new Date("2009-01-03");
+
+    async function fetchCurrentPrice() {
+      try {
+        const res = await fetch("https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd");
+        const data = await res.json();
+        return data.bitcoin.usd;
+      } catch (e) {
+        return null;
+      }
+    }
+
+    function powerLawPrice(n) {
+      return Math.pow(10, -17) * Math.pow(n, 5.8);
+    }
+
+    async function calculatePrice() {
+      let inputValue = document.getElementById("dateInput").value;
+      const inputDate = inputValue ? new Date(inputValue) : new Date();("dateInput").value);
+      if (!inputDate || isNaN(inputDate)) {
+        document.getElementById("result").innerHTML = "Please enter a valid date.";
+        return;
+      }
+
+      const diff = inputDate - genesis;
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+
+      if (days < 0) {
+        document.getElementById("result").innerHTML = "Date must be after January 3, 2009.";
+        return;
+      }
+
+      const predicted = powerLawPrice(days);
+      document.getElementById("result").innerHTML =
+        `Predicted Price: <strong>$${predicted.toLocaleString(undefined, { maximumFractionDigits: 2 })}</strong>`;
+
+      const current = await fetchCurrentPrice();
+      if (current) {
+        const deviation = ((current - predicted) / predicted) * 100;
+        document.getElementById("currentData").innerHTML =
+          `Current BTC Price: <strong>$${current.toLocaleString()}</strong><br>` +
+          `Deviation: <strong>${deviation.toFixed(2)}%</strong>`;
+      } else {
+        document.getElementById("currentData").innerHTML = "Unable to fetch current BTC price.";
+      }
+    }
+  </script>
+</body>
+</html>
+

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <script>
+    (function () {
+      var theme = localStorage.getItem("davidcoen_theme");
+      if (theme === "light" || theme === "dark") {
+        document.documentElement.setAttribute("data-theme", theme);
+      }
+    })();
+  </script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Bitcoind Console Commands</title>
+  <link rel="stylesheet" href="/resources/shared/site.css">
+</head>
+<body>
+  <main class="wrap">
+    <div id="tool-header"></div>
+    
+<h2>A list of commands you can use with bitcoin-cli</h2>
+<p>You can use these commands in bitcoind console.
+<br>Example: <code>bitcoin-cli dumpprivkey "myaddress"</code></p>
+<p>If you want to use the commands from your BTCpay Server, do:
+<br><code>sudo su -
+<br>cd btcpayserver-docker
+<br>bitcoin-cli.sh "command"</code>
+<br>Example: <code>bitcoin-cli.sh dumpprivkey "myaddress"</code></p>
+
+  <ul>
+    <li><a href="https://developer.bitcoin.org/reference/rpc/addmultisigaddress.html">addmultisigaddress</a></li>
+    <li><a href="https://developer.bitcoin.org/reference/rpc/backupwallet.html">backupwallet</a></li>
+    <li><a href="https://developer.bitcoin.org/reference/rpc/bumpfee.html">bumpfee</a></li>
+    <li><a href="https://developer.bitcoin.org/reference/rpc/createmultisig.html">createmultisig</a></li>
+    <li><a href="https://developer.bitcoin.org/reference/rpc/createrawtransaction.html">createrawtransaction</a></li>
+    <li><a href="https://developer.bitcoin.org/reference/rpc/decoderawtransaction.html">decoderawtransaction</a></li>
+    <li><a href="https://developer.bitcoin.org/reference/rpc/decodescript.html">decodescript</a></li>
+    <li><a href="https://developer.bitcoin.org/reference/rpc/dumpprivkey.html">dumpprivkey</a></li>
+    <li><a href="https://developer.bitcoin.org/reference/rpc/dumpwallet.html">dumpwallet</a></li>
+    <li><a href="https://developer.bitcoin.org/reference/rpc/encryptwallet.html">encryptwallet</a></li>
+    <li><a href="https://developer.bitcoin.org/reference/rpc/getaccount.html">getaccount</a></li>
+    <li><a href="https://developer.bitcoin.org/reference/rpc/getaccountaddress.html">getaccountaddress</a></li>
+    <li><a href="https://developer.bitcoin.org/reference/rpc/getaddressesbyaccount.html">getaddressesbyaccount</a></li>
+    <li><a href="https://developer.bitcoin.org/reference/rpc/getbalance.html">getbalance</a></li>
+    <li><a href="https://developer.bitcoin.org/reference/rpc/getblock.html">getblock</a></li>
+    <li><a href="https://developer.bitcoin.org/reference/rpc/getblockchaininfo.html">getblockchaininfo</a></li>
+    <li><a href="https://developer.bitcoin.org/reference/rpc/getblockcount.html">getblockcount</a></li>
+    <li><a href="https://developer.bitcoin.org/reference/rpc/getblockhash.html">getblockhash</a></li>
+    <li><a href="https://developer.bitcoin.org/reference/rpc/getblockheader.html">getblockheader</a></li>
+    <li><a href="https://developer.bitcoin.org/reference/rpc/getblocktemplate.html">getblocktemplate</a></li>
+    <li><a href="https://developer.bitcoin.org/reference/rpc/getchaintips.html">getchaintips</a></li>
+    <li><a href="https://developer.bitcoin.org/reference/rpc/getconnectioncount.html">getconnectioncount</a></li>
+    <li><a href="https://developer.bitcoin.org/reference/rpc/getrawmempool.html">getrawmempool</a></li>
+    <li><a href="https://developer.bitcoin.org/reference/rpc/getrawtransaction.html">getrawtransaction</a></li>
+    <li><a href="https://developer.bitcoin.org/reference/rpc/getreceivedbyaccount.html">getreceivedbyaccount</a></li>
+    <li><a href="https://developer.bitcoin.org/reference/rpc/getreceivedbyaddress.html">getreceivedbyaddress</a></li>
+    <li><a href="https://developer.bitcoin.org/reference/rpc/gettransaction.html">gettransaction</a></li>
+    <li><a href="https://developer.bitcoin.org/reference/rpc/gettxout.html">gettxout</a></li>
+    <li><a href="https://developer.bitcoin.org/reference/rpc/gettxoutproof.html">gettxoutproof</a></li>
+    <li><a href="https://developer.bitcoin.org/reference/rpc/gettxoutsetinfo.html">gettxoutsetinfo</a></li>
+    <li><a href="https://developer.bitcoin.org/reference/rpc/governance.html">governance</a></li>
+    <li><a href="https://developer.bitcoin.org/reference/rpc/governanceobject.html">governanceobject</a></li>
+    <li><a href="https://developer.bitcoin.org/reference/rpc/governanceobjectvote.html">governanceobjectvote</a></li>
+    <li><a href="https://developer.bitcoin.org/reference/rpc/help.html">help</a></li>
+    <li><a href="https://developer.bitcoin.org/reference/rpc/listaccounts.html">listaccounts</a></li>
+    <li><a href="https://developer.bitcoin.org/reference/rpc/listaddressgroupings.html">listaddressgroupings</a></li>
+    <li><a href="https://developer.bitcoin.org/reference/rpc/listlockunspent.html">listlockunspent</a></li>
+    <li><a href="https://developer.bitcoin.org/reference/rpc/listreceivedbyaccount.html">listreceivedbyaccount</a></li>
+    <li><a href="https://developer.bitcoin.org/reference/rpc/listreceivedbyaddress.html">listreceivedbyaddress</a></li>
+    <li><a href="https://developer.bitcoin.org/reference/rpc/listsinceblock.html">listsinceblock</a></li>
+    <li><a href="https://developer.bitcoin.org/reference/rpc/listtransactions.html">listtransactions</a></li>
+    <li><a href="https://developer.bitcoin.org/reference/rpc/listunspent.html">listunspent</a></li>
+    <li><a href="https://developer.bitcoin.org/reference/rpc/lockunspent.html">lockunspent</a></li>
+    <li><a href="https://developer.bitcoin.org/reference/rpc/logging.html">logging</a></li>
+    <li><a href="https://developer.bitcoin.org/reference/rpc/longpoll.html">longpoll</a></li>
+    <li><a href="https://developer.bitcoin.org/reference/rpc/ping.html">ping</a></li>
+    <li><a href="https://developer.bitcoin.org/reference/rpc/preciousblock.html">preciousblock</a></li>
+    <li><a href="https://developer.bitcoin.org/reference/rpc/prioritisetransaction.html">prioritisetransaction</a></li>
+    <li><a href="https://developer.bitcoin.org/reference/rpc/sendfrom.html">sendfrom</a></li>
+    <li><a href="https://developer.bitcoin.org/reference/rpc/sendmany.html">sendmany</a></li>
+    <li><a href="https://developer.bitcoin.org/reference/rpc/sendtoaddress.html">sendtoaddress</a></li>
+    <li><a href="https://developer.bitcoin.org/reference/rpc/setban.html">setban</a></li>
+    <li><a href="https://developer.bitcoin.org/reference/rpc/setmocktime.html">setmocktime</a></li>
+    <li><a href="https://developer.bitcoin.org/reference/rpc/setnetworkactive.html">setnetworkactive</a></li>
+    <li><a href="https://developer.bitcoin.org/reference/rpc/signmessage.html">signmessage</a></li>
+    <li><a href="https://developer.bitcoin.org/reference/rpc/signmessagewithprivkey.html">signmessagewithprivkey</a></li>
+    <li><a href="https://developer.bitcoin.org/reference/rpc/stop.html">stop</a></li>
+    <li><a href="https://developer.bitcoin.org/reference/rpc/submitblock.html">submitblock</a></li>
+    <li><a href="https://developer.bitcoin.org/reference/rpc/uptime.html">uptime</a></li>
+    <li><a href="https://developer.bitcoin.org/reference/rpc/validateaddress.html">validateaddress</a></li>
+    <li><a href="https://developer.bitcoin.org/reference/rpc/verifychain.html">verifychain</a></li>
+    <li><a href="https://developer.bitcoin.org/reference/rpc/verifymessage.html">verifymessage</a></li>
+    <li><a href="https://developer.bitcoin.org/reference/rpc/walletlock.html">walletlock</a></li>
+    <li><a href="https://developer.bitcoin.org/reference/rpc/walletpassphrase.html">walletpassphrase</a></li>
+    <li><a href="https://developer.bitcoin.org/reference/rpc/walletpassphrasechange.html">walletpassphrasechange</a></li>
+  </ul>
+  </main>
+  <script src="/resources/shared/site.js"></script>
+  <script>
+    ResourcesSite.mountToolHeader({
+      title: 'Bitcoind Console Commands',
+      clientSide: true,
+    });
+  </script>
+  <script src="/resources/shared/theme-toggle.js" defer></script>
+</body>
+</html>
+
+
+
+
+

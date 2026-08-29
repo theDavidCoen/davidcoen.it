@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <script>
+    (function () {
+      var theme = localStorage.getItem("davidcoen_theme");
+      if (theme === "light" || theme === "dark") {
+        document.documentElement.setAttribute("data-theme", theme);
+      }
+    })();
+  </script>
+  <title>BIP321 + BIP353 Generator</title>
+  <style>
+    .go-back {
+      position: relative;
+      top: 10px;
+      left: 10px;
+    }
+    button {
+      margin-left: 10px;
+    }
+    #splitParts > div {
+      margin-bottom: 8px;
+    }
+  </style>
+  <link rel="stylesheet" href="/resources/shared/site.css">
+</head>
+<body>
+  <main class="wrap">
+    <div id="tool-header"></div>
+    
+
+  <p>
+    This tool allows you to generate a <strong>BIP321-compliant Bitcoin URI</strong> that can combine
+    multiple types of Bitcoin-related payment addresses in a single shareable link.
+    <br><br>
+    You can include:
+    <ul>
+      <li>A standard Bitcoin address</li>
+      <li>An ARK address (e.g., <code>ark1...</code>)</li>
+      <li>A BOLT12 Lightning offer (e.g., <code>lno1...</code>)</li>
+      <li>A Silent Payment address (e.g., <code>sp1...</code>)</li>
+    </ul>
+    Once generated, you can share this BIP321 URI directly, or use it to create a BIP353-compatible Lightning Address below.
+  </p>
+
+  <label>Bitcoin Address:<br>
+    <input type="text" id="btc" placeholder="bc1... or 1... or 3...">
+  </label><br><br>
+
+  <label>ARK Address:<br>
+    <input type="text" id="ark" placeholder="ark1...">
+  </label><br><br>
+
+  <label>Lightning Offer (BOLT12):<br>
+    <input type="text" id="bolt12" placeholder="lno1...">
+  </label><br><br>
+
+  <label>Silent Payment Address:<br>
+    <input type="text" id="silent" placeholder="sp1...">
+  </label><br><br>
+
+  <button onclick="generateBIP321()">Generate BIP321 URI</button><br><br>
+
+  <label>BIP321 URI:<br>
+    <textarea id="bip321" rows="3" cols="80" readonly></textarea>
+  </label><br><br>
+
+  <hr>
+
+  <h1>BIP353 DNS TXT Record Generator</h1>
+
+  <p>
+    This section helps you generate a DNS <strong>TXT record</strong> that links a Lightning Address (e.g., <code>alice@yourdomain.com</code>)
+    to your BIP321 URI, following <a href="https://bips.dev/353" target="_blank">BIP353</a>.
+  </p>
+
+  <p>
+    <strong>Note:</strong> In order for your Lightning Address to work, your domain must have <strong>DNSSEC enabled</strong>.
+    DNSSEC is a security extension that ensures the integrity of DNS records.
+    <br><br>
+    <u>How to enable DNSSEC:</u>  
+    Most domain registrars (like Namecheap, GoDaddy, Cloudflare, etc.) offer DNSSEC setup in their DNS management dashboard.  
+    <br>Here an example guide from Supporthost: <a href="https://supporthost.com/tutorial/enable-dnssec/" target="_blank">https://supporthost.com/tutorial/enable-dnssec/</a>
+    <br>Here’s a verification tool:  
+    <a href="https://dnssec-analyzer.verisignlabs.com" target="_blank">→ Check or enable DNSSEC here (Verisign DNSSEC Analyzer)</a>
+  </p>
+
+  <label>Username:<br>
+    <input type="text" id="username" placeholder="e.g. alice">
+  </label><br><br>
+
+  <button onclick="generateTXT()">Generate TXT Record</button><br><br>
+
+  <h3>Generated DNS TXT Record</h3>
+  <div>
+    <strong>name:</strong> <span id="txtName"></span>
+    <button onclick="copyToClipboard('txtName')">Copy</button>
+  </div>
+  <div>
+    <strong>value (full):</strong> <span id="txtValue"></span>
+    <button onclick="copyToClipboard('txtValue')">Copy</button>
+  </div>
+
+  <h4>Value split into 255-character parts, useful if your domain registrant has a limit of 255 characters per TXT string:</h4>
+  <div id="splitParts"></div>
+
+  <script>
+    function generateBIP321() {
+      const btc = document.getElementById("btc").value.trim();
+      const ark = document.getElementById("ark").value.trim();
+      const bolt12 = document.getElementById("bolt12").value.trim();
+      const silent = document.getElementById("silent").value.trim();
+
+      const params = [];
+      if (ark) params.push("ark=" + encodeURIComponent(ark));
+      if (bolt12) params.push("lno=" + encodeURIComponent(bolt12));
+      if (silent) params.push("sp=" + encodeURIComponent(silent));
+
+      let uri = "bitcoin:";
+      if (btc) uri += encodeURIComponent(btc);
+      if (params.length > 0) uri += "?" + params.join("&");
+
+      document.getElementById("bip321").value = uri;
+    }
+
+    function generateTXT() {
+      const username = document.getElementById("username").value.trim();
+      const bip321 = document.getElementById("bip321").value.trim();
+
+      if (!username || !bip321) {
+        alert("Please enter a username and generate the BIP321 URI first.");
+        return;
+      }
+
+      const name = `${username}.user._bitcoin-payment`;
+      const maxLen = 255;
+      const parts = [];
+
+      for (let i = 0; i < bip321.length; i += maxLen) {
+        parts.push(bip321.slice(i, i + maxLen)); // no quotes
+      }
+
+      // Show full, unsplit string
+      document.getElementById("txtName").textContent = name;
+      document.getElementById("txtValue").textContent = bip321;
+
+      // Show each split string separately with copy buttons
+      const splitContainer = document.getElementById("splitParts");
+      splitContainer.innerHTML = "";
+
+      parts.forEach((part, index) => {
+        const div = document.createElement("div");
+        div.innerHTML = `
+          <strong>Part ${index + 1}:</strong>
+          <span id="split-${index}">${part}</span>
+          <button onclick="copyToClipboard('split-${index}')">Copy</button>
+        `;
+        splitContainer.appendChild(div);
+      });
+    }
+
+    function copyToClipboard(elementId) {
+      const text = document.getElementById(elementId).textContent;
+      const temp = document.createElement("textarea");
+      temp.value = text;
+      document.body.appendChild(temp);
+      temp.select();
+      document.execCommand("copy");
+      document.body.removeChild(temp);
+      alert("Copied to clipboard!");
+    }
+  </script>
+  </main>
+  <script src="/resources/shared/site.js"></script>
+  <script>
+    ResourcesSite.mountToolHeader({
+      title: 'BIP321 URI Generator',
+      clientSide: true,
+    });
+  </script>
+  <script src="/resources/shared/theme-toggle.js" defer></script>
+</body>
+</html>
+</html>

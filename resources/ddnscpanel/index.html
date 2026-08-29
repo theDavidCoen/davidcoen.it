@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  <script>
+    (function () {
+      var theme = localStorage.getItem("davidcoen_theme");
+      if (theme === "light" || theme === "dark") {
+        document.documentElement.setAttribute("data-theme", theme);
+      }
+    })();
+  </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic DNS & Secure Access Configurator for cPanel Users</title>
+    <style>
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+        .hint {
+            color: var(--muted);
+            font-size: 0.92rem;
+            margin: 0.15rem 0 0.75rem;
+        }
+        input[type="text"] {
+            width: 100%;
+            max-width: 34rem;
+            padding: 0.45rem 0.55rem;
+            box-sizing: border-box;
+        }
+        button {
+            margin-top: 0.5rem;
+            padding: 0.55rem 1rem;
+            cursor: pointer;
+        }
+        pre {
+            background: var(--border);
+            padding: 0.85rem;
+            overflow-x: auto;
+            border-radius: 4px;
+        }
+        #guideOutput {
+            margin-top: 1.5rem;
+        }
+        .steps-overview {
+            background: transparent;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 0.85rem 1rem;
+        }
+    </style>
+  <link rel="stylesheet" href="/resources/shared/site.css">
+</head>
+<body>
+  <main class="wrap">
+    <div id="tool-header"></div>
+    
+
+    <p><strong>What is this tool for?</strong></p>
+    <p>
+        This tool generates a step-by-step setup guide for exposing a home or LAN service on the internet when:
+    </p>
+    <ul>
+        <li>Your <strong>public IP changes</strong> (typical with residential ISPs).</li>
+        <li>Your domain DNS is managed in <strong>cPanel Dynamic DNS</strong>.</li>
+        <li>You want a hostname (for example <em>media.example.com</em>) that always points to your current IP.</li>
+    </ul>
+
+    <div class="steps-overview">
+        <p><strong>The guide covers four steps:</strong></p>
+        <ol>
+            <li><strong>DDNS</strong> — keep your subdomain updated when your public IP changes.</li>
+            <li><strong>Port forwarding</strong> — send traffic from your router to the correct machine on your LAN.</li>
+            <li><strong>Reverse proxy (optional but recommended)</strong> — terminate HTTPS on a server with Nginx.</li>
+            <li><strong>Let's Encrypt</strong> — obtain a free TLS certificate for your domain.</li>
+        </ol>
+    </div>
+
+    <p><strong>Who is this for?</strong></p>
+    <ul>
+        <li>Self-hosters running services like Jellyfin, Nextcloud, Home Assistant, or a personal website.</li>
+        <li>Users with cPanel hosting who can create a Dynamic DNS entry and copy its update URL.</li>
+        <li>Anyone comfortable running a few commands on Linux (Ubuntu/Debian examples are provided).</li>
+    </ul>
+
+    <hr>
+
+    <h2>Before you start — create the DDNS entry in cPanel</h2>
+    <ol>
+        <li>Log in to cPanel for your domain.</li>
+        <li>Open <strong>Domains → Dynamic DNS</strong>.</li>
+        <li>Click <strong>Create</strong> and choose a subdomain (for example <em>media.example.com</em>).</li>
+        <li>Copy the generated <strong>Update URL</strong> (also called webcall URL). You will paste it into the form below.</li>
+        <li>Wait a minute, then confirm the record exists in cPanel DNS / Zone Editor.</li>
+    </ol>
+    <p>
+        Official reference:
+        <a href="https://docs.cpanel.net/cpanel/domains/dynamic-dns/" target="_blank" rel="noopener">Dynamic DNS in cPanel</a>.
+    </p>
+
+    <p><strong>Tips:</strong></p>
+    <ul>
+        <li>Run the DDNS update script on a machine that is usually online (your home server or a small always-on host).</li>
+        <li>Find your LAN IP with <code>ip -4 addr</code> or your router's DHCP/client list. Use the IP of the host running the service or reverse proxy.</li>
+        <li>If you use a reverse proxy, forward ports <strong>80</strong> and <strong>443</strong> to the proxy host — not necessarily to the app port.</li>
+    </ul>
+
+    <hr>
+
+    <h2>Generate your setup guide</h2>
+    <p>Fill in the details for one service. You can submit again for additional hostnames.</p>
+
+    <form id="form">
+        <label for="serviceName">Service name</label>
+        <span class="hint">Short label used in filenames and router rules (for example <em>jellyfin</em>).</span>
+        <input type="text" id="serviceName" placeholder="jellyfin" required>
+
+        <label for="localIP">LAN IP of the target host</label>
+        <span class="hint">Private address of the machine running the app or reverse proxy (for example <em>192.168.1.50</em>).</span>
+        <input type="text" id="localIP" placeholder="192.168.1.50" required pattern="^(?:\d{1,3}\.){3}\d{1,3}$">
+
+        <label for="port">Application port on that host</label>
+        <span class="hint">Port the service listens on locally (for example Jellyfin <em>8096</em>, Home Assistant <em>8123</em>).</span>
+        <input type="text" id="port" placeholder="8096" required pattern="^\d{1,5}$">
+
+        <label for="domain">Public hostname</label>
+        <span class="hint">The full DDNS name you created in cPanel (for example <em>media.example.com</em>).</span>
+        <input type="text" id="domain" placeholder="media.example.com" required>
+
+        <label for="ddnsURL">cPanel DDNS update URL</label>
+        <span class="hint">Paste the full webcall URL from cPanel Dynamic DNS. Treat it like a password — anyone with it can repoint your DNS.</span>
+        <input type="text" id="ddnsURL" placeholder="https://yourdomain.com:2083/cpsess.../cpanelwebcall/..." required>
+
+        <button type="submit">Generate guide</button>
+    </form>
+
+    <hr>
+
+    <div id="guideOutput"></div>
+
+    <script>
+        document.getElementById("form").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const serviceName = document.getElementById("serviceName").value.trim();
+            const localIP = document.getElementById("localIP").value.trim();
+            const port = document.getElementById("port").value.trim();
+            const domain = document.getElementById("domain").value.trim();
+            const ddnsURL = document.getElementById("ddnsURL").value.trim();
+
+            const guide = `
+                <h2>Setup guide: ${serviceName}</h2>
+                <p>Hostname: <strong>${domain}</strong><br>
+                LAN target: <strong>${localIP}:${port}</strong></p>
+
+                <h3>1. Configure Dynamic DNS (DDNS)</h3>
+                <p>Your ISP may change your public IPv4 address. The script below calls cPanel so <strong>${domain}</strong> always points to your current WAN IP.</p>
+
+                <h4>1.1 Test the update URL manually</h4>
+                <p>Run this once on the machine that will keep DDNS updated:</p>
+                <pre>curl -fsS "${ddnsURL}"</pre>
+                <p>Then verify propagation (may take a few minutes):</p>
+                <ul>
+                    <li><a href="https://www.whatsmydns.net/#A/${domain}" target="_blank" rel="noopener">WhatsMyDNS</a> — check the A record for ${domain}</li>
+                    <li>Compare with your public IP: <code>curl -4 ifconfig.me</code></li>
+                </ul>
+
+                <h4>1.2 Automate updates (Ubuntu/Debian)</h4>
+                <pre>mkdir -p ~/scripts
+cat &gt; ~/scripts/update_ddns_${serviceName}.sh &lt;&lt;'EOF'
+#!/usr/bin/env bash
+set -euo pipefail
+curl -fsS "${ddnsURL}"
+EOF
+chmod +x ~/scripts/update_ddns_${serviceName}.sh
+
+# Run every 5 minutes (adjust if you prefer)
+(crontab -l 2&gt;/dev/null; echo "*/5 * * * * $HOME/scripts/update_ddns_${serviceName}.sh &gt;/dev/null 2&gt;&1") | crontab -
+</pre>
+                <p><strong>Note:</strong> keep the update URL private. If it leaks, rotate the Dynamic DNS entry in cPanel.</p>
+
+                <h3>2. Configure router port forwarding</h3>
+                <p>Log in to your router (often <code>192.168.1.1</code> or <code>192.168.0.1</code>) and add forwarding rules so inbound traffic reaches your LAN host.</p>
+
+                <h4>Option A — direct access (HTTP only, no reverse proxy)</h4>
+                <pre># Port forwarding rule
+Name: ${serviceName}
+Protocol: TCP
+WAN / external port: ${port}
+LAN / internal IP: ${localIP}
+LAN / internal port: ${port}
+</pre>
+                <p>Use this only if the app speaks HTTP directly and you do not need HTTPS on the app port.</p>
+
+                <h4>Option B — reverse proxy (recommended for HTTPS)</h4>
+                <p>Forward web ports to the host that will run Nginx (often the same machine as the app):</p>
+                <pre># Rule 1 — HTTP (required for Let's Encrypt HTTP-01)
+Name: ${serviceName}-http
+Protocol: TCP
+WAN port: 80
+LAN IP: ${localIP}
+LAN port: 80
+
+# Rule 2 — HTTPS
+Name: ${serviceName}-https
+Protocol: TCP
+WAN port: 443
+LAN IP: ${localIP}
+LAN port: 443
+</pre>
+
+                <h3>3. Reverse proxy with Nginx (recommended)</h3>
+                <p>Nginx listens on ports 80/443 and forwards requests to your app on <strong>${localIP}:${port}</strong>. Install it on the proxy host (use <code>${localIP}</code> if the app runs on the same machine).</p>
+                <pre>sudo apt update &amp;&amp; sudo apt install nginx -y
+
+sudo tee /etc/nginx/sites-available/${serviceName} &gt; /dev/null &lt;&lt;'EOF'
+server {
+    listen 80;
+    server_name ${domain};
+
+    location / {
+        proxy_pass http://${localIP}:${port};
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        add_header X-Robots-Tag "noindex, nofollow" always;
+    }
+}
+EOF
+
+sudo ln -sf /etc/nginx/sites-available/${serviceName} /etc/nginx/sites-enabled/
+sudo nginx -t
+sudo systemctl reload nginx
+</pre>
+                <p>If Nginx and the app are on the same host, <code>${localIP}</code> and <code>127.0.0.1</code> are usually equivalent.</p>
+
+                <h3>4. Enable HTTPS with Let's Encrypt</h3>
+                <pre>sudo apt install certbot python3-certbot-nginx -y
+sudo certbot --nginx -d ${domain}
+</pre>
+                <p>When prompted, choose to redirect HTTP to HTTPS. Certbot will renew automatically if the cron/systemd timer is active.</p>
+
+                <h3>5. Firewall (if UFW is enabled)</h3>
+                <pre>sudo ufw allow 80/tcp
+sudo ufw allow 443/tcp
+sudo ufw reload
+</pre>
+
+                <h3>6. Verify the final setup</h3>
+                <ol>
+                    <li><strong>DDNS:</strong> ${domain} resolves to your current public IP.</li>
+                    <li><strong>Port forward:</strong> router rules point 80/443 (or ${port}) to ${localIP}.</li>
+                    <li><strong>Local service:</strong> <code>curl -I http://${localIP}:${port}</code> responds on the LAN.</li>
+                    <li><strong>Public URL:</strong> open <code>https://${domain}</code> from outside your network (mobile data works well).</li>
+                </ol>
+
+                <h3>Troubleshooting</h3>
+                <ul>
+                    <li><strong>DNS wrong:</strong> re-run the DDNS script; check the cPanel update URL.</li>
+                    <li><strong>Connection timeout from outside:</strong> confirm port forwarding and that CGNAT is not blocking inbound connections (some ISPs require a business line or IPv6-only workarounds).</li>
+                    <li><strong>Certbot fails:</strong> ensure port 80 reaches Nginx and ${domain} already points to your WAN IP.</li>
+                    <li><strong>502 Bad Gateway:</strong> the app is not listening on ${localIP}:${port}, or a host firewall blocks the proxy.</li>
+                </ul>
+
+                <p><strong>Security reminder:</strong> exposing services increases your attack surface. Keep software updated, use strong authentication, and avoid publishing admin interfaces without extra protection (VPN, IP allowlist, or Authelia/Authentik).</p>
+            `;
+
+            document.getElementById("guideOutput").innerHTML = guide;
+            document.getElementById("guideOutput").scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+    </script>
+  </main>
+  <script src="/resources/shared/site.js"></script>
+  <script>
+    ResourcesSite.mountToolHeader({
+      title: 'Dynamic DNS &amp; Secure Access Configurator for cPanel Users',
+      clientSide: true,
+    });
+  </script>
+  <script src="/resources/shared/theme-toggle.js" defer></script>
+</body>
+</html>

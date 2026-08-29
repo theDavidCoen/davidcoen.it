@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Arkade Explorer QA Sweeper ⚡</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  :root {
+    --purple: #9468fe;
+    --orange: #ff6b35;
+    --blue: #4a9eff;
+    --green: #4ade80;
+    --red: #ef4444;
+    --bg: #f9fafb;
+    --card: white;
+    --text: #1f2937;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #111827;
+      --card: #1f2937;
+      --text: #f3f4f6;
+    }
+  }
+  body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+  }
+  header {
+    background: linear-gradient(135deg, var(--purple), #7c3aed);
+    color: white;
+    padding: 2rem 1rem;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(148, 104, 254, 0.4);
+  }
+  h1 { margin: 0; font-size: 2.5rem; }
+  .subtitle { opacity: 0.9; font-weight: 300; }
+  .container { max-width: 1100px; margin: 2rem auto; padding: 0 1rem; }
+  .stats {
+    display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center;
+    margin: 1.5rem 0; font-size: 1.1rem;
+  }
+  .stat {
+    background: var(--card); padding: 0.8rem 1.5rem; border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1); min-width: 140px;
+  }
+  .progress {
+    height: 12px; background: #e5e7eb; border-radius: 6px; overflow: hidden;
+    margin: 1.5rem 0;
+  }
+  .progress-bar {
+    height: 100%; width: 0%; background: linear-gradient(90deg, #4ade80, #22c55e);
+    transition: width 0.6s ease;
+  }
+  .search-box {
+    width: 100%; padding: 1rem; font-size: 1.1rem; border: 2px solid #ddd;
+    border-radius: 12px; margin-bottom: 1rem;
+  }
+  .section {
+    background: var(--card); border-radius: 12px; padding: 1.5rem;
+    margin-bottom: 1.5rem; box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    border: 1px solid rgba(148,104,254,0.2);
+  }
+  .section h2 {
+    margin-top: 0; cursor: pointer; display: flex; justify-content: space-between;
+    align-items: center; padding-bottom: 0.5rem; border-bottom: 2px solid #eee;
+  }
+  .section h2::after { content: "▼"; font-size: 0.8em; transition: transform 0.3s; }
+  .section.collapsed h2::after { transform: rotate(-90deg); }
+  .section.collapsed .checklist { display: none; }
+  .checklist { margin-top: 1rem; }
+  .item {
+    display: flex; align-items: flex-start; padding: 0.7rem 0;
+    border-bottom: 1px dashed #e5e7eb;
+  }
+  .item:last-child { border-bottom: none; }
+  .item input[type="checkbox"] {
+    margin-right: 12px; transform: scale(1.3); accent-color: var(--purple);
+  }
+  .item label {
+    flex: 1; cursor: pointer; transition: all 0.2s;
+  }
+  .item.pass label { color: var(--green); font-weight: 600; }
+  .item.fail label { color: var(--red); text-decoration: line-through; }
+  .actions { margin-left: 10px; }
+  .btn {
+    background: none; border: none; cursor: pointer; font-size: 1.2rem;
+    padding: 0 6px; opacity: 0.6; transition: 0.2s;
+  }
+  .btn:hover { opacity: 1; transform: scale(1.2); }
+  .btn.fail { color: var(--red); }
+  .summary { text-align: center; margin: 3rem 0; font-size: 1.3rem; }
+  .confetti { pointer-events: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 9999; }
+  footer { text-align: center; padding: 2rem; color: #888; font-size: 0.9rem; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Arkade Explorer QA Sweeper ⚡</h1>
+  <p class="subtitle">One-page lightning-fast checklist • Made with love for you</p>
+</header>
+
+<div class="container">
+  <div class="stats">
+    <div class="stat">Total: <strong id="total">0</strong></div>
+    <div class="stat">Passed: <strong id="passed">0</strong></div>
+    <div class="stat">Failed: <strong id="failed">0</strong></div>
+    <div class="stat">Progress: <strong id="percent">0%</strong></div>
+  </div>
+
+  <div class="progress"><div class="progress-bar" id="progressBar"></div></div>
+
+  <input type="text" class="search-box" placeholder="🔍 Search tests..." id="search">
+
+  <div id="sections"></div>
+
+  <div class="summary">
+    <h2 id="finalMessage">Keep going! You're doing great! 🌟</h2>
+    <button onclick="exportResults()" style="padding:0.8rem 2rem;font-size:1.1rem;margin-top:1rem;">📄 Export Results as JSON</button>
+    <button onclick="resetAll()" style="padding:0.8rem 2rem;font-size:1.1rem;margin-left:1rem;background:#ef4444;color:white;border:none;border-radius:8px;">🔄 Reset All</button>
+  </div>
+</div>
+
+<canvas class="confetti" id="confetti"></canvas>
+
+<footer>Made with caffeine & chaos by your friendly Grok • November 2025</footer>
+
+<script>
+// === TEST DATA ===
+const tests = [
+  { section: "Navigation & Pages", items: [
+    "Home page displays with search bar and feature cards",
+    "Transaction page shows correct transaction details",
+    "Commitment transaction page displays full transaction information",
+    "Address page shows VTXO list and statistics",
+    "404 page appears for invalid URLs",
+    "Header navigation works on all pages",
+    "Footer displays on all pages"
+  ]},
+  { section: "Search Functionality", items: [
+    "Search accepts 64-character hex strings (transaction IDs)",
+    "Search accepts Bitcoin addresses",
+    "Search navigates to correct page after submission",
+    "Search bar clears after successful navigation",
+    "Search available from home page",
+    "Search available from header on all pages",
+    "Recent searches appear below search bar",
+    "Pin icon saves searches to top of recent list",
+    "Unpin icon removes pinned status",
+    "Recent searches persist across sessions (no expiration)"
+  ]},
+  { section: "Transaction Display → Commitment Transactions", items: [
+    "Transaction ID displays correctly",
+    "Copy button copies transaction ID to clipboard",
+    "Started and ended timestamps display",
+    "Total input/output amounts show correctly",
+    "Total input/output VTXO counts display",
+    "Inputs section shows: Regular inputs with outpoint (txid:vout)",
+    "Links to mempool.space for regular inputs",
+    "Forfeit inputs with orange border and \"FORFEIT\" label",
+    "Links to forfeit transaction pages",
+    "Outputs section shows: Batch outputs with orange border and \"Batch #X\" label",
+    "VTXO count for batch outputs",
+    "Arrow button on batch outputs links to root transaction",
+    "Connector outputs with blue border and \"CONNECTOR\" label",
+    "Arrow button on connector outputs links to root connector transaction",
+    "Regular outputs with purple border",
+    "Output amounts display correctly",
+    "Script previews show (truncated)",
+    "Batch list displays all batches",
+    "Each batch shows: amount, VTXO count, expiration, swept status",
+    "Batch tree expands/collapses on click",
+    "Tree shows parent-child transaction relationships",
+    "Raw transaction hex viewer expands/collapses",
+    "Copy button copies raw hex"
+  ]},
+  { section: "Transaction Display → Arkade Transactions", items: [
+    "Transaction details display",
+    "Input/output information shows",
+    "Links to mempool.space work",
+    "Spent/unspent status indicators appear",
+    "Links to spending transactions work",
+    "Forfeit transactions show \"Arkade Operator\" label",
+    "Checkpoint transactions identified correctly"
+  ]},
+  { section: "Address Page", items: [
+    "Address/script displays at top",
+    "Copy button copies address to clipboard",
+    "Statistics card shows: Total balance (sum of active VTXOs)",
+    "Total received amount",
+    "Total VTXO count",
+    "Active VTXOs count",
+    "Spent VTXOs count",
+    "Swept VTXOs count",
+    "VTXO list displays: Status badges (green \"Active\", gray \"Spent\", yellow \"Swept\")",
+    "Outpoint with copy button",
+    "Amount in selected unit (sats/BTC)",
+    "Created timestamp",
+    "Expiration timestamp",
+    "Link to commitment transaction",
+    "Link to spending transaction (if spent)",
+    "Pagination works (10 items per page)",
+    "Page numbers clickable",
+    "Previous/Next buttons work"
+  ]},
+  { section: "Money Display", items: [
+    "Toggle button switches between sats and BTC",
+    "Preference persists after page refresh",
+    "Sats display: comma separators every 3 digits (e.g., \"4,438 sats\")",
+    "BTC display: comma separators every 3 digits from right in decimal",
+    "All amounts update when toggling unit",
+    "Amounts display consistently across all pages"
+  ]},
+  { section: "Theme", items: [
+    "Theme toggle button in header",
+    "Light theme applies correctly",
+    "Dark theme applies correctly",
+    "System theme follows OS preference",
+    "Theme preference persists after page refresh",
+    "All colors change appropriately with theme",
+    "Text remains readable in both themes"
+  ]},
+  { section: "Visual Elements", items: [
+    "Purple borders on regular items",
+    "Orange borders on batches and forfeits",
+    "Blue borders on connectors",
+    "Status badges show correct colors",
+    "Glow effects visible on cards",
+    "Particle rain animation on home page",
+    "Loading spinners appear during data fetch",
+    "Smooth transitions and animations"
+  ]},
+  { section: "Copy Functionality", items: [
+    "Copy buttons show clipboard icon",
+    "Click changes icon to checkmark",
+    "Icon reverts to clipboard after 2 seconds",
+    "Copied text matches displayed text",
+    "Works for: transaction IDs, addresses, outpoints, raw hex"
+  ]},
+  { section: "Links & Navigation", items: [
+    "Internal links navigate within app (no page reload)",
+    "External links (mempool.space) open in new tab",
+    "Back button works correctly",
+    "Forward button works correctly",
+    "Direct URL entry works for all routes",
+    "Batch output arrows navigate to correct transaction",
+    "Connector output arrows navigate to correct transaction",
+    "Forfeit input arrows navigate to correct transaction"
+  ]},
+  { section: "Error Handling", items: [
+    "Error messages display when data fails to load",
+    "Invalid transaction IDs show error",
+    "Invalid addresses show error",
+    "Network errors show user-friendly message",
+    "Missing data shows appropriate placeholder"
+  ]},
+  { section: "Responsive Design", items: [
+    "Layout adapts to mobile screens (< 768px)",
+    "Layout adapts to tablet screens (768px - 1024px)",
+    "Layout adapts to desktop screens (> 1024px)",
+    "Search bar usable on mobile",
+    "Tables/lists scroll horizontally on mobile if needed",
+    "Buttons remain clickable on all screen sizes",
+    "Text remains readable at all sizes"
+  ]},
+  { section: "Loading States", items: [
+    "Loading spinner shows while fetching data",
+    "Spinner disappears when data loads",
+    "Page doesn't show stale data during loading",
+    "Multiple spinners don't overlap"
+  ]},
+  { section: "Data Accuracy", items: [
+    "Transaction amounts match blockchain data",
+    "Timestamps display in local timezone",
+    "VTXO counts are accurate",
+    "Status badges reflect actual status",
+    "Links point to correct transactions",
+    "Batch information matches commitment transaction"
+  ]},
+  { section: "Performance", items: [
+    "Pages load within 2-3 seconds",
+    "Navigation between pages is instant",
+    "Search results appear quickly",
+    "No lag when toggling theme/unit",
+    "Smooth scrolling on long lists",
+    "No memory leaks during extended use"
+  ]}
+];
+
+// === RENDER ===
+const container = document.getElementById('sections');
+let totalChecks = 0;
+
+tests.forEach((group, i) => {
+  const sec = document.createElement('div');
+  sec.className = 'section';
+  sec.innerHTML = `<h2 onclick="this.parentNode.classList.toggle('collapsed')">${group.section}</h2><div class="checklist"></div>`;
+  const list = sec.querySelector('.checklist');
+
+  group.items.forEach((text, j) => {
+    const id = `check-${i}-${j}`;
+    totalChecks++;
+    const div = document.createElement('div');
+    div.className = 'item';
+    div.innerHTML = `
+      <input type="checkbox" id="${id}" onchange="updateStatus(this)">
+      <label for="${id}">${text}</label>
+      <div class="actions">
+        <button class="btn fail" onclick="toggleFail(this.parentNode.parentNode)" title="Mark as Failed">✗</button>
+      </div>
+    `;
+    list.appendChild(div);
+  });
+
+  container.appendChild(sec);
+});
+
+document.getElementById('total').textContent = totalChecks;
+
+// === STATE MANAGEMENT ===
+function updateProgress() {
+  const checks = document.querySelectorAll('input[type="checkbox"]');
+  const passed = Array.from(checks).filter(c => c.checked && !c.dataset.fail).length;
+  const failed = Array.from(checks).filter(c => c.dataset.fail === 'true').length;
+  const percent = Math.round((passed + failed) / totalChecks * 100);
+
+  document.getElementById('passed').textContent = passed;
+  document.getElementById('failed').textContent = failed;
+  document.getElementById('percent').textContent = percent + '%';
+  document.getElementById('progressBar').style.width = percent + '%';
+
+  const msg = document.getElementById('finalMessage');
+  if (percent === 100 && failed === 0) {
+    msg.textContent = "🎉 ALL TESTS PASSED! You're a QA legend! 🎉";
+    confettiRain();
+  } else if (percent === 100) {
+    msg.textContent = "Done! But some failures... time for bug hunting 🐛";
+  } else if (percent > 70) {
+    msg.textContent = "Looking solid! Keep rocking! 🚀";
+  }
+}
+
+function toggleFail(itemDiv) {
+  const cb = itemDiv.querySelector('input[type="checkbox"]');
+  cb.dataset.fail = cb.dataset.fail === 'true' ? 'false' : 'true';
+  itemDiv.classList.toggle('fail', cb.dataset.fail === 'true');
+  if (cb.dataset.fail === 'true') cb.checked = true;
+  updateProgress();
+  saveState();
+}
+
+function updateStatus(cb) {
+  const item = cb.parentNode;
+  item.classList.toggle('pass', cb.checked && cb.dataset.fail !== 'true');
+  updateProgress();
+  saveState();
+}
+
+// Search
+document.getElementById('search').addEventListener('input', e => {
+  const term = e.target.value.toLowerCase();
+  document.querySelectorAll('.item').forEach(item => {
+    const text = item.textContent.toLowerCase();
+    item.style.display = text.includes(term) ? 'flex' : 'none';
+  });
+});
+
+// Save/Load state
+function saveState() {
+  const state = {};
+  document.querySelectorAll('input[type="checkbox"]').forEach(cb => {
+    state[cb.id] = { checked: cb.checked, fail: cb.dataset.fail === 'true' };
+  });
+  localStorage.setItem('arkade-qa-state', JSON.stringify(state));
+}
+
+function loadState() {
+  const saved = localStorage.getItem('arkade-qa-state');
+  if (!saved) return;
+  const state = JSON.parse(saved);
+  Object.keys(state).forEach(id => {
+    const cb = document.getElementById(id);
+    if (cb) {
+      cb.checked = state[id].checked;
+      cb.dataset.fail = state[id].fail;
+      const item = cb.parentNode;
+      if (state[id].fail) item.classList.add('fail');
+      if (state[id].checked && !state[id].fail) item.classList.add('pass');
+    }
+  });
+  updateProgress();
+}
+
+function resetAll() {
+  if (confirm('Reset all progress?')) {
+    localStorage.removeItem('arkade-qa-state');
+    location.reload();
+  }
+}
+
+function exportResults() {
+  const results = { date: new Date().toISOString(), total: totalChecks, tests: [] };
+  document.querySelectorAll('.section').forEach(sec => {
+    const sectionName = sec.querySelector('h2').textContent;
+    const items = [];
+    sec.querySelectorAll('.item').forEach(item => {
+      const cb = item.querySelector('input');
+      items.push({
+        text: item.querySelector('label').textContent,
+        passed: cb.checked && !cb.dataset.fail,
+        failed: cb.dataset.fail === 'true'
+      });
+    });
+    results.tests.push({ section: sectionName, items });
+  });
+  const blob = new Blob([JSON.stringify(results, null, 2)], {type: 'application/json'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = `arkade-qa-results-${new Date().toISOString().slice(0,10)}.json`;
+  a.click();
+}
+
+// Confetti celebration
+function confettiRain() {
+  const canvas = document.getElementById('confetti');
+  const ctx = canvas.getContext('2d');
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+
+  const pieces = [];
+  const colors = ['#f87171','#fb923c','#fbbf24','#a3e635','#34d399','#22d3ee','#818cf8','#c084fc'];
+
+  for(let i=0;i<300;i++){
+    pieces.push({
+      x: Math.random()*canvas.width,
+      y: Math.random()*canvas.height,
+      r: Math.random()*4+1,
+      d: Math.random()*10+1,
+      color: colors[Math.floor(Math.random()*colors.length)],
+      tilt: Math.random()*10-5,
+      tiltAngle: 0
+    });
+  }
+
+  let animationFrame;
+  function draw(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    pieces.forEach(p => {
+      p.tiltAngle += 0.1;
+      p.tilt = Math.sin(p.tiltAngle) * 15;
+      ctx.beginPath();
+      ctx.lineWidth = p.r;
+      ctx.strokeStyle = p.color;
+      ctx.moveTo(p.x + p.tilt + p.r/2, p.y);
+      ctx.lineTo(p.x + p.tilt - p.r/2, p.y + p.tilt + p.r);
+      ctx.stroke();
+      p.y += p.d;
+      if (p.y > canvas.height) p.y = -10;
+    });
+    animationFrame = requestAnimationFrame(draw);
+  }
+  draw();
+  setTimeout(() => {
+    cancelAnimationFrame(animationFrame);
+    canvas.getContext('2d').clearRect(0,0,canvas.width,canvas.height);
+  }, 8000);
+}
+
+// Init
+loadState();
+updateProgress();
+</script>
+</body>
+</html>

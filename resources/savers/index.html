@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <script>
+    (function () {
+      var theme = localStorage.getItem("davidcoen_theme");
+      if (theme === "light" || theme === "dark") {
+        document.documentElement.setAttribute("data-theme", theme);
+      }
+    })();
+  </script>
+    <title>THORChain Chains Status</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="/resources/shared/site.css">
+</head>
+<body>
+  <main class="wrap">
+    <div id="tool-header"></div>
+    
+    <table>
+      <thead>
+        <tr>
+          <th>Chain</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody id="table-body">
+      </tbody>
+    </table>
+<p id="last-update-time"></p>
+    <script src="app.js"></script>
+
+<p style="text-align:center">Data from the public THORNode API
+(<a href="https://gateway.liquify.com/chain/thorchain_api/thorchain/inbound_addresses" target="_blank" rel="noopener">Liquify gateway</a>,
+fallback <a href="https://thornode.thorchain.network/thorchain/inbound_addresses" target="_blank" rel="noopener">thornode.thorchain.network</a>).
+<br>Double-check the raw JSON before relying on status for inbound funds.</p>
+  </main>
+  <script src="/resources/shared/site.js"></script>
+  <script>
+    ResourcesSite.mountToolHeader({
+      title: 'THORChain Chains Status',
+      clientSide: true,
+    });
+  </script>
+  <script src="/resources/shared/theme-toggle.js" defer></script>
+</body>
+</html>

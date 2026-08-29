@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sections>
+  <!-- Navigation & Pages -->
+  <section>
+    <name>Navigation & Pages</name>
+    <description>Tests for navigation and core pages in Arkade Explorer</description>
+    <case id="C001">
+      <title>Home page displays with search bar and feature cards</title>
+      <type>1</type>
+      <priority>3</priority>
+      <custom>
+        <preconds>Browser is open and internet connection is available.</preconds>
+        <steps>
+          1. Navigate to https://explorer.arkade.sh
+        </steps>
+        <expected>A search bar is visible at the top, and at least 3 feature cards (e.g., for transactions, addresses) are displayed below it.</expected>
+      </custom>
+    </case>
+    <case id="C002">
+      <title>Transaction page shows correct transaction details</title>
+      <type>1</type>
+      <priority>3</priority>
+      <custom>
+        <preconds>Valid transaction ID available (e.g., f4184fc596403b9d638783cf57adfe4c75c605f6356fbc91338530e9831e9e16).</preconds>
+        <steps>
+          1. Search for a valid transaction ID or navigate to /tx/{txid}.
+        </steps>
+        <expected>Page loads with transaction ID, inputs, outputs, amounts, and timestamps matching blockchain data.</expected>
+      </custom>
+    </case>
+    <case id="C003">
+      <title>Commitment transaction page displays full transaction information</title>
+      <type>1</type>
+      <priority>3</priority>
+      <custom>
+        <preconds>Valid commitment transaction ID.</preconds>
+        <steps>
+          1. Navigate to a commitment transaction page.
+        </steps>
+        <expected>Full details including batch list, tree view, raw hex, inputs/outputs, and timestamps are visible.</expected>
+      </custom>
+    </case>
+    <case id="C004">
+      <title>Address page shows VTXO list and statistics</title>
+      <type>1</type>
+      <priority>3</priority>
+      <custom>
+        <preconds>Valid Bitcoin address (e.g., tb1qw508d6qejxtdg4y5r3zarvary0c5xw7kxpjzsx).</preconds>
+        <steps>
+          1. Search for a valid address or navigate to /address/{addr}.
+        </steps>
+        <expected>Statistics card (balance, received, VTXO counts) and paginated VTXO list are displayed.</expected>
+      </custom>
+    </case>
+    <case id="C005">
+      <title>404 page appears for invalid URLs</title>
+      <type>1</type>
+      <priority>3</priority>
+      <custom>
+        <steps>
+          1. Navigate to an invalid URL (e.g., https://explorer.arkade.sh/invalid).
+        </steps>
+        <expected>A 404 error page is shown with a user-friendly message.</expected>
+      </custom>
+    </case>
+    <case id="C006">
+      <title>Header navigation works on all pages</title>
+      <type>1</type>
+      <priority>3</priority>
+      <custom>
+        <preconds>On any non-home page (e.g., transaction page).</preconds>
+        <steps>
+          1. Click header links (e.g., Home, Search).
+        </steps>
+        <expected>Navigates to the correct page without full reload.</expected>
+      </custom>
+    </case>
+    <case id="C007">
+      <title>Footer displays on all pages</title>
+      <type>1</type>
+      <priority>3</priority>
+      <custom>
+        <steps>
+          1. Navigate to multiple pages (home, tx, address).
+        </steps>
+        <expected>Footer with links/copyright is visible on every page.</expected>
+      </custom>
+    </case>
+  </section>
+
+  <!-- Search Functionality -->
+  <section>
+    <name>Search Functionality</name>
+    <description>Tests for search bar and recent searches</description>
+    <case id="C010">
+      <title>Search accepts 64-character hex strings (transaction IDs)</title>
+      <type>1</type>
+      <priority>3</priority>
+      <custom>
+        <preconds>On home page.</preconds>
+        <steps>
+          1. Enter a 64-char hex string (e.g., a1b2c3d4e5f6789012345678901234567890123456789012345678901234567) in search bar.
+          2. Submit.
+        </steps>
+        <expected>Navigates to transaction page if valid; no error for format.</expected>
+      </custom>
+    </case>
+    <case id="C011">
+      <title>Search accepts Bitcoin addresses</title>
+      <type>1</type>
+      <priority>3</priority>
+      <custom>
+        <preconds>On home page.</preconds>
+        <steps>
+          1. Enter a valid Bitcoin address (e.g., tb1qw508d6qejxtdg4y5r3zarvary0c5xw7kxpjzsx).
+          2. Submit.
+        </steps>
+        <expected>Navigates to address page.</expected>
+      </custom>
+    </case>
+    <case id="C012">
+      <title>Search navigates to correct page after submission</title>
+      <type>1</type>
+      <priority>3</priority>
+      <custom>
+        <preconds>On home page.</preconds>
+        <steps>
+          1. Search for valid tx ID or address.
+        </steps>
+        <expected>URL changes to /tx/{id} or /address/{addr}.</expected>
+      </custom>
+    </case>
+    <case id="C013">
+      <title>Search bar clears after successful navigation</title>
+      <type>1</type>
+      <priority>3</priority>
+      <custom>
+        <preconds>On home page.</preconds>
+        <steps>
+          1. Enter query and submit successfully.
+        </steps>
+        <expected>Search input field is empty after navigation.</expected>
+      </custom>
+    </case>
+    <case id="C014">
+      <title>Search available from home page</title>
+      <type>1</type>
+      <priority>3</priority>
+      <custom>
+        <steps>
+          1. Load home page.
+        </steps>
+        <expected>Search bar is visible and functional.</expected>
+      </custom>
+    </case>
+    <case id="C015">
+      <title>Search available from header on all pages</title>
+      <type>1</type>
+      <priority>3</priority>
+      <custom>
+        <preconds>On

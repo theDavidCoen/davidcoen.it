@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html data-theme="light" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Primary Meta Tags -->
+    <title>Nostr broadcast</title>
+    <meta name="title" content="Nostr broadcast" />
+    <meta
+      name="description"
+      content="Fetch, backup and broadcast your Nostr events" />
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://nostr-broadcast.pages.dev/" />
+    <meta property="og:title" content="Nostr broadcast" />
+    <meta
+      property="og:description"
+      content="Fetch, backup and broadcast your Nostr events" />
+    <meta property="og:image" content="/resources/nostr-broadcast/img/nostr-broadcast_og.png" />
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://nostr-broadcast.pages.dev/" />
+    <meta property="twitter:title" content="Nostr broadcast" />
+    <meta
+      property="twitter:description"
+      content="Fetch, backup and broadcast your Nostr events" />
+    <meta property="twitter:image" content="/resources/nostr-broadcast/img/nostr-broadcast_twitter.png" />
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/resources/nostr-broadcast/img/broadcast.png" type="image/x-icon" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/nostr-broadcast.css" />
+    <!-- Lightning -->
+    <meta name="lightning" content="bordalix@getalby.com" />
+    <!-- PWA -->
+    <meta name="theme-color" content="#ffffff" />
+    <link rel="apple-touch-icon" href="/resources/nostr-broadcast/img/broadcast-192.png" />
+ <style>
+      .go-back {
+        position: relative;
+        top: 10px;
+        left: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="/resources/" class="go-back">← Resources</a>
+    <main class="container">
+      <div class="space-between">
+        <h1>Nostr broadcast</h1>
+        <p>
+          <a href="https://github.com/bordalix/nostr-broadcast"
+            ><img src="img/github.png"
+          /></a>
+          <a href="https://twitter.com/bordalix/status/1623293175128379393"
+            ><img src="img/twitter.png"
+          /></a>
+        </p>
+      </div>
+      <p>Fetch, backup and broadcast your events.</p>
+      <details>
+        <summary>Know more</summary>
+        <p>
+          This app will fetch your events from a big list of relays, generate a
+          json file for your backup, and broadcast all events to known relays.
+        </p>
+        <p>
+          If you want to use your own
+          <a
+            href="https://github.com/bordalix/nostr-broadcast/blob/master/js/relays.js"
+            >list of relays</a
+          >:
+        </p>
+        <ul>
+          <li>
+            Clone <a href="https://github.com/bordalix/nostr-broadcast">repo</a>
+          </li>
+          <li>Edit js/relays.js</li>
+          <li>Open index.html with a browser</li>
+        </ul>
+        <p>
+          Repo at
+          <a href="https://github.com/bordalix/nostr-broadcast"
+            >https://github.com/bordalix/nostr-broadcast</a
+          >
+        </p>
+        <p>
+          Twitter
+          <a href="https://twitter.com/bordalix/status/1623293175128379393"
+            >thread</a
+          >
+          for discussion
+        </p>
+      </details>
+      <div class="box gray">
+        <p style="margin-bottom: 0">
+          Find your Nostr events via your public key
+        </p>
+        <form>
+          <div class="space-between">
+            <p>
+              <input
+                type="text"
+                id="pubkey"
+                name="pubkey"
+                placeholder="Public key (npub or hex)"
+                style="width: 200px"
+                required />
+            </p>
+            <p><button id="broadcast">Fetch & Broadcast</button></p>
+          </div>
+        </form>
+      </div>
+      <div class="box">
+        <div class="space-between">
+          <p id="fetching-status"></p>
+          <p style="padding-top: 2px">
+            <progress
+              type="range"
+              id="fetching-progress"
+              name="fetching-progress"
+              min="0"
+              max="20"
+              value="0"
+              style="visibility: hidden" />
+          </p>
+        </div>
+        <div class="space-between">
+          <p id="file-download"></p>
+          <p id="events-found"></p>
+        </div>
+        <div class="space-between">
+          <p id="broadcasting-status"></p>
+          <p style="padding-top: 2px">
+            <progress
+              type="range"
+              id="broadcasting-progress"
+              name="broadcasting-progress"
+              min="0"
+              max="20"
+              value="0"
+              style="visibility: hidden" />
+          </p>
+        </div>
+      </div>
+    </main>
+
+    <script src="https://bundle.run/buffer@6.0.3"></script>
+    <script src="https://bundle.run/bech32@2.0.0"></script>
+    <script src="https://bundle.run/noble-secp256k1@1.2.14"></script>
+    <script src="js/jquery-3.6.2.min.js"></script>
+    <script src="js/relays.js"></script>
+    <script src="js/nostr-broadcast.js"></script>
+  </body>
+</html>

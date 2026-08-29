@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <script>
+    (function () {
+      var theme = localStorage.getItem("davidcoen_theme");
+      if (theme === "light" || theme === "dark") {
+        document.documentElement.setAttribute("data-theme", theme);
+      }
+    })();
+  </script>
+  <title>Word List Table Generator</title>
+  <link rel="stylesheet" href="/resources/shared/site.css">
+</head>
+<body>
+  <main class="wrap">
+    <div id="tool-header"></div>
+    
+  <form>
+    <label for="wordList">Enter a list of words:</label><br>
+    <textarea id="wordList" name="wordList" rows="10" cols="30"></textarea><br>
+    <button type="button" onclick="generateTable()">Generate Table</button>
+  </form>
+  <br>
+  <table id="wordTable">
+    <thead>
+      <tr>
+        <th>Number</th>
+        <th>Word</th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+
+  <script src="script.js"></script>
+  </main>
+  <script src="/resources/shared/site.js"></script>
+  <script>
+    ResourcesSite.mountToolHeader({
+      title: 'Word List Table Generator',
+      clientSide: true,
+    });
+  </script>
+  <script src="/resources/shared/theme-toggle.js" defer></script>
+</body>
+</html>
+</html>

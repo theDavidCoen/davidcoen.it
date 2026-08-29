@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <script>
+    (function () {
+      var theme = localStorage.getItem("davidcoen_theme");
+      if (theme === "light" || theme === "dark") {
+        document.documentElement.setAttribute("data-theme", theme);
+      }
+    })();
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Check if SEPA transfers are up or paused today, and find out if Bitcoin is running smoothly!">
+  <meta name="keywords" content="SEPA, Bitcoin, SEPA Transfer, Bank Transfer, Bitcoin Network, ECB, TARGET2, Crypto, Donation, Bitcoin Donation">
+  <meta name="author" content="David Coen">
+  <title>SEPA vs Bitcoin Status</title>
+  <link rel="stylesheet" href="/resources/shared/site.css">
+  <style>
+    .sepa-page {
+      text-align: center;
+    }
+    .description {
+      font-size: 1.05rem;
+      color: var(--muted);
+      margin-bottom: 2rem;
+    }
+    .status-container {
+      margin: 1.25rem auto;
+      padding: 1.5rem;
+      border-radius: 12px;
+      width: 100%;
+      max-width: 28rem;
+      border: 1px solid var(--border);
+      background: var(--bg);
+    }
+    .sepa,
+    .bitcoin {
+      font-weight: 700;
+      font-size: 1.1rem;
+      margin-top: 0.75rem;
+    }
+    .sepa {
+      color: #c0392b;
+    }
+    .sepa.up {
+      color: #1e8e3e;
+    }
+    .bitcoin {
+      color: #1e8e3e;
+    }
+    .logo {
+      width: 40px;
+      height: 40px;
+      vertical-align: middle;
+      margin-right: 10px;
+      object-fit: contain;
+    }
+    .donate-section {
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .btcpay-form {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .btcpay-custom {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .btcpay-form select {
+      appearance: none;
+      color: currentColor;
+      background: transparent;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      display: block;
+      padding: 0.35rem 0.5rem;
+      margin: 0 auto;
+      font-size: 0.85rem;
+      cursor: pointer;
+    }
+    .btcpay-input-price {
+      appearance: textfield;
+      border: 1px solid var(--border);
+      box-shadow: none;
+      text-align: center;
+      font-size: 1.35rem;
+      margin: auto;
+      border-radius: 6px;
+      line-height: 1.6;
+      background: var(--bg);
+      color: var(--fg);
+      width: 3.5em;
+    }
+    .btcpay-input-price::-webkit-outer-spin-button,
+    .btcpay-input-price::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+    .btcpay-submit {
+      min-width: 168px;
+      min-height: 46px;
+      border-radius: 4px;
+      border-style: none;
+      background-color: #0f3b21;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 0.75rem;
+    }
+    .btcpay-submit span {
+      color: #fff;
+    }
+    .btcpay-submit img {
+      height: 40px;
+      display: inline-block;
+      padding: 5% 0 5% 5px;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap sepa-page">
+    <div id="tool-header"></div>
+
+    <p class="description">Check if SEPA bank transfers are working today... or if you should just use Bitcoin instead.</p>
+
+    <div class="status-container" id="sepa-container">
+      <h2>
+        <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/c/cb/Logo_European_Central_Bank.svg" alt="ECB Logo" width="40" height="40" loading="lazy">
+        SEPA Transfer System
+      </h2>
+      <div id="sepa-status">Checking...</div>
+    </div>
+
+    <div class="status-container" id="bitcoin-container">
+      <h2>
+        <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/4/46/Bitcoin.svg" alt="Bitcoin Logo" width="40" height="40" loading="lazy">
+        Bitcoin Network
+      </h2>
+      <div id="bitcoin-status">Checking...</div>
+    </div>
+
+    <div class="donate-section">
+      <p><strong>Like this tool? Support me with a few sats!</strong></p>
+
+      <form method="POST" action="https://btcpay.davidcoen.it/api/v1/invoices" class="btcpay-form">
+        <input type="hidden" name="storeId" value="4vbUUWVJ84PCq87v2Zw8w4rsQ3pC6jAh19BatSEcmtwG" />
+        <div class="btcpay-custom-container">
+          <div class="btcpay-custom">
+            <input class="btcpay-input-price" type="number" name="price" min="100" max="1000000" step="1" value="100" data-price="100" />
+          </div>
+          <select name="currency">
+            <option value="SATS" selected>SATS</option>
+            <option value="USD">USD</option>
+            <option value="GBP">GBP</option>
+            <option value="EUR">EUR</option>
+            <option value="BTC">BTC</option>
+          </select>
+        </div>
+        <button type="submit" class="btcpay-submit" name="submit" title="Pay with BTCPay Server, a Self-Hosted Bitcoin Payment Processor">
+          <span>Donate with</span>
+          <img src="/assets/btcpay-paybutton-logo.svg" alt="BTCPay Server" width="120" height="40">
+        </button>
+      </form>
+    </div>
+
+    <script>
+      function calculateEaster(year) {
+        const f = Math.floor;
+        const G = year % 19;
+        const C = f(year / 100);
+        const H = (C - f(C / 4) - f((8 * C + 13) / 25) + 19 * G + 15) % 30;
+        const I = H - f(H / 28) * (1 - f(29 / (H + 1)) * f((21 - G) / 11));
+        const J = (year + f(year / 4) + I + 2 - C + f(C / 4)) % 7;
+        const L = I - J;
+        const month = 3 + f((L + 40) / 44);
+        const day = L + 28 - 31 * f(month / 4);
+        return new Date(year, month - 1, day);
+      }
+
+      function formatDateLocal(date) {
+        const year = date.getFullYear();
+        const month = String(date.getMonth() + 1).padStart(2, '0');
+        const day = String(date.getDate()).padStart(2, '0');
+        return `${year}-${month}-${day}`;
+      }
+
+      function getManualClosures() {
+        return [];
+      }
+
+      function isTarget2Closed(date) {
+        const year = date.getFullYear();
+        const easterSunday = calculateEaster(year);
+
+        const goodFriday = new Date(easterSunday);
+        goodFriday.setDate(easterSunday.getDate() - 2);
+
+        const easterMonday = new Date(easterSunday);
+        easterMonday.setDate(easterSunday.getDate() + 1);
+
+        const holidays = [
+          `${year}-01-01`,
+          formatDateLocal(goodFriday),
+          formatDateLocal(easterMonday),
+          `${year}-05-01`,
+          `${year}-12-25`,
+          `${year}-12-26`,
+          `${year}-12-31`,
+          ...getManualClosures(year),
+        ];
+
+        const day = date.getDay();
+        if (day === 0 || day === 6) {
+          return true;
+        }
+
+        const todayStr = formatDateLocal(date);
+        return holidays.includes(todayStr);
+      }
+
+      function updateStatus() {
+        const sepaStatusDiv = document.getElementById('sepa-status');
+        const bitcoinStatusDiv = document.getElementById('bitcoin-status');
+        const today = new Date();
+
+        if (isTarget2Closed(today)) {
+          sepaStatusDiv.textContent = 'SEPA transfers are PAUSED today!';
+          sepaStatusDiv.className = 'sepa';
+        } else {
+          sepaStatusDiv.textContent = 'SEPA transfers are UP and RUNNING!';
+          sepaStatusDiv.className = 'sepa up';
+        }
+
+        bitcoinStatusDiv.textContent = 'Bitcoin network is UP and RUNNING!';
+        bitcoinStatusDiv.className = 'bitcoin';
+      }
+
+      document.querySelectorAll('.btcpay-input-price').forEach(function (el) {
+        el.addEventListener('input', function (event) {
+          const price = parseInt(event.target.dataset.price, 10);
+          const min = parseInt(event.target.getAttribute('min'), 10) || 1;
+          const max = parseInt(event.target.getAttribute('max'), 10);
+          if (isNaN(event.target.value)) {
+            event.target.value = price;
+          } else if (event.target.value < min) {
+            event.target.value = min;
+          } else if (event.target.value > max) {
+            event.target.value = max;
+          }
+        });
+      });
+
+      updateStatus();
+    </script>
+  </main>
+  <script src="/resources/shared/site.js"></script>
+  <script>
+    ResourcesSite.mountToolHeader({
+      title: 'SEPA vs Bitcoin Status',
+      clientSide: true,
+    });
+  </script>
+  <script src="/resources/shared/theme-toggle.js" defer></script>
+</body>
+</html>

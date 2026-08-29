@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  <script>
+    (function () {
+      var theme = localStorage.getItem("davidcoen_theme");
+      if (theme === "light" || theme === "dark") {
+        document.documentElement.setAttribute("data-theme", theme);
+      }
+    })();
+  </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Lightning Offer (BOLT12) to BIP353 Lightning Address</title>
+  <link rel="stylesheet" href="/resources/shared/site.css">
+</head>
+<body>
+  <main class="wrap">
+    <div id="tool-header"></div>
+    
+    <p>This simple tool helps you to create a TXT record you can use with your own domain to create custom Lightning Addresses compatible with <a href="https://bips.dev/353/" target="_blank">BIP353</a>.
+<br>The result will be a Lightning Address in the form "username@yourdomain".
+<br>Note: in order for the Lightning Address to work, you need to have DNSSEC enabled on your domain.</p>
+
+    <form id="offerForm">
+        <label for="offer">Enter Lightning Offer (BOLT12):</label><br>
+        <input type="text" id="offer" name="offer" required><br><br>
+
+        <label for="username">Enter Username:</label><br>
+        <input type="text" id="username" name="username" required><br><br>
+
+        <input type="submit" value="Generate TXT Record">
+    </form>
+    <p id="error" style="color: red;"></p>
+    <h2>Generated TXT Record</h2>
+    <div>
+        <label for="nameField">name:</label>
+        <span id="nameField"></span>
+        <button onclick="copyToClipboard('nameField')">Copy</button>
+    </div>
+    <div>
+        <label for="valueField">value:</label>
+        <span id="valueField"></span>
+        <button onclick="copyToClipboard('valueField')">Copy</button>
+    </div>
+
+    <script src="script.js"></script>
+  </main>
+  <script src="/resources/shared/site.js"></script>
+  <script>
+    ResourcesSite.mountToolHeader({
+      title: 'Lightning Offer (BOLT12) to BIP353 Lightning Address',
+      clientSide: true,
+    });
+  </script>
+  <script src="/resources/shared/theme-toggle.js" defer></script>
+</body>
+</html>
+</html>

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Search</title>
+  <style>
+      @font-face {
+        font-family: "Nunito";
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: local("Nunito Regular"), local("Nunito-Regular"),
+          url(https://fonts.gstatic.com/s/nunito/v12/XRXV3I6Li01BKofIOOaBTMnFcQIG.woff2)
+            format("woff2");
+        unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF,
+          U+A640-A69F, U+FE2E-FE2F;
+      }
+      @font-face {
+        font-family: "Nunito";
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: local("Nunito Regular"), local("Nunito-Regular"),
+          url(https://fonts.gstatic.com/s/nunito/v12/XRXV3I6Li01BKofIMeaBTMnFcQIG.woff2)
+            format("woff2");
+        unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+      }
+      @font-face {
+        font-family: "Nunito";
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: local("Nunito Regular"), local("Nunito-Regular"),
+          url(https://fonts.gstatic.com/s/nunito/v12/XRXV3I6Li01BKofIOuaBTMnFcQIG.woff2)
+            format("woff2");
+        unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169,
+          U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+      }
+      @font-face {
+        font-family: "Nunito";
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: local("Nunito Regular"), local("Nunito-Regular"),
+          url(https://fonts.gstatic.com/s/nunito/v12/XRXV3I6Li01BKofIO-aBTMnFcQIG.woff2)
+            format("woff2");
+        unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB,
+          U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+      }
+      @font-face {
+        font-family: "Nunito";
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: local("Nunito Regular"), local("Nunito-Regular"),
+          url(https://fonts.gstatic.com/s/nunito/v12/XRXV3I6Li01BKofINeaBTMnFcQ.woff2)
+            format("woff2");
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6,
+          U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193,
+          U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+
+      body {
+        background: #1b2f3b;
+        background-image: linear-gradient(135deg, #06090c 0, #1b2f3b 100%);
+        font: 300 18px/2em Nunito, sans-serif;
+        color: #fff;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        font-size: 16px;
+        line-height: 28px;
+        margin: 0;
+        padding: 0;
+      }
+
+      .wrap {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        padding: 2rem 1rem 3rem;
+        box-sizing: border-box;
+      }
+
+      .wrap.has-results {
+        align-items: flex-start;
+      }
+
+      .container {
+        text-align: center;
+        padding: 1rem;
+        max-width: 42rem;
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+      a {
+        color: #fff;
+      }
+
+      a:hover {
+        color: #66eda8;
+      }
+
+      a.button,
+      button.button {
+        margin: 0 15px;
+        transition: all 250ms cubic-bezier(0.23, 1, 0.32, 1);
+        display: inline-block;
+        text-decoration: none;
+        padding: 10px 30px;
+        border: 2px solid #fff;
+        border-radius: 8px;
+        background: transparent;
+        color: #fff;
+        font: inherit;
+        cursor: pointer;
+      }
+
+      a.button:hover,
+      button.button:hover {
+        border-color: #66eda8;
+        color: #66eda8;
+      }
+
+      .lead {
+        margin: 1.25rem 0 0.75rem;
+      }
+
+      #orderID {
+        display: block;
+        width: 100%;
+        max-width: 32rem;
+        margin: 0 auto 1rem;
+        box-sizing: border-box;
+        padding: 10px 14px;
+        border: 2px solid #fff;
+        border-radius: 8px;
+        background: transparent;
+        color: #fff;
+        font: inherit;
+        resize: vertical;
+        min-height: 3.25rem;
+      }
+
+      #orderID::placeholder {
+        color: rgba(255, 255, 255, 0.55);
+      }
+
+      #orderID:focus {
+        outline: none;
+        border-color: #66eda8;
+      }
+
+      .search-row {
+        margin-bottom: 1.25rem;
+      }
+
+      #results {
+        text-align: left;
+        margin: 0 auto 1.5rem;
+        max-width: 32rem;
+      }
+
+      .status-msg {
+        text-align: center;
+        margin: 0.75rem 0;
+      }
+
+      .status-msg.warn {
+        color: #66eda8;
+      }
+
+      .result-card {
+        border: 2px solid #fff;
+        border-radius: 8px;
+        padding: 16px 18px;
+        margin: 0 0 12px;
+        line-height: 1.45;
+        overflow-wrap: break-word;
+      }
+
+      .result-card h2 {
+        margin: 0 0 4px;
+        font-size: 1.05em;
+        font-weight: 400;
+        line-height: 1.3;
+      }
+
+      .result-kind {
+        color: #66eda8;
+        font-size: 0.85em;
+        margin: 0 0 10px;
+        line-height: 1.35;
+      }
+
+      .result-card p {
+        margin: 0.4rem 0;
+      }
+
+      .result-actions {
+        margin: 10px 0 2px;
+      }
+
+      a.button.result-link {
+        margin: 0 8px 8px 0;
+        padding: 6px 16px;
+        font-size: 0.9em;
+        line-height: 1.3;
+      }
+
+      .footnote {
+        font-size: 0.9em;
+        opacity: 0.9;
+        line-height: 1.55;
+        margin-top: 1.5rem;
+        text-align: left;
+      }
+
+      .wrap.has-results .footnote {
+        display: none;
+      }
+
+      .footnote code {
+        font-family: inherit;
+        color: #66eda8;
+      }
+
+      @media (min-width: 768px) {
+        body {
+          font-size: 18px;
+          line-height: 32px;
+        }
+      }
+    </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="container">
+      <svg width="102" height="30" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <defs>
+          <path id="a" d="M16.698 17.195V.222H.021v16.973h16.677z"></path>
+        </defs>
+        <g fill="none" fill-rule="evenodd">
+          <path d="M41.514 13.26c-.395-2.236-2.369-4.045-4.836-4.045-2.335 0-4.44 1.579-4.835 4.046h9.67zm-9.704 2.632c.658 2.664 2.829 4.243 5.23 4.243 2.04 0 3.816-1.085 4.934-2.17l1.974 2.4c-2.138 2.106-4.704 2.96-6.94 2.96-5 0-8.619-4.078-8.619-8.716 0-4.703 3.684-8.256 8.322-8.256 4.77 0 8.355 3.783 8.355 9.54H31.81zM60.845 14.84c0-2.862-2.336-5.165-5.165-5.165s-5.164 2.303-5.164 5.165c0 2.828 2.335 5.131 5.164 5.131 2.83 0 5.165-2.303 5.165-5.131m-.033-6.514V.037H64.1v23.026h-2.796v-2.072c-1.447 1.414-3.454 2.335-5.658 2.335-4.703 0-8.486-3.816-8.486-8.486a8.465 8.465 0 018.486-8.487c1.974 0 3.816.757 5.165 1.973M79.803 14.84c0-2.862-2.335-5.197-5.164-5.197-2.83 0-5.198 2.335-5.198 5.197 0 2.828 2.336 5.164 5.198 5.164 2.862 0 5.164-2.336 5.164-5.164zm3.256 6.348c0 6.283-3.848 8.717-7.565 8.717a8.297 8.297 0 01-4.671-1.415l1.283-2.73c1.086.625 2.04.954 3.19.954 2.731 0 4.606-1.875 4.606-5.493-1.448 1.316-3.257 2.105-5.296 2.105-4.704 0-8.52-3.816-8.52-8.486 0-4.671 3.816-8.487 8.52-8.487 2.17 0 4.144.855 5.592 2.302V6.616h2.861v14.572z" fill="#FFF"></path>
+          <g transform="translate(85.189 6.131)">
+            <mask id="b" fill="#fff"><use xlink:href="#a"></use></mask>
+            <path d="M13.145 7.13c-.394-2.237-2.368-4.046-4.835-4.046-2.335 0-4.44 1.578-4.835 4.045h9.67zM3.442 9.76c.658 2.665 2.829 4.244 5.23 4.244 2.04 0 3.816-1.085 4.934-2.17l1.974 2.4c-2.138 2.106-4.704 2.96-6.94 2.96-5 0-8.62-4.078-8.62-8.716C.02 3.774 3.706.222 8.344.222c4.77 0 8.355 3.782 8.355 9.539H3.442z" fill="#FFF" mask="url(#b)"></path>
+          </g>
+          <path fill="#66EDA8" d="M24.627 3.372l-7.294 20.064H.429l3.792-10.432h6.662l3.502-9.632z"></path>
+          <path fill="#66EDA8" d="M12.864 0L9.05 10.46H0L3.817 0z"></path>
+        </g>
+      </svg>
+      <p class="lead">Enter the partner order ID, or paste Edge Exchange Details.</p>
+      <textarea id="orderID" rows="3" placeholder="Order ID or Exchange Details"></textarea>
+      <div class="search-row">
+        <button type="button" class="button" id="searchButton">Search</button>
+      </div>
+      <div id="results"></div>
+      <p class="footnote">
+        Partner order IDs are not blockchain txids. A 64-character hex hash
+        (or <code>0x</code> + 64 hex) is an on-chain transaction — CEX partners
+        cannot look it up. DEX swaps (Maya Protocol, THORChain) use that hash
+        and often have an empty Order ID.
+      </p>
+    </div>
+  </div>
+  <script src="script.js?v=20260829c"></script>
+</body>
+</html>

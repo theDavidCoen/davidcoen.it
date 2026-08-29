@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta charset="utf-8">
+  <script>
+    (function () {
+      var theme = localStorage.getItem("davidcoen_theme");
+      if (theme === "light" || theme === "dark") {
+        document.documentElement.setAttribute("data-theme", theme);
+      }
+    })();
+  </script>
+    <title>HTML and JavaScript to Raw Code Converter Tool</title>
+  <link rel="stylesheet" href="/resources/shared/site.css">
+</head>
+<body>
+  <main class="wrap">
+    <div id="tool-header"></div>
+    
+<p>Enter a HTML code and this tool will return a raw code you can use to show your code as preformatted in a webpage.</p>
+<br>
+    <textarea id="input" rows="10" cols="50" placeholder="<!DOCTYPE html>
+<html>
+  <head>
+    <title>Page title</title>
+  </head>
+  <body>
+    <h1>Welcome to my Simple Webpage</h1>
+      </body>
+</html>"
+></textarea>
+    <br><br>
+    <button onclick="convert()">Convert Code</button>
+    <br><br>
+    <textarea id="output" rows="10" cols="50"></textarea>    
+    <script>
+      function convert() {
+        var input = document.getElementById("input").value;
+        var output = document.getElementById("output");
+        
+        output.value = escapeHtml(input);
+      }
+      
+      function escapeHtml(unsafe) {
+        return unsafe
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")
+            .replace(/"/g, "&quot;")
+            .replace(/'/g, "&#039;");
+      }
+    </script>
+  </main>
+  <script src="/resources/shared/site.js"></script>
+  <script>
+    ResourcesSite.mountToolHeader({
+      title: 'HTML and JavaScript to Raw Code Converter Tool',
+      clientSide: true,
+    });
+  </script>
+  <script src="/resources/shared/theme-toggle.js" defer></script>
+</body>
+</html>
+</html>

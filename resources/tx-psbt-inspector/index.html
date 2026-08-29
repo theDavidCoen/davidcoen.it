@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <script>
+    (function () {
+      var theme = localStorage.getItem("davidcoen_theme");
+      if (theme === "light" || theme === "dark") {
+        document.documentElement.setAttribute("data-theme", theme);
+      }
+    })();
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TX / PSBT inspector | DAVIDCOEN.IT Resources</title>
+  <link rel="stylesheet" href="/resources/shared/site.css">
+</head>
+<body>
+  <main class="wrap">
+    <div id="tool-header"></div>
+    <section class="card">
+      <label for="mode">Input type</label>
+      <select id="mode">
+        <option value="psbt">Base64 PSBT</option>
+        <option value="hex">Raw transaction hex</option>
+      </select>
+      <label for="input">Data</label>
+      <textarea id="input" placeholder="Paste PSBT or raw tx hex"></textarea>
+      <button type="button" id="decodeBtn">Inspect</button>
+      <div id="result" class="result" hidden></div>
+    </section>
+  </main>
+  <script src="/resources/shared/site.js"></script>
+  <script type="module" src="/resources/tx-psbt-inspector/app.js"></script>
+  <script src="/resources/shared/theme-toggle.js" defer></script>
+</body>
+</html>

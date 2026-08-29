@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <script>
+    (function () {
+      var theme = localStorage.getItem("davidcoen_theme");
+      if (theme === "light" || theme === "dark") {
+        document.documentElement.setAttribute("data-theme", theme);
+      }
+    })();
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bitcoin transaction explorer | DAVIDCOEN.IT Resources</title>
+  <link rel="stylesheet" href="/resources/shared/site.css">
+</head>
+<body>
+  <main class="wrap">
+    <div id="tool-header"></div>
+    <section class="card">
+      <label for="query">Transaction ID or raw hex</label>
+      <input type="text" id="query" placeholder="txid or 02000000…">
+      <button type="button" id="lookupBtn">Lookup</button>
+      <p class="muted">TX IDs are fetched from mempool.space. Raw hex is decoded locally and can also be looked up if it is a known txid.</p>
+      <div id="result" class="result" hidden></div>
+    </section>
+  </main>
+  <script src="/resources/shared/site.js"></script>
+  <script type="module" src="/resources/explorer/app.js"></script>
+  <script src="/resources/shared/theme-toggle.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <script>
+    (function () {
+      var theme = localStorage.getItem("davidcoen_theme");
+      if (theme === "light" || theme === "dark") {
+        document.documentElement.setAttribute("data-theme", theme);
+      }
+    })();
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bech32@2.0.0/dist/index.js"></script>
+  <link rel="stylesheet" href="/resources/shared/site.css">
+</head>
+<body>
+  <main class="wrap">
+    <div id="tool-header"></div>
+    
+
+  <div>
+    <label for="hexInput">Enter HEX:</label>
+    <input id="hexInput" type="text">
+  </div>
+
+  <div>
+    <label for="prefixSelect">Bech32 Prefix:</label>
+    <select id="prefixSelect">
+      <option value="npub">npub</option>
+      <option value="nsec">nsec</option>
+      <option value="note">note</option>
+    </select>
+  </div>
+
+  <button id="convertBtn">Convert</button>
+
+  <h2>Result:</h2>
+  <div id="result"></div>
+
+  <script>
+    function hexToBech32() {
+  const hex = document.getElementById("hexInput").value;
+  const prefix = document.getElementById("prefixSelect").value;
+
+  const bytes = new Uint8Array(hex.length / 2);
+  for (let i = 0; i < hex.length; i += 2) {
+    bytes[i / 2] = parseInt(hex.substr(i, 2), 16);
+  }
+
+  const encodedBech32 = bech32.encode(prefix, bytes);
+  document.getElementById("result").innerHTML = encodedBech32;
+}
+  
+    document.getElementById("convertBtn").addEventListener("click", hexToBech32);
+  </script>
+  </main>
+  <script src="/resources/shared/site.js"></script>
+  <script>
+    ResourcesSite.mountToolHeader({
+      title: 'HEX to Bech32 Converter',
+      clientSide: true,
+    });
+  </script>
+  <script src="/resources/shared/theme-toggle.js" defer></script>
+</body>
+</html>
+</html>

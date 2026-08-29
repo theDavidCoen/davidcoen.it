@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <script>
+    (function () {
+      var theme = localStorage.getItem("davidcoen_theme");
+      if (theme === "light" || theme === "dark") {
+        document.documentElement.setAttribute("data-theme", theme);
+      }
+    })();
+  </script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Bitcoin Block Version Tool</title>
+  <link rel="stylesheet" href="/resources/shared/site.css">
+</head>
+<body>
+  <main class="wrap">
+    <div id="tool-header"></div>
+    
+<p>This tool allows the user to enter a Bitcoin block version and converts it to binary. It also interprets the individual bits as flags according to BIP-9.</p>
+	<label for="version">Enter Block Version:</label>
+	<input type="text" id="version">
+	<button onclick="convertToBinary()">Convert to Binary</button>
+
+	<h2>Binary:</h2>
+	<p id="binary"></p>
+
+	<h2>Flags:</h2>
+	<ul id="flags"></ul>
+
+	<script>
+		function convertToBinary() {
+			const versionInput = document.getElementById("version");
+			const version = parseInt(versionInput.value);
+
+			if (isNaN(version)) {
+				alert("Invalid block version. Please enter a number.");
+				return;
+			}
+
+			const binary = version.toString(2).padStart(32, "0");
+			console.log(binary);
+			document.getElementById("binary").textContent = binary;
+
+			const flags = {
+				"bit0": "Reserved",
+				"bit1": "Reserved",
+				"bit2": "Reserved",
+				"bit3": "Specifies BIP34 (coinbase height)",
+				"bit4": "Specifies BIP66 (strict DER signatures)",
+				"bit5": "Specifies BIP65 (checklocktimeverify)",
+				"bit8": "Specifies BIP91 (segwit signalling)",
+				"bit9": "Specifies BIP141 (segwit)",
+				"bit10": "Specifies BIP147 (dummy stack element)",
+				"bit11": "Specifies BIP340 (taproot)",
+				"bit12": "Specifies BIP341 (tapscript)",
+				"bit13": "Specifies BIP342 (tapscript)",
+				"bit14": "Specifies BIP350 (eltoo)",
+				"bit15": "Specifies BIP352 (eltoo)",
+				"bit16": "Specifies BIP341 validation",
+				"bit17": "Specifies BIP342 validation",
+				"bit19": "Defined as `1` if this block version is used for signalling support for BIP113 (median time past).",
+				"bit20": "Defined as `1` if this block version is used for signalling support for BIP141 (segwit).",
+				"bit21": "Defined as `1` if this block version is used for signalling support for BIP147 (dummy stack element).",
+				"bit23": "Specifies BIP341 signature validation",
+				"bit24": "Specifies BIP342 signature validation",
+				"bit26": "Specifies BIP350 signature validation",
+				"bit27": "Specifies BIP352 signature validation",
+				"bit28": "Defined as `1` if this block version is used for signalling support for BIP8 (version bits signalling)."
+			};
+
+			const flagList = document.getElementById("flags");
+			flagList.innerHTML = "";
+
+			for (const [bit, flag] of Object.entries(flags)) {
+				const index = parseInt(bit.substring(3));
+				if (binary.charAt(31 - index) === "1") {
+					const item = document.createElement("li");
+					item.textContent = flag;
+					flagList.appendChild(item);
+				}
+			}
+		}
+	</script>
+  </main>
+  <script src="/resources/shared/site.js"></script>
+  <script>
+    ResourcesSite.mountToolHeader({
+      title: 'Bitcoin Block Version Tool',
+      clientSide: true,
+    });
+  </script>
+  <script src="/resources/shared/theme-toggle.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<html>
+	<head>
+		<title>Litecoin P2SH Converter</title>
+		<link rel="stylesheet" href="bootstrap_v3.3.7.min.css">
+		<link rel="shortcut icon" type="image/png" href="litecoin.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<style>
+      .go-back {
+        position: relative;
+        top: 10px;
+        left: 10px;
+      }
+    </style>
+  </head>
+
+
+<a href="/resources/" class="go-back">← Resources</a>
+</head>
+	
+
+	<script src='bitcoinjs.min.js'></script>
+	<script type="text/javascript">
+		function convert() {
+			try {
+				address = document.getElementById('address').value;
+				decoded = bitcoin.address.fromBase58Check(address);
+				version = decoded['version']
+
+				switch (version) {
+					case 5:
+						message = "Mainnet p2sh address: ";
+						version = 50;
+						break;
+					case 50:
+						message = "Mainnet p2sh address (deprecated): ";
+						version = 5;
+						break;
+					case 196:
+						message = "Testnet p2sh address: ";
+						version = 58;
+						break;
+					case 58:
+						message = "Testnet p2sh address (deprecated): ";
+						version = 196;
+						break;
+					default:
+						throw "unknown";
+				}
+				// 5 <-> 50
+				// 196 <-> 58
+				address = bitcoin.address.toBase58Check(decoded['hash'], version);
+			} catch(err) {
+				message = "Please enter a valid address."
+			    address = "";
+			}
+
+			document.getElementById('message').innerText = message + address;
+		}
+	</script>
+
+		<div class="container">
+<nav class="navbar navbar-default">
+
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Litecoin P2SH Converter</a>
+    </div>
+   
+
+</nav>
+<h2>Warning: save this page and use it offline for safety reason!</h2>
+<p>Example:
+<br>32CTmyxzHvcKMPhKHAJKZzF6Pkgypmf8mc is the deprecated version of M8Qc5sNxF3Tk9tyDP3HfPdVViTHRkTZvju</p>
+
+		<div class="form-group row">
+			<div class="col-md-4">
+				<label for="address">P2SH Value:</label>
+
+				<input class="form-control" id="address" size="40" value=""/>
+			</div>
+			<div class="col-md-12">
+				<button class="btn btn-primary" type="button" onclick="convert();" style="margin-top: 4px">Convert</button>
+			</div>
+		</div>
+		
+		
+		<label id="message"/>
+
+		<footer style="margin-top: 7em;">This tool is <a href="https://github.com/litecoin-project/p2sh-convert">Open Source</a>. It can be downloaded and run offline for added security.</footer>
+	</div>
+</html>

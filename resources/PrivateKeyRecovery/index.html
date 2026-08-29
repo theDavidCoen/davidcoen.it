@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <script>
+    (function () {
+      var theme = localStorage.getItem("davidcoen_theme");
+      if (theme === "light" || theme === "dark") {
+        document.documentElement.setAttribute("data-theme", theme);
+      }
+    })();
+  </script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Private Key Recovery</title>
+  <link rel="stylesheet" href="/resources/shared/site.css">
+</head>
+<body>
+  <main class="wrap">
+    <div id="tool-header"></div>
+    
+  <p>This tool helps you to generate all the possible combinations, starting from a private key with up to 5 missing characters, in order to recover your ruined private key.
+<br>Write the private key and replace the missing characters with '#'. 
+<br>Example: L#nUcMYDMe5imVSCx8AJDqZe5S75tChstuz3BhheYz6TRXU3PL#m.
+<br><br><b>Important: the private key must be 52 characters long, including the '#'.
+<br>For safety reasons, please save this webpage and disconnect from the Internet before continuing.</b></p>
+  <form>
+    <label for="privateKey">Private Key with missing characters:</label>
+    <input type="text" id="privateKey" name="privateKey" placeholder="Enter private key here" pattern="[A-Za-z0-9#]{52}">
+    <br>
+    <input type="button" value="Generate Combinations" onclick="generateCombinations()">
+  </form>
+  <br>
+  <div id="result"></div>
+  <div id="next-previous-section">
+    <input type="button" value="Previous 21" onclick="previousCombinations()" id="previous-button" disabled>
+    <input type="button" value="Next 21" onclick="nextCombinations()" id="next-button" disabled>
+  </div>
+ <br> <input type="button" value="Copy all combinations" onclick="copyCombinations()" id="copy-button" disabled>
+  <script src="script.js"></script>
+<br><br><br><p>Code created with the help of <a href="https://openai.com/" target="blank">openai.com</a>.
+<br>Open Source code available on GitHub <a href="https://github.com/theDavidCoen/PrivateKeyRecovery/" target="blank">here</a>.
+  </main>
+  <script src="/resources/shared/site.js"></script>
+  <script>
+    ResourcesSite.mountToolHeader({
+      title: 'Private Key Recovery',
+      clientSide: true,
+    });
+  </script>
+  <script src="/resources/shared/theme-toggle.js" defer></script>
+</body>
+</html>
+</html>

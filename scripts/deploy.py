@@ -23,6 +23,10 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 REMOTE_ROOT = "/public_html"
+RESOURCES_LOCAL = ROOT / "resources"
+RESOURCES_REMOTE = f"{REMOTE_ROOT}/resources"
+SUBDOMAIN_REMOTE = "/resources.davidcoen.it"
+SUBDOMAIN_HTACCESS = ROOT / "deploy" / "resources-subdomain.htaccess"
 PORTABLE_HOST = os.environ.get("PORTABLE_HOST", "david@homelab-portable")
 PORTABLE_DIR = os.environ.get("PORTABLE_DIR", "~/davidcoen-tor")
 ONION_FILE = ROOT / "deploy" / "onion-hostname"
@@ -47,6 +51,8 @@ STATIC_PATHS = [
     "assets/favicon.ico",
     "assets/favicon-theme.png",
     "assets/logo-light.png",
+    "assets/openpatron-badge.svg",
+    "assets/btcpay-paybutton-logo.svg",
 ]
 
 
@@ -115,6 +121,75 @@ def upload_static(ftp: ftplib.FTP) -> None:
         upload_bytes(ftp, Path(rel).name, local.read_bytes())
 
 
+def upload_resources(ftp: ftplib.FTP) -> int:
+    if not RESOURCES_LOCAL.is_dir():
+        print("  (skip resources — directory missing)")
+        return 0
+    skip = {".git", "__pycache__", ".DS_Store"}
+    count = 0
+    for path in sorted(RESOURCES_LOCAL.rglob("*")):
+        if not path.is_file():
+            continue
+        if any(part in skip for part in path.parts):
+            continue
+        rel = path.relative_to(RESOURCES_LOCAL).as_posix()
+        parent = str(Path(rel).parent)
+        if parent in (".", ""):
+            ensure_dir(ftp, "resources")
+        else:
+            ensure_dir(ftp, f"resources/{parent}")
+        print(f"  FTP resources/{rel}")
+        upload_bytes(ftp, path.name, path.read_bytes())
+        count += 1
+    return count
+
+
+def upload_resources_subdomain_redirect(ftp: ftplib.FTP) -> None:
+    if not SUBDOMAIN_HTACCESS.is_file():
+        return
+    cwd(ftp, SUBDOMAIN_REMOTE)
+    print("  FTP resources.davidcoen.it/.htaccess (301 → davidcoen.it/resources/)")
+    upload_bytes(ftp, ".htaccess", SUBDOMAIN_HTACCESS.read_bytes())
+
+
+def purge_resources_subdomain(ftp: ftplib.FTP) -> int:
+    """Remove duplicate files on resources.davidcoen.it; keep redirect + .well-known."""
+    cwd(ftp, SUBDOMAIN_REMOTE)
+    keep = {".htaccess", ".well-known"}
+
+    def list_items() -> list[tuple[str, str]]:
+        items: list[tuple[str, str]] = []
+        for name, facts in ftp.mlsd():
+            if name in (".", ".."):
+                continue
+            typ = facts.get("type", "file")
+            items.append((name, "dir" if typ == "dir" else "file"))
+        return items
+
+    removed = 0
+
+    def walk() -> None:
+        nonlocal removed
+        for name, typ in list_items():
+            if name in keep:
+                continue
+            if typ == "dir":
+                ftp.cwd(name)
+                walk()
+                ftp.cwd("..")
+                ftp.rmd(name)
+                removed += 1
+                print(f"  DEL resources.davidcoen.it/{name}/")
+            else:
+                ftp.delete(name)
+                removed += 1
+                print(f"  DEL resources.davidcoen.it/{name}")
+
+    walk()
+    upload_bytes(ftp, ".htaccess", SUBDOMAIN_HTACCESS.read_bytes())
+    return removed
+
+
 def build_htaccess(onion: str | None) -> bytes:
     base = (ROOT / "deploy" / "root.htaccess.example").read_text(encoding="utf-8")
     if onion:
@@ -144,7 +219,6 @@ def rsync_portable() -> None:
         ["ssh", PORTABLE_HOST, f"mkdir -p {PORTABLE_DIR}/html && rm -rf {PORTABLE_DIR}/html/*"],
         check=True,
     )
-    # Explicit file list — avoids pulling .git/backups via include=*/
     list_file = ROOT / "deploy" / "portable-tor" / ".rsync-files"
     list_file.write_text("\n".join(STATIC_PATHS) + "\n", encoding="utf-8")
     cmd = [
@@ -155,8 +229,32 @@ def rsync_portable() -> None:
         f"{ROOT}/",
         remote,
     ]
-    print(f"  rsync → {remote}")
+    print(f"  rsync static → {remote}")
     subprocess.run(cmd, check=True)
+
+    if not RESOURCES_LOCAL.is_dir():
+        print("  (skip resources on onion — directory missing)")
+        return
+
+    skip = {".git", "__pycache__", ".DS_Store"}
+    resources_count = sum(
+        1
+        for path in RESOURCES_LOCAL.rglob("*")
+        if path.is_file() and not any(part in skip for part in path.parts)
+    )
+    res_cmd = [
+        "rsync",
+        "-av",
+        "--delete",
+        "--exclude",
+        ".git/",
+        "--exclude",
+        "__pycache__/",
+        f"{RESOURCES_LOCAL}/",
+        f"{remote}resources/",
+    ]
+    print(f"  rsync resources ({resources_count} files) → {remote}resources/")
+    subprocess.run(res_cmd, check=True)
 
 
 def sync_compose_stack() -> None:
@@ -236,13 +334,21 @@ def main() -> int:
 
     if do_clearnet:
         print("=== clearnet FTP ===")
+        n = 0
+        removed = 0
         ftp = ftp_connect()
         try:
             upload_static(ftp)
+            n = upload_resources(ftp)
+            removed = purge_resources_subdomain(ftp)
             if not args.skip_htaccess:
                 upload_htaccess(ftp, onion)
         finally:
             ftp.quit()
+        if n:
+            print(f"  resources: {n} files")
+        if removed:
+            print(f"  subdomain purge: {removed} items removed from resources.davidcoen.it")
 
     if onion:
         print(f"\nOnion: http://{onion}/")

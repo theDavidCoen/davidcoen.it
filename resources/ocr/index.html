@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <script>
+    (function () {
+      var theme = localStorage.getItem("davidcoen_theme");
+      if (theme === "light" || theme === "dark") {
+        document.documentElement.setAttribute("data-theme", theme);
+      }
+    })();
+  </script>
+    <title>OCR Tool</title>
+    <script src="https://cdn.jsdelivr.net/npm/tesseract.js@v3.0.10/dist/tesseract.min.js"></script>
+    <link rel="stylesheet" href="/resources/shared/site.css">
+</head>
+<body>
+  <main class="wrap">
+    <div id="tool-header"></div>
+    
+
+    <p>
+      Upload an image containing text to extract the text:
+    </p>
+
+    <input type="file" id="image-input" accept="image/*">
+    <br><br>
+    <textarea id="result" rows="10" cols="50" disabled></textarea>
+    <br><br>
+    <button id="submit-button">Submit</button>
+
+    <script>
+      const submitButton = document.querySelector("#submit-button");
+      const resultArea = document.querySelector("#result");
+      const imageInput = document.querySelector("#image-input");
+
+      submitButton.addEventListener("click", function() {
+        const image = imageInput.files[0];
+        extractTextFromImage(image, function(text) {
+          resultArea.value = text;
+        });
+      });
+
+      function extractTextFromImage(image, callback) {
+        Tesseract.recognize(image)
+          .progress(function(message) { console.log(message); })
+          .catch(err => console.error(err))
+          .then(function(result) {
+            callback(result.text);
+          });
+      }
+    </script>
+  </main>
+  <script src="/resources/shared/site.js"></script>
+  <script>
+    ResourcesSite.mountToolHeader({
+      title: 'OCR Tool',
+      clientSide: true,
+    });
+  </script>
+  <script src="/resources/shared/theme-toggle.js" defer></script>
+</body>
+</html>
+</html>

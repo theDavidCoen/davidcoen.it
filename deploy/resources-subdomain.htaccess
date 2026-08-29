@@ -1,0 +1,2 @@
+RewriteEngine On
+RewriteRule ^(.*)$ https://davidcoen.it/resources/$1 [R=301,L]

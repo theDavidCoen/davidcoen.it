@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <script>
+    (function () {
+      var theme = localStorage.getItem("davidcoen_theme");
+      if (theme === "light" || theme === "dark") {
+        document.documentElement.setAttribute("data-theme", theme);
+      }
+    })();
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bitcoin power law | DAVIDCOEN.IT Resources</title>
+  <link rel="stylesheet" href="/resources/shared/site.css">
+  <link rel="stylesheet" href="/resources/power-law/power-law.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+  <script src="https://cdn.jsdelivr.net/npm/luxon@3"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-luxon@1"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom@2"></script>
+</head>
+<body>
+  <main class="wrap">
+    <div id="tool-header"></div>
+    <p class="muted">Giovanni Santostasi power law model. Hover or click the chart to explore dates. Scroll to zoom, drag to pan.</p>
+
+    <div class="grid-2">
+      <div>
+        <p>
+          <label for="targetDate">Target date: </label>
+          <input type="date" id="targetDate">
+          <button type="button" id="calcBtn">Calculate</button>
+        </p>
+        <p class="price" id="predicted">Select a date</p>
+      </div>
+      <div>
+        <h2>Today</h2>
+        <p class="price" id="currentPrice">Loading…</p>
+        <p id="deviation">–</p>
+      </div>
+    </div>
+
+    <p class="chart-hint">Hover = inspect · Click = set target date · Wheel = zoom · Drag = pan</p>
+    <div id="hoverInfo"></div>
+    <div class="chart-wrap">
+      <canvas id="rainbowChart"></canvas>
+    </div>
+    <p><button type="button" id="resetZoom">Reset zoom</button></p>
+
+    <h2>Power law milestones</h2>
+    <div class="goals">
+      <p class="goal"><strong>$1,000,000</strong> — <span id="m1">…</span></p>
+      <p class="goal"><strong>$10,000,000</strong> — <span id="m10">…</span></p>
+      <p class="goal"><strong>$100,000,000</strong> — <span id="m100">…</span></p>
+    </div>
+    <p class="muted">Model: P = 10⁻¹⁷ × (days since 2009-01-03)^5.8. Market price from Blockchain.com.</p>
+  </main>
+  <script src="/resources/shared/site.js"></script>
+  <script src="/resources/power-law/app.js"></script>
+  <script src="/resources/shared/theme-toggle.js" defer></script>
+</body>
+</html>

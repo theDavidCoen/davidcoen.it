@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+  <url>
+    <loc>https://davidcoen.it/resources/</loc>
+  <lastmod>2023-03-13T13:19:58+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://davidcoen.it/resources/nostr-broadcast/</loc>
+  <lastmod>2023-02-10T13:58:44+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://davidcoen.it/resources/nip05creator/</loc>
+  <lastmod>2023-02-28T15:07:58+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://davidcoen.it/resources/PrivateKeyRecovery/</loc>
+  <lastmod>2023-02-10T13:59:15+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://davidcoen.it/resources/bitcoinclicommand/</loc>
+  <lastmod>2023-02-14T11:25:27+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://davidcoen.it/resources/blockversiontool/</loc>
+  <lastmod>2023-03-09T14:20:44+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://davidcoen.it/resources/litecoin-p2sh-convert/</loc>
+  <lastmod>2023-02-10T13:57:26+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://davidcoen.it/resources/bip39-standalone.html</loc>
+  <lastmod>2023-02-10T14:01:32+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://davidcoen.it/resources/rawhtml/</loc>
+  <lastmod>2023-02-15T15:26:28+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+
+
+</urlset>

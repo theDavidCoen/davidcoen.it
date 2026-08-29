@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <script>
+    (function () {
+      var theme = localStorage.getItem("davidcoen_theme");
+      if (theme === "light" || theme === "dark") {
+        document.documentElement.setAttribute("data-theme", theme);
+      }
+    })();
+  </script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>QR Code Generator</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <link rel="stylesheet" href="/resources/shared/site.css">
+</head>
+<body>
+  <main class="wrap">
+    <div id="tool-header"></div>
+    
+    <label for="type">Select Type:</label>
+    <select id="type" onchange="updateForm()">
+        <option value="url">URL</option>
+        <option value="text">Text</option>
+        <option value="vcard">vCard</option>
+        <option value="email">E-mail</option>
+        <option value="wifi">WiFi</option>
+        <option value="bitcoin">Bitcoin</option>
+        <option value="twitter">X</option>
+        <option value="facebook">Facebook</option>
+    </select>
+    <br><br>
+    <div id="inputFields">
+        <input type="text" id="data" placeholder="Enter data here">
+    </div>
+    <button onclick="generateQRCode()">Generate QR Code</button>
+    <br><br>
+    <div id="qrcode"></div>
+    <br>
+    <button onclick="downloadQR('jpeg')">Download as JPEG</button>
+    <button onclick="downloadQR('svg')">Download as SVG</button>
+
+    <script>
+        function updateForm() {
+            let type = document.getElementById("type").value;
+            let inputFields = document.getElementById("inputFields");
+            inputFields.innerHTML = "";
+
+            if (type === "vcard") {
+                inputFields.innerHTML = `
+                    <h2>vCard QR Code</h2>
+                    <input type="text" id="name" placeholder="Your Name"><br>
+                    <input type="text" id="contact" placeholder="Contact"><br>
+                    <input type="text" id="phone" placeholder="Phone"><br>
+                    <input type="text" id="email" placeholder="Email"><br>
+                    <input type="text" id="company" placeholder="Company"><br>
+                    <input type="text" id="street" placeholder="Street"><br>
+                    <input type="text" id="city" placeholder="City"><br>
+                    <input type="text" id="state" placeholder="State"><br>
+                    <input type="text" id="country" placeholder="Country"><br>
+                    <input type="text" id="website" placeholder="Website">
+                `;
+            } else if (type === "wifi") {
+                inputFields.innerHTML = `
+                    <h2>WiFi QR Code</h2>
+                    <input type="text" id="ssid" placeholder="Network Name SSID"><br>
+                    <input type="text" id="password" placeholder="Password"><br>
+                    Encryption type <select id="encryption">
+                        <option value="nopass">None</option>
+                        <option value="WPA">WPA/WPA2</option>
+                        <option value="WEP">WEP</option>
+                    </select>
+                `;
+            } else if (type === "bitcoin") {
+                inputFields.innerHTML = `
+                    <h2>Bitcoin QR Code</h2>
+                    <input type="text" id="receiver" placeholder="Receiver"><br>
+                    <input type="text" id="amount" placeholder="Amount">
+                `;
+            } else if (type === "twitter") {
+                inputFields.innerHTML = `<input type="text" id="data" placeholder="@thedavidcoen">`;
+            } else if (type === "facebook") {
+                inputFields.innerHTML = `<input type="text" id="data" placeholder="david.coen">`;
+            } else {
+                inputFields.innerHTML = `<input type="text" id="data" placeholder="Enter data here">`;
+            }
+        }
+
+        function generateQRCode() {
+            let type = document.getElementById("type").value;
+            let qrData = "";
+
+            if (type === "vcard") {
+                qrData = `BEGIN:VCARD
+VERSION:3.0
+FN:${document.getElementById("name").value}
+TEL:${document.getElementById("phone").value}
+EMAIL:${document.getElementById("email").value}
+ORG:${document.getElementById("company").value}
+ADR:;;${document.getElementById("street").value};${document.getElementById("city").value};${document.getElementById("state").value};${document.getElementById("country").value}
+URL:${document.getElementById("website").value}
+END:VCARD`;
+            } else if (type === "wifi") {
+                qrData = `WIFI:S:${document.getElementById("ssid").value};T:${document.getElementById("encryption").value};P:${document.getElementById("password").value};;`;
+            } else if (type === "bitcoin") {
+                qrData = `bitcoin:${document.getElementById("receiver").value}?amount=${document.getElementById("amount").value}`;
+            } else if (type === "twitter") {
+                qrData = `https://x.com/${document.getElementById("data").value.replace('@', '')}`;
+            } else if (type === "facebook") {
+                qrData = `https://facebook.com/${document.getElementById("data").value}`;
+            } else {
+                qrData = document.getElementById("data").value;
+            }
+
+            document.getElementById("qrcode").innerHTML = "";
+            new QRCode(document.getElementById("qrcode"), {
+                text: qrData,
+                width: 256,
+                height: 256
+            });
+        }
+    </script>
+  </main>
+  <script src="/resources/shared/site.js"></script>
+  <script>
+    ResourcesSite.mountToolHeader({
+      title: 'QR Code Generator',
+      clientSide: true,
+    });
+  </script>
+  <script src="/resources/shared/theme-toggle.js" defer></script>
+</body>
+</html>
+

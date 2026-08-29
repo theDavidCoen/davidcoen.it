@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+  <script>
+    (function () {
+      var theme = localStorage.getItem("davidcoen_theme");
+      if (theme === "light" || theme === "dark") {
+        document.documentElement.setAttribute("data-theme", theme);
+      }
+    })();
+  </script>
+	<title>Hex to Binary and Morse Converter</title>
+	<script type="text/javascript" src="binarytomorse.js"></script>
+  <link rel="stylesheet" href="/resources/shared/site.css">
+</head>
+<body>
+  <main class="wrap">
+    <div id="tool-header"></div>
+    
+
+	<label for="hexInput">Enter one or more hexadecimal strings:</label>
+	<textarea id="hexInput" rows="10"></textarea>
+
+	<button onclick="hexToBinAndMorse()">Convert to Binary and Morse</button>
+
+	<label for="binOutput">Binary Output:</label>
+	<textarea id="binOutput" rows="10" readonly></textarea>
+
+	<label for="morseOutput">Morse Code Output:</label>
+	<textarea id="morseOutput" rows="10" readonly></textarea>
+  </main>
+  <script src="/resources/shared/site.js"></script>
+  <script>
+    ResourcesSite.mountToolHeader({
+      title: 'Hex to Binary and Morse Converter',
+      clientSide: true,
+    });
+  </script>
+  <script src="/resources/shared/theme-toggle.js" defer></script>
+</body>
+</html>
+</html>

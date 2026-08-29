@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <script>
+    (function () {
+      var theme = localStorage.getItem("davidcoen_theme");
+      if (theme === "light" || theme === "dark") {
+        document.documentElement.setAttribute("data-theme", theme);
+      }
+    })();
+  </script>
+    <title>SHA-256 Hash Calculator</title>
+  <link rel="stylesheet" href="/resources/shared/site.css">
+</head>
+<body>
+  <main class="wrap">
+    <div id="tool-header"></div>
+    
+    <label for="preimage">Enter Preimage:</label>
+    <input type="text" id="preimage" placeholder="Enter preimage...">
+    <button onclick="calculateHash()">Calculate Hash</button>
+    <p><strong>Payment Hash:</strong> <span id="hashResult"></span></p>
+
+    <script>
+        async function sha256Hash(input) {
+            const encoder = new TextEncoder();
+            const data = encoder.encode(input);
+            const hashBuffer = await crypto.subtle.digest("SHA-256", data);
+            const hashArray = Array.from(new Uint8Array(hashBuffer));
+            return hashArray.map(byte => ('00' + byte.toString(16)).slice(-2)).join('');
+        }
+
+        function calculateHash() {
+            const preimageInput = document.getElementById("preimage").value;
+
+            if (preimageInput.length !== 64) {
+                alert("Preimage must be 64 characters long.");
+                return;
+            }
+
+            sha256Hash(preimageInput)
+                .then(hashResult => {
+                    document.getElementById("hashResult").textContent = hashResult;
+                })
+                .catch(error => {
+                    console.error(error);
+                    alert("An error occurred while calculating the hash.");
+                });
+        }
+    </script>
+  </main>
+  <script src="/resources/shared/site.js"></script>
+  <script>
+    ResourcesSite.mountToolHeader({
+      title: 'SHA-256 Hash Calculator',
+      clientSide: true,
+    });
+  </script>
+  <script src="/resources/shared/theme-toggle.js" defer></script>
+</body>
+</html>
+</html>

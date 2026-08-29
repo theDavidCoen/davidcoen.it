@@ -1,0 +1,85 @@
+window.RESOURCES_CATALOG = [
+  {
+    category: 'Status & services',
+    items: [
+      { name: 'Service status dashboard', href: '/resources/relay-health/', desc: 'NIP-11, WebSocket, and paywall checks for Nostr relays.', tags: ['nostr', 'relay', 'health'], client: true, network: true },
+      { name: 'Service status dashboard', href: 'https://status.davidcoen.it/', desc: 'BTCPay, relay, and homelab uptime.', tags: ['status', 'btcpay', 'relay'], network: true, client: false },
+      { name: "David Coen's BTCPay Server", href: 'https://btcpay.davidcoen.it/', desc: 'Free non-custodial payment processor.', tags: ['btcpay', 'bitcoin'], network: true, client: false },
+      { name: 'Nostr relay + paywall', href: 'https://relay.davidcoen.it/', desc: 'Public relay with Lightning paywall access.', tags: ['nostr', 'relay', 'lightning'], network: true, client: false },
+    ],
+  },
+  {
+    category: 'Bitcoin utilities',
+    items: [
+      { name: 'Bitcoin transaction explorer', href: '/resources/explorer/', desc: 'Decode raw TX hex and inspect transactions via mempool.space.', tags: ['bitcoin', 'tx', 'explorer'], client: true, network: true },
+      { name: 'TX / PSBT inspector', href: '/resources/tx-psbt-inspector/', desc: 'Parse raw transaction hex and base64 PSBTs.', tags: ['bitcoin', 'psbt', 'tx'], client: true },
+      { name: 'BOLT11 / LNURL / offer decoder', href: '/resources/bolt-decoder/', desc: 'Decode Lightning invoices, LNURL payloads, and BOLT12 offers.', tags: ['lightning', 'bolt11', 'lnurl'], client: true, network: true },
+      { name: 'Ian Coleman BIP39 tool', href: '/resources/bip39-standalone.html', desc: 'Generate and inspect BIP39 mnemonics (offline-capable standalone page).', tags: ['bip39', 'seed', 'iancoleman'], client: true, sensitive: true },
+      { name: 'Last BIP39 word calculator', href: '/resources/bip39-last-word/', desc: 'Find valid checksum words for an incomplete mnemonic.', tags: ['bip39', 'seed'], client: true, sensitive: true },
+      { name: 'BIP39 wordlist checker', href: '/resources/bip39wordlist/', desc: 'English BIP39 word list and validity checker.', tags: ['bip39'], client: true },
+      { name: 'xpub / descriptor viewer', href: '/resources/xpub-viewer/', desc: 'Inspect extended public keys and output descriptors.', tags: ['xpub', 'descriptor', 'bitcoin'], client: true, sensitive: true },
+      { name: 'Private key recovery', href: '/resources/PrivateKeyRecovery/', desc: 'Recover a WIF key with up to five missing characters.', tags: ['bitcoin', 'recovery'], client: true, sensitive: true },
+      { name: 'Private keys and seeds checker', href: '/resources/privatekeychecker/', desc: 'Validate WIF keys, seeds, and related formats.', tags: ['bitcoin', 'seed', 'wif'], client: true, sensitive: true },
+      { name: 'Derive private key', href: '/resources/deriveprivatekey/', desc: 'Derive a private key from path and mnemonic material.', tags: ['bitcoin', 'bip32', 'bip44'], client: true, sensitive: true },
+      { name: 'SHA-256 preimage calculator', href: '/resources/preimage2hash/', desc: 'Hash a preimage for Lightning HTLCs and scripts.', tags: ['bitcoin', 'sha256', 'lightning'], client: true },
+      { name: 'Hex ↔ bech32 converter', href: '/resources/hex2bech32/', desc: 'Convert between hex and bech32 strings.', tags: ['bitcoin', 'bech32'], client: true },
+      { name: 'Bitcoin regret calculator', href: '/resources/bitcoinregret/', desc: 'How much BTC you would have saved by not spending USD in a given year.', tags: ['bitcoin', 'fun'], client: true, network: true },
+      { name: 'Bitcoin power law chart', href: '/resources/power-law/', desc: 'Santostasi power law model with live price and rainbow bands.', tags: ['bitcoin', 'chart'], client: true, network: true },
+      { name: 'Bitcoin blockchain size chart', href: '/resources/blockchainchart/', desc: 'Historical Bitcoin blockchain size chart.', tags: ['bitcoin', 'chart'], client: true, network: true },
+      { name: 'Bitcoin difficulty & halving countdown', href: '/resources/countdown/', desc: 'Difficulty adjustment and halving countdown.', tags: ['bitcoin', 'halving'], client: true, network: true },
+      { name: 'Bitcoind console commands', href: '/resources/bitcoinclicommand/', desc: 'Searchable bitcoin-cli reference.', tags: ['bitcoin', 'cli'], client: true },
+      { name: 'Block version tool', href: '/resources/blockversiontool/', desc: 'Decode block version bits (BIP-9).', tags: ['bitcoin'], client: true },
+      { name: 'OP_RETURN for Electrum', href: '/resources/opreturnelectrum/', desc: 'Build Electrum Pay To fields with OP_RETURN.', tags: ['bitcoin', 'electrum'], client: true },
+      { name: 'Information conversion tool', href: '/resources/conversion/', desc: 'Convert bits, bytes, KB, MB, and related units.', tags: ['utility'], client: true },
+      { name: 'Word list table generator', href: '/resources/words2table/', desc: 'Turn a word list into an HTML table.', tags: ['utility', 'html'], client: true },
+      { name: 'Hex to binary and Morse', href: '/resources/binarytomidi/', desc: 'Convert hex to binary and Morse code.', tags: ['utility'], client: true },
+      { name: 'OCR tool', href: '/resources/ocr/', desc: 'Extract text from images in the browser.', tags: ['ocr'], client: true, network: true },
+    ],
+  },
+  {
+    category: 'Lightning & Arkade',
+    items: [
+      { name: 'Lightning offer → BIP353 address', href: '/resources/353lnaddress/', desc: 'Convert a BOLT12 offer to a BIP353 Lightning address.', tags: ['lightning', 'bolt12', 'bip353'], client: true },
+      { name: 'BIP321 + BIP353 generator', href: '/resources/321uri353address/', desc: 'Build BIP321 / BIP353 Lightning address URIs.', tags: ['lightning', 'bip353'], client: true },
+      { name: 'Arkade address converter', href: '/resources/arkaddressconverter/', desc: 'Convert Arkade addresses ↔ scriptPubKey hex.', tags: ['arkade', 'ark', 'address'], client: true },
+      { name: 'Arkade explorer', href: 'https://arkade.space/', desc: 'Official Ark Labs explorer for Arkade transactions and VTXOs (Bitcoin mainnet).', tags: ['arkade', 'explorer'], network: true, client: false },
+      { name: 'LightningExchanges', href: 'https://github.com/theDavidCoen/LightningExchanges', desc: 'Exchanges supporting Lightning.', tags: ['lightning', 'github'], network: true },
+    ],
+  },
+  {
+    category: 'Altcoins',
+    items: [
+      { name: 'Litecoin P2SH converter', href: '/resources/litecoin-p2sh-convert/', desc: 'Convert Litecoin addresses to P2SH format (litecoin-project tool).', tags: ['litecoin', 'p2sh'], client: true },
+      { name: 'Monero address tests', href: '/resources/monero/', desc: 'Monero address / wallet generation utilities (MyMonero-compatible).', tags: ['monero', 'xmr'], client: true, sensitive: true },
+    ],
+  },
+  {
+    category: 'Nostr',
+    items: [
+      { name: 'Nostr event inspector', href: '/resources/nostr-event/', desc: 'Validate and explain Nostr event JSON.', tags: ['nostr', 'event'], client: true },
+      { name: 'Nostr redirect', href: 'https://nostredirect.davidcoen.it/', desc: 'HTTPS redirect to a Nostr profile.', tags: ['nostr'], network: true },
+      { name: 'Nostr broadcast', href: '/resources/nostr-broadcast/', desc: 'Fetch, backup, and rebroadcast events.', tags: ['nostr', 'relay'], network: true },
+      { name: 'NIP-05 creation tool', href: '/resources/nip05creator/', desc: 'Generate nostr.json entries for your domain.', tags: ['nostr', 'nip05'], client: true },
+    ],
+  },
+  {
+    category: 'Edge Wallet support',
+    items: [
+      { name: 'Order checker', href: '/resources/ordercheck/', desc: 'Look up partner order pages from an order ID.', tags: ['edge', 'support'], network: true },
+      { name: 'SEPA high-risk IBAN checker', href: '/resources/highriskchecker/', desc: 'FATF high-risk country IBAN check.', tags: ['edge', 'sepa', 'iban'], client: true },
+      { name: '0x token search tool', href: '/resources/0xsearchtool/', desc: 'Search Ethereum tokens supported by 0x.', tags: ['edge', 'ethereum', '0x'], client: true, network: true },
+      { name: 'THORChain chains status', href: '/resources/savers/', desc: 'THORChain inbound address and chain status.', tags: ['edge', 'thorchain', 'defi'], client: true, network: true },
+    ],
+  },
+  {
+    category: 'General utilities',
+    items: [
+      { name: 'QR code generator', href: '/resources/qrcodegenerator/', desc: 'Simple client-side QR codes.', tags: ['qr'], client: true },
+      { name: 'Country IBAN information', href: '/resources/ibanchecker/', desc: 'IBAN format examples by country.', tags: ['iban'], client: true },
+      { name: 'HTML to raw code converter', href: '/resources/rawhtml/', desc: 'Escape HTML for preformatted display.', tags: ['html'], client: true },
+      { name: 'SEPA vs Bitcoin status', href: '/resources/sepa/', desc: 'Compare SEPA and Bitcoin transfer status.', tags: ['sepa', 'bitcoin'], client: true, network: true },
+      { name: 'Dynamic DNS & cPanel configurator', href: '/resources/ddnscpanel/', desc: 'Generate config snippets for dynamic DNS and secure access.', tags: ['dns', 'cpanel'], client: true },
+      { name: 'Torrent downloader', href: '/resources/torrent/', desc: 'Browser-based torrent utility.', tags: ['torrent'], client: true, network: true },
+    ],
+  },
+];

@@ -1,0 +1,1164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f7931a">
+  <title>Airbitz - Multi-Network Bitcoin Wallet</title>
+  <link rel="manifest" href="#" id="manifest-placeholder">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
+  <style>
+    :root {
+      --bg: #0a0a0a;
+      --text: #f5f5f5;
+      --accent: #f7931a;
+      --card: #111;
+      --border: #222;
+      --success: #00d4aa;
+      --error: #ff4444;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-user-select: none;
+      user-select: none;
+    }
+    .screen { display: none; min-height: 100vh; }
+    .screen.active { display: flex; flex-direction: column; }
+    
+    /* Setup Screen */
+    .setup-screen {
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      background: radial-gradient(circle at center, rgba(247,147,26,0.1) 0%, transparent 70%);
+    }
+    .setup-box {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 2.5rem;
+      width: 100%;
+      max-width: 400px;
+    }
+    .logo-large {
+      font-size: 2.5rem;
+      font-weight: 900;
+      text-align: center;
+      margin-bottom: 0.5rem;
+      background: linear-gradient(135deg, #f7931a, #ffb74d);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .subtitle {
+      text-align: center;
+      color: #888;
+      margin-bottom: 2rem;
+      font-size: 0.9rem;
+    }
+    .seed-display {
+      background: #000;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      font-family: monospace;
+      font-size: 0.85rem;
+      line-height: 1.8;
+      word-spacing: 0.5rem;
+      -webkit-user-select: text;
+      user-select: text;
+    }
+    .warning-box {
+      background: rgba(255,68,68,0.1);
+      border: 1px solid rgba(255,68,68,0.3);
+      border-radius: 12px;
+      padding: 1rem;
+      margin-bottom: 1.5rem;
+      font-size: 0.85rem;
+      color: #ff9999;
+    }
+    .btn {
+      width: 100%;
+      padding: 1rem;
+      background: var(--accent);
+      color: #000;
+      border: none;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s;
+      font-family: inherit;
+    }
+    .btn:active {
+      transform: scale(0.98);
+    }
+    .btn-secondary {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text);
+      margin-top: 1rem;
+    }
+    
+    /* Main App */
+    .app-header {
+      padding: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border);
+    }
+    .logo-small {
+      font-size: 1.5rem;
+      font-weight: 900;
+      color: var(--accent);
+    }
+    .settings-btn {
+      background: none;
+      border: none;
+      color: var(--text);
+      font-size: 1.3rem;
+      cursor: pointer;
+      padding: 0.5rem;
+    }
+    
+    /* Balance Card */
+    .balance-section {
+      padding: 2rem 1.5rem;
+      text-align: center;
+    }
+    .balance-label {
+      color: #888;
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
+    }
+    .balance-amount {
+      font-size: 3rem;
+      font-weight: 900;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+    .balance-fiat {
+      color: #aaa;
+      font-size: 1.1rem;
+    }
+    
+    /* Network Pills */
+    .networks {
+      padding: 0 1.5rem 1rem;
+      display: flex;
+      gap: 0.5rem;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .networks::-webkit-scrollbar { display: none; }
+    .network-pill {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 0.5rem 1rem;
+      white-space: nowrap;
+      font-size: 0.85rem;
+    }
+    .network-pill span {
+      color: var(--accent);
+      font-weight: 600;
+    }
+    
+    /* Action Buttons */
+    .actions {
+      padding: 1rem 1.5rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    .action-btn {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.5rem 1rem;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .action-btn:active {
+      transform: scale(0.95);
+      border-color: var(--accent);
+    }
+    .action-icon {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+    .action-label {
+      font-weight: 600;
+    }
+    
+    /* Flat Icons */
+    .icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 1.5em;
+      height: 1.5em;
+    }
+    .icon-send::before { content: '↗'; }
+    .icon-receive::before { content: '↙'; }
+    .icon-home::before { content: '⌂'; }
+    .icon-settings::before { content: '⚙'; }
+    
+    /* Transactions */
+    .transactions {
+      padding: 1.5rem;
+      flex: 1;
+      padding-bottom: 5rem;
+    }
+    .section-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    .tx-item {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1rem;
+      margin-bottom: 0.75rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .tx-left {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .tx-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(247,147,26,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+    }
+    .tx-details h4 {
+      font-size: 0.95rem;
+      margin-bottom: 0.2rem;
+    }
+    .tx-details p {
+      font-size: 0.8rem;
+      color: #888;
+    }
+    .tx-amount {
+      text-align: right;
+    }
+    .tx-amount .amount {
+      font-weight: 700;
+      font-size: 1rem;
+    }
+    .tx-amount .network {
+      font-size: 0.75rem;
+      color: #888;
+    }
+    .receive .amount { color: var(--success); }
+    .send .amount { color: var(--error); }
+    
+    /* Bottom Nav */
+    .bottom-nav {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: var(--card);
+      border-top: 1px solid var(--border);
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      padding: 0.75rem 0;
+      z-index: 100;
+    }
+    .nav-item {
+      text-align: center;
+      cursor: pointer;
+      padding: 0.5rem;
+      color: #888;
+      transition: color 0.3s;
+    }
+    .nav-item.active {
+      color: var(--accent);
+    }
+    .nav-icon {
+      font-size: 1.5rem;
+      margin-bottom: 0.25rem;
+    }
+    .nav-label {
+      font-size: 0.7rem;
+    }
+    
+    /* Send/Receive Screens */
+    .form-screen {
+      padding: 1.5rem;
+      padding-bottom: 5rem;
+    }
+    .back-btn {
+      background: none;
+      border: none;
+      color: var(--text);
+      font-size: 1.5rem;
+      cursor: pointer;
+      margin-bottom: 1rem;
+    }
+    .qr-code {
+      background: #fff;
+      border: 2px solid var(--border);
+      border-radius: 16px;
+      margin: 2rem auto;
+      padding: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      max-width: 280px;
+    }
+    .qr-code canvas {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+    .address-box {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1rem;
+      word-break: break-all;
+      font-size: 0.85rem;
+      font-family: monospace;
+      margin-bottom: 1rem;
+      -webkit-user-select: text;
+      user-select: text;
+    }
+    .info-box {
+      background: rgba(0,212,170,0.1);
+      border: 1px solid rgba(0,212,170,0.3);
+      border-radius: 12px;
+      padding: 1rem;
+      margin-bottom: 1.5rem;
+      font-size: 0.9rem;
+      color: #0ff0c8;
+    }
+    input, select {
+      width: 100%;
+      padding: 1rem;
+      background: #000;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      color: var(--text);
+      font-size: 1rem;
+      font-family: inherit;
+    }
+    input:focus, select:focus {
+      outline: none;
+      border-color: var(--accent);
+    }
+    .input-group {
+      margin-bottom: 1.5rem;
+    }
+    .input-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+      font-size: 0.9rem;
+    }
+    .amount-input {
+      font-size: 2rem;
+      text-align: center;
+      font-weight: 700;
+    }
+    
+    /* Speed Slider */
+    .slider-group {
+      margin-bottom: 1.5rem;
+    }
+    .slider-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+      font-size: 0.9rem;
+    }
+    .slider-container {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .slider {
+      flex: 1;
+      -webkit-appearance: none;
+      appearance: none;
+      height: 6px;
+      border-radius: 3px;
+      background: var(--border);
+      outline: none;
+    }
+    .slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: var(--accent);
+      cursor: pointer;
+    }
+    .slider::-moz-range-thumb {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: var(--accent);
+      cursor: pointer;
+      border: none;
+    }
+    .slider-labels {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.75rem;
+      color: #888;
+      margin-top: 0.5rem;
+    }
+    .speed-value {
+      font-weight: 600;
+      color: var(--accent);
+      min-width: 60px;
+      text-align: right;
+    }
+    
+    /* Privacy Toggle */
+    .toggle-group {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1rem;
+      margin-bottom: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .toggle-info {
+      flex: 1;
+    }
+    .toggle-info h4 {
+      font-size: 0.95rem;
+      margin-bottom: 0.25rem;
+    }
+    .toggle-info p {
+      font-size: 0.8rem;
+      color: #888;
+    }
+    .toggle-switch {
+      position: relative;
+      width: 50px;
+      height: 28px;
+      background: var(--border);
+      border-radius: 14px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .toggle-switch.active {
+      background: var(--accent);
+    }
+    .toggle-switch::after {
+      content: '';
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      width: 22px;
+      height: 22px;
+      background: var(--text);
+      border-radius: 50%;
+      transition: transform 0.3s;
+    }
+    .toggle-switch.active::after {
+      transform: translateX(22px);
+    }
+    
+    .fee-info {
+      display: flex;
+      justify-content: space-between;
+      padding: 1rem;
+      background: var(--card);
+      border-radius: 12px;
+      margin: 1rem 0;
+      font-size: 0.9rem;
+    }
+    .privacy-route {
+      background: rgba(0,212,170,0.1);
+      border: 1px solid rgba(0,212,170,0.3);
+      border-radius: 12px;
+      padding: 1rem;
+      margin: 1rem 0;
+      font-size: 0.85rem;
+    }
+    .privacy-route h4 {
+      color: var(--success);
+      margin-bottom: 0.5rem;
+    }
+    .route-step {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin: 0.5rem 0;
+      color: #aaa;
+    }
+    
+    .success-screen {
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+    }
+    .success-icon {
+      font-size: 5rem;
+      color: var(--success);
+      margin-bottom: 1rem;
+    }
+    .success-title {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    .success-subtitle {
+      color: #888;
+      margin-bottom: 2rem;
+    }
+    
+    /* Settings */
+    .settings-screen {
+      padding: 1.5rem;
+      padding-bottom: 5rem;
+    }
+    .settings-group {
+      margin-bottom: 2rem;
+    }
+    .settings-group h3 {
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+      color: #888;
+    }
+    .settings-item {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1rem;
+      margin-bottom: 0.75rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+    }
+    .settings-item:active {
+      background: #1a1a1a;
+    }
+    
+    .toast {
+      position: fixed;
+      bottom: 6rem;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--card);
+      border: 1px solid var(--border);
+      padding: 1rem 1.5rem;
+      border-radius: 12px;
+      font-size: 0.9rem;
+      z-index: 1000;
+      animation: slideUp 0.3s ease;
+    }
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Setup Screen -->
+  <div class="screen active" id="setupScreen">
+    <div class="setup-screen">
+      <div class="setup-box">
+        <h1 class="logo-large">Airbitz</h1>
+        <p class="subtitle">One Wallet. Every Bitcoin Network.</p>
+        
+        <div class="warning-box">
+          ⚠️ Write down your seed phrase and store it safely. You'll need it to recover your wallet.
+        </div>
+        
+        <div class="seed-display" id="seedPhrase"></div>
+        
+        <button class="btn" onclick="continueSetup()">I've Saved My Seed</button>
+        <button class="btn btn-secondary" onclick="generateNewSeed()">Generate New Seed</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Home Screen -->
+  <div class="screen" id="homeScreen">
+    <div class="app-header">
+      <div class="logo-small">Airbitz</div>
+      <button class="settings-btn" onclick="showScreen('settingsScreen')">⚙</button>
+    </div>
+    
+    <div class="balance-section">
+      <div class="balance-label">Total Balance</div>
+      <div class="balance-amount">0.15420000 BTC</div>
+      <div class="balance-fiat">≈ $14,250.00</div>
+    </div>
+    
+    <div class="networks">
+      <div class="network-pill">Mainnet: <span>0.10 BTC</span></div>
+      <div class="network-pill">Liquid: <span>0.03 BTC</span></div>
+      <div class="network-pill">Ark: <span>0.02 BTC</span></div>
+      <div class="network-pill">Rollup: <span>0.00420000 BTC</span></div>
+    </div>
+    
+    <div class="actions">
+      <div class="action-btn" onclick="showScreen('sendScreen')">
+        <div class="action-icon">↗</div>
+        <div class="action-label">Send</div>
+      </div>
+      <div class="action-btn" onclick="showScreen('receiveScreen')">
+        <div class="action-icon">↙</div>
+        <div class="action-label">Receive</div>
+      </div>
+    </div>
+    
+    <div class="transactions">
+      <h3 class="section-title">Recent Transactions</h3>
+      
+      <div class="tx-item receive">
+        <div class="tx-left">
+          <div class="tx-icon">↙</div>
+          <div class="tx-details">
+            <h4>Received</h4>
+            <p>Liquid • 2 hours ago</p>
+          </div>
+        </div>
+        <div class="tx-amount">
+          <div class="amount">+0.03000000</div>
+          <div class="network">Liquid</div>
+        </div>
+      </div>
+      
+      <div class="tx-item send">
+        <div class="tx-left">
+          <div class="tx-icon">↗</div>
+          <div class="tx-details">
+            <h4>Sent</h4>
+            <p>Lightning • Yesterday</p>
+          </div>
+        </div>
+        <div class="tx-amount">
+          <div class="amount">-0.00150000</div>
+          <div class="network">via Ark → Lightning</div>
+        </div>
+      </div>
+      
+      <div class="tx-item receive">
+        <div class="tx-left">
+          <div class="tx-icon">↙</div>
+          <div class="tx-details">
+            <h4>Received</h4>
+            <p>Mainnet • 3 days ago</p>
+          </div>
+        </div>
+        <div class="tx-amount">
+          <div class="amount">+0.10000000</div>
+          <div class="network">Mainnet</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="bottom-nav">
+      <div class="nav-item active" onclick="showScreen('homeScreen')">
+        <div class="nav-icon">⌂</div>
+        <div class="nav-label">Home</div>
+      </div>
+      <div class="nav-item" onclick="showScreen('sendScreen')">
+        <div class="nav-icon">↗</div>
+        <div class="nav-label">Send</div>
+      </div>
+      <div class="nav-item" onclick="showScreen('receiveScreen')">
+        <div class="nav-icon">↙</div>
+        <div class="nav-label">Receive</div>
+      </div>
+      <div class="nav-item" onclick="showScreen('settingsScreen')">
+        <div class="nav-icon">⚙</div>
+        <div class="nav-label">Settings</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Send Screen -->
+  <div class="screen" id="sendScreen">
+    <div class="form-screen">
+      <button class="back-btn" onclick="showScreen('homeScreen')">←</button>
+      <h2 class="section-title">Send Bitcoin</h2>
+      
+      <div class="info-box">
+        ✨ Send to any Bitcoin address. Airbitz automatically handles routing between networks!
+      </div>
+      
+      <div class="input-group">
+        <label>Address or Invoice</label>
+        <input type="text" id="recipientAddress" placeholder="bc1q... / lnbc... / lq1q...">
+      </div>
+      
+      <div class="input-group">
+        <label>Or choose an example</label>
+        <select id="exampleAddresses" onchange="selectExample()">
+          <option value="">-- Select a test address --</option>
+          <optgroup label="Bitcoin Mainnet">
+            <option value="bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh">Mainnet SegWit (bc1q...)</option>
+            <option value="3J98t1WpEZ73CNmYviecrnyiWrnqRhWNLy">Mainnet P2SH (3...)</option>
+            <option value="1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa">Mainnet Legacy (1...)</option>
+          </optgroup>
+          <optgroup label="Liquid Network">
+            <option value="lq1qqf8er278e6nyvuwtgf39e6ewvdcnjupn9a86rzpx655y5lhkt0walu3djf9cklkxd3ryld97hu8h3xepw7sh2rlu7q45dcew5">Liquid Confidential</option>
+          </optgroup>
+          <optgroup label="Lightning Network">
+            <option value="lnbc10m1pjkhz3zpp5qqqsyqcyq5rqwzqfqqqsyqcyq5rqwzqfqqqsyqcyq5rqwzqfqypqsp5zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zygsdqq">Lightning Invoice</option>
+          </optgroup>
+          <optgroup label="Ark (VTXO)">
+            <option value="ark1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlhvtxo">Ark VTXO Address</option>
+          </optgroup>
+        </select>
+      </div>
+      
+      <div class="input-group">
+        <label>Amount (BTC)</label>
+        <input type="text" class="amount-input" id="amountInput" placeholder="0.00000000">
+      </div>
+      
+      <div class="toggle-group" onclick="togglePrivacy()">
+        <div class="toggle-info">
+          <h4>Maximize Privacy</h4>
+          <p>Route via Liquid/Ark for enhanced privacy</p>
+        </div>
+        <div class="toggle-switch" id="privacyToggle"></div>
+      </div>
+      
+      <div id="privacyRoute" style="display: none;" class="privacy-route">
+        <h4>Privacy-Enhanced Route</h4>
+        <div class="route-step">→ Use Liquid balance (confidential)</div>
+        <div class="route-step">→ Aggregate via Ark VTXO</div>
+        <div class="route-step">→ Route through Lightning</div>
+        <div class="route-step">→ Deliver to destination</div>
+      </div>
+      
+      <div class="slider-group">
+        <label>Transaction Speed</label>
+        <div class="slider-container">
+          <input type="range" min="1" max="3" value="2" class="slider" id="speedSlider" oninput="updateFee()">
+          <span class="speed-value" id="speedValue">Normal</span>
+        </div>
+        <div class="slider-labels">
+          <span>Slow</span>
+          <span>Normal</span>
+          <span>Fast</span>
+        </div>
+      </div>
+      
+      <div class="fee-info">
+        <span>Estimated Fee</span>
+        <span style="color: var(--accent)" id="feeAmount">~0.00002000 BTC</span>
+      </div>
+      
+      <div class="fee-info">
+        <span>Confirmation Time</span>
+        <span style="color: #888" id="confirmTime">~30 minutes</span>
+      </div>
+      
+      <button class="btn" onclick="sendPayment()">Confirm Send</button>
+    </div>
+  </div>
+
+  <!-- Receive Screen -->
+  <div class="screen" id="receiveScreen">
+    <div class="form-screen">
+      <button class="back-btn" onclick="showScreen('homeScreen')">←</button>
+      <h2 class="section-title">Receive Bitcoin</h2>
+      
+      <div class="info-box">
+        🌐 Single QR code works for all networks (BIP-321)
+      </div>
+      
+      <div class="qr-code" id="qrCode"></div>
+      
+      <div class="address-box" id="addressDisplay"></div>
+      
+      <button class="btn" onclick="copyAddress()">Copy Address</button>
+      <button class="btn btn-secondary" onclick="shareQR()">Share QR Code</button>
+    </div>
+  </div>
+
+  <!-- Success Screen -->
+  <div class="screen" id="successScreen">
+    <div class="success-screen">
+      <div class="success-icon">✓</div>
+      <h2 class="success-title">Payment Sent!</h2>
+      <p class="success-subtitle">Transaction has been successfully processed</p>
+      <button class="btn" onclick="showScreen('homeScreen')">Back to Home</button>
+    </div>
+  </div>
+
+  <!-- Settings Screen -->
+  <div class="screen" id="settingsScreen">
+    <div class="settings-screen">
+      <button class="back-btn" onclick="showScreen('homeScreen')">←</button>
+      <h2 class="section-title">Settings</h2>
+      
+      <div class="settings-group">
+        <h3>Account</h3>
+        <div class="settings-item" onclick="toggleSeed()">
+          <span>Show Seed Phrase</span>
+          <span>→</span>
+        </div>
+      </div>
+      
+      <div id="seedDisplay" style="display: none;">
+        <div class="seed-display" id="settingsSeedPhrase" style="-webkit-user-select: text; user-select: text;"></div>
+        <p style="color: #888; font-size: 0.85rem; margin-top: 1rem; text-align: center;">
+          ⚠️ Never share your seed phrase
+        </p>
+      </div>
+      
+      <div class="settings-group">
+        <h3>Preferences</h3>
+        <div class="settings-item">
+          <span>Fiat Currency</span>
+          <span style="color: #888">USD</span>
+        </div>
+        <div class="settings-item">
+          <span>Notifications</span>
+          <span style="color: var(--success)">ON</span>
+        </div>
+      </div>
+      
+      <div class="settings-group">
+        <h3>Other</h3>
+        <div class="settings-item" onclick="showToast('Feature not available in demo')">
+          <span>Backup</span>
+          <span>→</span>
+        </div>
+        <div class="settings-item" onclick="showToast('Feature not available in demo')">
+          <span>Security</span>
+          <span>→</span>
+        </div>
+        <div class="settings-item" onclick="resetWallet()">
+          <span style="color: var(--error)">Reset Wallet</span>
+          <span>→</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Global state
+    let seedPhrase = '';
+    let receiveAddress = '';
+    let privacyMode = false;
+
+    // BIP39 word list (subset for demo)
+    const wordList = ['abandon', 'ability', 'able', 'about', 'above', 'absent', 'absorb', 'abstract', 'absurd', 'abuse', 'access', 'accident', 'account', 'accuse', 'achieve', 'acid', 'acoustic', 'acquire', 'across', 'act', 'action', 'actor', 'actress', 'actual', 'adapt', 'add', 'addict', 'address', 'adjust', 'admit', 'adult', 'advance', 'advice', 'aerobic', 'affair', 'afford', 'afraid', 'again', 'age', 'agent', 'agree', 'ahead', 'aim', 'air', 'airport', 'aisle', 'alarm', 'album', 'alcohol', 'alert', 'alien', 'all', 'alley', 'allow', 'almost', 'alone', 'alpha', 'already', 'also', 'alter', 'always', 'amateur', 'amazing', 'among', 'amount', 'amused', 'analyst', 'anchor', 'ancient', 'anger', 'angle', 'angry', 'animal', 'ankle', 'announce', 'annual', 'another', 'answer', 'antenna', 'antique', 'anxiety', 'any', 'apart', 'apology', 'appear', 'apple', 'approve', 'april', 'arch', 'arctic', 'area', 'arena', 'argue', 'arm', 'armed', 'armor', 'army', 'around', 'arrange', 'arrest', 'arrive', 'arrow', 'art', 'artefact', 'artist', 'artwork', 'ask', 'aspect', 'assault', 'asset', 'assist', 'assume', 'asthma', 'athlete', 'atom', 'attack', 'attend', 'attitude', 'attract', 'auction', 'audit', 'august', 'aunt', 'author', 'auto', 'autumn', 'average', 'avocado', 'avoid', 'awake', 'aware', 'away', 'awesome', 'awful', 'awkward', 'axis', 'baby', 'bachelor', 'bacon', 'badge', 'bag', 'balance', 'balcony', 'ball', 'bamboo', 'banana', 'banner', 'bar', 'barely', 'bargain', 'barrel', 'base', 'basic', 'basket', 'battle', 'beach', 'bean', 'beauty', 'because', 'become', 'beef', 'before', 'begin', 'behave', 'behind', 'believe', 'below', 'belt', 'bench', 'benefit', 'best', 'betray', 'better', 'between', 'beyond', 'bicycle', 'bid', 'bike', 'bind', 'biology', 'bird', 'birth', 'bitter', 'black', 'blade', 'blame', 'blanket', 'blast', 'bleak', 'bless', 'blind', 'blood', 'blossom', 'blouse', 'blue', 'blur', 'blush', 'board', 'boat', 'body', 'boil', 'bomb', 'bone', 'bonus', 'book', 'boost', 'border', 'boring', 'borrow', 'boss', 'bottom', 'bounce', 'box', 'boy', 'bracket', 'brain', 'brand', 'brass', 'brave', 'bread', 'breeze', 'brick', 'bridge', 'brief', 'bright', 'bring', 'brisk', 'broccoli', 'broken', 'bronze', 'broom', 'brother', 'brown', 'brush', 'bubble', 'buddy', 'budget', 'buffalo', 'build', 'bulb', 'bulk', 'bullet', 'bundle', 'bunker', 'burden', 'burger', 'burst', 'bus', 'business', 'busy', 'butter', 'buyer', 'buzz'];
+
+    // Generate random seed phrase
+    function generateSeed() {
+      const words = [];
+      for (let i = 0; i < 12; i++) {
+        const randomIndex = Math.floor(Math.random() * wordList.length);
+        words.push(wordList[randomIndex]);
+      }
+      return words.join(' ');
+    }
+
+    // Initialize app
+    function initApp() {
+      seedPhrase = generateSeed();
+      document.getElementById('seedPhrase').textContent = seedPhrase;
+      receiveAddress = 'bc1q' + Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+    }
+
+    // Generate new seed
+    function generateNewSeed() {
+      seedPhrase = generateSeed();
+      document.getElementById('seedPhrase').textContent = seedPhrase;
+      showToast('New seed phrase generated');
+    }
+
+    // Continue setup
+    function continueSetup() {
+      showScreen('homeScreen');
+      generateReceiveQR();
+    }
+
+    // Navigation
+    function showScreen(screenId) {
+      document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+      document.getElementById(screenId).classList.add('active');
+      
+      // Update bottom nav
+      document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
+      if (screenId === 'homeScreen') {
+        document.querySelectorAll('.nav-item')[0].classList.add('active');
+      } else if (screenId === 'sendScreen') {
+        document.querySelectorAll('.nav-item')[1].classList.add('active');
+      } else if (screenId === 'receiveScreen') {
+        document.querySelectorAll('.nav-item')[2].classList.add('active');
+        generateReceiveQR();
+      } else if (screenId === 'settingsScreen') {
+        document.querySelectorAll('.nav-item')[3].classList.add('active');
+      }
+    }
+
+    // Generate QR code for receive
+    function generateReceiveQR() {
+      const qrContainer = document.getElementById('qrCode');
+      qrContainer.innerHTML = '';
+      
+      const unifiedAddress = `bitcoin:${receiveAddress}?amount=0.01&label=Airbitz&lightning=lnbc10m...&liquid=lq1qxy...`;
+      
+      QRCode.toCanvas(unifiedAddress, { 
+        width: 240,
+        margin: 2,
+        color: {
+          dark: '#000000',
+          light: '#ffffff'
+        }
+      }, function (error, canvas) {
+        if (error) {
+          qrContainer.innerHTML = '<div style="font-size: 2rem;">📱</div>';
+        } else {
+          qrContainer.appendChild(canvas);
+        }
+      });
+      
+      document.getElementById('addressDisplay').textContent = unifiedAddress;
+    }
+
+    // Copy address to clipboard
+    async function copyAddress() {
+      const address = document.getElementById('addressDisplay').textContent;
+      try {
+        await navigator.clipboard.writeText(address);
+        showToast('✓ Address copied to clipboard!');
+      } catch (err) {
+        // Fallback for older browsers
+        const textArea = document.createElement('textarea');
+        textArea.value = address;
+        textArea.style.position = 'fixed';
+        textArea.style.opacity = '0';
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textArea);
+        showToast('✓ Address copied to clipboard!');
+      }
+    }
+
+    // Share QR code
+    async function shareQR() {
+      const address = document.getElementById('addressDisplay').textContent;
+      if (navigator.share) {
+        try {
+          await navigator.share({
+            title: 'Airbitz Bitcoin Address',
+            text: `Send Bitcoin to: ${address}`
+          });
+        } catch (err) {
+          showToast('Share cancelled');
+        }
+      } else {
+        copyAddress();
+      }
+    }
+
+    // Select example address
+    function selectExample() {
+      const select = document.getElementById('exampleAddresses');
+      const input = document.getElementById('recipientAddress');
+      input.value = select.value;
+      
+      if (select.value) {
+        const network = detectNetwork(select.value);
+        setTimeout(() => {
+          showToast(`📡 Network detected: ${network}`);
+        }, 300);
+      }
+    }
+
+    // Detect network from address
+    function detectNetwork(address) {
+      if (address.startsWith('bc1')) return 'Bitcoin Mainnet (SegWit)';
+      if (address.startsWith('1')) return 'Bitcoin Mainnet (Legacy)';
+      if (address.startsWith('3')) return 'Bitcoin Mainnet (P2SH)';
+      if (address.startsWith('lq1') || address.startsWith('tex1')) return 'Liquid Network';
+      if (address.startsWith('lnbc')) return 'Lightning Network';
+      if (address.startsWith('ark1')) return 'Ark Protocol (VTXO)';
+      if (address.startsWith('cit1')) return 'Citrea Rollup';
+      if (address.startsWith('bob1')) return 'BOB Rollup';
+      return 'Unknown Network';
+    }
+
+    // Toggle privacy mode
+    function togglePrivacy() {
+      privacyMode = !privacyMode;
+      const toggle = document.getElementById('privacyToggle');
+      const route = document.getElementById('privacyRoute');
+      
+      if (privacyMode) {
+        toggle.classList.add('active');
+        route.style.display = 'block';
+      } else {
+        toggle.classList.remove('active');
+        route.style.display = 'none';
+      }
+      
+      updateFee();
+    }
+
+    // Update fee based on speed slider
+    function updateFee() {
+      const speed = document.getElementById('speedSlider').value;
+      const speedValue = document.getElementById('speedValue');
+      const feeAmount = document.getElementById('feeAmount');
+      const confirmTime = document.getElementById('confirmTime');
+      
+      const speeds = {
+        '1': { label: 'Slow', fee: '0.00001000', time: '~2 hours' },
+        '2': { label: 'Normal', fee: '0.00002000', time: '~30 minutes' },
+        '3': { label: 'Fast', fee: '0.00005000', time: '~10 minutes' }
+      };
+      
+      const current = speeds[speed];
+      speedValue.textContent = current.label;
+      feeAmount.textContent = `~${current.fee} BTC`;
+      confirmTime.textContent = current.time;
+      
+      // Adjust fee if privacy mode is on
+      if (privacyMode) {
+        const privacyFee = parseFloat(current.fee) * 1.5;
+        feeAmount.textContent = `~${privacyFee.toFixed(8)} BTC`;
+        confirmTime.textContent = current.time + ' + privacy routing';
+      }
+    }
+
+    // Send payment
+    function sendPayment() {
+      const address = document.getElementById('recipientAddress').value;
+      const amount = document.getElementById('amountInput').value;
+      
+      if (!address) {
+        showToast('⚠️ Enter a destination address');
+        return;
+      }
+      
+      if (!amount || parseFloat(amount) <= 0) {
+        showToast('⚠️ Enter a valid amount');
+        return;
+      }
+      
+      showScreen('successScreen');
+      setTimeout(() => {
+        showScreen('homeScreen');
+      }, 3000);
+    }
+
+    // Toggle seed display in settings
+    function toggleSeed() {
+      const seedDisplay = document.getElementById('seedDisplay');
+      const settingsSeed = document.getElementById('settingsSeedPhrase');
+      
+      if (seedDisplay.style.display === 'none') {
+        seedDisplay.style.display = 'block';
+        settingsSeed.textContent = seedPhrase;
+      } else {
+        seedDisplay.style.display = 'none';
+      }
+    }
+
+    // Reset wallet
+    function resetWallet() {
+      if (confirm('Are you sure you want to reset the wallet? This will generate a new seed phrase.')) {
+        seedPhrase = generateSeed();
+        showScreen('setupScreen');
+        document.getElementById('seedPhrase').textContent = seedPhrase;
+        showToast('Wallet reset with new seed phrase');
+      }
+    }
+
+    // Show toast notification
+    function showToast(message) {
+      const existingToast = document.querySelector('.toast');
+      if (existingToast) {
+        existingToast.remove();
+      }
+      
+      const toast = document.createElement('div');
+      toast.className = 'toast';
+      toast.textContent = message;
+      document.body.appendChild(toast);
+      
+      setTimeout(() => {
+        toast.remove();
+      }, 3000);
+    }
+
+    // Service Worker Registration
+    if ('serviceWorker' in navigator) {
+      const swCode = `
+        self.addEventListener('install', (e) => {
+          console.log('Service Worker: Installed');
+        });
+        self.addEventListener('fetch', (e) => {
+          e.respondWith(fetch(e.request));
+        });
+      `;
+      const blob = new Blob([swCode], { type: 'application/javascript' });
+      const swURL = URL.createObjectURL(blob);
+      navigator.serviceWorker.register(swURL);
+    }
+
+    // Manifest
+    const manifest = {
+      name: 'Airbitz',
+      short_name: 'Airbitz',
+      description: 'Multi-Network Bitcoin Wallet',
+      start_url: '.',
+      display: 'standalone',
+      background_color: '#0a0a0a',
+      theme_color: '#f7931a',
+      icons: [{
+        src: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192"><rect fill="%23f7931a" width="192" height="192" rx="40"/><text x="96" y="130" font-size="100" text-anchor="middle" fill="%23000" font-family="Arial" font-weight="900">A</text></svg>',
+        sizes: '192x192',
+        type: 'image/svg+xml'
+      }]
+    };
+    const manifestBlob = new Blob([JSON.stringify(manifest)], { type: 'application/json' });
+    const manifestURL = URL.createObjectURL(manifestBlob);
+    document.getElementById('manifest-placeholder').href = manifestURL;
+
+    // Initialize app on load
+    initApp();
+  </script>
+
+</body>
+</html>

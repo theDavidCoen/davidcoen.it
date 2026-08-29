@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+  <script>
+    (function () {
+      var theme = localStorage.getItem("davidcoen_theme");
+      if (theme === "light" || theme === "dark") {
+        document.documentElement.setAttribute("data-theme", theme);
+      }
+    })();
+  </script>
+    <title>Information Conversion Tool</title>
+    <link rel="stylesheet" href="/resources/shared/site.css">
+</head>
+<body>
+  <main class="wrap">
+    <div id="tool-header"></div>
+    
+    
+    <label for="input">Enter a value:</label>
+    <input type="number" id="input" name="input" min="0">
+    
+    <label for="from">From:</label>
+    <select id="from" name="from">
+      <option value="bits">bits</option>
+      <option value="bytes">bytes</option>
+      <option value="kilobits">kilobits</option>
+      <option value="kilobytes">kilobytes</option>
+      <option value="megabits">megabits</option>
+      <option value="megabytes">megabytes</option>
+      <option value="gigabits">gigabits</option>
+      <option value="gigabytes">gigabytes</option>
+      <option value="terabits">terabits</option>
+      <option value="terabytes">terabytes</option>
+      <option value="petabits">petabits</option>
+      <option value="petabytes">petabytes</option>
+      <option value="exabits">exabits</option>
+      <option value="exabytes">exabytes</option>
+    </select>
+    
+    <label for="to">To:</label>
+    <select id="to" name="to">
+      <option value="bits">bits</option>
+      <option value="bytes">bytes</option>
+      <option value="kilobits">kilobits</option>
+      <option value="kilobytes">kilobytes</option>
+      <option value="megabits">megabits</option>
+      <option value="megabytes">megabytes</option>
+      <option value="gigabits">gigabits</option>
+      <option value="gigabytes">gigabytes</option>
+      <option value="terabits">terabits</option>
+      <option value="terabytes">terabytes</option>
+      <option value="petabits">petabits</option>
+      <option value="petabytes">petabytes</option>
+      <option value="exabits">exabits</option>
+      <option value="exabytes">exabytes</option>
+    </select>
+    
+    <button onclick="convert()">Convert</button>
+    
+    <p id="result"></p>
+    
+    <script src="conversion.js"></script>
+  </main>
+  <script src="/resources/shared/site.js"></script>
+  <script>
+    ResourcesSite.mountToolHeader({
+      title: 'Information Conversion Tool',
+      clientSide: true,
+    });
+  </script>
+  <script src="/resources/shared/theme-toggle.js" defer></script>
+</body>
+</html>

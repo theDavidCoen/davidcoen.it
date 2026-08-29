@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <script>
+    (function () {
+      var theme = localStorage.getItem("davidcoen_theme");
+      if (theme === "light" || theme === "dark") {
+        document.documentElement.setAttribute("data-theme", theme);
+      }
+    })();
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Last BIP39 word calculator | DAVIDCOEN.IT Resources</title>
+  <link rel="stylesheet" href="/resources/shared/site.css">
+</head>
+<body>
+  <main class="wrap">
+    <div id="tool-header"></div>
+    <section class="card">
+      <p class="muted">Enter 11 or 23 valid BIP39 English words. The tool lists every valid final checksum word. Runs fully in your browser.</p>
+      <label for="words">Mnemonic words (space-separated)</label>
+      <textarea id="words" placeholder="abandon abandon abandon …"></textarea>
+      <button type="button" id="calcBtn">Find valid last words</button>
+      <div id="result" class="result" hidden></div>
+    </section>
+  </main>
+  <script src="/resources/shared/site.js"></script>
+  <script type="module" src="/resources/bip39-last-word/app.js"></script>
+  <script src="/resources/shared/theme-toggle.js" defer></script>
+</body>
+</html>

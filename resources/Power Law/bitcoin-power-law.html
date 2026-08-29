@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bitcoin Power Law & Rainbow Chart</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/luxon@3"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-luxon@1"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&display=swap');
+
+    body {margin:0;padding:0;background:#000;color:#fff;font-family:'Orbitron',sans-serif;text-align:center;min-height:100vh;}
+    header {background:#111;padding:30px 20px;border-bottom:3px solid #F7931A;}
+    h1 {font-size:2.8rem;color:#F7931A;margin:0;font-weight:900;}
+    .subtitle {color:#aaa;font-size:1.1rem;margin-top:8px;}
+    .container {max-width:1200px;margin:30px auto;padding:0 20px;display:grid;gap:30px;grid-template-columns:1fr 1fr;}
+    .card {background:#111;border:2px solid #333;border-radius:12px;padding:25px;}
+    .full-width {grid-column:1/-1;}
+    label {display:block;margin:15px 0 8px;font-size:1.1rem;color:#F7931A;}
+    input[type="date"] {padding:10px;background:#222;border:1px solid #F7931A;color:white;border-radius:6px;font-size:1rem;width:100%;max-width:220px;}
+    button {margin-top:15px;padding:12px 30px;background:#F7931A;color:black;border:none;border-radius:6px;font-weight:bold;font-size:1.1rem;cursor:pointer;}
+    button:hover {background:#ffb84d;}
+    .price {font-size:2.8rem;font-weight:900;color:#F7931A;margin:20px 0;letter-spacing:1px;}
+    .deviation {font-size:1.4rem;margin:15px 0;}
+    .positive {color:#00ff00;}
+    .negative {color:#ff0066;}
+    .goals {display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:15px;margin-top:20px;}
+    .goal {background:#222;padding:18px;border-radius:8px;border:1px solid #F7931A;}
+    .goal span:first-child {display:block;font-size:1.3rem;color:#F7931A;}
+    .credits {margin-top:60px;color:#666;font-size:0.95rem;padding-bottom:30px;}
+    canvas {background:#111;border-radius:10px;height:600px !important;}
+    @media (max-width:900px) {.container{grid-template-columns:1fr;} canvas{height:480px !important;} h1{font-size:2.2rem;} .price{font-size:2.2rem;}}
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>BITCOIN POWER LAW</h1>
+    <div class="subtitle">Giovanni Santostasi Model + Live Rainbow Chart (Log Scale)</div>
+  </header>
+
+  <div class="container">
+    <div class="card">
+      <label>Select Target Date</label>
+      <input type="date" id="targetDate" />
+      <button onclick="calculate()">CALCULATE PRICE</button>
+      <div class="price" id="predicted">Select a date</div>
+    </div>
+
+    <div class="card">
+      <h3>TODAY</h3>
+      <div class="price" id="currentPrice">Loading...</div>
+      <div class="deviation" id="deviation">–</div>
+    </div>
+    </div>
+
+    <div class="card full-width">
+      <canvas id="rainbowChart"></canvas>
+    </div>
+
+    <div class="card full-width">
+      <h3 style="color:#F7931A">POWER LAW MILESTONES</h3>
+      <div class="goals">
+        <div class="goal"><span>$1,000,000</span><strong id="m1">Calculating...</strong></div>
+        <div class="goal"><span>$10,000,000</span><strong id="m10">Calculating...</strong></div>
+        <div class="goal"><span>$100,000,000</span><strong id="m100">Calculating...</strong></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="credits">
+    Power Law: P = 10⁻¹⁷ × (days since Jan 3, 2009)⁵·⁸<br>
+    Chart: Log₁₀(Price) vs Time — Credits to Prof. Giovanni Santostasi
+  </div>
+
+  <script>
+    const GENESIS = new Date('2009-01-03');
+    const A = -17;
+    const B = 5.8;
+    let currentBTCPrice = 0;
+
+    function daysSinceGenesis(date) {
+      return Math.floor((date - GENESIS) / 86400000);
+    }
+
+    function powerLawPrice(n) {
+      return Math.pow(10, A) * Math.pow(n, B);
+    }
+
+    function formatPrice(p) {
+      return '$' + p.toLocaleString('en-US', {minimumFractionDigits:0, maximumFractionDigits:0});
+    }
+
+    function formatDateFull(d) {
+      return d.toLocaleDateString('en-US', {year:'numeric', month:'long'});
+    }
+
+    function calculate() {
+      const input = document.getElementById('targetDate').value;
+      if (!input) return alert('Select a date');
+      const date = new Date(input);
+      const n = daysSinceGenesis(date);
+      const price = powerLawPrice(n);
+      document.getElementById('predicted').textContent = formatPrice(price);
+    }
+
+    // Current price + deviation
+    async function loadCurrentPrice() {
+      try {
+        const res = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd');
+        const data = await res.json();
+        currentBTCPrice = data.bitcoin.usd;
+
+        const n = daysSinceGenesis(new Date());
+        const predicted = powerLawPrice(n);
+        const dev = ((currentBTCPrice - predicted) / predicted * 100).toFixed(1);
+
+        document.getElementById('currentPrice').textContent = formatPrice(currentBTCPrice);
+        document.getElementById('deviation').innerHTML = 
+          `Deviation: <span class="${dev >= 0 ? 'positive' : 'negative'}">${dev > 0 ? '+' : ''}${dev}%</span>`;
+
+        // Update "We are here" point
+        updateWeAreHerePoint();
+      } catch(e) {
+        document.getElementById('currentPrice').textContent = 'API error';
+      }
+    }
+
+    const bands = [
+      { max: 1e3,    color: 'rgba(0, 0, 139, 0.5)',   label: 'Basically Free' },
+      { max: 9e3,    color: 'rgba(0, 0, 255, 0.5)',   label: 'Blue Sale' },
+      { max: 3e4,    color: 'rgba(0, 255, 255, 0.5)', label: 'Still Cheap' },
+      { max: 1e5,    color: 'rgba(50, 205, 50, 0.5)',  label: 'Accumulate' },
+      { max: 3e5,    color: 'rgba(255, 215, 0, 0.6)', label: 'HODL' },
+      { max: 1e6,    color: 'rgba(255, 140, 0, 0.6)',  label: 'FOMO' },
+      { max: 1e7,    color: 'rgba(255, 0, 0, 0.7)',    label: 'Danger Zone' },
+      { max: Infinity, color: 'rgba(139, 0, 0, 0.8)', label: 'Bubble Territory' }
+    ];
+
+    const ctx = document.getElementById('rainbowChart').getContext('2d');
+    const chart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        datasets: [
+          { label: 'Power Law (Santostasi)', data: [], borderColor: '#F7931A', borderWidth: 4, pointRadius: 0, tension: 0 },
+          ...bands.map((b,i)=>({
+            label: b.label, data: [], backgroundColor: b.color, borderWidth: 0, pointRadius: 0,
+            fill: i===0 ? false : '-1'
+          })),
+          // "WE ARE HERE" point
+          {
+            label: 'WE ARE HERE',
+            data: [],
+            backgroundColor: '#F7931A',
+            borderColor: '#000',
+            borderWidth: 3,
+            pointRadius: 12,
+            pointHoverRadius: 15,
+            pointStyle: 'circle',
+            showLine: false
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: {
+          x: { type: 'time', time: { unit: 'year' }, title: { display: true, text: 'Year', color: '#aaa' }, grid: { color: '#333' } },
+          y: {
+            type: 'logarithmic',
+            title: { display: true, text: 'Bitcoin Price (USD) – Log Scale', color: '#F7931A', font: { size: 14 } },
+            ticks: { callback: v => '$' + Number(v).toLocaleString(), color: '#aaa' },
+            grid: { color: '#333' }
+          }
+        },
+        plugins: {
+          legend: { labels: { color: '#fff' } },
+          tooltip: {
+            callbacks: { label: ctx => ctx.dataset.label + ': ' + formatPrice(ctx.parsed.y) }
+          }
+        }
+      }
+    });
+
+    function updateChart() {
+      const points = [];
+      let date = new Date('2009-01-03');
+      const end = new Date('2040-01-01');
+      while (date <= end) {
+        const n = daysSinceGenesis(date);
+        points.push({ x: new Date(date), y: powerLawPrice(n) });
+        date.setMonth(date.getMonth() + 2);
+      }
+
+      chart.data.datasets[0].data = points;
+
+      bands.forEach((band,i) => {
+        chart.data.datasets[i+1].data = points.map(p => ({ x: p.x, y: p.y > band.max ? band.max : p.y }));
+      });
+
+      chart.update();
+    }
+
+    function updateWeAreHerePoint() {
+      if (currentBTCPrice === 0) return;
+      const today = new Date();
+      chart.data.datasets[chart.data.datasets.length-1].data = [{
+        x: today,
+        y: currentBTCPrice
+      }];
+      chart.update();
+    }
+
+    function calculateMilestone(target) {
+      const n = Math.pow(10, (Math.log10(target) - A) / B);
+      const future = new Date(GENESIS);
+      future.setDate(future.getDate() + Math.ceil(n));
+      return formatDateFull(future);
+    }
+
+    window.onload = () => {
+      document.getElementById('targetDate').value = new Date().toISOString().split('T')[0];
+      calculate();
+      loadCurrentPrice();
+      updateChart();
+
+      document.getElementById('m1').textContent = calculateMilestone(1000000);
+      document.getElementById('m10').textContent = calculateMilestone(10000000);
+      document.getElementById('m100').textContent = calculateMilestone(100000000);
+    };
+  </script>
+</body>
+</html>

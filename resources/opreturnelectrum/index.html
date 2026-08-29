@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <script>
+    (function () {
+      var theme = localStorage.getItem("davidcoen_theme");
+      if (theme === "light" || theme === "dark") {
+        document.documentElement.setAttribute("data-theme", theme);
+      }
+    })();
+  </script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bitcoin OP_RETURN for Electrum Tool</title>
+  <link rel="stylesheet" href="/resources/shared/site.css">
+</head>
+<body>
+  <main class="wrap">
+    <div id="tool-header"></div>
+    <h2>Bitcoin OP_RETURN for Electrum Tool</h2>
+    <p>Enter a Bitcoin address, an amount, and a memo (OP_RETURN). The result can be pasted into Electrum Wallet's "Pay to:" field.*</p>
+    <p>The transaction will include your memo as an OP_RETURN and will send the amount to the selected Bitcoin address. You can spend to yourself by using a Bitcoin address from your wallet.</p> 
+    
+    <label for="address">Bitcoin Address:</label>
+    <input type="text" id="address" placeholder="1BitcoinAddressHere" required><br><br>
+    
+    <label for="amount">Amount (BTC):</label>
+    <input type="number" id="amount" step="0.00000001" placeholder="0.001" required><br><br>
+    
+    <label for="memo">Memo:</label>
+    <input type="text" id="memo" placeholder="Your message here" required><br><br>
+    
+    <button onclick="generateTransaction()">Generate</button>
+    
+    <h3>Result:</h3>
+    <pre id="result"></pre>
+    <button onclick="copyResult()">Copy to Clipboard</button>
+    
+    <script>
+        function textToHex(str) {
+            return Array.from(str, c => c.charCodeAt(0).toString(16).padStart(2, '0')).join('');
+        }
+
+        function generateTransaction() {
+            const address = document.getElementById("address").value.trim();
+            const amount = document.getElementById("amount").value.trim();
+            const memo = document.getElementById("memo").value.trim();
+            const hexMemo = textToHex(memo);
+            
+            if (!address || !amount || !memo) {
+                alert("Please fill in all fields.");
+                return;
+            }
+            
+            if ((hexMemo.length / 2) + 2 > 80) { // OP_RETURN + push opcode
+                alert("Memo is too long! Must be 78 bytes or less.");
+                return;
+            }
+            
+            const result = `${address}, ${amount}\nscript(OP_RETURN ${hexMemo}), 0`;
+            document.getElementById("result").textContent = result;
+        }
+        
+        function copyResult() {
+            const resultText = document.getElementById("result").textContent;
+            navigator.clipboard.writeText(resultText).then(() => {
+                alert("Copied to clipboard!");
+            }).catch(err => {
+                alert("Failed to copy.");
+            });
+        }
+    </script>
+<h5>*Version 4 or higher</h5>
+  </main>
+  <script src="/resources/shared/site.js"></script>
+  <script>
+    ResourcesSite.mountToolHeader({
+      title: 'Bitcoin OP_RETURN for Electrum Tool',
+      clientSide: true,
+    });
+  </script>
+  <script src="/resources/shared/theme-toggle.js" defer></script>
+</body>
+</html>
+</html>

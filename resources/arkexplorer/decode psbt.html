@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>PSBT Vaporwave Decoder 3000</title>
+<style>
+  body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(135deg, #ff006e, #8338ec, #3a86ff);
+    font-family: 'Courier New', monospace;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .container {
+    background: rgba(0,0,0,0.6);
+    padding: 2rem 3rem;
+    border-radius: 20px;
+    box-shadow: 0 0 40px #ff006e, 0 0 80px #8338ec;
+    max-width: 900px;
+    text-align: center;
+    animation: glow 4s infinite alternate;
+  }
+  @keyframes glow { from { box-shadow: 0 0 40px #ff006e; } to { box-shadow: 0 0 80px #3a86ff; } }
+  h1 {
+    font-size: 3rem;
+    margin: 0 0 1rem;
+    text-shadow: 0 0 20px #fff;
+  }
+  textarea {
+    width: 100%;
+    height: 120px;
+    background: #000;
+    color: #0f0;
+    border: 3px solid #ff006e;
+    border-radius: 10px;
+    padding: 1rem;
+    font-size: 1rem;
+    margin: 1rem 0;
+    resize: vertical;
+  }
+  button {
+    background: #ff006e;
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 0 30px #ff006e;
+    transition: all 0.3s;
+  }
+  button:hover { transform: scale(1.1); background: #ff477e; }
+  pre {
+    background: #000;
+    padding: 1.5rem;
+    border-radius: 10px;
+    text-align: left;
+    margin-top: 2rem;
+    max-height: 60vh;
+    overflow: auto;
+    border: 2px solid #3a86ff;
+  }
+  .footer { margin-top: 2rem; font-size: 0.9rem; opacity: 0.8; }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>PSBT VAPORWAVE DECODER 3000</h1>
+  <p>Paste your Base64 PSBT below and prepare for maximum retro vibes</p>
+  
+  <textarea id="input" placeholder="cHNidP8BAGsDAAAAAdwZc6GhPZLz...">=</textarea>
+  <br>
+  <button onclick="decode()">DECODE IT BABY</button>
+
+  <pre id="output">Your beautiful decoded PSBT will appear here...</pre>
+  
+  <div class="footer">Made with love and too much caffeine — 100% client-side</div>
+</div>
+
+<script>
+// Simple but very readable PSBT decoder (supports v0 and v2)
+function decode() {
+  const b64 = document.getElementById('input').value.trim();
+  if (!b64) return;
+  
+  let binary = atob(b64);
+  let bytes = new Uint8Array(binary.length);
+  for (let i = 0; i < binary.length; i++) bytes[i] = binary.charCodeAt(i);
+  
+  let pos = 0;
+  let output = "";
+  
+  // Magic + version
+  const magic = bytes.slice(pos, pos+5).reduce((s,b)=>s+String.fromCharCode(b),'');
+  pos += 5;
+  if (magic !== 'psbt\xff') { output += "Not a valid PSBT\n"; document.getElementById('output').textContent = output; return; }
+  
+  const version = bytes[pos] | (bytes[pos+1]<<8) | (bytes[pos+2]<<16) | (bytes[pos+3]<<24);
+  pos += 4;
+  output += `PSBT Version: ${version} ${version===2 ? "(v2 — fancy!)" : ""}\n\n`;
+  
+  // Helper to read varint
+  function readVarint() {
+    let n = 0, shift = 0;
+    while (true) {
+      let b = bytes[pos++];
+      n |= (b & 0x7f) << shift;
+      if (b < 0x80) break;
+      shift += 7;
+    }
+    return n;
+  }
+  
+  // Helper to read key/value pairs until 0x00 separator
+  function readKeyValuePairs() {
+    let pairs = {};
+    while (bytes[pos] !== 0x00) {
+      let keyLen = readVarint();
+      if (keyLen === 0) break;
+      let keyType = bytes[pos];
+      let key = bytes.slice(pos+1, pos+keyLen);
+      pos += keyLen;
+      let valueLen = readVarint();
+      let value = bytes.slice(pos, pos+valueLen);
+      pos += valueLen;
+      pairs[keyType] = value;
+    }
+    pos++; // skip separator 0x00
+    return pairs;
+  }
+  
+  // Global fields (very small for this tx)
+  readKeyValuePairs();
+  
+  // === INPUTS ===
+  const inputCount = readVarint();
+  output += `Inputs: ${inputCount}\n`;
+  for (let i = 0; i < inputCount; i++) {
+    let prevTxid = [...bytes.slice(pos+4, pos+36)].reverse().map(b=>b.toString(16).padStart(2,'0')).join('');
+    let vout = bytes[pos] | (bytes[pos+1]<<8) | (bytes[pos+2]<<16) | (bytes[pos+3]<<24);
+    pos += 36;
+    output += `  Input #${i}\n`;
+    output += `    ← ${prevTxid} : ${vout}\n`;
+    
+    let inputFields = readKeyValuePairs();
+    
+    // Try to find amount from partial sig or bip32 derivation
+    if (inputFields[0x05]) { // PSBT_IN_WITNESS_UTXO
+      let scriptPubKeyLen = inputFields[0x05][8]; // after value 8 bytes
+      let amount = Number(inputFields[0x05].slice(0,8).reduce((a,b,i)=>a + b*Math.pow(256,7-i),0n));
+      output += `    Amount: ${amount} sat (${(amount/1e8).toFixed(8)} BTC)\n`;
+    }
+    
+    if (inputFields[0x01]) { // PSBT_IN_PARTIAL_SIG
+      let pubkey = [...inputFields[0x01].slice(1)].map(b=>b.toString(16).padStart(2,'0')).join('');
+      output += `    Partial signature present (pubkey ends ...${pubkey.slice(-10)})\n`;
+    }
+  }
+  
+  // === OUTPUTS ===
+  const outputCount = readVarint();
+  output += `\nOutputs: ${outputCount}\n`;
+  for (let i = 0; i < outputCount; i++) {
+    let amount = bytes.slice(pos, pos+8).reduce((a,b,i)=>a + b*Math.pow(256,7-i),0n);
+    pos += 8;
+    let scriptLen = readVarint();
+    let scriptPubKey = bytes.slice(pos, pos+scriptLen);
+    pos += scriptLen;
+    
+    // Decode address from scriptPubKey (P2WPKH or P2WSH only for simplicity)
+    let address = "";
+    if (scriptLen === 22 && scriptPubKey[0]===0x00 && scriptPubKey[1]===0x14) {
+      address = bech32mEncode("bc", [0].concat([...scriptPubKey.slice(2)]));
+    } else if (scriptLen === 34 && scriptPubKey[0]===0x16 && scriptPubKey[1]===0x00 && scriptPubKey[2]===0x14) {
+      address = bech32Encode("bc", [...scriptPubKey.slice(3)]);
+    }
+    
+    output += `  Output #${i}\n`;
+    output += `    → ${address || "unknown script"} \n`;
+    output += `    Amount: ${amount} sat (${(amount/1e8).toFixed(8)} BTC)\n`;
+  }
+  
+  document.getElementById('output').textContent = output;
+}
+
+// Tiny Bech32 / Bech32m encoder (good enough for P2WPKH/P2WSH)
+function bech32Encode(hrp, data) {
+  const charset = 'qpzry9x8gf2tvdw0s3jn54khce6mua7l';
+  let spec = bech32(hrp, data, charset);
+  return spec;
+}
+function bech32mEncode(hrp, data) {
+  const charset = 'qpzry9x8gf2tvdw0s3jn54khce6mua7l';
+  let spec = bech32(hrp, data, charset, 0x2bc830a3); // M = 0x2bc830a3
+  return spec;
+}
+function bech32(hrp, data, alphabet, constant = 1) {
+  let checksum = createChecksum(hrp, data, constant);
+  let combined = data.concat(checksum);
+  let str = hrp + '1';
+  for (let p of combined) str += alphabet.charAt(p);
+  return str;
+}
+function createChecksum(hrp, data, constant) {
+  let values = hrpExpand(hrp).concat(data).concat([0,0,0,0,0,0]);
+  let mod = polymod(values) ^ constant;
+  let result = [];
+  for (let i = 0; i < 6; ++i) result.push((mod >> 5*(5-i)) & 31);
+  return result;
+}
+function hrpExpand(hrp) {
+  let res = [];
+  for (let p of hrp) res.push(p.charCodeAt(0) >> 5);
+  res.push(0);
+  for (let p of hrp) res.push(p.charCodeAt(0) & 31);
+  return res;
+}
+function polymod(values) {
+  const GEN = [0x3b6a57b2, 0x26508e6d, 0x1ea119fa, 0x3d4233dd, 0x2a1462b3];
+  let chk = 1;
+  for (let v of values) {
+    let b = chk >> 25;
+    chk = (chk & 0x1ffffff) << 5 ^ v;
+    for (let i = 0; i < 5; ++i) if ((b >> i) & 1) chk ^= GEN[i];
+  }
+  return chk;
+}
+
+// Auto-load the example you posted
+window.onload = () => {
+  document.getElementById('input').value = "cHNidP8BAGsDAAAAAdwZc6GhPZLz/OqeBDdfsaYQKoozhImBSKSeF41js8EZAQAAAAD/////AkoBAAAAAAAAIlEgJrU0vgMiiXR8ytQBLcPfPge7EZv+eQ1g4eB5DDeCCa0AAAAAAAAAAARRAk5zAAAAAAAN3mNvc2lnbmVyAAAAACECJrU0vgMiiXR8ytQBLcPfPge7EZv+eQ1g4eB5DDeCCa0AAAA=";
+  decode();
+};
+</script>
+
+</body>
+</html>

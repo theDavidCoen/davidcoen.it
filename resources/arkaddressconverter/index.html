@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <script>
+    (function () {
+      var theme = localStorage.getItem("davidcoen_theme");
+      if (theme === "light" || theme === "dark") {
+        document.documentElement.setAttribute("data-theme", theme);
+      }
+    })();
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Arkade address converter | DAVIDCOEN.IT Resources</title>
+  <meta name="description" content="Convert Arkade addresses to Bitcoin scriptPubKey hex and back.">
+  <link rel="stylesheet" href="/resources/shared/site.css">
+</head>
+<body>
+  <main class="wrap">
+    <div id="tool-header"></div>
+    <div class="card">
+      <p class="muted">Arkade addresses encode network prefix, version, operator x-only pubkey (32 bytes), and P2TR output key. Mainnet server: <a href="https://arkade.computer" target="_blank" rel="noopener">arkade.computer</a>. Fetch the current operator key from <code>GetInfo</code> if conversion fails.</p>
+      <label for="serverPubkey">Operator pubkey (compressed hex, 33 bytes)</label>
+      <input type="text" id="serverPubkey" placeholder="02… or 03… (66 hex chars)" spellcheck="false">
+      <button type="button" class="secondary" id="fetchPubkey">Try fetch from arkade.computer</button>
+    </div>
+    <div class="grid-2">
+      <section class="card">
+        <h2>Arkade address → scriptPubKey</h2>
+        <label for="arkAddress">Arkade address</label>
+        <input type="text" id="arkAddress" placeholder="ark1…" spellcheck="false" autocomplete="off">
+        <button type="button" id="toScript">Convert</button>
+        <label for="scriptHex">scriptPubKey (hex)</label>
+        <textarea id="scriptHex" readonly></textarea>
+      </section>
+      <section class="card">
+        <h2>scriptPubKey → Arkade address</h2>
+        <label for="scriptInput">scriptPubKey (hex)</label>
+        <input type="text" id="scriptInput" placeholder="5120…" spellcheck="false" autocomplete="off">
+        <button type="button" id="toArk">Convert</button>
+        <label for="arkOutput">Arkade address</label>
+        <textarea id="arkOutput" readonly></textarea>
+      </section>
+    </div>
+    <div id="message" class="result" hidden></div>
+  </main>
+  <script src="/resources/shared/site.js"></script>
+  <script src="/resources/arkaddressconverter/app.js"></script>
+  <script src="/resources/shared/theme-toggle.js" defer></script>
+</body>
+</html>

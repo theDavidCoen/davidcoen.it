@@ -280,6 +280,11 @@ li::marker {
   margin: 0.35rem 0;
 }
 
+.footer-sponsor img {
+  display: inline-block;
+  vertical-align: middle;
+}
+
 .cookie-banner {
   position: fixed;
   inset: auto 1rem 1rem 1rem;

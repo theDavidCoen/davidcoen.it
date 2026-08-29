@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <script>
+    (function () {
+      var theme = localStorage.getItem("davidcoen_theme");
+      if (theme === "light" || theme === "dark") {
+        document.documentElement.setAttribute("data-theme", theme);
+      }
+    })();
+  </script>
+  <title>NIP-05 Creation Tool</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.5.0/jszip.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.2/FileSaver.min.js"></script>
+  <link rel="stylesheet" href="/resources/shared/site.css">
+</head>
+<body>
+  <main class="wrap">
+    <div id="tool-header"></div>
+    
+<p>NIP-05 defines a way to verify a Nostr account by mapping Nostr keys to DNS-based internet identifiers.
+<br>As we can read from the <a href="https://github.com/nostr-protocol/nips/blob/master/05.md" target="_blank">documentation</a>, if the public key for the given 'name' in the JSON on the user's server matches the pubkey from the set_metadata event on Nostr, the client then concludes that the given pubkey can indeed be referenced by its identifier.
+<h2>Example:</h2>
+<code>{
+        "names": {
+          "david":"a976156de0384616921e32bfc8314cc647d33843af649d2d91faabb2450b808d"
+        }
+      };
+</code>
+<br>will say that the Nostr public key a976156de0384616921e32bfc8314cc647d33843af649d2d91faabb2450b808d represents "david" for the domain in which this JSON is put.
+<h2>How the tool works?</h2>
+The tool generates a .zip file. Inside you have a .htaccess file for your Apache server and a folder which contains a JSON called "nostr.json".
+<br>You simply need to paste the unzipped contents in the domain you prefer.
+<br>For example, I wanted to put my NIP05 identifier in my domain davidcoen.it, so I pasted .htaccess file and the .well-known folder in the public.html folder.
+<h2>Convert Nostr Public Key in NPUB format to HEX format</h2>
+<p>If you already have your Nostr Public Key in HEX format, skip this step.</p>
+<label for="bech32">NPUB key</label>
+	      <input type="text"  placeholder="npub..." id="damus-key">
+
+	      <label for="bech32">HEX key</label>
+	      <input type="text"  placeholder="" id="hex-key">
+<script src="bech32.js" ></script>
+	<script src="key.js?v=3" ></script>
+<p>Conversion tool provided by <a href="https://damus.io/key/">Damus</a>.</p>
+ <br>
+<h2>Enter Nostr Public Key in HEX format</h2>
+  <input type="text" id="keyInput" placeholder="Enter Nostr HEX public key here">
+  <br><br>
+  <h2>Choose a name</h2>
+  <input type="text" id="nameInput" placeholder="Enter a name here">
+  <br><br>
+  <button id="createButton">Create</button>
+  <script>
+    document.getElementById("createButton").addEventListener("click", function() {
+      let key = document.getElementById("keyInput").value;
+      let name = document.getElementById("nameInput").value;
+      let json = {
+        "names": {
+          [name]: key
+        }
+      };
+      let jsonStr = JSON.stringify(json);
+      let blob = new Blob([jsonStr], { type: "application/json" });
+      let htaccess = `<IfModule mod_headers.c>
+   Header set Access-Control-Allow-Origin "*"
+ </IfModule>`;
+      let zip = new JSZip();
+      zip.folder(".well-known").file("nostr.json", blob);
+      zip.file(".htaccess", htaccess);
+      zip.generateAsync({ type: "blob" }).then(function(content) {
+        saveAs(content, "nip05.zip");
+      });
+    });
+  </script>
+
+<br><br><br><b>Tip:</b>
+<br>If you want to simply show the domain name instead of the format "name@domain", you can use the name "_", so you will get something like:
+<br><code>{
+        "names": {
+          "_":"a976156de0384616921e32bfc8314cc647d33843af649d2d91faabb2450b808d"
+        }
+      };
+</code>
+<br>which sould be rendered as "domain.com" in the Nostr client. In my example is "davidcoen.it".
+  </main>
+  <script src="/resources/shared/site.js"></script>
+  <script>
+    ResourcesSite.mountToolHeader({
+      title: 'NIP-05 Creation Tool',
+      clientSide: true,
+    });
+  </script>
+  <script src="/resources/shared/theme-toggle.js" defer></script>
+</body>
+<br><br><br>
+<p>If this helps you and you want to drop some sats, you can send a Lightning payment to <a href=lightning:davidcoen@getalby.com>davidcoen@getalby.com</a> or use this button
+<style>.btcpay-form{display:inline-flex;align-items:center;justify-content:center}.btcpay-form--inline{flex-direction:row}.btcpay-form--block{flex-direction:column}.btcpay-form--inline .submit{margin-left:15px}.btcpay-form--block select{margin-bottom:10px}.btcpay-form .btcpay-custom-container{text-align:center}.btcpay-custom{display:flex;align-items:center;justify-content:center}.btcpay-form .plus-minus{cursor:pointer;font-size:25px;line-height:25px;background:#dfe0e1;height:30px;width:45px;border:0;border-radius:60px;margin:auto 5px;display:inline-flex;justify-content:center}.btcpay-form select{-moz-appearance:none;-webkit-appearance:none;appearance:none;color:currentColor;background:transparent;border:1px solid transparent;display:block;padding:1px;margin-left:auto;margin-right:auto;font-size:11px;cursor:pointer}.btcpay-form select:hover{border-color:#ccc}.btcpay-form option{color:#000;background:rgba(0,0,0,.1)}.btcpay-input-price{-moz-appearance:textfield;border:0;box-shadow:none;text-align:center;font-size:25px;margin:auto;border-radius:5px;line-height:35px;background:#fff}.btcpay-input-price::-webkit-outer-spin-button,.btcpay-input-price::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}</style>
+<form method=POST action=https://btcpay.davidcoen.it/api/v1/invoices class="btcpay-form btcpay-form--inline">
+<input type=hidden name=storeId value=4vbUUWVJ84PCq87v2Zw8w4rsQ3pC6jAh19BatSEcmtwG />
+<div class=btcpay-custom-container>
+<div class=btcpay-custom>
+<button class=plus-minus type=button data-type=- data-step=1 data-min=10 data-max=99999999999>-</button>
+<input class=btcpay-input-price type=number name=price min=10 max=99999999999 step=1 value=10 data-price=10 style=width:2em />
+<button class=plus-minus type=button data-type=+ data-step=1 data-min=10 data-max=99999999999>+</button>
+</div>
+<select name=currency>
+<option value=SATS selected>SATS</option>
+<option value=USD>USD</option>
+<option value=GBP>GBP</option>
+<option value=EUR>EUR</option>
+<option value=BTC>BTC</option>
+</select>
+</div>
+<button type=submit class=submit name=submit style=min-width:146px;min-height:40px;border-radius:4px;border-style:none;background-color:#0f3b21;cursor:pointer title="Pay with BTCPay Server, a Self-Hosted Bitcoin Payment Processor"><span style=color:#fff>Donate with</span>
+<img src=/assets/btcpay-paybutton-logo.svg style="height:40px;display:inline-block;padding:5% 0 5% 5px;vertical-align:middle">
+</button></form>
+<script>function handlePlusMinus(h){h.preventDefault();const b=h.target.closest(".btcpay-form");const e=b.querySelector(".btcpay-input-price");const g=parseInt(h.target.dataset.step)||1;const c=parseInt(h.target.dataset.min)||1;const a=parseInt(h.target.dataset.max);const d=h.target.dataset.type;const f=parseInt(e.value)||c;if(d==="-"){e.value=f-g<c?c:f-g}else{if(d==="+"){e.value=f+g>a?a:f+g}}}document.querySelectorAll(".btcpay-form .plus-minus").forEach(function(a){if(!a.dataset.initialized){a.addEventListener("click",handlePlusMinus);a.dataset.initialized=true}});function handlePriceInput(e){e.preventDefault();const b=e.target.closest(".btcpay-form");const d=parseInt(e.target.dataset.price);if(isNaN(e.target.value)){b.querySelector(".btcpay-input-price").value=d}const c=parseInt(e.target.getAttribute("min"))||1;const a=parseInt(e.target.getAttribute("max"));if(e.target.value<c){e.target.value=c}else{if(e.target.value>a){e.target.value=a}}}document.querySelectorAll(".btcpay-form .btcpay-input-price").forEach(function(a){if(!a.dataset.initialized){a.addEventListener("input",handlePriceInput);a.dataset.initialized=true}});</script>
+</p>
+<p style=text-align:right>
+
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+  <script>
+    (function () {
+      var theme = localStorage.getItem("davidcoen_theme");
+      if (theme === "light" || theme === "dark") {
+        document.documentElement.setAttribute("data-theme", theme);
+      }
+    })();
+  </script>
+    <title>Torrent Downloader</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+   <style>
+
+#progress-bar {
+  height: 20px;
+  border: 1px solid #ccc;
+  margin: 10px 0;
+  background-color: white;
+  overflow: hidden; /* added to hide overflowing background-color */
+}
+
+#progress {
+  height: 100%;
+  background-color: transparent;
+  width: 0%;
+  box-sizing: border-box; /* added to include border in width */
+  border: 1px solid green; /* added to show progress with a green border */
+}
+
+
+    </style>
+    <link rel="stylesheet" href="/resources/shared/site.css">
+</head>
+<body>
+  <main class="wrap">
+    <div id="tool-header"></div>
+    
+<p>You can use <a href="https://torrentseeker.com/" target="_blank">torrentseeker.com</a> to search for a magnet and paste it here below.</p>
+    <div>
+      <label for="magnet-link">Magnet Link:</label>
+      <input id="magnet-link" type="text" placeholder="Enter magnet link">
+    </div>
+    <div>
+      <button onclick="downloadTorrent()">Download</button>
+      <button onclick="stopDownload()" disabled>Stop</button>
+      <div id="progress-bar"></div>
+<div id="progress"></div>
+      <div id="stats"></div>
+    </div>
+
+        <script src="https://cdn.jsdelivr.net/webtorrent/latest/webtorrent.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/g/filesaver.js"></script>
+       <script src="main.js"></script>  
+<div><b>Please don't use this tool to download copyrighted material.</b></div>
+  </main>
+  <script src="/resources/shared/site.js"></script>
+  <script>
+    ResourcesSite.mountToolHeader({
+      title: 'Torrent Downloader',
+      clientSide: true,
+    });
+  </script>
+  <script src="/resources/shared/theme-toggle.js" defer></script>
+</body>
+</html>

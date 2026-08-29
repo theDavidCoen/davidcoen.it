@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <script>
+    (function () {
+      var theme = localStorage.getItem("davidcoen_theme");
+      if (theme === "light" || theme === "dark") {
+        document.documentElement.setAttribute("data-theme", theme);
+      }
+    })();
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>xpub / descriptor viewer | DAVIDCOEN.IT Resources</title>
+  <link rel="stylesheet" href="/resources/shared/site.css">
+</head>
+<body>
+  <main class="wrap">
+    <div id="tool-header"></div>
+    <section class="card">
+      <p class="muted">Paste a standard output descriptor (<code>wpkh(…)</code>, <code>tr(…)</code>, <code>wsh(…)</code>, <code>multi(…)</code>, <code>addr(…)</code>, …) or a plain xpub/ypub/zpub. Parsing uses <code>@bitcoinerlab/descriptors</code> in your browser.</p>
+      <label for="input">xpub / ypub / zpub or descriptor</label>
+      <textarea id="input" placeholder="xpub… or wpkh([fingerprint/path]xpub/0/*)"></textarea>
+      <label for="count">Addresses to derive</label>
+      <input type="number" id="count" min="1" max="20" value="5">
+      <label for="change">Change chain</label>
+      <select id="change">
+        <option value="0">External / receive (0)</option>
+        <option value="1">Internal / change (1)</option>
+      </select>
+      <button type="button" id="inspectBtn">Inspect</button>
+      <div id="result" class="result" hidden></div>
+    </section>
+  </main>
+  <script src="/resources/shared/site.js"></script>
+  <script>
+    ResourcesSite.mountToolHeader({
+      title: 'xpub / descriptor viewer',
+      subtitle: 'Parse output descriptors and derive receive/change addresses locally.',
+      clientSide: true,
+      sensitive: true,
+    });
+  </script>
+  <script type="module" src="/resources/xpub-viewer/app.js"></script>
+  <script src="/resources/shared/theme-toggle.js" defer></script>
+</body>
+</html>

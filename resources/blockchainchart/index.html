@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <script>
+    (function () {
+      var theme = localStorage.getItem("davidcoen_theme");
+      if (theme === "light" || theme === "dark") {
+        document.documentElement.setAttribute("data-theme", theme);
+      }
+    })();
+  </script>
+	<title>Bitcoin Blockchain Size Chart</title>
+	<!-- Include the Chart.js library -->
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+	<!-- Set the chart width and height to fill the screen -->
+	<style>
+		canvas {
+			display: block;
+			width: 100vw;
+			height: 100vh;
+		}
+	</style>
+  <link rel="stylesheet" href="/resources/shared/site.css">
+</head>
+<body>
+  <main class="wrap">
+    <div id="tool-header"></div>
+    <!-- Create a canvas element to hold the chart -->
+	<canvas id="myChart"></canvas>
+	<!-- Load the data and create the chart -->
+	<script>
+		// Define the Blockchain.com API endpoint and parameters
+		var endpoint = 'https://api.blockchain.info/charts/blocks-size?cors=true';
+		var params = {
+			format: 'json',
+			timespan: '1year'
+		};
+
+		// Fetch the data from the API
+		fetch(endpoint + '&' + new URLSearchParams(params))
+			.then(response => response.json())
+			.then(data => {
+				// Format the data for the chart
+				var chartData = {
+					labels: [],
+					datasets: [{
+						label: 'Bitcoin Blockchain Size',
+						data: [],
+						borderColor: 'rgba(255, 99, 132, 1)',
+						fill: false
+					}]
+				};
+				data.values.forEach(item => {
+					chartData.labels.push(new Date(item.x * 1000));
+					chartData.datasets[0].data.push(item.y / 1e6); // Convert bytes to MB
+				});
+
+				// Create the chart using Chart.js
+				var ctx = document.getElementById('myChart').getContext('2d');
+				var chart = new Chart(ctx, {
+					type: 'line',
+					data: chartData,
+					options: {
+						scales: {
+							xAxes: [{
+								type: 'time',
+								time: {
+									unit: 'month',
+									displayFormats: {
+										month: 'MMM YYYY'
+									}
+								},
+								scaleLabel: {
+									display: true,
+									labelString: 'Time'
+								}
+							}],
+							yAxes: [{
+								scaleLabel: {
+									display: true,
+									labelString: 'Blockchain Size (MB)'
+								}
+							}]
+						}
+					}
+				});
+			})
+			.catch(error => console.error(error));
+	</script>
+  </main>
+  <script src="/resources/shared/site.js"></script>
+  <script>
+    ResourcesSite.mountToolHeader({
+      title: 'Bitcoin Blockchain Size Chart',
+      clientSide: true,
+    });
+  </script>
+  <script src="/resources/shared/theme-toggle.js" defer></script>
+</body>
+</html>
+</html>

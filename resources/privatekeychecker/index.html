@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <script>
+    (function () {
+      var theme = localStorage.getItem("davidcoen_theme");
+      if (theme === "light" || theme === "dark") {
+        document.documentElement.setAttribute("data-theme", theme);
+      }
+    })();
+  </script>
+    <title>Private Keys and Seeds Checker</title>
+    <script src="script.js"></script>
+    <script src="scriptseed.js" defer></script>
+  <link rel="stylesheet" href="/resources/shared/site.css">
+</head>
+<body>
+  <main class="wrap">
+    <div id="tool-header"></div>
+    
+    <p>Paste your JSON below:</p>
+    <textarea id="jsonInput" rows="10" cols="50"></textarea>
+    <br>
+    <button onclick="checkPrivateKeys()">Check</button>
+    <p id="result"></p>
+
+    <h1>BIP39 Wordlist Checker</h1>
+    <textarea id="inputText" rows="10" cols="50" placeholder="Enter your text here"></textarea>
+    <button onclick="searchWordlist()">Search</button>
+    <div id="results"></div>
+  </main>
+  <script src="/resources/shared/site.js"></script>
+  <script>
+    ResourcesSite.mountToolHeader({
+      title: 'Private Key Checker',
+      clientSide: true,
+    });
+  </script>
+  <script src="/resources/shared/theme-toggle.js" defer></script>
+</body>
+</html>
+</html>

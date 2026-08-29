@@ -1,0 +1,4127 @@
+[
+  {
+    "address": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+    "name": " \bUSD Coin",
+    "symbol": " \u0004USDC"
+  },
+  {
+    "address": "0xba100000625a3754423978a60c9317c58a424e3d",
+    "name": " \bBalancer",
+    "symbol": " \u0003BAL"
+  },
+  {
+    "address": "0x27702a26126e0b3702af63ee09ac4d1a084ef628",
+    "name": " \u000baleph.im v2",
+    "symbol": " \u0005ALEPH"
+  },
+  {
+    "address": "0xd46ba6d942050d489dbd938a2c909a5d5039a161",
+    "name": " \nAmpleforth",
+    "symbol": " \u0004AMPL"
+  },
+  {
+    "address": "0x0aacfbec6a24756c20d41914f2caba817c0d8521",
+    "name": " \u0003YAM",
+    "symbol": " \u0003YAM"
+  },
+  {
+    "address": "0x362bc847a3a9637d3af6624eec853618a43ed7d2",
+    "name": " \fParsiq Token",
+    "symbol": " \u0003PRQ"
+  },
+  {
+    "address": "0x2edf094db69d6dcd487f1b3db9febe2eec0dd4c5",
+    "name": " \rZeroSwapToken",
+    "symbol": " \u0003ZEE"
+  },
+  {
+    "address": "0x18aaa7115705e8be94bffebde57af9bfc265b998",
+    "name": " \u0006Audius",
+    "symbol": " \u0005AUDIO"
+  },
+  {
+    "address": "0x0202be363b8a4820f3f4de7faf5224ff05943ab1",
+    "name": " \u0015UniLend Finance Token",
+    "symbol": " \u0003UFT"
+  },
+  {
+    "address": "0x111111111117dc0aa78b770fa6a738034120c302",
+    "name": " \u000b1INCH Token",
+    "symbol": " \u00051INCH"
+  },
+  {
+    "address": "0x4688a8b1f292fdab17e9a90c8bc379dc1dbd8713",
+    "name": " \u001fCover Protocol Governance Token",
+    "symbol": " \u0005COVER"
+  },
+  {
+    "address": "0xa8b12cc90abf65191532a12bb5394a714a46d358",
+    "name": " \rPOW BTC-35W/T",
+    "symbol": " \u0007pBTC35A"
+  },
+  {
+    "address": "0x888888888889c00c67689029d7856aac1065ec11",
+    "name": " \u0016Opium Governance Token",
+    "symbol": " \u0005OPIUM"
+  },
+  {
+    "address": "0x725c263e32c72ddc3a19bea12c5a0479a81ee688",
+    "name": " \rBridge Mutual",
+    "symbol": " \u0003BMI"
+  },
+  {
+    "address": "0x0000000000095413afc295d19edeb1ad7b71c952",
+    "name": " \bTokenlon",
+    "symbol": " \u0003LON"
+  },
+  {
+    "address": "0x297d33e17e61c2ddd812389c2105193f8348188a",
+    "name": " \u000fStrudel Finance",
+    "symbol": " \u0005$TRDL"
+  },
+  {
+    "address": "0x6e9730ecffbed43fd876a264c982e254ef05a0de",
+    "name": " \nNord Token",
+    "symbol": " \u0004NORD"
+  },
+  {
+    "address": "0x31c8eacbffdd875c74b94b077895bd78cf1e64a3",
+    "name": " \u0007Radicle",
+    "symbol": " \u0003RAD"
+  },
+  {
+    "address": "0x9b99cca871be05119b2012fd4474731dd653febe",
+    "name": " #Antimatter.Finance Governance Token",
+    "symbol": " \u0006MATTER"
+  },
+  {
+    "address": "0x2aeccb42482cc64e087b6d2e5da39f5a7a7001f8",
+    "name": " \u000eRuler Protocol",
+    "symbol": " \u0005RULER"
+  },
+  {
+    "address": "0x888888435fde8e7d4c54cab67f206e4199454c60",
+    "name": " \tDFX Token",
+    "symbol": " \u0003DFX"
+  },
+  {
+    "address": "0xa8b61cff52564758a204f841e636265bebc8db9b",
+    "name": " \u000eYield Protocol",
+    "symbol": " \u0005YIELD"
+  },
+  {
+    "address": "0xcd2828fc4d8e8a0ede91bb38cf64b1a81de65bf6",
+    "name": " \tOddzToken",
+    "symbol": " \u0004ODDZ"
+  },
+  {
+    "address": "0xceb286c9604c542d3cc08b41aa6c9675b078a832",
+    "name": " \u000bVortex DeFi",
+    "symbol": " \u0003VTX"
+  },
+  {
+    "address": "0x956f47f50a910163d8bf957cf5846d573e7f87ca",
+    "name": " \u0007Fei USD",
+    "symbol": " \u0003FEI"
+  },
+  {
+    "address": "0x88acdd2a6425c3faae4bc9650fd7e27e0bebb7ab",
+    "name": " \tAlchemist",
+    "symbol": " \u0006Alchemist"
+  },
+  {
+    "address": "0xc477d038d5420c6a9e0b031712f61c5120090de9",
+    "name": " \u000bBoson Token",
+    "symbol": " \u0005BOSON"
+  },
+  {
+    "address": "0x48c3399719b582dd63eb5aadf12a40b4c3f52fa2",
+    "name": " \tStakeWise",
+    "symbol": " \u0005SWISE"
+  },
+  {
+    "address": "0xf16e81dce15b08f326220742020379b855b87df9",
+    "name": " \bIceToken",
+    "symbol": " \u0003ICE"
+  },
+  {
+    "address": "0x5a666c7d92e5fa7edcb6390e4efd6d0cdd69cf37",
+    "name": " \u000eUnmarshalToken",
+    "symbol": " \u0005MARSH"
+  },
+  {
+    "address": "0x90de74265a416e1393a450752175aed98fe11517",
+    "name": " \u0015Unlock Discount Token",
+    "symbol": " \u0003UDT"
+  },
+  {
+    "address": "0x677ddbd918637e5f2c79e164d402454de7da8619",
+    "name": " \u0004VUSD",
+    "symbol": " \u0004VUSD"
+  },
+  {
+    "address": "0x9695e0114e12c0d3a3636fab5a18e6b737529023",
+    "name": " \nDFYN Token",
+    "symbol": " \u0004DFYN"
+  },
+  {
+    "address": "0x1321f1f1aa541a56c31682c57b80ecfccd9bb288",
+    "name": " \u0015ARCx Governance Token",
+    "symbol": " \u0004ARCX"
+  },
+  {
+    "address": "0xdddddd4301a082e62e84e43f474f044423921918",
+    "name": " \u000fDeversiFi Token",
+    "symbol": " \u0003DVF"
+  },
+  {
+    "address": "0x19042021329fddcfbea5f934fb5b2670c91f7d20",
+    "name": " \u000eTake My Muffin",
+    "symbol": " \u0003TMM"
+  },
+  {
+    "address": "0xc221b7e65ffc80de234bbb6667abdd46593d34f0",
+    "name": " \u0012Wrapped Centrifuge",
+    "symbol": " \u0004wCFG"
+  },
+  {
+    "address": "0x7f39c581f595b53c5cb19bd0b3f8da6c935e2ca0",
+    "name": " \u001fWrapped liquid staked Ether 2.0",
+    "symbol": " \u0006wstETH"
+  },
+  {
+    "address": "0x949d48eca67b17269629c7194f4b727d4ef9e5d6",
+    "name": " \fMerit Circle",
+    "symbol": " \u0002MC"
+  },
+  {
+    "address": "0xc18360217d8f7ab5e7c516566761ea12ce7f9d72",
+    "name": " \u0015Ethereum Name Service",
+    "symbol": " \u0003ENS"
+  },
+  {
+    "address": "0x8254e26e453eb5abd29b3c37ac9e8da32e5d3299",
+    "name": " \u0003RBX",
+    "symbol": " \u0003RBX"
+  },
+  {
+    "address": "0x6bba316c48b49bd1eac44573c5c871ff02958469",
+    "name": " \u0007Gas DAO",
+    "symbol": " \u0003GAS"
+  },
+  {
+    "address": "0xa36fdbbae3c9d55a1d67ee5821d53b50b63a1ab9",
+    "name": " \u0006Tempus",
+    "symbol": " \u0004TEMP"
+  },
+  {
+    "address": "0x0de05f6447ab4d22c8827449ee4ba2d5c288379b",
+    "name": " \nOoki Token",
+    "symbol": " \u0004OOKI"
+  },
+  {
+    "address": "0x1a7e4e63778b4f12a199c062f3efdd288afcbce8",
+    "name": " \u0017EURA (previously agEUR)",
+    "symbol": " \u0004EURA"
+  },
+  {
+    "address": "0x31429d1856ad1377a8a0079410b297e1a9e214c2",
+    "name": " \u0005ANGLE",
+    "symbol": " \u0005ANGLE"
+  },
+  {
+    "address": "0xd38bb40815d2b0c2d2c866e0c72c5728ffc76dd9",
+    "name": " \tSymbiosis",
+    "symbol": " \u0003SIS"
+  },
+  {
+    "address": "0x0f2d719407fdbeff09d87557abb7232601fd9f29",
+    "name": " \u0007Synapse",
+    "symbol": " \u0003SYN"
+  },
+  {
+    "address": "0xa5f2211b9b8170f694421f2046281775e8468044",
+    "name": " \u000eTHORSwap Token",
+    "symbol": " \u0004THOR"
+  },
+  {
+    "address": "0x64aa3364f17a4d01c6f1751fd97c2bd3d7e7f1d5",
+    "name": " \u0007Olympus",
+    "symbol": " \u0003OHM"
+  },
+  {
+    "address": "0xdef1ca1fb7fbcdc777520aa7f396b4e015f497ab",
+    "name": " \u0012CoW Protocol Token",
+    "symbol": " \u0003COW"
+  },
+  {
+    "address": "0x7f280dac515121dcda3eac69eb4c13a52392cace",
+    "name": " \u000bFancy Games",
+    "symbol": " \u0003FNC"
+  },
+  {
+    "address": "0x299698b4b44bd6d023981a7317798dee12860834",
+    "name": " \u0015New Frontier Presents",
+    "symbol": " \u0003NFP"
+  },
+  {
+    "address": "0x8f693ca8d21b157107184d29d398a8d082b38b76",
+    "name": " \u0007Streamr",
+    "symbol": " \u0004DATA"
+  },
+  {
+    "address": "0x4cf89ca06ad997bc732dc876ed2a7f26a9e7f361",
+    "name": " \tMysterium",
+    "symbol": " \u0004MYST"
+  },
+  {
+    "address": "0xc5102fe9359fd9a28f877a67e36b0f050d81a3cc",
+    "name": " \u0003Hop",
+    "symbol": " \u0003HOP"
+  },
+  {
+    "address": "0x4b520c812e8430659fc9f12f6d0c39026c83588d",
+    "name": " \u000fDecentral Games",
+    "symbol": " \u0002DG"
+  },
+  {
+    "address": "0x6bea7cfef803d1e3d5f7c0103f7ded065644e197",
+    "name": " \u0005Gamma",
+    "symbol": " \u0005GAMMA"
+  },
+  {
+    "address": "0xbea0000029ad1c77d3d5d23ba2d8893db9d1efab",
+    "name": " \u0004Bean",
+    "symbol": " \u0004BEAN"
+  },
+  {
+    "address": "0x111111517e4929d3dcbdfa7cce55d30d4b6bc4d6",
+    "name": " \u0004ICHI",
+    "symbol": " \u0004ICHI"
+  },
+  {
+    "address": "0xf1dc500fde233a4055e25e5bbf516372bc4f6871",
+    "name": " \nSaddle DAO",
+    "symbol": " \u0003SDL"
+  },
+  {
+    "address": "0xd084944d3c05cd115c09d072b9f44ba3e0e45921",
+    "name": " \u0010Manifold Finance",
+    "symbol": " \u0004FOLD"
+  },
+  {
+    "address": "0xb0b195aefa3650a6908f15cdac7d92f8a5791b0b",
+    "name": " \u0003BOB",
+    "symbol": " \u0003BOB"
+  },
+  {
+    "address": "0x865377367054516e17014ccded1e7d814edc9ce4",
+    "name": " \u0013Dola USD Stablecoin",
+    "symbol": " \u0004DOLA"
+  },
+  {
+    "address": "0x3af33bef05c2dcb3c7288b77fe1c8d2aeba4d789",
+    "name": " \tKromatika",
+    "symbol": " \u0004KROM"
+  },
+  {
+    "address": "0x350d3f0f41b5b21f0e252fe2645ae9d55562150a",
+    "name": " \u000fBananaClubToken",
+    "symbol": " \u0003BCT"
+  },
+  {
+    "address": "0x6e98f1fbd2bc9d827499e69f9bbb0a72bd5c9b2d",
+    "name": " \r1COIN Network",
+    "symbol": " \u00031CN"
+  },
+  {
+    "address": "0x2596b971ee0de4532566c59fa394c0d29f21d224",
+    "name": " \u00042048",
+    "symbol": " \u00042048"
+  },
+  {
+    "address": "0x2c9c19ce3b15ae77c6d80aec3c1194cfd6f7f3fa",
+    "name": " \u000b2CrazyToken",
+    "symbol": " \u00042CRZ"
+  },
+  {
+    "address": "0xa1033592f20e579863986b5734ba1df9070c0363",
+    "name": " \u0007Inu Inu",
+    "symbol": " \u00042INU"
+  },
+  {
+    "address": "0x8a14897ea5f668f36671678593fae44ae23b39fb",
+    "name": " \bCerberus",
+    "symbol": " \u00043DOG"
+  },
+  {
+    "address": "0xf054aa5a8f8e0e016272b3429d579ebcd41ed799",
+    "name": " \u000bInu Inu Inu",
+    "symbol": " \u00043INU"
+  },
+  {
+    "address": "0xee62f72fb0cd61ced2e7a1ca56ea14ee6eae8452",
+    "name": " \u0001A",
+    "symbol": " \u0001A"
+  },
+  {
+    "address": "0x8b4c7f7d03c4fab12c394a65f2fb6ba023e26c6a",
+    "name": " \u001bSCHIZO DAO GOVERNANCE TOKEN",
+    "symbol": " \u0007ABILIFY"
+  },
+  {
+    "address": "0x1934e252f840aa98dfce2b6205b3e45c41aef830",
+    "name": " \u0007₡ABIN",
+    "symbol": " \u0007₡ABIN"
+  },
+  {
+    "address": "0x26ce26b4cbecd0dfd592d3cdc9fc753af737e81a",
+    "name": " \u0007ARTCOIN",
+    "symbol": " \u0002AC"
+  },
+  {
+    "address": "0x9a251daa6382c373594c8f8275752921ec2550c8",
+    "name": " \u0018Asymmetry Crypto Capital",
+    "symbol": " \u0003ACC"
+  },
+  {
+    "address": "0xb2cabf797bc907b049e4ccb5b84d13be3a8cfc21",
+    "name": " \u000fArable Protocol",
+    "symbol": " \u0004ACRE"
+  },
+  {
+    "address": "0xd9a4cb9dc9296e111c66dfacab8be034ee2e1c2c",
+    "name": " \fAdEx Loyalty",
+    "symbol": " \u000bADX-LOYALTY"
+  },
+  {
+    "address": "0xb3ed706b564bba9cab64042f4e1b391be7bebce5",
+    "name": " \u0011Augmented Finance",
+    "symbol": " \u0003AGF"
+  },
+  {
+    "address": "0x80c24111d3f9e1ffecf3b41b9ca68e60a890866b",
+    "name": " \u0012Aggregated Finance",
+    "symbol": " \u0004AGFI"
+  },
+  {
+    "address": "0x4d0f56d728c5232ab07faa0bdcba23670a35451f",
+    "name": " \u0012Aggregated Finance",
+    "symbol": " \u0004AGFI"
+  },
+  {
+    "address": "0x667fd83e24ca1d935d36717d305d54fa0cac991c",
+    "name": " \u000eCollector Coin",
+    "symbol": " \u0003AGS"
+  },
+  {
+    "address": "0xc0134b5b924c2fca106efb33c45446c466fbe03e",
+    "name": " \baleph.im",
+    "symbol": " \u0005ALEPH"
+  },
+  {
+    "address": "0x1e5193ccc53f25638aa22a940af899b692e10b09",
+    "name": " \u000bAlluo Token",
+    "symbol": " \u0005ALLUO"
+  },
+  {
+    "address": "0x09a8fb018326a4647488ccb340c211f510a466d3",
+    "name": " \u0005ALPHA",
+    "symbol": " \u0005ALPHA"
+  },
+  {
+    "address": "0x507586012a126421c3669a64b8393fffa9c44462",
+    "name": " \u0006Anubis",
+    "symbol": " \u0004ANKH"
+  },
+  {
+    "address": "0x4332f8a38f14bd3d8d1553af27d7c7ac6c27278d",
+    "name": " \u000bApe Finance",
+    "symbol": " \u0005APEFI"
+  },
+  {
+    "address": "0xf04847b93612ee9e7327f31906e7710b252ba4a1",
+    "name": " \rAphra Finance",
+    "symbol": " \u0005APHRA"
+  },
+  {
+    "address": "0xe6483e957b6e43bd780a8f98372303e6f11699fd",
+    "name": " \u0007AptosAI",
+    "symbol": " \u0005APTAI"
+  },
+  {
+    "address": "0x51bde723d5cf0ce453870ab8e0faa17e228adf1b",
+    "name": " \u0007Aquasis",
+    "symbol": " \u0004$AQS"
+  },
+  {
+    "address": "0xcc665390b03c5d324d8faf81c15ecee29a73bcb4",
+    "name": " \u001eChainSwap.com Governance Token",
+    "symbol": " \u0004ASAP"
+  },
+  {
+    "address": "0xec3507c639231df837ec0769e61513ac4a6c9fb3",
+    "name": " \u0014Alien Space Cat Club",
+    "symbol": " \u0004ASCC"
+  },
+  {
+    "address": "0x0dc5189ec8cde5732a01f0f592e927b304370551",
+    "name": " \u0006Asgard",
+    "symbol": " \u0003ASG"
+  },
+  {
+    "address": "0x56694577564fdd577a0abb20fe95c1e2756c2a11",
+    "name": " \u000fWrapped AdaSwap",
+    "symbol": " \u0003ASW"
+  },
+  {
+    "address": "0xf98f61a89e1a2c521229d1395d5fbc39a4e58a9a",
+    "name": " \u000bAureus Coin",
+    "symbol": " \u0006AUREUS"
+  },
+  {
+    "address": "0x30ac8317dfb0ab4263cd8db1c4f10749911b126c",
+    "name": " \u0006AxeDAO",
+    "symbol": " \u0003AXE"
+  },
+  {
+    "address": "0x467719ad09025fcc6cf6f8311755809d45a5e5f3",
+    "name": " \u0006Axelar",
+    "symbol": " \u0003AXL"
+  },
+  {
+    "address": "0x27292cf0016e5df1d8b37306b2a98588acbd6fca",
+    "name": " \u0013Axelar Wrapped ATOM",
+    "symbol": " \u0007axlATOM"
+  },
+  {
+    "address": "0x5c6ee304399dbdb9c8ef030ab642b10820db8f56",
+    "name": " \u0017Balancer 80 BAL 20 WETH",
+    "symbol": " \u000eB-80BAL-20WETH"
+  },
+  {
+    "address": "0x2dc87af8e3b2f7ff7a11fc06c34cef1eaf935bc5",
+    "name": " \tBackrooms",
+    "symbol": " \tBACKROOMS"
+  },
+  {
+    "address": "0xcfc3f2b53afea64325bb7010cfac15f6b167576a",
+    "name": " \u0014a COIN called BEAST ",
+    "symbol": " \u0006$BAGMI"
+  },
+  {
+    "address": "0x3703f712945f8111fe2c5f9ae155a52560e2065c",
+    "name": " \nBamboonium",
+    "symbol": " \u0004BAMB"
+  },
+  {
+    "address": "0x14079e63e492bb7df6aeb4fe4e48cb4f18f3488a",
+    "name": " #Dogechain Fan Club Governance Token",
+    "symbol": " \u0004BARK"
+  },
+  {
+    "address": "0x5646077e2779a4e8607a99257bd76f627a262d86",
+    "name": " \u0006ATBASH",
+    "symbol": " \u0004BASH"
+  },
+  {
+    "address": "0x0424af689f9155fa71d77e532ba847a0e2e6ae3a",
+    "name": " \u000fBaskets.Finance",
+    "symbol": " \u0006BASKET"
+  },
+  {
+    "address": "0xae37d54ae477268b9997d4161b96b8200755935c",
+    "name": "  Balancer Aave Boosted Pool (DAI)",
+    "symbol": " \bbb-a-DAI"
+  },
+  {
+    "address": "0x804cdb9116a10bb78768d3252355a1b18067bf8f",
+    "name": "  Balancer Aave Boosted Pool (DAI)",
+    "symbol": " \bbb-a-DAI"
+  },
+  {
+    "address": "0xa13a9247ea42d743238089903570127dda72fe44",
+    "name": "  Balancer Aave Boosted StablePool",
+    "symbol": " \bbb-a-USD"
+  },
+  {
+    "address": "0x7b50775383d3d6f0215a8f290f2c9e2eebbeceb2",
+    "name": " &Balancer Aave Boosted StablePool (USD)",
+    "symbol": " \bbb-a-USD"
+  },
+  {
+    "address": "0x82698aecc9e28e9bb27608bd52cf57f704bd1b83",
+    "name": " !Balancer Aave Boosted Pool (USDC)",
+    "symbol": " \tbb-a-USDC"
+  },
+  {
+    "address": "0x9210f1204b5a24742eba12f710636d76240df3d0",
+    "name": " !Balancer Aave Boosted Pool (USDC)",
+    "symbol": " \tbb-a-USDC"
+  },
+  {
+    "address": "0x2f4eb100552ef93840d5adc30560e5513dfffacb",
+    "name": " !Balancer Aave Boosted Pool (USDT)",
+    "symbol": " \tbb-a-USDT"
+  },
+  {
+    "address": "0xfe459828c90c0ba4bc8b42f5c5d44f316700b430",
+    "name": " \u0003BBS",
+    "symbol": " \u0003BBS"
+  },
+  {
+    "address": "0x0b4803c00d4885124e35b8ee88c2cefc7cb0345b",
+    "name": " \u0013BMining POW BTC-50W",
+    "symbol": " \u0006bBTC50"
+  },
+  {
+    "address": "0x6a4ffaafa8dd400676df8076ad6c724867b0e2e8",
+    "name": " \u0014BTU Incentivized DAI",
+    "symbol": " \u0004bDAI"
+  },
+  {
+    "address": "0x73ed426ce17bee460780a57cd8dc4e1ff668ec3f",
+    "name": " \u0004Bear",
+    "symbol": " \u0004BEAR"
+  },
+  {
+    "address": "0x8f081eb884fd47b79536d28e2dd9d4886773f783",
+    "name": " \u0006beCoin",
+    "symbol": " \u0006BECOIN"
+  },
+  {
+    "address": "0x0d02755a5700414b26ff040e1de35d337df56218",
+    "name": " \nBend Token",
+    "symbol": " \u0004BEND"
+  },
+  {
+    "address": "0x93c51a96855daebaa7aaa260727b768ac4eacaed",
+    "name": " \u0007BergDAO",
+    "symbol": " \u0005BERGD"
+  },
+  {
+    "address": "0xd01d0eabc49975d9dee3256769365088db3d7c17",
+    "name": " \u0013BMining POW ETH-30W",
+    "symbol": " \u0006bETH30"
+  },
+  {
+    "address": "0xe29f1241e6015a4949cb7e3f07234ba794006181",
+    "name": " \u0006BIGCAP",
+    "symbol": " \u0006BIGCAP"
+  },
+  {
+    "address": "0xb99984e1cae383320744718524b9b0a891e5bbc3",
+    "name": " \u0012BIG Token test 6.1",
+    "symbol": " \fBIG test 6.1"
+  },
+  {
+    "address": "0xb97b0de16dd20effb0d6715f4cbac37f5e1bf3d5",
+    "name": " \u0012BIG Token test 8.1",
+    "symbol": " \fBIG test 8.1"
+  },
+  {
+    "address": "0x15ee120fd69bec86c1d38502299af7366a41d1a6",
+    "name": " \u0006BitANT",
+    "symbol": " \u0006BitANT"
+  },
+  {
+    "address": "0x4efc1fbed6598551c30a830758244ecc9706dfb4",
+    "name": " \u0010Burned Bytes DAO",
+    "symbol": " \u0004BITS"
+  },
+  {
+    "address": "0x090f572496ce30a4ffc62a0a9f2a7540f2a997b5",
+    "name": " \tBlahToken",
+    "symbol": " \u0004BLAH"
+  },
+  {
+    "address": "0x614d7f40701132e25fe6fc17801fbd34212d2eda",
+    "name": " \tSafeBLAST",
+    "symbol": " \u0005BLAST"
+  },
+  {
+    "address": "0x8bcd06492416a749c9369009b3429861b7f27f6e",
+    "name": " \bBlackHat",
+    "symbol": " \u0004BLKC"
+  },
+  {
+    "address": "0x48983d42ddc25e98b738c231c022e22ef0a851cc",
+    "name": " \bBlackDAO",
+    "symbol": " \u0004BLKD"
+  },
+  {
+    "address": "0xe7da1d8327ae1f320bbc23ca119b02ad3f85dceb",
+    "name": " \bBlackDAO",
+    "symbol": " \u0004BLKD"
+  },
+  {
+    "address": "0xff4cb3800f257c86fe0cec6c4a30136395994496",
+    "name": " \u0005Blood",
+    "symbol": " \u0006$BLOOD"
+  },
+  {
+    "address": "0xe7b40046a1f6f5561a6edf329f61874f3fdcd3b1",
+    "name": " \u0007Ballast",
+    "symbol": " \u0004BLST"
+  },
+  {
+    "address": "0xb2d973b457f60c29998d5d377e78ea2fcd03abca",
+    "name": " \fTwitter Blue",
+    "symbol": " \u0004Blue"
+  },
+  {
+    "address": "0x42bbfa2e77757c645eeaad1655e0911a7553efbc",
+    "name": " \nBoba Token",
+    "symbol": " \u0004BOBA"
+  },
+  {
+    "address": "0xda91e5547cba22e79d0c66bd9040aed90f0363c5",
+    "name": " \u0003BOG",
+    "symbol": " \u0003BOG"
+  },
+  {
+    "address": "0x55af5865807b196bd0197e0902746f31fbccfa58",
+    "name": " \u000bSpookyToken",
+    "symbol": " \u0003BOO"
+  },
+  {
+    "address": "0x0337fe811809a0aaf9b5d07945b39e473de4c46e",
+    "name": " \fBoot Finance",
+    "symbol": " \u0004BOOT"
+  },
+  {
+    "address": "0x6facc8ce4f55e543c9e1296cab4f7805264c1c73",
+    "name": " \u0006Boring",
+    "symbol": " \u0003BOR"
+  },
+  {
+    "address": "0xbdcdbd0d59f71aab0724e5fd4b15bceef60898e9",
+    "name": " \bBot Wars",
+    "symbol": " \u0004BOTS"
+  },
+  {
+    "address": "0x94e9eb8b5ab9fd6b9ea3169d55ffade62a01702e",
+    "name": " \nBreederDAO",
+    "symbol": " \u0005BREED"
+  },
+  {
+    "address": "0xd4e12b224c316664ebb647f69abc1fb8bb2697c7",
+    "name": " \u000bBribe Token",
+    "symbol": " \u0005BRIBE"
+  },
+  {
+    "address": "0xbeab712832112bd7664226db7cd025b153d3af55",
+    "name": " \fBright Union",
+    "symbol": " \u0006BRIGHT"
+  },
+  {
+    "address": "0xae561dc54ed96c3d55103beb17e181a44db958c0",
+    "name": " \tBerry INU",
+    "symbol": " \u0004BRRY"
+  },
+  {
+    "address": "0x69570f3e84f51ea70b7b68055c8d667e77735a25",
+    "name": " \nBetswap.gg",
+    "symbol": " \u0004BSGG"
+  },
+  {
+    "address": "0x32e6c34cd57087abbd59b5a4aecc4cb495924356",
+    "name": " \u0007BitBase",
+    "symbol": " \u0004BTBS"
+  },
+  {
+    "address": "0xfbdd194376de19a88118e84e279b977f165d01b8",
+    "name": " \u000fBat True Dollar",
+    "symbol": " \u0003BTD"
+  },
+  {
+    "address": "0xc55126051b22ebb829d00368f4b12bde432de5da",
+    "name": " \u0006BTRFLY",
+    "symbol": " \u0006BTRFLY"
+  },
+  {
+    "address": "0xc0d4ceb216b3ba9c3701b291766fdcba977cec3a",
+    "name": " \u0006BTRFLY",
+    "symbol": " \u0006BTRFLY"
+  },
+  {
+    "address": "0x355cd8b9fc9a514a1d3ff7aaabb8a9ce2fb5e696",
+    "name": " \u0007BullRun",
+    "symbol": " \u0004Bull"
+  },
+  {
+    "address": "0x785c34312dfa6b74f6f1829f79ade39042222168",
+    "name": " \u0004BUMP",
+    "symbol": " \u0004BUMP"
+  },
+  {
+    "address": "0xee31e8597d972cfd136042719bdbc8b24020f0d0",
+    "name": " \u000bBustad Coin",
+    "symbol": " \u0004BUSC"
+  },
+  {
+    "address": "0x2734afeab5f94883dd6ee40acd0d42de978a443c",
+    "name": " \rBlackrock USD",
+    "symbol": " \u0004BUSD"
+  },
+  {
+    "address": "0xcadc0acd4b445166f12d2c07eac6e2544fbe2eef",
+    "name": " \bCAD Coin",
+    "symbol": " \u0004CADC"
+  },
+  {
+    "address": "0x863ad391091ae0e87b850c2bb7bfc7597c79c93f",
+    "name": " \u000bCanvasToken",
+    "symbol": " \u0006CANVAS"
+  },
+  {
+    "address": "0x5c8c8d560048f34e5f7f8ad71f2f81a89dbd273e",
+    "name": " \fCryptoArt.Ai",
+    "symbol": " \u0004CART"
+  },
+  {
+    "address": "0xbe9895146f7af43049ca1c1ae358b0541ea49704",
+    "name": " \u001bCoinbase Wrapped Staked ETH",
+    "symbol": " \u0005cbETH"
+  },
+  {
+    "address": "0xedfc8cf99eafb4b90e60f71e544c63dd644b36aa",
+    "name": " \bCerberus",
+    "symbol": " \bCerberus"
+  },
+  {
+    "address": "0xcd6adc6b8bd396e2d53ccd7d7257b4de55be4fbe",
+    "name": " \u000eCFL365 Finance",
+    "symbol": " \u0006CFL365"
+  },
+  {
+    "address": "0xbe62613d3abbf3d86f0806bcc12805b41e7e4428",
+    "name": " \tChainGain",
+    "symbol": " \u0003CGN"
+  },
+  {
+    "address": "0x06af07097c9eeb7fd685c692751d5c66db49c215",
+    "name": " \u0004Chai",
+    "symbol": " \u0004CHAI"
+  },
+  {
+    "address": "0xbba39fd2935d5769116ce38d46a71bde9cf03099",
+    "name": " \u0010choise.com Token",
+    "symbol": " \u0003CHO"
+  },
+  {
+    "address": "0x0a6e18fb2842855c3af925310b0f50a4bfa17909",
+    "name": " \u000fCoinPoker Chips",
+    "symbol": " \u0003CHP"
+  },
+  {
+    "address": "0x4d2192e0db26d54adf2e367f0d79252bc9f76591",
+    "name": " \bCitizens",
+    "symbol": " \u0004CITY"
+  },
+  {
+    "address": "0xc6db556fd9ec09bab6dfea320e52d8476f61d424",
+    "name": " \u0011Cool Monke Banana",
+    "symbol": " \u0003CMB"
+  },
+  {
+    "address": "0x68cfb82eacb9f198d508b514d898a403c449533e",
+    "name": " \bCredmark",
+    "symbol": " \u0003CMK"
+  },
+  {
+    "address": "0xbc138bd20c98186cc0342c8e380953af0cb48ba8",
+    "name": " \u0006Candle",
+    "symbol": " \u0004CNDL"
+  },
+  {
+    "address": "0x5c1d9aa868a30795f92fae903edc9eff269044bf",
+    "name": " \u0007Changer",
+    "symbol": " \u0003CNG"
+  },
+  {
+    "address": "0x429876c4a6f89fb470e92456b8313879df98b63c",
+    "name": " \u0016Cryption Network Token",
+    "symbol": " \u0003CNT"
+  },
+  {
+    "address": "0x8c27fd42fe55d9e9b802842ba3801e12d0770731",
+    "name": " \u0010China Numero Uno",
+    "symbol": " \u0003CNU"
+  },
+  {
+    "address": "0x000000007a58f5f58e697e51ab0357bc9e260a04",
+    "name": " \u0007Concave",
+    "symbol": " \u0003CNV"
+  },
+  {
+    "address": "0xc4bb7277a74678f053259cb1f96140347efbfd46",
+    "name": " \u0015Coin of the champions",
+    "symbol": " \u0003COC"
+  },
+  {
+    "address": "0xf55be65ffb0f2885075bab53261ab6ad41e0f2c8",
+    "name": " \u0004Cock",
+    "symbol": " \u0004COCK"
+  },
+  {
+    "address": "0xb24cd494fae4c180a89975f1328eab2a7d5d8f11",
+    "name": " \rDeveloper DAO",
+    "symbol": " \u0004CODE"
+  },
+  {
+    "address": "0xd417144312dbf50465b1c641d016962017ef6240",
+    "name": " \u0014Covalent Query Token",
+    "symbol": " \u0003CQT"
+  },
+  {
+    "address": "0x6c43751fef27c956f7e75d5c345a65df1465f7e0",
+    "name": " \tCR7 Token",
+    "symbol": " \u0003CR7"
+  },
+  {
+    "address": "0x8e9c3b0e535d261f5e9a1eda43ee4836ca20795a",
+    "name": " \nCRCL Token",
+    "symbol": " \u0004CRCL"
+  },
+  {
+    "address": "0xaa61d5dec73971cd4a026ef2820bb87b4a4ed8d6",
+    "name": " \nCRE8R DAO ",
+    "symbol": " \u0005CRE8R"
+  },
+  {
+    "address": "0x54efda7fae8316c210cbd1bd85f8cb87bdbda461",
+    "name": " \fCrop Finance",
+    "symbol": " \u0004CROP"
+  },
+  {
+    "address": "0xfdcdfa378818ac358739621ddfa8582e6ac1adcb",
+    "name": " \u0011Curio Stable Coin",
+    "symbol": " \u0003CSC"
+  },
+  {
+    "address": "0xcb45625572253036e3e580702c9ce0343262b381",
+    "name": " \u000bCthulhuCoin",
+    "symbol": " \u0003CTH"
+  },
+  {
+    "address": "0x1fadbb8d7c2d84daad1c6f52f92480cef8c96024",
+    "name": " \u0015Cosmo Universal Power",
+    "symbol": " \u0003CUP"
+  },
+  {
+    "address": "0xde79d36ab6d2489dd36729a657a25f299cb2fbca",
+    "name": " \u000eCurve BTC Plus",
+    "symbol": " \tCurveBTC+"
+  },
+  {
+    "address": "0x50bc2ecc0bfdf5666640048038c1aba7b7525683",
+    "name": " \u0007cVToken",
+    "symbol": " \u0002cV"
+  },
+  {
+    "address": "0x6b175474e89094c44da98b954eedeac495271d0f",
+    "name": " \u000eDai Stablecoin",
+    "symbol": " \u0003DAI"
+  },
+  {
+    "address": "0x40955d77f87123b71b145098358a60573ac7be96",
+    "name": " \u0005DAISY",
+    "symbol": " \u0005DAISY"
+  },
+  {
+    "address": "0x01f3af11f2d93fb23ae33d336459957f3b7730ae",
+    "name": " \u0007Daocoin",
+    "symbol": " \u0004DAOC"
+  },
+  {
+    "address": "0x419a6e348467be9958204c08a14b2ce52d637ffd",
+    "name": " \u0007Daocoin",
+    "symbol": " \u0004DAOZ"
+  },
+  {
+    "address": "0x939b462ee3311f8926c047d2b576c389092b1649",
+    "name": " \nDAPP TOKEN",
+    "symbol": " \u0004DAPP"
+  },
+  {
+    "address": "0xec5709c0750043cfb4b869dbc871e86efe18b4c5",
+    "name": " \u000bDark Matter",
+    "symbol": " \u0004DARK"
+  },
+  {
+    "address": "0x6330e5e49022d0b424a612bfb539f99a24f1c41d",
+    "name": " \u0007Dawgsta",
+    "symbol": " \u0004DAWG"
+  },
+  {
+    "address": "0x64a77277e37d44957fe5815d6ff442ab8b16cc29",
+    "name": " \nSpaceDawgs",
+    "symbol": " \u0005DAWGS"
+  },
+  {
+    "address": "0xad038eb671c44b853887a7e32528fab35dc5d710",
+    "name": " \u0014Dola Borrowing Right",
+    "symbol": " \u0003DBR"
+  },
+  {
+    "address": "0x4ece5c5cfb9b960a49aae739e15cdb6cfdcc5782",
+    "name": " \tDoont Buy",
+    "symbol": " \u0004DBUY"
+  },
+  {
+    "address": "0x045da4bfe02b320f4403674b3b7d121737727a36",
+    "name": " \nDefi Franc",
+    "symbol": " \u0004DCHF"
+  },
+  {
+    "address": "0x3c64beb87c58ebc7f666727b741fefb27e9a7d56",
+    "name": " \u000eDegen Defender",
+    "symbol": " \u0003$DD"
+  },
+  {
+    "address": "0x7caad772532339af66d886520b8c546f6758ee4d",
+    "name": " \u001bDecentralized Finance Token",
+    "symbol": " \u0004DEFI"
+  },
+  {
+    "address": "0xd6efcd22f0e3a4a9c35a8aabff52350dfb0c2621",
+    "name": " \u000eDegenLabsToken",
+    "symbol": " \u0006DEGLAB"
+  },
+  {
+    "address": "0x7b19929f6fe4e468ed7568122f1000be8cf226cf",
+    "name": " \u0006Delphi",
+    "symbol": " \u0006Delphi"
+  },
+  {
+    "address": "0x7502931720447014d198e3405bb1c067ee641102",
+    "name": " \u0010defigold.network",
+    "symbol": " \u0003DFG"
+  },
+  {
+    "address": "0x9284101d05e1a2a7efbae2c8904aa023bdae5a6e",
+    "name": " \u0011Degen Gamers Club",
+    "symbol": " \u0003DGC"
+  },
+  {
+    "address": "0x7b8fbdf847c343a88e24524f00bda64842469d9d",
+    "name": " \u0007DIAMOND",
+    "symbol": " \u0007DIAMOND"
+  },
+  {
+    "address": "0x6df3faaf5ba546831c03432d79e356fb957ef012",
+    "name": " \nDeriswaPv1",
+    "symbol": " \u0003DIL"
+  },
+  {
+    "address": "0x07adc37c53cc791c502fff9314660999eedd3c20",
+    "name": " \u0007Toolbox",
+    "symbol": " \u0003DIY"
+  },
+  {
+    "address": "0x144e3b02e08e644ffbb7ff652763f5b72ee22701",
+    "name": " \nDiamondDAO",
+    "symbol": " \u0004DMND"
+  },
+  {
+    "address": "0xef6344de1fcfc5f48c30234c16c1389e8cdc572c",
+    "name": " \u0003DNA",
+    "symbol": " \u0003DNA"
+  },
+  {
+    "address": "0xf8e9f10c22840b613cda05a0c5fdb59a4d6cd7ef",
+    "name": " \fDogs Of Elon",
+    "symbol": " \u0003DOE"
+  },
+  {
+    "address": "0x4206931337dc273a630d328da6441786bfad668f",
+    "name": " \bDogecoin",
+    "symbol": " \u0004DOGE"
+  },
+  {
+    "address": "0xca9bef33744581b33f5d8e7dc715db6c4db37c24",
+    "name": " \bDogeShib",
+    "symbol": " \bDogeShib"
+  },
+  {
+    "address": "0xf7cff7098a431a905970962eb86044ce6e7a0412",
+    "name": " \tDogeVerse",
+    "symbol": " \tDogeVerse"
+  },
+  {
+    "address": "0x0361b0864ab8c744c4d959730956715c3dc95589",
+    "name": " \u0005DOGGZ",
+    "symbol": " \u0005DOGGZ"
+  },
+  {
+    "address": "0x5b3240b6be3e7487d61cd1afdfc7fe4fa1d81e64",
+    "name": " \u001dBalancer DOLA bb-a-usd Stable",
+    "symbol": " \bDOLA BSP"
+  },
+  {
+    "address": "0x058bc8ef040bd3971418e36aa88b64899378ccf4",
+    "name": " \u0004DONA",
+    "symbol": " \u0004DONA"
+  },
+  {
+    "address": "0xb31ef9e52d94d4120eb44fe1ddfde5b4654a6515",
+    "name": " \u0004DOSE",
+    "symbol": " \u0004DOSE"
+  },
+  {
+    "address": "0xfb62ae373aca027177d1c18ee0862817f9080d08",
+    "name": " \u0011My DeFi Pet Token",
+    "symbol": " \u0004DPET"
+  },
+  {
+    "address": "0x4b815591f596f2a07c0ffddce41f6f2da6304c53",
+    "name": " \nDoont Pump",
+    "symbol": " \u0005DPUMP"
+  },
+  {
+    "address": "0x49428f057dd9d20a8e4c6873e98afd8cd7146e3b",
+    "name": " \u000bSignata DAO",
+    "symbol": " \u0005dSATA"
+  },
+  {
+    "address": "0x605d26fbd5be761089281d5cec2ce86eea667109",
+    "name": " \u0015Digital Standard Unit",
+    "symbol": " \u0003DSU"
+  },
+  {
+    "address": "0xc90b6004e077b175e4e87a2a0615691be6c26095",
+    "name": " \u0006DVault",
+    "symbol": " \u0006DVault"
+  },
+  {
+    "address": "0x7dee45dff03ec7137979586ca20a2f4917bac9fa",
+    "name": " \u0010DeFiWizard Token",
+    "symbol": " \u0003DWZ"
+  },
+  {
+    "address": "0xa1d65e8fb6e87b60feccbc582f7f97804b725521",
+    "name": " \u0005DXdao",
+    "symbol": " \u0003DXD"
+  },
+  {
+    "address": "0x88aa4a6c5050b9a1b2aa7e34d0582025ca6ab745",
+    "name": " \u000eDexpools Token",
+    "symbol": " \u0003DXP"
+  },
+  {
+    "address": "0x92d6c1e31e14520e676a687f0a93788b716beff5",
+    "name": " \u0004dYdX",
+    "symbol": " \u0004DYDX"
+  },
+  {
+    "address": "0x24244f8060eace82b36eb46c5d313bd0a72e3bcb",
+    "name": " \u0004dYdX",
+    "symbol": " \u0004DYDX"
+  },
+  {
+    "address": "0x529119733d33f4779b7a0bbc2cd43746bcfc3929",
+    "name": " \bDyneCoin",
+    "symbol": " \u0004DYNE"
+  },
+  {
+    "address": "0x2ce99ddbb794101eb81539ade1c9792e8110749a",
+    "name": " \u0012Effective Altruism",
+    "symbol": " \u0002EA"
+  },
+  {
+    "address": "0xea5edef1287afdf9eb8a46f9773abfc10820c61c",
+    "name": " \nEase Token",
+    "symbol": " \u0004EASE"
+  },
+  {
+    "address": "0xa01b656e49efbb8210d882a1f1a4d10f5cada8cc",
+    "name": " \bEco Gold",
+    "symbol": " \u0004ECGO"
+  },
+  {
+    "address": "0x3b8c698c5bdaa059f93bae370f00a01c4fa5352b",
+    "name": " \u0004Ecto",
+    "symbol": " \u0004ECTO"
+  },
+  {
+    "address": "0x953b3e4530d0f92c8e3ccb283f9af736ee073478",
+    "name": " \u0007EarnETH",
+    "symbol": " \u0004EETH"
+  },
+  {
+    "address": "0x4b7ee45f30767f36f06f79b32bf1fca6f726deda",
+    "name": " \u0019Ethereum Wrapped Filecoin",
+    "symbol": " \u0004eFIL"
+  },
+  {
+    "address": "0xe6fd75ff38adca4b97fbcd938c86b98772431867",
+    "name": " \u000fELA on Ethereum",
+    "symbol": " \u0003ELA"
+  },
+  {
+    "address": "0xeeeeeb57642040be42185f49c52f7e9b38f8eeee",
+    "name": " \u0003Elk",
+    "symbol": " \u0003ELK"
+  },
+  {
+    "address": "0x5db69b9f173f9d9fa91b7cdcc4dc9939c0499cfe",
+    "name": " \fEthereum Mix",
+    "symbol": " \u0004EMIX"
+  },
+  {
+    "address": "0x0e74417b5a86bb99e6bd27cd4ef8772c8eea8310",
+    "name": " \u0003EON",
+    "symbol": " \u0003EON"
+  },
+  {
+    "address": "0xb6854d5b6a7e5c48d4028ead4d803ee8061bc1d3",
+    "name": " \u0007ETHPETS",
+    "symbol": " \u0005EPETS"
+  },
+  {
+    "address": "0xb1cc77e701de60fe246607565cf7edc9d9b6b963",
+    "name": " %Element Principal Token yvDAI-16OCT21",
+    "symbol": " \u000fePyvDAI-16OCT21"
+  },
+  {
+    "address": "0x449d7c2e096e9f867339078535b15440d42f78e8",
+    "name": " %Element Principal Token yvDAI-28JAN22",
+    "symbol": " \u000fePyvDAI-28JAN22"
+  },
+  {
+    "address": "0x76a34d72b9cf97d972fb0e390eb053a37f211c74",
+    "name": " &Element Principal Token yvUSDC-17DEC21",
+    "symbol": " \u0010ePyvUSDC-17DEC21"
+  },
+  {
+    "address": "0x8a2228705ec979961f0e16df311debcf097a2766",
+    "name": " &Element Principal Token yvUSDC-28JAN22",
+    "symbol": " \u0010ePyvUSDC-28JAN22"
+  },
+  {
+    "address": "0xfd09911130e6930bf87f2b0554c44f400bd80d3e",
+    "name": " \u0005Ethix",
+    "symbol": " \u0005ETHIX"
+  },
+  {
+    "address": "0xe1f238374943bb9a2d254dfb713b3b2ff8efdb87",
+    "name": " \u0012ETradingStakeToken",
+    "symbol": " \u0004ETRD"
+  },
+  {
+    "address": "0xd9fcd98c322942075a5c3860693e9f4f03aae07b",
+    "name": " \u0005Euler",
+    "symbol": " \u0003EUL"
+  },
+  {
+    "address": "0xdbd9f3d57f199b44ea70f624f5cd14ddc1ad2ac7",
+    "name": " \tExcalibur",
+    "symbol": " \u0003EXC"
+  },
+  {
+    "address": "0xe728834bda6572a39c3092f8dda82029bb60da80",
+    "name": " \u0007Exfinet",
+    "symbol": " \u0003EXN"
+  },
+  {
+    "address": "0x8c6fa66c21ae3fc435790e451946a9ea82e6e523",
+    "name": " \nMetaFabric",
+    "symbol": " \u0006FABRIC"
+  },
+  {
+    "address": "0x59b4bcbdab80643575fe0a971b5e11247946109a",
+    "name": " \nThe Factor",
+    "symbol": " \u0006FACTOR"
+  },
+  {
+    "address": "0x7de2b6745c3a4ab23de9b459f0639e049c275fd0",
+    "name": " \u0011Fairmint Dev Init",
+    "symbol": " \u0004FAIR"
+  },
+  {
+    "address": "0x0382f5ca67a15a4fd91959904e9681a8319a4c7a",
+    "name": " \u0013Fairmint Stage Init",
+    "symbol": " \u0004FAIR"
+  },
+  {
+    "address": "0x9ec0862ce715ea4fd830074be6bee4558db8a071",
+    "name": " \bFeeToken",
+    "symbol": " \u0003FEE"
+  },
+  {
+    "address": "0x985572429deb3acc47e019af6b3da4620175e553",
+    "name": " \bFeeToken",
+    "symbol": " \u0003FEE"
+  },
+  {
+    "address": "0xf344b01da08b142d2466dae9e47e333f22e64588",
+    "name": " \tFemboyDAO",
+    "symbol": " \u0003FEM"
+  },
+  {
+    "address": "0x9fb83c0635de2e815fd1c21b3a292277540c2e8d",
+    "name": " \tFevrToken",
+    "symbol": " \u0004FEVR"
+  },
+  {
+    "address": "0x586aa273f262909eef8fa02d90ab65f5015e0516",
+    "name": " \u0018Fixed Income Asset Token",
+    "symbol": " \u0004FIAT"
+  },
+  {
+    "address": "0xb1f1f47061a7be15c69f378cb3f69423bd58f2f8",
+    "name": " \nFlashstake",
+    "symbol": " \u0005FLASH"
+  },
+  {
+    "address": "0xb05097849bca421a3f51b249ba6cca4af4b97cb9",
+    "name": " \u0015Float Protocol: FLOAT",
+    "symbol": " \u0005FLOAT"
+  },
+  {
+    "address": "0xf59257e961883636290411c11ec5ae622d19455e",
+    "name": " \u0005Floor",
+    "symbol": " \u0005FLOOR"
+  },
+  {
+    "address": "0x5a1912749d2b7c3cdb832b81601c8c3f437a0de8",
+    "name": " \u0004FLYZ",
+    "symbol": " \u0003FLZ"
+  },
+  {
+    "address": "0x29ceddcf0da3c1d8068a7dfbd0fb06c2e438ff70",
+    "name": " \u000bFreelaToken",
+    "symbol": " \u0004FREL"
+  },
+  {
+    "address": "0xcf0bcf85082e3cfe591bd2451bc4b46faa34c7de",
+    "name": " \u0005Froyo",
+    "symbol": " \u0005Froyo"
+  },
+  {
+    "address": "0x5e8422345238f34275888049021821e8e08caa1f",
+    "name": " \nFrax Ether",
+    "symbol": " \u0006frxETH"
+  },
+  {
+    "address": "0xa24390c62186a8d265344e914f0fd962b81b5f13",
+    "name": " \u0011Flash Sushi Token",
+    "symbol": " \u0006fSUSHI"
+  },
+  {
+    "address": "0x661b6ccd0edeed2b351f6ec5452455b064518592",
+    "name": " \u000eFlight to Earn",
+    "symbol": " \u0003FTE"
+  },
+  {
+    "address": "0x3bedae4dba3c3561b61381441098e25147fc363a",
+    "name": " \rFUCK ALL RUGS",
+    "symbol": " \u0007FUCKRUG"
+  },
+  {
+    "address": "0xb4dffa52fee44bd493f12d85829d775ec8017691",
+    "name": " \u0013Congruent DAO Token",
+    "symbol": " \u0004Gaas"
+  },
+  {
+    "address": "0x9fda7ceec4c18008096c2fe2b85f05dc300f94d0",
+    "name": " \rPolyGaj Token",
+    "symbol": " \u0003GAJ"
+  },
+  {
+    "address": "0x5faa989af96af85384b8a938c2ede4a7378d9875",
+    "name": " \u000eProject Galaxy",
+    "symbol": " \u0003GAL"
+  },
+  {
+    "address": "0x2275d4937b6bfd3c75823744d3efbf6c3a8de473",
+    "name": " \u0006Goober",
+    "symbol": " \u0003GBR"
+  },
+  {
+    "address": "0x431b366be6069ae62f8121a901c6160b34af7f80",
+    "name": " \u0007GoldDAX",
+    "symbol": " \u0004GDAX"
+  },
+  {
+    "address": "0x9a9821cb2d96aa9768a48688de76429bf7ba728a",
+    "name": " \u0004Gems",
+    "symbol": " \u0003GEM"
+  },
+  {
+    "address": "0x9b17baadf0f21f03e35249e0e59723f34994f806",
+    "name": " \u0011NFTmall GEM Token",
+    "symbol": " \u0003GEM"
+  },
+  {
+    "address": "0x21413c119b0c11c5d96ae1bd328917bc5c8ed67e",
+    "name": " \nGenomesDAO",
+    "symbol": " \u0004GENE"
+  },
+  {
+    "address": "0x444444444444c1a66f394025ac839a535246fcc8",
+    "name": " \u0006Genius",
+    "symbol": " \u0004GENI"
+  },
+  {
+    "address": "0x7dd9c5cba05e151c895fde1cf355c9a1d5da6429",
+    "name": " \u0013Golem Network Token",
+    "symbol": " \u0003GLM"
+  },
+  {
+    "address": "0x70c5f366db60a2a0c59c4c24754803ee47ed7284",
+    "name": " \u0005Glove",
+    "symbol": " \u0003GLO"
+  },
+  {
+    "address": "0xe58eb0bb13a71d7b95c4c3cbe6cb3dbb08f9cbfb",
+    "name": " \u0015GenomesDAO Governance",
+    "symbol": " \u0005GNOME"
+  },
+  {
+    "address": "0xa9b584ec492cf6f641c9d37ea23bf5229139b419",
+    "name": " \u0007Genesis",
+    "symbol": " \u0004GNSS"
+  },
+  {
+    "address": "0x4097cc783596b34a971f78dbc0da502bd8936d90",
+    "name": " \tGoatChain",
+    "symbol": " \u0004GOAT"
+  },
+  {
+    "address": "0xc2a3a4fd22c9054615f45ef5753eb0c5a9ebe5e8",
+    "name": " \rGobbler Union",
+    "symbol": " \u0006GOBBLE"
+  },
+  {
+    "address": "0xc57a0af6d8836d61ab2816d1b4d0c8918007132c",
+    "name": " \bGoberian",
+    "symbol": " \u0004GOBE"
+  },
+  {
+    "address": "0x7be647634a942e73f8492d15ae492d867ce5245c",
+    "name": " \rFeudalz Goldz",
+    "symbol": " \u0005GOLDZ"
+  },
+  {
+    "address": "0xdcabdbdf086e1b0398418cdd10f8fbbf827cbb0b",
+    "name": " \u0003Goo",
+    "symbol": " \u0003GOO"
+  },
+  {
+    "address": "0x600000000a36f3cd48407e35eb7c5c910dc1f7a8",
+    "name": " \u0003Goo",
+    "symbol": " \u0003GOO"
+  },
+  {
+    "address": "0xc9393609a47f5744ce98369208b9dc66224e6b5d",
+    "name": " \u000eGoldOnSteroids",
+    "symbol": " \u0003GOS"
+  },
+  {
+    "address": "0x005e217b7fa172558179f98635b7d40292fb5994",
+    "name": " \rGiga Protocol",
+    "symbol": " \u0004GPRO"
+  },
+  {
+    "address": "0xd8e2f184eedc79a9bde9eb7e34b0ff34e98692b7",
+    "name": " \u0007Gravity",
+    "symbol": " \u0004GRAV"
+  },
+  {
+    "address": "0xfcfc8eacc436f336a80c63a7cec03d9b04c62f25",
+    "name": " \u0006GRILLA",
+    "symbol": " \u0006GRILLA"
+  },
+  {
+    "address": "0xbc5cef436eadacadfa8dafb63088f09f21dea7e9",
+    "name": " \u001fGwei Token (Forked from WETH10)",
+    "symbol": " \u0004GWEI"
+  },
+  {
+    "address": "0x36f17bd0f7028c784b2e0c9b5a65dbe071a902d7",
+    "name": " \u0003GWS",
+    "symbol": " \u0003GWS"
+  },
+  {
+    "address": "0x0642026e7f0b6ccac5925b4e7fa61384250e1701",
+    "name": " \u0003H2O",
+    "symbol": " \u0003H2O"
+  },
+  {
+    "address": "0x0e29e5abbb5fd88e28b2d355774e73bd47de3bcd",
+    "name": " \rHakka Finance",
+    "symbol": " \u0005HAKKA"
+  },
+  {
+    "address": "0xc3b20cf63b36909cd43a91c2786c373bc7d708ab",
+    "name": " \rHalcyon Token",
+    "symbol": " \u0003HAL"
+  },
+  {
+    "address": "0x72cfebbeec86009c3c6860484dca5636349f372d",
+    "name": " \u000fHammer Protocol",
+    "symbol": " \u0004HAMM"
+  },
+  {
+    "address": "0x0c90c57aaf95a3a87eadda6ec3974c99d786511f",
+    "name": " \bHanChain",
+    "symbol": " \u0003HAN"
+  },
+  {
+    "address": "0x0ace32f6e87ac1457a5385f8eb0208f37263b415",
+    "name": " \rHabitat Token",
+    "symbol": " \u0003HBT"
+  },
+  {
+    "address": "0xdac657ffd44a3b9d8aba8749830bf14beb66ff2d",
+    "name": " \bhumanDAO",
+    "symbol": " \u0004HDAO"
+  },
+  {
+    "address": "0x0f45a96fd1d9c6dceffefe60965e026d396ec25d",
+    "name": " \u000eSustedible DAO",
+    "symbol": " \u0005HERBN"
+  },
+  {
+    "address": "0xd520ddbdf81323f4b9a0ea0adbb692ebef6ce280",
+    "name": " \rHoldefi Token",
+    "symbol": " \u0003HLD"
+  },
+  {
+    "address": "0xcfaaeb5e659d34d781c477eee27c5c07e1066247",
+    "name": " \u0005HNA G",
+    "symbol": " \u0003HNA"
+  },
+  {
+    "address": "0x10010078a54396f62c96df8532dc2b4847d47ed3",
+    "name": " \u000fHundred Finance",
+    "symbol": " \u0003HND"
+  },
+  {
+    "address": "0xc3589f56b6869824804a5ea29f2c9886af1b0fce",
+    "name": " \u0005Honey",
+    "symbol": " \u0003HNY"
+  },
+  {
+    "address": "0x33b4fe5e40e4903a0849ca97b3292eac3eb0aa36",
+    "name": " \u0005Honey",
+    "symbol": " \u0005HONEY"
+  },
+  {
+    "address": "0xd1ac902c7d058055cab36373159be35391722f29",
+    "name": " \fHarumble Inu",
+    "symbol": " \u0003HRM"
+  },
+  {
+    "address": "0x27c84448c44f219d1db2897e07359fa508977e34",
+    "name": " \u0007Heavens",
+    "symbol": " \u0003HVN"
+  },
+  {
+    "address": "0x83221650e771f54773b32b602cedb705c500a2cc",
+    "name": " \bBLVKHVND",
+    "symbol": " \u0004HVND"
+  },
+  {
+    "address": "0x40eb746dee876ac1e78697b7ca85142d178a1fc8",
+    "name": " \u0005IAGON",
+    "symbol": " \u0003IAG"
+  },
+  {
+    "address": "0x6a68de599e8e0b1856e322ce5bd11c5c3c79712b",
+    "name": " \tI Bet You",
+    "symbol": " \u0003IBY"
+  },
+  {
+    "address": "0x875773784af8135ea0ef43b5a374aad105c5d39e",
+    "name": " \u0004Idle",
+    "symbol": " \u0004IDLE"
+  },
+  {
+    "address": "0xf9c53268e9de692ae1b2ea5216e24e1c3ad7cb1e",
+    "name": " \u000bIdexo Token",
+    "symbol": " \u0003IDO"
+  },
+  {
+    "address": "0x63fc0d65b11909465765f5691ac9748abe95a66d",
+    "name": " \u0007IMPULSE",
+    "symbol": " \u0005IMPLS"
+  },
+  {
+    "address": "0x04c17b9d3b29a78f7bd062a57cf44fc633e71f85",
+    "name": " \u0004IMPT",
+    "symbol": " \u0004IMPT"
+  },
+  {
+    "address": "0x1f0f9f2593b23f3667d1fb163a3bb0298c30df63",
+    "name": " \u0005{∞}",
+    "symbol": " \u0003INF"
+  },
+  {
+    "address": "0xba608ab350f1b7602a7a234c70ea5b4a66260b50",
+    "name": " \u0007Insidor",
+    "symbol": " \u0007INSIDER"
+  },
+  {
+    "address": "0x02d3a27ac3f55d5d91fb0f52759842696a864217",
+    "name": " \u0018Charged Particles - IONX",
+    "symbol": " \u0004IONX"
+  },
+  {
+    "address": "0x3abf2a4f8452ccc2cf7b4c1e4663147600646f66",
+    "name": " \bJuicebox",
+    "symbol": " \u0003JBX"
+  },
+  {
+    "address": "0xe2fc859c838f31c1450448f4fed92e3284ae49e9",
+    "name": " \u0005Jigen",
+    "symbol": " \u0003JIG"
+  },
+  {
+    "address": "0x8a9c67fee641579deba04928c4bc45f66e26343a",
+    "name": " \u0013Jarvis Reward Token",
+    "symbol": " \u0003JRT"
+  },
+  {
+    "address": "0x93effd08e3e5a4b1b40c26137e63876b2501ffa4",
+    "name": " \u000eJulSwap on ETH",
+    "symbol": " \u0004JulD"
+  },
+  {
+    "address": "0x59d1e836f7b7210a978b25a855085cc46fd090b5",
+    "name": " \nAssangeDAO",
+    "symbol": " \u0007JUSTICE"
+  },
+  {
+    "address": "0x66485a844898b3e8a210cf850376214a94d9e163",
+    "name": " \u0013HaKibbutz HaMeuchad",
+    "symbol": " \u0004KBTZ"
+  },
+  {
+    "address": "0x824a50df33ac1b41afc52f4194e2e8356c17c3ac",
+    "name": " \tKickToken",
+    "symbol": " \u0004KICK"
+  },
+  {
+    "address": "0x11ea96d1e3d7d2fcc45a793e1a29b1b4b0c9566c",
+    "name": " \u0010Ryukyu Kiji Tori",
+    "symbol": " \u0004KIJI"
+  },
+  {
+    "address": "0x1f726ddaaf9abd678858cb840f7a00d427a1f816",
+    "name": " \tKiji Tori",
+    "symbol": " \u0004KIJI"
+  },
+  {
+    "address": "0x618d62420b3fc761044cebf393283cdf94766f8f",
+    "name": " \u0016King Charles III Token",
+    "symbol": " \u0004KING"
+  },
+  {
+    "address": "0x184b6f31aeaa6a19eb207dfea01f4289629e0f0f",
+    "name": " \nFiveKM KMT",
+    "symbol": " \u0003KMT"
+  },
+  {
+    "address": "0xf0c74886502b2cc7beb7eb9644b5c1461955e3e9",
+    "name": " \rKomodo Dragon",
+    "symbol": " \u0006KOMODO"
+  },
+  {
+    "address": "0x049e119413ab1f1b0fd836e657e3e4ba3ad9cab8",
+    "name": " \rKESEF.FINANCE",
+    "symbol": " \u0003KSF"
+  },
+  {
+    "address": "0xcb58418aa51ba525aef0fe474109c0354d844b7c",
+    "name": " \rLaikaProtocol",
+    "symbol": " \u0005LAIKA"
+  },
+  {
+    "address": "0x0bffc5692960bb043d3216839bdd6e5e64ff1b4e",
+    "name": " \rLaikaProtocol",
+    "symbol": " \u0005LAIKA"
+  },
+  {
+    "address": "0x54aa569005332e4d6f91e27c55307aaef607c0e2",
+    "name": " \nLAND Token",
+    "symbol": " \u0004LAND"
+  },
+  {
+    "address": "0xa23c1194d421f252b4e6d5edcc3205f7650a4ebe",
+    "name": " \fLaunch Block",
+    "symbol": " \u0003LBP"
+  },
+  {
+    "address": "0x53263d9ef74db583b15fbc6d5d4e8b83833fa134",
+    "name": " \nLEAP Token",
+    "symbol": " \u0004LEAP"
+  },
+  {
+    "address": "0x63125c0d5cd9071de9a1ac84c400982f41c697ae",
+    "name": " \u0006LexDAO",
+    "symbol": " \u0003LEX"
+  },
+  {
+    "address": "0x7e43fe8ea9a433cb848ddfbbb54c9ad1fcf25856",
+    "name": " \u000bleadgnr.com",
+    "symbol": " \u0003LGM"
+  },
+  {
+    "address": "0x7b71fb77a2f3ca98a0dec88ba7cc53871881809b",
+    "name": " \u000bLiangxi DAO",
+    "symbol": " \u0005LIANG"
+  },
+  {
+    "address": "0xfbfefe2fee2ea07b2a5b367c9a13b0ab43518dcd",
+    "name": " \u0010Libra Stablecoin",
+    "symbol": " \u0005LIBRA"
+  },
+  {
+    "address": "0x9c38688e5acb9ed6049c8502650db5ac8ef96465",
+    "name": " \u0003Lif",
+    "symbol": " \u0003LIF"
+  },
+  {
+    "address": "0x8667625cc5968fcc83e6522be0acd7d85d569048",
+    "name": " \fLightNetwork",
+    "symbol": " \u0005LIGHT"
+  },
+  {
+    "address": "0x5f69b7ab8f7cab199a310fd5a27b43fef44ddcc0",
+    "name": " \bLiquidus",
+    "symbol": " \u0003LIQ"
+  },
+  {
+    "address": "0xfd0205066521550d7d7ab19da8f72bb004b4c341",
+    "name": " \u0019Liquidity Incentive Token",
+    "symbol": " \u0003LIT"
+  },
+  {
+    "address": "0x4071efd58634fa46aa6dab0a2f3ea23d9f5e37b3",
+    "name": " \tLLGT test",
+    "symbol": " \u0005$LLGT"
+  },
+  {
+    "address": "0xdec41db0c33f3f6f3cb615449c311ba22d418a8d",
+    "name": " \u0004Lobi",
+    "symbol": " \u0004LOBI"
+  },
+  {
+    "address": "0xce92d0599cf9a6ca3e91e709ccd1c987cc7aa2e0",
+    "name": " \u000bLogarithmic",
+    "symbol": " \u0004$LOG"
+  },
+  {
+    "address": "0x721a1b990699ee9d90b6327faad0a3e840ae8335",
+    "name": " \nLOOT Token",
+    "symbol": " \u0004LOOT"
+  },
+  {
+    "address": "0x9da91d7cb48fbbe531458ce79a0b0e9d8dd2ba50",
+    "name": " \nLoot Token",
+    "symbol": " \u0004LOOT"
+  },
+  {
+    "address": "0xf5a90648b528bdb12991ab0350db618f461b29c0",
+    "name": " \tLovelyDAO",
+    "symbol": " \u0004LOVE"
+  },
+  {
+    "address": "0xce15cb5fe641e0c083bb3e12aa3bf70072d23c1e",
+    "name": " \u000bLPDAO Token",
+    "symbol": " \u0002LP"
+  },
+  {
+    "address": "0x652b24e8bfb3a69de5a5181128f313e1a8b33d2d",
+    "name": " \rLoop Protocol",
+    "symbol": " \u0003LPL"
+  },
+  {
+    "address": "0x7fe8dac51394157811c71bbf74c133a224a9ff44",
+    "name": " \nLiquidSwap",
+    "symbol": " \u0003LQD"
+  },
+  {
+    "address": "0x6dea81c8171d0ba574754ef6f8b412f2ed88c54d",
+    "name": " \u0004LQTY",
+    "symbol": " \u0004LQTY"
+  },
+  {
+    "address": "0x749b964f3dd571b177fc6e415a07f62b05047da4",
+    "name": " \bBad Trip",
+    "symbol": " \u0003LSD"
+  },
+  {
+    "address": "0x32bc49b6c3183437d3e2eaac357415d067e42051",
+    "name": " \tLunacyDAO",
+    "symbol": " \u0005LUNAC"
+  },
+  {
+    "address": "0x71a28feaee902966dc8d355e7b8aa427d421e7e0",
+    "name": " \bLunchDao",
+    "symbol": " \u0005LUNCH"
+  },
+  {
+    "address": "0x5f98805a4e8be255a32880fdec7f6728c6568ba0",
+    "name": " \u000fLUSD Stablecoin",
+    "symbol": " \u0004LUSD"
+  },
+  {
+    "address": "0x01ba67aac7f75f647d94220cc98fb30fcc5105bf",
+    "name": " \nLyra Token",
+    "symbol": " \u0004LYRA"
+  },
+  {
+    "address": "0x3466b4c9e2abc189b59ad64af247619df10c7e7b",
+    "name": " \nMacc Money",
+    "symbol": " \u0005$MACC"
+  },
+  {
+    "address": "0x745407c86df8db893011912d3ab28e68b62e49b0",
+    "name": " \u0007MahaDAO",
+    "symbol": " \u0004MAHA"
+  },
+  {
+    "address": "0x4af698b479d0098229dc715655c667ceb6cd8433",
+    "name": " \bMaidCoin",
+    "symbol": " \u0005$MAID"
+  },
+  {
+    "address": "0xb29e76bfdf20dfc9721b426ac91f752a493ab99f",
+    "name": " \bMaidCoin",
+    "symbol": " \u0005$MAID"
+  },
+  {
+    "address": "0x6c9bdf986b76211d3951b7b83316cea0ab793398",
+    "name": " \bMakeLove",
+    "symbol": " \bMakeLove"
+  },
+  {
+    "address": "0xc8d3dcb63c38607cb0c9d3f55e8ecce628a01c36",
+    "name": " \u000fMatrixSwapToken",
+    "symbol": " \u0006MATRIX"
+  },
+  {
+    "address": "0x63f5d74f6ea4a8308891c2e7182c197721ead1a8",
+    "name": " \u0011My Crypto Romance",
+    "symbol": " \u0003MCR"
+  },
+  {
+    "address": "0xed351575b9869aada94435e0066ba38e08800b60",
+    "name": " \u000eMcr Stablecoin",
+    "symbol": " \u0003MCR"
+  },
+  {
+    "address": "0xd8eeffb0151ca81191577a45359d877e6d5f7fac",
+    "name": " \tMemies.io",
+    "symbol": " \u0005MEMIO"
+  },
+  {
+    "address": "0x2ebd53d035150f328bd754d6dc66b99b0edb89aa",
+    "name": " \nMetronome2",
+    "symbol": " \u0003MET"
+  },
+  {
+    "address": "0x8807e69dc04155af64172cd6f0b4738f8068d0d4",
+    "name": " \fMeta Network",
+    "symbol": " \u0004Meta"
+  },
+  {
+    "address": "0x376c2dc94d30ba7f9bca742b626250198569bbe7",
+    "name": " \u0007Meta Ai",
+    "symbol": " \u0005METAI"
+  },
+  {
+    "address": "0x40f0a7a1ff0cbe3b26af8d12fb2fa20c4b4515ce",
+    "name": " \u0007miniETH",
+    "symbol": " \u0004mETH"
+  },
+  {
+    "address": "0x2374073ce05e8542e8c6ba4f35844d54f58d2f99",
+    "name": " \tMemeVerse",
+    "symbol": " \u0003MEV"
+  },
+  {
+    "address": "0x99d8a9c45b2eca8864373a26d1459e3dff1e17f3",
+    "name": " \u0014Magic Internet Money",
+    "symbol": " \u0003MIM"
+  },
+  {
+    "address": "0x0244d128f585a5593dc7713566100b4f3fa8e253",
+    "name": " \nMiND Token",
+    "symbol": " \u0004MiND"
+  },
+  {
+    "address": "0x21585bbcd5bdc3f5737620cf0db2e51978cf60ac",
+    "name": " \bManifest",
+    "symbol": " \u0005MNFST"
+  },
+  {
+    "address": "0x335e14d18d8a903b782a39059dc35d61b94e1c1b",
+    "name": " \tMango INU",
+    "symbol": " \u0004MNGO"
+  },
+  {
+    "address": "0x1ea48b9965bb5086f3b468e50ed93888a661fc17",
+    "name": " \u0006Moneta",
+    "symbol": " \u0003MON"
+  },
+  {
+    "address": "0x99f839134a18dd4c7077b5ae60813de0274611d8",
+    "name": " \fMongoose DAO",
+    "symbol": " \u0006MonDAO"
+  },
+  {
+    "address": "0xf8640b0b79c236b0c14f67344b4d203ffcedc712",
+    "name": " \u0004Monk",
+    "symbol": " \u0004MONK"
+  },
+  {
+    "address": "0xa4e27ea37d18bb0f483779f9e75a6024efa5e73e",
+    "name": " \tMonastery",
+    "symbol": " \u0004MONK"
+  },
+  {
+    "address": "0xe1ca72ff3434b131765c62cbcbc26060f7aba03d",
+    "name": " \u0011MOONs on Ethereum",
+    "symbol": " \u0004MOON"
+  },
+  {
+    "address": "0x20d4db1946859e2adb0e5acc2eac58047ad41395",
+    "name": " \u0006MOONEY",
+    "symbol": " \u0006MOONEY"
+  },
+  {
+    "address": "0x3fa729b4548becbad4eab6ef18413470e6d5324c",
+    "name": " \u0005Mover",
+    "symbol": " \u0004MOVE"
+  },
+  {
+    "address": "0x87ad2db2097a16a039e1d830022b4d7f3188c62a",
+    "name": " \tMethereum",
+    "symbol": " \u0003MTH"
+  },
+  {
+    "address": "0x84ba4aecfde39d69686a841bab434c32d179a169",
+    "name": " \u0006Method",
+    "symbol": " \u0004MTHD"
+  },
+  {
+    "address": "0x13c99770694f07279607a6274f28a28c33086424",
+    "name": " \bMaterial",
+    "symbol": " \u0004MTRL"
+  },
+  {
+    "address": "0x333a4823466879eef910a04d473505da62142069",
+    "name": " \u0007Nation3",
+    "symbol": " \u0006NATION"
+  },
+  {
+    "address": "0xeb58343b36c7528f23caae63a150240241310049",
+    "name": " \u0006Nimbus",
+    "symbol": " \u0003NBU"
+  },
+  {
+    "address": "0x71e02750c97a940eccc6f36be05763842b31e1fe",
+    "name": " \bSENDCOIN",
+    "symbol": " \u0004NELK"
+  },
+  {
+    "address": "0xe69a114289c79818ed2f74408c778aee74315086",
+    "name": " \bNeutrino",
+    "symbol": " \u0004NEUT"
+  },
+  {
+    "address": "0x530320c5fcd391c43b8bead2960c32cb43ddd596",
+    "name": " \tNonefakev",
+    "symbol": " \u0003NFV"
+  },
+  {
+    "address": "0xff3ac80c1caa08cbd43a7e90d20c398d54c7342f",
+    "name": " \u0011Staked Ice Tokens",
+    "symbol": " \u0004nICE"
+  },
+  {
+    "address": "0x3c07209ec660fb42249b2b06f0beddb0a272378a",
+    "name": " \u0003NO1",
+    "symbol": " \u0003NO1"
+  },
+  {
+    "address": "0xe069af87450fb51fc0d0e044617f1c134163e591",
+    "name": " \fNASDEX Token",
+    "symbol": " \u0004NSDX"
+  },
+  {
+    "address": "0x70bef3bb2f001da2fddb207dae696cd9faff3f5d",
+    "name": " \u0011Ninja Squad Token",
+    "symbol": " \u0003NST"
+  },
+  {
+    "address": "0x16ba8efe847ebdfef99d399902ec29397d403c30",
+    "name": " \u000bOh! Finance",
+    "symbol": " \u0002OH"
+  },
+  {
+    "address": "0x383518188c0c6d7730d91b2c03a03c837814a899",
+    "name": " \u0007Olympus",
+    "symbol": " \u0003OHM"
+  },
+  {
+    "address": "0x0275e1001e293c46cfe158b3702aade0b99f88a5",
+    "name": " \u0005Oiler",
+    "symbol": " \u0003OIL"
+  },
+  {
+    "address": "0x516d813bc49b0eb556f9d09549f98443acdd7d8f",
+    "name": " \tOKPC GOLD",
+    "symbol": " \u0005OKGLD"
+  },
+  {
+    "address": "0xcbb2f7e909a61dec35ebfc8a9c315affface1bf5",
+    "name": " \tOKEX USDT",
+    "symbol": " \u0003OKU"
+  },
+  {
+    "address": "0xcf78c7dd70d6f30f6e3609e905e78305da98c863",
+    "name": " \u0005Ownix",
+    "symbol": " \u0003ONX"
+  },
+  {
+    "address": "0xb580f4d0987d78f2f87063c9c30c9cc6e2b62d43",
+    "name": " \u0007Orwells",
+    "symbol": " \u0003ORW"
+  },
+  {
+    "address": "0x8fcb1783bf4b71a51f702af0c266729c4592204a",
+    "name": " 'OT Aave interest bearing USDC 29DEC2022",
+    "symbol": " \u0012OT-aUSDC-29DEC2022"
+  },
+  {
+    "address": "0x010a0288af52ed61e32674d82bbc7ddbfa9a1324",
+    "name": " 'OT Aave interest bearing USDC 30DEC2021",
+    "symbol": " \u0012OT-aUSDC-30DEC2021"
+  },
+  {
+    "address": "0x3d4e7f52efafb9e0c70179b688fc3965a75bcfea",
+    "name": " \u0019OT Compound Dai 29DEC2022",
+    "symbol": " \u0011OT-cDAI-29DEC2022"
+  },
+  {
+    "address": "0xe55e3b62005a2035d48ac0c41a5a9c799f04892c",
+    "name": " \u0019OT Compound Dai 30DEC2021",
+    "symbol": " \u0011OT-cDAI-30DEC2021"
+  },
+  {
+    "address": "0x407a3e019c655b779ccd098ff50377e4c5f1c334",
+    "name": " \bOtherDAO",
+    "symbol": " \u0004OTHR"
+  },
+  {
+    "address": "0x322d6c69048330247165231eb7848a5c80a48878",
+    "name": " \u001fOT SushiSwap LP Token 29DEC2022",
+    "symbol": " \u0010OT-SLP-29DEC2022"
+  },
+  {
+    "address": "0xbf682bd31a615123d28d611b38b0ae3d2b675c2c",
+    "name": " \u001fOT SushiSwap LP Token 29DEC2022",
+    "symbol": " \u0010OT-SLP-29DEC2022"
+  },
+  {
+    "address": "0x189564397643d9e6173a002f1ba98da7d40a0fa6",
+    "name": " \u0015OT wxBTRFLY 21APR2022",
+    "symbol": " \u0015OT-wxBTRFLY-21APR2022"
+  },
+  {
+    "address": "0xf756042f382f081954cead84ddb9dc9bbcfac0cd",
+    "name": " \fOVEN.FINANCE",
+    "symbol": " \u0003OVN"
+  },
+  {
+    "address": "0x9d4265bf1b571bb56a1908806854e8830f4903b1",
+    "name": " 1WETHUSDC 30-September-2022 900Put USDC Collateral",
+    "symbol": " \u001boWETHUSDC/USDC-30SEP22-900P"
+  },
+  {
+    "address": "0xdf6d67d6b01d9c09c8a44f91dc054b56e8248cab",
+    "name": " 0WETHUSDC 05-August-2022 2350Call WETH Collateral",
+    "symbol": " \u001coWETHUSDC/WETH-05AUG22-2350C"
+  },
+  {
+    "address": "0x9ff79c75ae2bcbe0ec63c0375a3ec90ff75bbe0f",
+    "name": " 2WETHUSDC 26-November-2021 4500Call WETH Collateral",
+    "symbol": " \u001coWETHUSDC/WETH-26NOV21-4500C"
+  },
+  {
+    "address": "0x603b0423f818607127278d7b28621814d2a20c08",
+    "name": " .WETHUSDC 29-July-2022 2100Call WETH Collateral",
+    "symbol": " \u001coWETHUSDC/WETH-29JUL22-2100C"
+  },
+  {
+    "address": "0x3cd9129da8c58a8779105a2012a31e203de40679",
+    "name": " .WETHUSDC 30-July-2021 2500Call WETH Collateral",
+    "symbol": " \u001coWETHUSDC/WETH-30JUL21-2500C"
+  },
+  {
+    "address": "0xed136b85c8329379eb23b1e22d700b37d163271e",
+    "name": " 3WETHUSDC 30-September-2022 1200Call WETH Collateral",
+    "symbol": " \u001coWETHUSDC/WETH-30SEP22-1200C"
+  },
+  {
+    "address": "0x428dca9537116148616a5a3e44035af17238fe9d",
+    "name": " \u0004OxAI",
+    "symbol": " \u0004OXAI"
+  },
+  {
+    "address": "0x83e031005ecb771b7ff900b3c7b0bdde7f521c08",
+    "name": " \nPaintToken",
+    "symbol": " \u0005PAINT"
+  },
+  {
+    "address": "0x3cbb7f5d7499af626026e96a2f05df806f2200dc",
+    "name": " \bPandaDAO",
+    "symbol": " \u0005PANDA"
+  },
+  {
+    "address": "0x9256c9b0bb0cda4b7fbf8212f80184eb1da17e7a",
+    "name": " \fRebase Panda",
+    "symbol": " \u0005PANDA"
+  },
+  {
+    "address": "0xdd9b84f8b435f09baf02cccd746822bb293c3284",
+    "name": " \u0004YARN",
+    "symbol": " \bPCC Yarn"
+  },
+  {
+    "address": "0xcff79e48a2dc2f213f23d03b2bffbbc541ceef22",
+    "name": " \fConcave pCNV",
+    "symbol": " \u0004pCNV"
+  },
+  {
+    "address": "0x528fc7341f43c13268bfb53fc095fa025044f286",
+    "name": " \tPEACEVOID",
+    "symbol": " \u0005PEACE"
+  },
+  {
+    "address": "0x9d3ee6b64e69ebe12a4bf0b01d031cb80f556ee4",
+    "name": " \fWrapped PECO",
+    "symbol": " \u0004PECO"
+  },
+  {
+    "address": "0x7a58c0be72be218b41c608b7fe7c5bb630736c71",
+    "name": " \u000fConstitutionDAO",
+    "symbol": " \u0006PEOPLE"
+  },
+  {
+    "address": "0x6afcff9189e8ed3fcc1cffa184feb1276f6a82a5",
+    "name": " \nPETS Token",
+    "symbol": " \u0004PETS"
+  },
+  {
+    "address": "0x9107a255c4016ade2c37b2762e7c0d077174a8b6",
+    "name": " \u0002φ",
+    "symbol": " \u0003PHI"
+  },
+  {
+    "address": "0x758b4684be769e92eefea93f60dda0181ea303ec",
+    "name": " \nPhonon DAO",
+    "symbol": " \u0006PHONON"
+  },
+  {
+    "address": "0x60f5672a271c7e39e787427a18353ba59a4a3578",
+    "name": " \u0004PIKA",
+    "symbol": " \u0004PIKA"
+  },
+  {
+    "address": "0x02814f435dd04e254be7ae69f61fca19881a780d",
+    "name": " \u000bMeme Dollar",
+    "symbol": " \u0004PINA"
+  },
+  {
+    "address": "0x5aa7f00075d135117667e6ed4938f294c6881ea9",
+    "name": " \fProtocol Inu",
+    "symbol": " \u0004PINU"
+  },
+  {
+    "address": "0x00ee41dcc47045a85bcf7784264f23a6f8bad35c",
+    "name": " \nPITCH - v2",
+    "symbol": " \u0005PITCH"
+  },
+  {
+    "address": "0x1590abe3612be1cb3ab5b0f28874d521576e97dc",
+    "name": " \u0005Pixel",
+    "symbol": " \u0005PIXEL"
+  },
+  {
+    "address": "0x2155a67ded74ea71502849dc47cf01e36d8a4cda",
+    "name": " \u0017Peking University Token",
+    "symbol": " \u0003PKU"
+  },
+  {
+    "address": "0xd4da2b10cc1982706fde669f9b27afadacfe0715",
+    "name": " \bPlatform",
+    "symbol": " \bPLATFORM"
+  },
+  {
+    "address": "0x130966628846bfd36ff31a822705796e8cb8c18d",
+    "name": " \bPolyPlay",
+    "symbol": " \u0004PLAY"
+  },
+  {
+    "address": "0xfbf20ba2135cda583757f44aae6547bdbec68463",
+    "name": " \bPulseFeg",
+    "symbol": " \u0006PLSFEG"
+  },
+  {
+    "address": "0xe83341b9d5cc95f0e0d6b94ed4820c0f191c51ba",
+    "name": " \bPlatinum",
+    "symbol": " \u0006$PLTNM"
+  },
+  {
+    "address": "0x71921c08586295b0b68e44a78a2dca1e3f259721",
+    "name": " \u0007PonyDAO",
+    "symbol": " \u0004PNYD"
+  },
+  {
+    "address": "0x6a54ef1680f593574522422f3700194ec91ce57d",
+    "name": " \u0011PooTogether Token",
+    "symbol": " \u0003POO"
+  },
+  {
+    "address": "0x2c2f7e7c5604d162d75641256b80f1bf6f4dc796",
+    "name": " \u000ePolkaRareToken",
+    "symbol": " \u0005PRARE"
+  },
+  {
+    "address": "0x46e98ffe40e408ba6412beb670507e083c8b95ff",
+    "name": " \u0007PRIMATE",
+    "symbol": " \u0007PRIMATE"
+  },
+  {
+    "address": "0xfcbcebaada7f2563b40b7ad9695e18b354b2b1ae",
+    "name": " \u0010Prime Ape Planet",
+    "symbol": " \u0005PRIME"
+  },
+  {
+    "address": "0x7cfea0dd176651e7b5a1ced9c4faf8ee295315fd",
+    "name": " \fPrimeNumbers",
+    "symbol": " \u0004PRNT"
+  },
+  {
+    "address": "0x958adc9a67b867dcaf8f504f922a7909d668122f",
+    "name": " \u000eProukrainecoin",
+    "symbol": " \u0005proua"
+  },
+  {
+    "address": "0xa211f450ce88deb31d3f12ae3c1ebf6b0e55a5d9",
+    "name": " \fParsiq Boost",
+    "symbol": " \bPRQBOOST"
+  },
+  {
+    "address": "0x65fdf4b89cb72e28d31afe71720a5bc3eb662974",
+    "name": " \bPunkCoin",
+    "symbol": " \u0004PUNK"
+  },
+  {
+    "address": "0xc68e539231e6da62513bbdc88e2249f5d012e747",
+    "name": " \u0017Transgender Rights Coin",
+    "symbol": " \u0005PUPPY"
+  },
+  {
+    "address": "0xda9fdab21bc4a5811134a6e0ba6ca06624e67c07",
+    "name": " \u0005QUIDD",
+    "symbol": " \u0005QUIDD"
+  },
+  {
+    "address": "0x6af36add4e2f6e8a9cb121450d59f6c30f3f3722",
+    "name": " \u0007Radcoin",
+    "symbol": " \u0003RAD"
+  },
+  {
+    "address": "0x6b1871328f3c80f6bd85f1b4b45b67319b2b4c8d",
+    "name": " \u0006Radial",
+    "symbol": " \u0003RAD"
+  },
+  {
+    "address": "0x94804dc4948184ffd7355f62ccbb221c9765886f",
+    "name": " \tRageToken",
+    "symbol": " \u0004RAGE"
+  },
+  {
+    "address": "0x32e255ed9e9f703563118ab5211ace4f80ce6279",
+    "name": " \u0010Rai Reflex Index",
+    "symbol": " \u0003RAI"
+  },
+  {
+    "address": "0x03ab458634910aad20ef5f1c8ee96f1d6ac54919",
+    "name": " \u0010Rai Reflex Index",
+    "symbol": " \u0003RAI"
+  },
+  {
+    "address": "0xba5bde662c17e2adff1075610382b9b691296350",
+    "name": " \tSuperRare",
+    "symbol": " \u0004RARE"
+  },
+  {
+    "address": "0x4ef32658a6a2a63e42e31b342bd2aebf11a1be09",
+    "name": " \u0015Ruler Protocol rToken",
+    "symbol": " \u001dRC_bBADGER_7_alUSD_2021_08_31"
+  },
+  {
+    "address": "0xe7ee0b13928afee21a634debbe59693b13658420",
+    "name": " \u0015Ruler Protocol rToken",
+    "symbol": " \u001aRC_COVER_250_DAI_2021_3_31"
+  },
+  {
+    "address": "0x7570003f85d0c362333e1668bfd638c7f34a259b",
+    "name": " \u0015Ruler Protocol rToken",
+    "symbol": " \u0017RC_COVER__DAI_2021_3_31"
+  },
+  {
+    "address": "0xb040041fdd14164a566f94f7789fc2e6b5bf9c58",
+    "name": " \u0015Ruler Protocol rToken",
+    "symbol": " \u001bRC_DAI_0.25_TRIBE_2021_4_30"
+  },
+  {
+    "address": "0x5922a5f93d55aa25b162d407b938be9beacb7585",
+    "name": " \u0015Ruler Protocol rToken",
+    "symbol": " \u001fRC_ibBTC_25000_alUSD_2021_08_31"
+  },
+  {
+    "address": "0x368df85396be56f1d475e5d10339211a77e13c32",
+    "name": " \u0015Ruler Protocol rToken",
+    "symbol": " \u001bRC_WBTC_25000_DAI_2021_3_31"
+  },
+  {
+    "address": "0x31c1dcf1a63c52418f20b8df4d95411cb76df433",
+    "name": " \u0015Ruler Protocol rToken",
+    "symbol": " \u001cRC_WBTC_27000_DAI_2021_09_30"
+  },
+  {
+    "address": "0x3368f2b9a0758556de65186eb7dce977543a30ae",
+    "name": " \u0015Ruler Protocol rToken",
+    "symbol": " \u001cRC_WBTC_32000_DAI_2021_08_31"
+  },
+  {
+    "address": "0x3238efef52f1141734b17cdefcf70539c01ea7a9",
+    "name": " \u0015Ruler Protocol rToken",
+    "symbol": " \u001cRC_WBTC_36000_DAI_2021_08_31"
+  },
+  {
+    "address": "0x7b73a9e765b947b4eeb05cf7dd17eefaac1b1575",
+    "name": " \u0015Ruler Protocol rToken",
+    "symbol": " \u0016RC_WBTC__DAI_2021_3_31"
+  },
+  {
+    "address": "0xd56bc68ef6fce282d54fcd67daa94f284829813b",
+    "name": " \u0015Ruler Protocol rToken",
+    "symbol": " \u001aRC_WETH_1600_DAI_2021_7_31"
+  },
+  {
+    "address": "0x89472e02e3550fd52971ed89a2682613b2c97199",
+    "name": " \u0015Ruler Protocol rToken",
+    "symbol": " \u0019RC_WETH_750_DAI_2021_3_31"
+  },
+  {
+    "address": "0x7f701650c116b5a2338b6eed6be0b924fc9a1551",
+    "name": " \u0015Ruler Protocol rToken",
+    "symbol": " \u0016RC_WETH__DAI_2021_3_31"
+  },
+  {
+    "address": "0x6f442da588232dc57bf0096e8de48d6961d5cc83",
+    "name": " (RealToken S 13895 Saratoga st Detroit MI",
+    "symbol": " (REALTOKEN-S-13895-SARATOGA-ST-DETROIT-MI"
+  },
+  {
+    "address": "0x315699f1ba88383cff2f2f30fcad187adb2e4d72",
+    "name": " (RealToken S 14078 Carlisle st Detroit MI",
+    "symbol": " (REALTOKEN-S-14078-CARLISLE-ST-DETROIT-MI"
+  },
+  {
+    "address": "0x41599149f1b52035392402f9e311b1edb0c9f699",
+    "name": " (RealToken S 14319 Rosemary st Detroit MI",
+    "symbol": " (REALTOKEN-S-14319-ROSEMARY-ST-DETROIT-MI"
+  },
+  {
+    "address": "0xfe17c3c0b6f38cf3bd8ba872bee7a18ab16b43fb",
+    "name": " 'RealToken S 15777 Ardmore st Detroit MI",
+    "symbol": " 'REALTOKEN-S-15777-ARDMORE-ST-DETROIT-MI"
+  },
+  {
+    "address": "0xd9e89bfebae447b42c1fa85c590716ec8820f737",
+    "name": " $RealToken S 4061 Grand St Detroit MI",
+    "symbol": " $REALTOKEN-S-4061-GRAND-ST-DETROIT-MI"
+  },
+  {
+    "address": "0x96700ffae33c651bc329c3f3fbfe56e1f291f117",
+    "name": " +RealToken S 4380 Beaconsfield st Detroit MI",
+    "symbol": " +REALTOKEN-S-4380-BEACONSFIELD-ST-DETROIT-MI"
+  },
+  {
+    "address": "0x78b5c6149c87c82edcffc73c230395abbc56ddd5",
+    "name": " \rRegular Token",
+    "symbol": " \u0003REG"
+  },
+  {
+    "address": "0x5d843fa9495d23de997c394296ac7b4d721e841c",
+    "name": " \u000bRelay Token",
+    "symbol": " \u0005RELAY"
+  },
+  {
+    "address": "0x459086f2376525bdceba5bdda135e4e9d3fef5bf",
+    "name": " \u0006renBCH",
+    "symbol": " \u0006renBCH"
+  },
+  {
+    "address": "0xeb4c2781e4eba804ce9a9803c67d0893436bb27d",
+    "name": " \u0006renBTC",
+    "symbol": " \u0006renBTC"
+  },
+  {
+    "address": "0xe3cb486f3f5c639e98ccbaf57d95369375687f80",
+    "name": " \u0006renDGB",
+    "symbol": " \u0006renDGB"
+  },
+  {
+    "address": "0x3832d2f059e55934220881f831be501d180671a7",
+    "name": " \u0007renDOGE",
+    "symbol": " \u0007renDOGE"
+  },
+  {
+    "address": "0xd5147bc8e386d91cc5dbe72099dac6c9b99276f5",
+    "name": " \u0006renFIL",
+    "symbol": " \u0006renFIL"
+  },
+  {
+    "address": "0x52d87f22192131636f93c5ab18d0127ea52cb641",
+    "name": " \u0007renLUNA",
+    "symbol": " \u0007renLUNA"
+  },
+  {
+    "address": "0x1c5db575e2ff833e46a2e9864c22f4b22e0b37c2",
+    "name": " \u0006renZEC",
+    "symbol": " \u0006renZEC"
+  },
+  {
+    "address": "0x20bc832ca081b91433ff6c17f85701b6e92486c5",
+    "name": " \u0015StakeWise Reward ETH2",
+    "symbol": " \u0005rETH2"
+  },
+  {
+    "address": "0x460b8586600555ee1d3ba97458f941a24944dfc4",
+    "name": " \nREU Mining",
+    "symbol": " \u0003REU"
+  },
+  {
+    "address": "0x2baa3668936cb0636d264458e6fc1039e1cf5226",
+    "name": " \nREU Mining",
+    "symbol": " \u0003REU"
+  },
+  {
+    "address": "0x5aaef4659c683d2b00ef86aa70c6ab2e5a00bcc7",
+    "name": " \u0004RICH",
+    "symbol": " \u0004RICH"
+  },
+  {
+    "address": "0x0cd022dde27169b20895e0e2b2b8a33b25e63579",
+    "name": " \bEverRise",
+    "symbol": " \u0004RISE"
+  },
+  {
+    "address": "0x7616f89f2537e32454c069fb95d74bc9a8aaa5ae",
+    "name": " \u0007Rockets",
+    "symbol": " \u0004RKTS"
+  },
+  {
+    "address": "0x68ed268ec325b9e05ad25fcd82c889d9716a6edc",
+    "name": " \bRumorDao",
+    "symbol": " \u0003RMR"
+  },
+  {
+    "address": "0x2c5e6ffe9f7f161c15f78cd67d79c33a7c8d84b5",
+    "name": " \u001aRoborovski NameChangeToken",
+    "symbol": " \u0004RNCT"
+  },
+  {
+    "address": "0x8ebfe1e17ea41f8b737e4f7670885b2278b1cc32",
+    "name": " \u000fChadverse Token",
+    "symbol": " \u0005ROIDZ"
+  },
+  {
+    "address": "0xed025a9fe4b30bcd68460bca42583090c2266468",
+    "name": " \nRipio Coin",
+    "symbol": " \u0003RPC"
+  },
+  {
+    "address": "0x320623b8e4ff03373931769a31fc52a4e78b5d70",
+    "name": " \u000eReserve Rights",
+    "symbol": " \u0003RSR"
+  },
+  {
+    "address": "0x8adf82dd1e0dbce5d92cc481e59659532cbbfa9c",
+    "name": " \u000fRUBC Stablecoin",
+    "symbol": " \u0004RUBC"
+  },
+  {
+    "address": "0x0c74e87c123b9a6c61c66468f8718692c1397a53",
+    "name": " \u0004RUSH",
+    "symbol": " \u0004RUSH"
+  },
+  {
+    "address": "0xe9f84de264e91529af07fa2c746e934397810334",
+    "name": " \u0004Sake",
+    "symbol": " \u0004SAK3"
+  },
+  {
+    "address": "0x2ba282bc146bd8451afb662d553e4480f904393d",
+    "name": " \nSango Coin",
+    "symbol": " \u0005SANGO"
+  },
+  {
+    "address": "0xf3dce50625cc3dd2c335326be679a0705021e017",
+    "name": " \u0006SBFINU",
+    "symbol": " \u0006SBFINU"
+  },
+  {
+    "address": "0x30d20208d987713f46dfd34ef128bb16c404d10f",
+    "name": " \u0006Stader",
+    "symbol": " \u0002SD"
+  },
+  {
+    "address": "0xa634fd53f1129a410a3da6df586d2ee02541d749",
+    "name": " \u0003Sda",
+    "symbol": " \u0003SDA"
+  },
+  {
+    "address": "0xfe2e637202056d30016725477c5da089ab0a043a",
+    "name": " \u0015StakeWise Staked ETH2",
+    "symbol": " \u0005sETH2"
+  },
+  {
+    "address": "0x09a0cbeeed92206e34dd679624f58b74567ca8b7",
+    "name": " \rSonic Finance",
+    "symbol": " \u0003SFI"
+  },
+  {
+    "address": "0xac3e018457b222d93114458476f3e3416abbe38f",
+    "name": " \u0011Staked Frax Ether",
+    "symbol": " \u0007sfrxETH"
+  },
+  {
+    "address": "0x8e85e97ed19c0fa13b2549309965291fbbc0048b",
+    "name": " \u001dsfrxETH-stETH-rETH StablePool",
+    "symbol": " \u0016sfrxETH-stETH-rETH-BPT"
+  },
+  {
+    "address": "0x0aabcc65ef352ad84b1326df188c95b6ab856c1c",
+    "name": " \bScorefam",
+    "symbol": " \u0003SFT"
+  },
+  {
+    "address": "0x461d52769884ca6235b685ef2040f47d30c94eb5",
+    "name": " \u000bSeedifyFund",
+    "symbol": " \u0005SFUND"
+  },
+  {
+    "address": "0x0aa9d1c726acbfa1ef8683a6b105ef46c5889a7c",
+    "name": " \u000bStaked Gaas",
+    "symbol": " \u0005sGaas"
+  },
+  {
+    "address": "0x24c19f7101c1731b85f1127eaa0407732e36ecdd",
+    "name": " \u0013Sharedstake.finance",
+    "symbol": " \u0003SGT"
+  },
+  {
+    "address": "0x232afce9f1b3aae7cb408e482e847250843db931",
+    "name": " \tShark DAO",
+    "symbol": " \u0005SHARK"
+  },
+  {
+    "address": "0xcb9f441ffae898e7a2f32143fd79ac899517a9dc",
+    "name": " \bShar Pei",
+    "symbol": " \u0007SHARPEI"
+  },
+  {
+    "address": "0xba5db223543a20972e7417b91323475b228dceb3",
+    "name": " \u0011Shibarium Network",
+    "symbol": " \u0003SHI"
+  },
+  {
+    "address": "0xad996a45fd2373ed0b10efa4a8ecb9de445a4302",
+    "name": " \u0007Shirtum",
+    "symbol": " \u0003SHI"
+  },
+  {
+    "address": "0xa09c0e98a252965a2b6bf2994e2d2c020af0f89a",
+    "name": " \u0007ShibOHM",
+    "symbol": " \u0007SHIBOHM"
+  },
+  {
+    "address": "0xf9abaeec0334fd30804446db7423abe0c02ef47d",
+    "name": " \tSHO Token",
+    "symbol": " \u0003SHO"
+  },
+  {
+    "address": "0x947d5acea7b613d46d119ca38e49d3d72383c113",
+    "name": " \tSigma DAO",
+    "symbol": " \u0005SIGMA"
+  },
+  {
+    "address": "0x804a4f2705f7bd08b1d84ae8698014a18c708dbc",
+    "name": " \u0004Sins",
+    "symbol": " \u0003SIN"
+  },
+  {
+    "address": "0xb33440566865f4433e28f90f61f0a8ec334b761e",
+    "name": " \u0004Sins",
+    "symbol": " \u0003SIN"
+  },
+  {
+    "address": "0xd71eea2bb8f54cd67ac26be39fd41ef13ebd0ba8",
+    "name": " \nStable INR",
+    "symbol": " \u0004SINR"
+  },
+  {
+    "address": "0x32f37d20e837d699bdc94af8bd1becef0666bf2d",
+    "name": " \u0006Skynet",
+    "symbol": " \u0003SKN"
+  },
+  {
+    "address": "0xdb795ef4bf54401ba954109681587e5f497ea0a2",
+    "name": " \nslothclimb",
+    "symbol": " \nslothclimb"
+  },
+  {
+    "address": "0x6a091a3406e0073c3cd6340122143009adac0eda",
+    "name": " \u0012SushiSwap LP Token",
+    "symbol": " \u0003SLP"
+  },
+  {
+    "address": "0x68c6d02d44e16f1c20088731ab032f849100d70f",
+    "name": " \u0012SushiSwap LP Token",
+    "symbol": " \u0003SLP"
+  },
+  {
+    "address": "0x58dc5a51fe44589beb22e8ce67720b5bc5378009",
+    "name": " \u0012SushiSwap LP Token",
+    "symbol": " \u0003SLP"
+  },
+  {
+    "address": "0x518d6ce2d7a689a591bf46433443c31615b206c5",
+    "name": " \u0012SushiSwap LP Token",
+    "symbol": " \u0003SLP"
+  },
+  {
+    "address": "0x4fb3cae84a1264b8bb1911e8915f56660ec8178e",
+    "name": " \u0012SushiSwap LP Token",
+    "symbol": " \u0003SLP"
+  },
+  {
+    "address": "0xceff51756c56ceffca006cd410b03ffc46dd3a58",
+    "name": " \u0012SushiSwap LP Token",
+    "symbol": " \u0003SLP"
+  },
+  {
+    "address": "0xc926990039045611eb1de520c1e249fd0d20a8ea",
+    "name": " \u0012SushiSwap LP Token",
+    "symbol": " \u0003SLP"
+  },
+  {
+    "address": "0xd75ea151a61d06868e31f8988d28dfe5e9df57b4",
+    "name": " \u0012SushiSwap LP Token",
+    "symbol": " \u0003SLP"
+  },
+  {
+    "address": "0xcb2286d9471cc185281c4f763d34a962ed212962",
+    "name": " \u0012SushiSwap LP Token",
+    "symbol": " \u0003SLP"
+  },
+  {
+    "address": "0xbded49a446de07bb9c1568a4da975d2d319d0d55",
+    "name": " \u0012SushiSwap LP Token",
+    "symbol": " \u0003SLP"
+  },
+  {
+    "address": "0xbcd6a2ddafbaa7f424698ed69e717c0c0f1e99bf",
+    "name": " \u0012SushiSwap LP Token",
+    "symbol": " \u0003SLP"
+  },
+  {
+    "address": "0xc5fa164247d2f8d68804139457146efbde8370f6",
+    "name": " \u0012SushiSwap LP Token",
+    "symbol": " \u0003SLP"
+  },
+  {
+    "address": "0xc2b0f2a7f736d3b908bdde8608177c8fc28c1690",
+    "name": " \u0012SushiSwap LP Token",
+    "symbol": " \u0003SLP"
+  },
+  {
+    "address": "0xc9cb53b48a2f3a9e75982685644c1870f1405ccb",
+    "name": " \u0012SushiSwap LP Token",
+    "symbol": " \u0003SLP"
+  },
+  {
+    "address": "0xb84c45174bfc6b8f3eaecbae11dee63114f5c1b2",
+    "name": " \u0012SushiSwap LP Token",
+    "symbol": " \u0003SLP"
+  },
+  {
+    "address": "0xba13afecda9beb75de5c56bbaf696b880a5a50dd",
+    "name": " \u0012SushiSwap LP Token",
+    "symbol": " \u0003SLP"
+  },
+  {
+    "address": "0xcfd111c4c0daeae6351bcdc80a993e78923845ab",
+    "name": " \u0012SushiSwap LP Token",
+    "symbol": " \u0003SLP"
+  },
+  {
+    "address": "0xc40d16476380e4037e6b1a2594caf6a6cc8da967",
+    "name": " \u0012SushiSwap LP Token",
+    "symbol": " \u0003SLP"
+  },
+  {
+    "address": "0xd3f85d18206829f917929bbbf738c1e0ce9af7fc",
+    "name": " \u0012SushiSwap LP Token",
+    "symbol": " \u0003SLP"
+  },
+  {
+    "address": "0xd453d48aca428fd718bc0e1ad238bfc009eff1d0",
+    "name": " \u0012SushiSwap LP Token",
+    "symbol": " \u0003SLP"
+  },
+  {
+    "address": "0xc3d03e4f041fd4cd388c549ee2a29a9e5075882f",
+    "name": " \u0012SushiSwap LP Token",
+    "symbol": " \u0003SLP"
+  },
+  {
+    "address": "0x47d9e3f2ddae87abe831521cf5a9eb7b71ccf3ef",
+    "name": " \u0012SushiSwap LP Token",
+    "symbol": " \u0003SLP"
+  },
+  {
+    "address": "0x35a0d9579b1e886702375364fe9c540f97e4517b",
+    "name": " \u0012SushiSwap LP Token",
+    "symbol": " \u0003SLP"
+  },
+  {
+    "address": "0x378b4c5f2a8a0796a8d4c798ef737cf00ae8e667",
+    "name": " \u0012SushiSwap LP Token",
+    "symbol": " \u0003SLP"
+  },
+  {
+    "address": "0x31503dcb60119a812fee820bb7042752019f2355",
+    "name": " \u0012SushiSwap LP Token",
+    "symbol": " \u0003SLP"
+  },
+  {
+    "address": "0x364248b2f1f57c5402d244b2d469a35b4c0e9dab",
+    "name": " \u0012SushiSwap LP Token",
+    "symbol": " \u0003SLP"
+  },
+  {
+    "address": "0x397ff1542f962076d0bfe58ea045ffa2d347aca0",
+    "name": " \u0012SushiSwap LP Token",
+    "symbol": " \u0003SLP"
+  },
+  {
+    "address": "0x26d8151e631608570f3c28bec769c3afee0d73a3",
+    "name": " \u0012SushiSwap LP Token",
+    "symbol": " \u0003SLP"
+  },
+  {
+    "address": "0xe4455fdec181561e9ffe909dde46aaeaedc55283",
+    "name": " \u0012SushiSwap LP Token",
+    "symbol": " \u0003SLP"
+  },
+  {
+    "address": "0xfb3cd0b8a5371fe93ef92e3988d30df7931e2820",
+    "name": " \u0012SushiSwap LP Token",
+    "symbol": " \u0003SLP"
+  },
+  {
+    "address": "0xeefa3b448768dd561af4f743c9e925987a1f8d09",
+    "name": " \u0012SushiSwap LP Token",
+    "symbol": " \u0003SLP"
+  },
+  {
+    "address": "0xdafd66636e2561b0284edde37e42d192f2844d40",
+    "name": " \u0012SushiSwap LP Token",
+    "symbol": " \u0003SLP"
+  },
+  {
+    "address": "0xe7689b2c21242e07870aaa0ffee1ec11833d5e24",
+    "name": " \u0012SushiSwap LP Token",
+    "symbol": " \u0003SLP"
+  },
+  {
+    "address": "0xf1f85b2c54a2bd284b1cf4141d64fd171bd85539",
+    "name": " \u0012SushiSwap LP Token",
+    "symbol": " \u0003SLP"
+  },
+  {
+    "address": "0xe5f06db4f3473e7e35490f1f98017728496fe81e",
+    "name": " \u0012SushiSwap LP Token",
+    "symbol": " \u0003SLP"
+  },
+  {
+    "address": "0xdd77c93199064a53e1db19ee0930bcdf7c9999f4",
+    "name": " \u0012SushiSwap LP Token",
+    "symbol": " \u0003SLP"
+  },
+  {
+    "address": "0xfceaaf9792139bf714a694f868a215493461446d",
+    "name": " \u0012SushiSwap LP Token",
+    "symbol": " \u0003SLP"
+  },
+  {
+    "address": "0xfcfee7769c012578877dc787a5d9a339cc5920a1",
+    "name": " \u0012SushiSwap LP Token",
+    "symbol": " \u0003SLP"
+  },
+  {
+    "address": "0x201e6a9e75df132a8598720433af35fe8d73e94d",
+    "name": " \u0012SushiSwap LP Token",
+    "symbol": " \u0003SLP"
+  },
+  {
+    "address": "0x0cd198a5f6cc84ca8499dd97a6c1a1c4b4a12da1",
+    "name": " \u0012SushiSwap LP Token",
+    "symbol": " \u0003SLP"
+  },
+  {
+    "address": "0x110492b31c59716ac47337e616804e3e3adc0b4a",
+    "name": " \u0012SushiSwap LP Token",
+    "symbol": " \u0003SLP"
+  },
+  {
+    "address": "0x06da0fd433c1a5d7a4faa01111c044910a184553",
+    "name": " \u0012SushiSwap LP Token",
+    "symbol": " \u0003SLP"
+  },
+  {
+    "address": "0x066f3a3b7c8fa077c71b9184d862ed0a4d5cf3e0",
+    "name": " \u0012SushiSwap LP Token",
+    "symbol": " \u0003SLP"
+  },
+  {
+    "address": "0x00c70e8b3c9d0e0adb85993382abaae2a11c5d96",
+    "name": " \u0012SushiSwap LP Token",
+    "symbol": " \u0003SLP"
+  },
+  {
+    "address": "0x10b47177e92ef9d5c6059055d92ddf6290848991",
+    "name": " \u0012SushiSwap LP Token",
+    "symbol": " \u0003SLP"
+  },
+  {
+    "address": "0x02c6260ce42ea5cd055911ed0d4857ecd4583740",
+    "name": " \u0012SushiSwap LP Token",
+    "symbol": " \u0003SLP"
+  },
+  {
+    "address": "0x033ecd066376afec5e6383bc9f1f15be4c62dc89",
+    "name": " \u0012SushiSwap LP Token",
+    "symbol": " \u0003SLP"
+  },
+  {
+    "address": "0x088ee5007c98a9677165d78dd2109ae4a3d04d0c",
+    "name": " \u0012SushiSwap LP Token",
+    "symbol": " \u0003SLP"
+  },
+  {
+    "address": "0x83b04af7a77c727273b7a582d6fda65472fcb3f2",
+    "name": " \u0012SushiSwap LP Token",
+    "symbol": " \u0003SLP"
+  },
+  {
+    "address": "0x8b00ee8606cc70c2dce68dea0cefe632cca0fb7b",
+    "name": " \u0012SushiSwap LP Token",
+    "symbol": " \u0003SLP"
+  },
+  {
+    "address": "0x850fe284f917eb6dfcfe452348bead903aa63073",
+    "name": " \u0012SushiSwap LP Token",
+    "symbol": " \u0003SLP"
+  },
+  {
+    "address": "0x804be24f625c7e23edd9fa68e4582590c57ad2b3",
+    "name": " \u0012SushiSwap LP Token",
+    "symbol": " \u0003SLP"
+  },
+  {
+    "address": "0x715134a16acb73c86e81df5542e1cf759eeb6fc7",
+    "name": " \u0012SushiSwap LP Token",
+    "symbol": " \u0003SLP"
+  },
+  {
+    "address": "0x6f58a1aa0248a9f794d13dc78e74fc75140956d7",
+    "name": " \u0012SushiSwap LP Token",
+    "symbol": " \u0003SLP"
+  },
+  {
+    "address": "0x795065dcc9f64b5614c407a6efdc400da6221fb0",
+    "name": " \u0012SushiSwap LP Token",
+    "symbol": " \u0003SLP"
+  },
+  {
+    "address": "0x7c5bbe30b5b1c1abaa9e1ee32e04a81a2b20a052",
+    "name": " \u0012SushiSwap LP Token",
+    "symbol": " \u0003SLP"
+  },
+  {
+    "address": "0xa1d7b2d891e3a1f9ef4bbc5be20630c2feb1c470",
+    "name": " \u0012SushiSwap LP Token",
+    "symbol": " \u0003SLP"
+  },
+  {
+    "address": "0x9360b76f8f5f932ac33d46a3ce82ad6c52a713e5",
+    "name": " \u0012SushiSwap LP Token",
+    "symbol": " \u0003SLP"
+  },
+  {
+    "address": "0xaf988aff99d3d0cb870812c325c588d8d8cb7de8",
+    "name": " \u0012SushiSwap LP Token",
+    "symbol": " \u0003SLP"
+  },
+  {
+    "address": "0xa73df646512c82550c2b3c0324c4eedee53b400c",
+    "name": " \u0012SushiSwap LP Token",
+    "symbol": " \u0003SLP"
+  },
+  {
+    "address": "0x9cd028b1287803250b1e226f0180eb725428d069",
+    "name": " \u0012SushiSwap LP Token",
+    "symbol": " \u0003SLP"
+  },
+  {
+    "address": "0x9cbc2a6ab3f10edf7d71c9cf3b6bdb7ee5629550",
+    "name": " \u0012SushiSwap LP Token",
+    "symbol": " \u0003SLP"
+  },
+  {
+    "address": "0xb1d38026062ac10feda072ca0e9b7e35f1f5795a",
+    "name": " \u0012SushiSwap LP Token",
+    "symbol": " \u0003SLP"
+  },
+  {
+    "address": "0x98c2f9d752e044dc2e1f1743bf0b76a7096eceb2",
+    "name": " \u0012SushiSwap LP Token",
+    "symbol": " \u0003SLP"
+  },
+  {
+    "address": "0x9d16187d7d8a6adb39d7f373b7e24ea49f97e869",
+    "name": " \u0012SushiSwap LP Token",
+    "symbol": " \u0003SLP"
+  },
+  {
+    "address": "0x16b3e050e9e2f0ac4f1bea1b3e4fdc43d7f062dd",
+    "name": " \u0006SOMBRA",
+    "symbol": " \u0004SMBR"
+  },
+  {
+    "address": "0x2b8a8845b9bbb8b5beef1d95ef6a60701d867142",
+    "name": " \u000bSudo Snacks",
+    "symbol": " \u0005SNACK"
+  },
+  {
+    "address": "0x93b743fb12a2677adb13093f8ea8464a436da008",
+    "name": " \u000bSudo Snacks",
+    "symbol": " \u0005SNACK"
+  },
+  {
+    "address": "0x6515e93708a0be2bacda1afcb3b0723f532f2f76",
+    "name": " \tSNKR Coin",
+    "symbol": " \u0004SNKR"
+  },
+  {
+    "address": "0x8715ca97c5b464c1957cefbd18015b5567e52060",
+    "name": " \tSnoop DAO",
+    "symbol": " \u0005SNOOP"
+  },
+  {
+    "address": "0x6911f552842236bd9e8ea8ddbb3fb414e2c5fa9d",
+    "name": " \u000fSynapse Network",
+    "symbol": " \u0003SNP"
+  },
+  {
+    "address": "0x55e45269833cad7060c554279087761a1abc96a1",
+    "name": " \u000fSock Aficionado",
+    "symbol": " \u0004SOCK"
+  },
+  {
+    "address": "0xfe3b138879d6d0555be4132dcfe6e7424e257a2e",
+    "name": " \u0007SoftDAO",
+    "symbol": " \u0004SOFT"
+  },
+  {
+    "address": "0x04906695d6d12cf5459975d7c3c03356e4ccd460",
+    "name": " \nStaked OHM",
+    "symbol": " \u0004sOHM"
+  },
+  {
+    "address": "0x04f2694c8fcee23e8fd0dfea1d4f5bb8c352111f",
+    "name": " \u000eStaked Olympus",
+    "symbol": " \u0004sOHM"
+  },
+  {
+    "address": "0xf55e77c77f933d252fbb6692f4cc060ad82de510",
+    "name": " \u0007ShibOHM",
+    "symbol": " \u0004SOHM"
+  },
+  {
+    "address": "0x501ace9c35e60f03a2af4d484f49f9b1efde9f40",
+    "name": " \u0006solace",
+    "symbol": " \u0006SOLACE"
+  },
+  {
+    "address": "0x3dc7b06dd0b1f08ef9acbbd2564f8605b4868eea",
+    "name": " \u000bSpace Token",
+    "symbol": " \u0005SPACE"
+  },
+  {
+    "address": "0x090185f2135308bad17527004364ebcc2d37e5f6",
+    "name": " \u000bSpell Token",
+    "symbol": " \u0005SPELL"
+  },
+  {
+    "address": "0x99bb54f7a11eb8af1d486fe644ebed304f52f85a",
+    "name": " \u0010SpongeBob Square",
+    "symbol": " \u0006SPONGS"
+  },
+  {
+    "address": "0x54005bec43d8ffd2ec92edeceff7d952693294cd",
+    "name": " \u000fSpaceships Coin",
+    "symbol": " \u0004SPSX"
+  },
+  {
+    "address": "0x21ad647b8f4fe333212e735bfc1f36b4941e6ad2",
+    "name": " \u0005Squid",
+    "symbol": " \u0005SQUID"
+  },
+  {
+    "address": "0xcf6daab95c476106eca715d48de4b13287ffdeaa",
+    "name": " \u0012ShibaSwap LP Token",
+    "symbol": " \u0004SSLP"
+  },
+  {
+    "address": "0xefb47fcfcad4f96c83d4ca676842fb03ef20a477",
+    "name": " \u0012ShibaSwap LP Token",
+    "symbol": " \u0004SSLP"
+  },
+  {
+    "address": "0x57654ae132413e81459ad2ae70c2570a9b89fb53",
+    "name": " \u0012ShibaSwap LP Token",
+    "symbol": " \u0004SSLP"
+  },
+  {
+    "address": "0x26fa3fffb6efe8c1e69103acb4044c26b9a106a9",
+    "name": " \u0013Staked Spell Tokens",
+    "symbol": " \u0006sSPELL"
+  },
+  {
+    "address": "0x0ae055097c6d159879521c384f1d2123d1f195e6",
+    "name": " \u0005STAKE",
+    "symbol": " \u0005STAKE"
+  },
+  {
+    "address": "0x1d7ca62f6af49ec66f6680b8606e634e55ef22c1",
+    "name": " \nBSCstarter",
+    "symbol": " \u0005START"
+  },
+  {
+    "address": "0x00c2999c8b2adf4abc835cc63209533973718eb1",
+    "name": " \u000fNew World Order",
+    "symbol": " \u0005STATE"
+  },
+  {
+    "address": "0x2c5bcad9ade17428874855913def0a02d8be2324",
+    "name": " \nStaked ETH",
+    "symbol": " \u0006stkETH"
+  },
+  {
+    "address": "0xbe3c662a89d7dd0b11090dc22e0a3c2c71653d78",
+    "name": " \u000eStarkNet Token",
+    "symbol": " \u0004STRK"
+  },
+  {
+    "address": "0x0edf9bc41bbc1354c70e2107f80c42cae7fbbca8",
+    "name": " \u0014Instrumental Finance",
+    "symbol": " \u0004STRM"
+  },
+  {
+    "address": "0x90b426067be0b0ff5de257bc4dd6a4815ea03b5f",
+    "name": " \u0006Strain",
+    "symbol": " \u0004STRN"
+  },
+  {
+    "address": "0xdc0327d50e6c73db2f8117760592c8bbf1cdcf38",
+    "name": " \bStronger",
+    "symbol": " \u0006STRNGR"
+  },
+  {
+    "address": "0x0ba0d270f4594099877b6096e310b77396664039",
+    "name": " \tSuzume2.0",
+    "symbol": " \u0003SU2"
+  },
+  {
+    "address": "0x3446dd70b2d52a6bf4a5a192d9b0a161295ab7f9",
+    "name": " \u0015SUDO GOVERNANCE TOKEN",
+    "symbol": " \u0004SUDO"
+  },
+  {
+    "address": "0x8d7cfe0c1045ed9d3e65f9746f270c9c1f65262a",
+    "name": " \u0003Sui",
+    "symbol": " \u0003SUI"
+  },
+  {
+    "address": "0x691d7f624e91201ca3e8b1ea2336c583d643ca57",
+    "name": " \bSuperBid",
+    "symbol": " \u0006SUPERB"
+  },
+  {
+    "address": "0x314fdc725ba9028af758f8a23270d84ebbd1e9e6",
+    "name": " \nStable USD",
+    "symbol": " \u0004SUSD"
+  },
+  {
+    "address": "0x57db3ffca78dbbe0efa0ec745d55f62aa0cbd345",
+    "name": " \tSymmetric",
+    "symbol": " \u0004SYMM"
+  },
+  {
+    "address": "0x86389efb27908a8724444b17f5056767a9a15d1a",
+    "name": " \u0004Take",
+    "symbol": " \u0004TAKE"
+  },
+  {
+    "address": "0x549ea7d6b3cc50ecd57ce2c6e4e36329d26e964d",
+    "name": " \u000bTankbottoms",
+    "symbol": " \u0004TANK"
+  },
+  {
+    "address": "0x08a647fbe57c846e3b9ce9caa5689d305e5f5259",
+    "name": " \u0012Test Aquasis token",
+    "symbol": " \u0005$TAQS"
+  },
+  {
+    "address": "0x890f6dc7f57ac3d5b354d1331e8eff463bb2e034",
+    "name": " \fTateNoYuusha",
+    "symbol": " \u0004Tate"
+  },
+  {
+    "address": "0xa1ed0364d53394209d61ae8bfdb8ff50484d8c91",
+    "name": " \u000fTeraBlock Token",
+    "symbol": " \u0003TBC"
+  },
+  {
+    "address": "0x18084fba666a33d37592fa2633fd49a74dd93a88",
+    "name": " \u0007tBTC v2",
+    "symbol": " \u0004tBTC"
+  },
+  {
+    "address": "0xe38b72d6595fd3885d1d2f770aa23e94757f91a1",
+    "name": " \tTecraCoin",
+    "symbol": " \u0003TCR"
+  },
+  {
+    "address": "0x511d35c52a3c244e7b8bd92c0c297755fbd89212",
+    "name": " \u0015Timechain Swap Token ",
+    "symbol": " \u0003TCS"
+  },
+  {
+    "address": "0x89d71dfbdd6ebecd0dfe27d55189f903169d2991",
+    "name": " \u0004THDX",
+    "symbol": " \u0004THDX"
+  },
+  {
+    "address": "0x5437c65d9964474c5bbae7335ce72a5f9373d782",
+    "name": " \u0015The Protocol Reloaded",
+    "symbol": " \u0004THE2"
+  },
+  {
+    "address": "0xb444c9f907254b60cb1e7637baea86f5558c4434",
+    "name": " \u0007The Dev",
+    "symbol": " \u0006THEDEV"
+  },
+  {
+    "address": "0x82f77e7497826fb4578ad5f60575154d880f3790",
+    "name": " \u000bSimpson Inu",
+    "symbol": " \nThe NOSTRA"
+  },
+  {
+    "address": "0xbbf81c5e7d0dc140e26472128d3b4629001c6de6",
+    "name": " \u0007THE Inu",
+    "symbol": " \u0005THENU"
+  },
+  {
+    "address": "0xf4781b33f2aa5977ccecaa53519c06571985116b",
+    "name": " \u0019Tsinghua University Token",
+    "symbol": " \u0003THU"
+  },
+  {
+    "address": "0x1d6ea8f676d1da91022fcc185f19ce9665109696",
+    "name": " \tTrustMoon",
+    "symbol": " \u0005TMoon"
+  },
+  {
+    "address": "0xaee433adebe0fbb88daa47ef0c1a513caa52ef02",
+    "name": " \fPontoonToken",
+    "symbol": " \u0004TOON"
+  },
+  {
+    "address": "0x409c4d8cd5d2924b9bc5509230d16a61289c8153",
+    "name": " \nTONStarter",
+    "symbol": " \u0003TOS"
+  },
+  {
+    "address": "0x6e5970dbd6fc7eb1f29c6d2edf2bc4c36124c0c1",
+    "name": " \tPolytrade",
+    "symbol": " \u0005TRADE"
+  },
+  {
+    "address": "0xe53abf2d3bce282a145cc4381ee16b1ff8059da6",
+    "name": " \u000bMetaTreeDAO",
+    "symbol": " \u0004TREE"
+  },
+  {
+    "address": "0x93eeb426782bd88fcd4b48d7b0368cf061044928",
+    "name": " \fThe Rug Game",
+    "symbol": " \u0003TRG"
+  },
+  {
+    "address": "0x30e74b8ffde15099bee8e7d4abe20d0440f9c3c9",
+    "name": " \tTripamine",
+    "symbol": " \u0004TRIP"
+  },
+  {
+    "address": "0xfc13d141b5b11bbd27f6b5f88304cf1f63b6f992",
+    "name": " \nTateWhales",
+    "symbol": " \u0007TWHALES"
+  },
+  {
+    "address": "0x097b9959bfcf715513ecd30c4b1fb469ef32b743",
+    "name": " \u0011The Yellow Blocks",
+    "symbol": " \u0003TYB"
+  },
+  {
+    "address": "0x0f644658510c95cb46955e55d7ba9dda9e9fbec6",
+    "name": " \u001bUbiquity Algorithmic Dollar",
+    "symbol": " \u0003uAD"
+  },
+  {
+    "address": "0x4e38d89362f7e5db0096ce44ebd021c3962aa9a0",
+    "name": " \bUbiquity",
+    "symbol": " \u0003UBQ"
+  },
+  {
+    "address": "0xb1db366890eeb8f28c2813c6a6084353e0b90713",
+    "name": " \bUniCandy",
+    "symbol": " \u0003UCD"
+  },
+  {
+    "address": "0x35bcf2b1c21562579c3d88ceb9d7149c96397545",
+    "name": " \u0004Suck",
+    "symbol": " \u0004$UCK"
+  },
+  {
+    "address": "0xc1abb8c93be6811affc70675b0432926c4bfbb5d",
+    "name": " \u0005UERII",
+    "symbol": " \u0005UERII"
+  },
+  {
+    "address": "0xbb7be7cc5abb65d3a29d7982236481ddf4f10b09",
+    "name": " \bmicroETH",
+    "symbol": " \u0004uETH"
+  },
+  {
+    "address": "0x0dcff98368bc0bd5880682068ff5d527449d5fb5",
+    "name": " \nUnicornDAO",
+    "symbol": " \u0003UNI"
+  },
+  {
+    "address": "0xe92346d9369fe03b735ed9bdeb6bdc2591b8227e",
+    "name": " \nUniswap V2",
+    "symbol": " \u0006UNI-V2"
+  },
+  {
+    "address": "0xe2aab7232a9545f29112f9e6441661fd6eeb0a5d",
+    "name": " \nUniswap V2",
+    "symbol": " \u0006UNI-V2"
+  },
+  {
+    "address": "0xe7b957d982e38112e1eac74fc5e5889619b2d177",
+    "name": " \nUniswap V2",
+    "symbol": " \u0006UNI-V2"
+  },
+  {
+    "address": "0xdfa42ba0130425b21a1568507b084cc246fb0c8f",
+    "name": " \nUniswap V2",
+    "symbol": " \u0006UNI-V2"
+  },
+  {
+    "address": "0xe5d6fc7323d74ad440ca53d3e53252427ad632ed",
+    "name": " \nUniswap V2",
+    "symbol": " \u0006UNI-V2"
+  },
+  {
+    "address": "0xdc98556ce24f007a5ef6dc1ce96322d65832a819",
+    "name": " \nUniswap V2",
+    "symbol": " \u0006UNI-V2"
+  },
+  {
+    "address": "0xe1573b9d29e2183b1af0e743dc2754979a40d237",
+    "name": " \nUniswap V2",
+    "symbol": " \u0006UNI-V2"
+  },
+  {
+    "address": "0xdfc14d2af169b0d36c4eff567ada9b2e0cae044f",
+    "name": " \nUniswap V2",
+    "symbol": " \u0006UNI-V2"
+  },
+  {
+    "address": "0xdeb706fc00e335092532587f5b8c3829ebdab303",
+    "name": " \nUniswap V2",
+    "symbol": " \u0006UNI-V2"
+  },
+  {
+    "address": "0xedaedd22e653c504ff6806bf61664292848eb26e",
+    "name": " \nUniswap V2",
+    "symbol": " \u0006UNI-V2"
+  },
+  {
+    "address": "0xdd6fba84245f5ab20a8e39ce7303b243eb52aad1",
+    "name": " \nUniswap V2",
+    "symbol": " \u0006UNI-V2"
+  },
+  {
+    "address": "0xfac2c93fb88a1536578e1a44936191d24effc681",
+    "name": " \nUniswap V2",
+    "symbol": " \u0006UNI-V2"
+  },
+  {
+    "address": "0xfb51a66e5684f2ed6027cc5816bcf7b720396f23",
+    "name": " \nUniswap V2",
+    "symbol": " \u0006UNI-V2"
+  },
+  {
+    "address": "0xfa29c55326c81c79b81f190f0439bae108604804",
+    "name": " \nUniswap V2",
+    "symbol": " \u0006UNI-V2"
+  },
+  {
+    "address": "0xe58eb0e623d06e329020813568124e3541a36fcc",
+    "name": " \nUniswap V2",
+    "symbol": " \u0006UNI-V2"
+  },
+  {
+    "address": "0xf047ee812b21050186f86106f6cabdfec35366c6",
+    "name": " \nUniswap V2",
+    "symbol": " \u0006UNI-V2"
+  },
+  {
+    "address": "0xb1a6876ad98fba649a66be916559039abdd3dbbe",
+    "name": " \nUniswap V2",
+    "symbol": " \u0006UNI-V2"
+  },
+  {
+    "address": "0x9507568a74b0e43456b902adea648d3f6954f570",
+    "name": " \nUniswap V2",
+    "symbol": " \u0006UNI-V2"
+  },
+  {
+    "address": "0xa478c2975ab1ea89e8196811f51a7b7ade33eb11",
+    "name": " \nUniswap V2",
+    "symbol": " \u0006UNI-V2"
+  },
+  {
+    "address": "0x9ec5149472db6acffb9023a47d37b4ecbcf68a4b",
+    "name": " \nUniswap V2",
+    "symbol": " \u0006UNI-V2"
+  },
+  {
+    "address": "0x97be09f2523b39b835da9ea3857cfa1d3c660cbb",
+    "name": " \nUniswap V2",
+    "symbol": " \u0006UNI-V2"
+  },
+  {
+    "address": "0xb469899812f74ee43bffe2d2022590111da86425",
+    "name": " \nUniswap V2",
+    "symbol": " \u0006UNI-V2"
+  },
+  {
+    "address": "0xa938b18d435f7b217ffcb810de05a095a119edbc",
+    "name": " \nUniswap V2",
+    "symbol": " \u0006UNI-V2"
+  },
+  {
+    "address": "0x93e7dec988e24b08cc1606061b232deeb80ffbf8",
+    "name": " \nUniswap V2",
+    "symbol": " \u0006UNI-V2"
+  },
+  {
+    "address": "0xa00d47b4b304792eb07b09233467b690db847c91",
+    "name": " \nUniswap V2",
+    "symbol": " \u0006UNI-V2"
+  },
+  {
+    "address": "0xab3b03808b67c45c8103e7e1f010cab82ab9a614",
+    "name": " \nUniswap V2",
+    "symbol": " \u0006UNI-V2"
+  },
+  {
+    "address": "0xb1b537b7272ba1eda0086e2f480adca72c0b511c",
+    "name": " \nUniswap V2",
+    "symbol": " \u0006UNI-V2"
+  },
+  {
+    "address": "0xaad22f5543fcdaa694b68f94be177b561836ae57",
+    "name": " \nUniswap V2",
+    "symbol": " \u0006UNI-V2"
+  },
+  {
+    "address": "0x944fd50276599807625786fb8edc9876c54565e8",
+    "name": " \nUniswap V2",
+    "symbol": " \u0006UNI-V2"
+  },
+  {
+    "address": "0x919b599ecb6c9a474a046d1252b2f41f8047decb",
+    "name": " \nUniswap V2",
+    "symbol": " \u0006UNI-V2"
+  },
+  {
+    "address": "0xb13201b48b1e61593df055576964d0b3aab66ea3",
+    "name": " \nUniswap V2",
+    "symbol": " \u0006UNI-V2"
+  },
+  {
+    "address": "0xa23c4aa7050425d2922956bedd9d513da1b4a977",
+    "name": " \nUniswap V2",
+    "symbol": " \u0006UNI-V2"
+  },
+  {
+    "address": "0x9861f7187b58023d89b2c2b0767bdee43345620a",
+    "name": " \nUniswap V2",
+    "symbol": " \u0006UNI-V2"
+  },
+  {
+    "address": "0x9b7dad79fc16106b47a3dab791f389c167e15eb0",
+    "name": " \nUniswap V2",
+    "symbol": " \u0006UNI-V2"
+  },
+  {
+    "address": "0xa14c40b83885e1f8d516e0e43a7361f31eca6854",
+    "name": " \nUniswap V2",
+    "symbol": " \u0006UNI-V2"
+  },
+  {
+    "address": "0xa5ab281f4e794b80cc8155103f55f2522e83999d",
+    "name": " \nUniswap V2",
+    "symbol": " \u0006UNI-V2"
+  },
+  {
+    "address": "0x78b668acc8233daf8780d0d9260c1092a3507e01",
+    "name": " \nUniswap V2",
+    "symbol": " \u0006UNI-V2"
+  },
+  {
+    "address": "0x8804fcdd7d77d2f9007399e819b7524addfd00a9",
+    "name": " \nUniswap V2",
+    "symbol": " \u0006UNI-V2"
+  },
+  {
+    "address": "0x769af5167a6e060be22d7187e16e11304b512dda",
+    "name": " \nUniswap V2",
+    "symbol": " \u0006UNI-V2"
+  },
+  {
+    "address": "0x735152dc18fd8ce2b93ef3a8de3a978d6a38df5b",
+    "name": " \nUniswap V2",
+    "symbol": " \u0006UNI-V2"
+  },
+  {
+    "address": "0x82d6b30bff73c6363d024cbc2f44d1cbbee5972e",
+    "name": " \nUniswap V2",
+    "symbol": " \u0006UNI-V2"
+  },
+  {
+    "address": "0x86fef14c27c78deaeb4349fd959caa11fc5b5d75",
+    "name": " \nUniswap V2",
+    "symbol": " \u0006UNI-V2"
+  },
+  {
+    "address": "0x87febfb3ac5791034fd5ef1a615e9d9627c2665d",
+    "name": " \nUniswap V2",
+    "symbol": " \u0006UNI-V2"
+  },
+  {
+    "address": "0x6fad7d44640c5cd0120deec0301e8cf850becb68",
+    "name": " \nUniswap V2",
+    "symbol": " \u0006UNI-V2"
+  },
+  {
+    "address": "0x8e6083970f9ce8f0594ede2bbe39edf0ad201dd1",
+    "name": " \nUniswap V2",
+    "symbol": " \u0006UNI-V2"
+  },
+  {
+    "address": "0x76cc78cc8923361908003d627b285dc63e6069ca",
+    "name": " \nUniswap V2",
+    "symbol": " \u0006UNI-V2"
+  },
+  {
+    "address": "0x8cab3e311702acb64e250926d77134fde604bd4d",
+    "name": " \nUniswap V2",
+    "symbol": " \u0006UNI-V2"
+  },
+  {
+    "address": "0x901380ab7b9e8a0ecfb14bd5219e4a7d762c656d",
+    "name": " \nUniswap V2",
+    "symbol": " \u0006UNI-V2"
+  },
+  {
+    "address": "0x7361089739160c3fe987a06bf50283487b671219",
+    "name": " \nUniswap V2",
+    "symbol": " \u0006UNI-V2"
+  },
+  {
+    "address": "0xca9aa40d435d7388618ff9ca8c98c9b5566f7a23",
+    "name": " \nUniswap V2",
+    "symbol": " \u0006UNI-V2"
+  },
+  {
+    "address": "0xbb2b8038a1640196fbe3e38816f3e67cba72d940",
+    "name": " \nUniswap V2",
+    "symbol": " \u0006UNI-V2"
+  },
+  {
+    "address": "0xd5fb669db8f85c2be391adeffe7e8c781995795b",
+    "name": " \nUniswap V2",
+    "symbol": " \u0006UNI-V2"
+  },
+  {
+    "address": "0xb5b638706cf6cac54c71e39ab00982b6317de908",
+    "name": " \nUniswap V2",
+    "symbol": " \u0006UNI-V2"
+  },
+  {
+    "address": "0xc5be99a02c6857f9eac67bbce58df5572498f40c",
+    "name": " \nUniswap V2",
+    "symbol": " \u0006UNI-V2"
+  },
+  {
+    "address": "0xce84867c3c02b05dc570d0135103d3fb9cc19433",
+    "name": " \nUniswap V2",
+    "symbol": " \u0006UNI-V2"
+  },
+  {
+    "address": "0xb96a7b515dacb0f359515e7fb08babf2651db3c0",
+    "name": " \nUniswap V2",
+    "symbol": " \u0006UNI-V2"
+  },
+  {
+    "address": "0xc72a90093839bccfae757db12d4f15ac5cab2f09",
+    "name": " \nUniswap V2",
+    "symbol": " \u0006UNI-V2"
+  },
+  {
+    "address": "0xc759c0e2b6bcb8504c70b8045b3e8990852fac2a",
+    "name": " \nUniswap V2",
+    "symbol": " \u0006UNI-V2"
+  },
+  {
+    "address": "0xb93cc05334093c6b3b8bfd29933bb8d5c031cabc",
+    "name": " \nUniswap V2",
+    "symbol": " \u0006UNI-V2"
+  },
+  {
+    "address": "0xbb0444980898acc79de3b66a7025f24fc720f2e5",
+    "name": " \nUniswap V2",
+    "symbol": " \u0006UNI-V2"
+  },
+  {
+    "address": "0xc7a729d6d010ffdea743092a97898e450ec1ed33",
+    "name": " \nUniswap V2",
+    "symbol": " \u0006UNI-V2"
+  },
+  {
+    "address": "0xd5781d21d3a7c871e4ded41542002295c9408f8c",
+    "name": " \nUniswap V2",
+    "symbol": " \u0006UNI-V2"
+  },
+  {
+    "address": "0xc822d85d2dcedfaf2cefcf69dbd5588e7ffc9f10",
+    "name": " \nUniswap V2",
+    "symbol": " \u0006UNI-V2"
+  },
+  {
+    "address": "0xbacd2cd0c094c607902f10390187b31e6845bca0",
+    "name": " \nUniswap V2",
+    "symbol": " \u0006UNI-V2"
+  },
+  {
+    "address": "0xba08c283487849fe5c14d1d1e5f93f84092819f0",
+    "name": " \nUniswap V2",
+    "symbol": " \u0006UNI-V2"
+  },
+  {
+    "address": "0xb64f549c13975732a37eb252ec128f5b0872f5a8",
+    "name": " \nUniswap V2",
+    "symbol": " \u0006UNI-V2"
+  },
+  {
+    "address": "0xcd3c5d24831877df1bf80e1cebac2f5d9ac530b0",
+    "name": " \nUniswap V2",
+    "symbol": " \u0006UNI-V2"
+  },
+  {
+    "address": "0xd3d2e2692501a5c9ca623199d38826e513033a17",
+    "name": " \nUniswap V2",
+    "symbol": " \u0006UNI-V2"
+  },
+  {
+    "address": "0x18a5c094d811e1ef9116fa0bbc5cd23a70cfcddd",
+    "name": " \nUniswap V2",
+    "symbol": " \u0006UNI-V2"
+  },
+  {
+    "address": "0x2084c8115d97a12114a70a27198c3591b6df7d3e",
+    "name": " \nUniswap V2",
+    "symbol": " \u0006UNI-V2"
+  },
+  {
+    "address": "0x1d4b2b2a2ca8762410801b51f128b73743439e39",
+    "name": " \nUniswap V2",
+    "symbol": " \u0006UNI-V2"
+  },
+  {
+    "address": "0x0df411cd73dd664237a8e67d43c3e13d6e7d2bff",
+    "name": " \nUniswap V2",
+    "symbol": " \u0006UNI-V2"
+  },
+  {
+    "address": "0x1d177da406e3c1419e3bc07b16794f58f6bbd421",
+    "name": " \nUniswap V2",
+    "symbol": " \u0006UNI-V2"
+  },
+  {
+    "address": "0x22508de3dc071801fa553579d7110875ac0e3052",
+    "name": " \nUniswap V2",
+    "symbol": " \u0006UNI-V2"
+  },
+  {
+    "address": "0x1c48b1def1404750359d3ff5a765a90c3f702999",
+    "name": " \nUniswap V2",
+    "symbol": " \u0006UNI-V2"
+  },
+  {
+    "address": "0x0d4a11d5eeaac28ec3f61d100daf4d40471f1852",
+    "name": " \nUniswap V2",
+    "symbol": " \u0006UNI-V2"
+  },
+  {
+    "address": "0x01f8989c1e556f5c89c7d46786db98eeaae82c33",
+    "name": " \nUniswap V2",
+    "symbol": " \u0006UNI-V2"
+  },
+  {
+    "address": "0x0a98031f532c268c6a4d231e015432084c4923c8",
+    "name": " \nUniswap V2",
+    "symbol": " \u0006UNI-V2"
+  },
+  {
+    "address": "0x0617d5ffb29c03ac35f1863b8a50ce1b52d446f6",
+    "name": " \nUniswap V2",
+    "symbol": " \u0006UNI-V2"
+  },
+  {
+    "address": "0x0be902716176d66364f1c2ecf25829a6d95c5bee",
+    "name": " \nUniswap V2",
+    "symbol": " \u0006UNI-V2"
+  },
+  {
+    "address": "0x1d4d105bc6db52d614644aeb849895dfa8313849",
+    "name": " \nUniswap V2",
+    "symbol": " \u0006UNI-V2"
+  },
+  {
+    "address": "0x17ee04ec364577937855d2e9a7add8d2a957e4fa",
+    "name": " \nUniswap V2",
+    "symbol": " \u0006UNI-V2"
+  },
+  {
+    "address": "0x32ce7e48debdccbfe0cd037cc89526e4382cb81b",
+    "name": " \nUniswap V2",
+    "symbol": " \u0006UNI-V2"
+  },
+  {
+    "address": "0x3a11629d7b26f5ef39bb25b5dd5dea5da8964b25",
+    "name": " \nUniswap V2",
+    "symbol": " \u0006UNI-V2"
+  },
+  {
+    "address": "0x2fdbadf3c4d5a8666bc06645b8358ab803996e28",
+    "name": " \nUniswap V2",
+    "symbol": " \u0006UNI-V2"
+  },
+  {
+    "address": "0x39c0edef530d284b8f7820061114157c5bd78093",
+    "name": " \nUniswap V2",
+    "symbol": " \u0006UNI-V2"
+  },
+  {
+    "address": "0x308e019143b560215775a0c6efbd2673413d76e6",
+    "name": " \nUniswap V2",
+    "symbol": " \u0006UNI-V2"
+  },
+  {
+    "address": "0x2d3b42a5fd084f1e75ac7e3fcd081386a431f17a",
+    "name": " \nUniswap V2",
+    "symbol": " \u0006UNI-V2"
+  },
+  {
+    "address": "0x31db6e081241e7b9023c3b2deee25d37dcc0cf16",
+    "name": " \nUniswap V2",
+    "symbol": " \u0006UNI-V2"
+  },
+  {
+    "address": "0x283c7d44a93db3c211b61fdbe3c3bb2678f5d657",
+    "name": " \nUniswap V2",
+    "symbol": " \u0006UNI-V2"
+  },
+  {
+    "address": "0x44ee37ba8c98493f2590811c197ddd474c911d46",
+    "name": " \nUniswap V2",
+    "symbol": " \u0006UNI-V2"
+  },
+  {
+    "address": "0x3da1313ae46132a397d90d95b1424a9a7e3e0fce",
+    "name": " \nUniswap V2",
+    "symbol": " \u0006UNI-V2"
+  },
+  {
+    "address": "0x3041cbd36888becc7bbcbc0045e3b1f144466f5f",
+    "name": " \nUniswap V2",
+    "symbol": " \u0006UNI-V2"
+  },
+  {
+    "address": "0x35baf3cb842394c52accbef27ec83f43495aa333",
+    "name": " \nUniswap V2",
+    "symbol": " \u0006UNI-V2"
+  },
+  {
+    "address": "0x318b64b3222c40496830644632f24015d4b2b095",
+    "name": " \nUniswap V2",
+    "symbol": " \u0006UNI-V2"
+  },
+  {
+    "address": "0x3dd49f67e9d5bc4c5e6634b3f70bfd9dc1b6bd74",
+    "name": " \nUniswap V2",
+    "symbol": " \u0006UNI-V2"
+  },
+  {
+    "address": "0x43ae24960e5534731fc831386c07755a2dc33d47",
+    "name": " \nUniswap V2",
+    "symbol": " \u0006UNI-V2"
+  },
+  {
+    "address": "0x4f9fcdae3950a033074b93e269b6c382109fae71",
+    "name": " \nUniswap V2",
+    "symbol": " \u0006UNI-V2"
+  },
+  {
+    "address": "0x626fdfd9ece333f2f2e59d57a2f23d4595b5c820",
+    "name": " \nUniswap V2",
+    "symbol": " \u0006UNI-V2"
+  },
+  {
+    "address": "0x6a3d23fa07c455f88d70c29d230467c407a3964b",
+    "name": " \nUniswap V2",
+    "symbol": " \u0006UNI-V2"
+  },
+  {
+    "address": "0x5c47016e8a4a3c6a7c46a765f81dce205d00393e",
+    "name": " \nUniswap V2",
+    "symbol": " \u0006UNI-V2"
+  },
+  {
+    "address": "0x4c8341379e95f70c08defb76c4f9c036525edc30",
+    "name": " \nUniswap V2",
+    "symbol": " \u0006UNI-V2"
+  },
+  {
+    "address": "0x5ac13261c181a9c3938bfe1b649e65d10f98566b",
+    "name": " \nUniswap V2",
+    "symbol": " \u0006UNI-V2"
+  },
+  {
+    "address": "0x4c508b9861116a15351ae0b67aae548fcc05f99e",
+    "name": " \nUniswap V2",
+    "symbol": " \u0006UNI-V2"
+  },
+  {
+    "address": "0x54572fda1844ab7c674ba151c67e7d9881f2b276",
+    "name": " \nUniswap V2",
+    "symbol": " \u0006UNI-V2"
+  },
+  {
+    "address": "0x59f96b8571e3b11f859a09eaf5a790a138fc64d0",
+    "name": " \nUniswap V2",
+    "symbol": " \u0006UNI-V2"
+  },
+  {
+    "address": "0x554fcab23c38795c9e32b73562eed9fa431d7a7b",
+    "name": " \nUniswap V2",
+    "symbol": " \u0006UNI-V2"
+  },
+  {
+    "address": "0x4b824d4765708c44475c781fa4594ae37d1f130f",
+    "name": " \nUniswap V2",
+    "symbol": " \u0006UNI-V2"
+  },
+  {
+    "address": "0x4a93a3bb71966dffde24b979945871e28f82236e",
+    "name": " \nUniswap V2",
+    "symbol": " \u0006UNI-V2"
+  },
+  {
+    "address": "0xffa98a091331df4600f87c9164cd27e8a5cd2405",
+    "name": " \nUniswap V2",
+    "symbol": " \u0006UNI-V2"
+  },
+  {
+    "address": "0xff58711683be66dad6e0e20e0043af46fc7f5f49",
+    "name": " \nUniswap V2",
+    "symbol": " \u0006UNI-V2"
+  },
+  {
+    "address": "0x2966ff4d75842278c798f0b6d362bda81a1012b1",
+    "name": " \u0005Up Ai",
+    "symbol": " \u0004UPAI"
+  },
+  {
+    "address": "0x2dcf322d66cb77a05f66fdff93e3678df7e44dea",
+    "name": " \u0006USDCow",
+    "symbol": " \u0006USDCow"
+  },
+  {
+    "address": "0x255e182b989edd63dd3d91f78968cda5d4718d2a",
+    "name": " \u0006USDCow",
+    "symbol": " \u0006USDCow"
+  },
+  {
+    "address": "0x2b4200a8d373d484993c37d63ee14aee0096cd12",
+    "name": " \u0010USDFreeLiquidity",
+    "symbol": " \u0005USDFL"
+  },
+  {
+    "address": "0x2a54ba2964c8cd459dc568853f79813a60761b58",
+    "name": " \nUSDI Token",
+    "symbol": " \u0004USDI"
+  },
+  {
+    "address": "0x03eb7ce2907e202bb70bae3d7b0c588573d3cecc",
+    "name": " \u000bMinimal USD",
+    "symbol": " \u0003USM"
+  },
+  {
+    "address": "0x88536c9b2c4701b8db824e6a16829d5b5eb84440",
+    "name": " \u0018Universal Store of Value",
+    "symbol": " \u0003USV"
+  },
+  {
+    "address": "0x0f9a4ea78ba7c8a2b6284c97ba7895c7d2d0726d",
+    "name": " \u0006United",
+    "symbol": " \u0003UTD"
+  },
+  {
+    "address": "0x55c08ca52497e2f1534b59e2917bf524d4765257",
+    "name": " \bUwU Lend",
+    "symbol": " \u0003UwU"
+  },
+  {
+    "address": "0xb5badfa6e69728adba44d67c98b05f1d1d40182e",
+    "name": " \u0017Bitcoin Cash by Strudel",
+    "symbol": " \u0004vBCH"
+  },
+  {
+    "address": "0x05d70721c4f75473a07907c0d0c6eebed5f2fef7",
+    "name": " \nValue Bond",
+    "symbol": " \u0005VBOND"
+  },
+  {
+    "address": "0xe1406825186d63980fd6e2ec61888f7b91c4bae4",
+    "name": " \u000bStrudel BTC",
+    "symbol": " \u0004VBTC"
+  },
+  {
+    "address": "0x249ca82617ec3dfb2589c4c17ab7ec9765350a18",
+    "name": " \u0005Verse",
+    "symbol": " \u0005VERSE"
+  },
+  {
+    "address": "0xe20ce8b4797c76d64b045e1b06f1d16aca440364",
+    "name": " \u000bVitalik Inu",
+    "symbol": " \u0004vINU"
+  },
+  {
+    "address": "0x6e1ab0d7f43e4877db93eca85f6ca5816d493751",
+    "name": " \u0010Vitalik Protocol",
+    "symbol": " \u0004VITK"
+  },
+  {
+    "address": "0x4eac0c7f0fb8dbe30997b6ad2da0cab78aeff4ec",
+    "name": " \u0013Value Network Token",
+    "symbol": " \u0006VNTWIN"
+  },
+  {
+    "address": "0x6d57b2e05f26c26b549231c866bdd39779e4a488",
+    "name": " \bVNX Gold",
+    "symbol": " \u0005VNXAU"
+  },
+  {
+    "address": "0x5166e09628b696285e3a151e84fb977736a83575",
+    "name": " \u0019Volatility Protocol Token",
+    "symbol": " \u0003VOL"
+  },
+  {
+    "address": "0x559ebc30b0e58a45cc9ff573f77ef1e5eb1b3e18",
+    "name": " \u0004VOLT",
+    "symbol": " \u0004VOLT"
+  },
+  {
+    "address": "0xba4cfe5741b357fa371b506e5db0774abfecf8fc",
+    "name": " \tvVSP pool",
+    "symbol": " \u0004vVSP"
+  },
+  {
+    "address": "0xf4617c7019434bb103c457286f0494bd9fb9a9af",
+    "name": " \u0011WagmipetLoveMaker",
+    "symbol": " \u0005WAGML"
+  },
+  {
+    "address": "0xedb171c18ce90b633db442f2a6f72874093b49ef",
+    "name": " \u0012Wrapped Ampleforth",
+    "symbol": " \u0005WAMPL"
+  },
+  {
+    "address": "0xe20b9e246db5a0d21bf9209e4858bc9a3ff7a034",
+    "name": " \u000eWrapped Banano",
+    "symbol": " \u0004wBAN"
+  },
+  {
+    "address": "0xec17a4f75fea1d2ecd7c9810fc75b0a097b16c77",
+    "name": " \u0004what",
+    "symbol": " \u0004what"
+  },
+  {
+    "address": "0x0c75dd36af9a59ba1d248a98fe91b2384cfea9be",
+    "name": " \tOmniWhirl",
+    "symbol": " \u0005WHIRL"
+  },
+  {
+    "address": "0xbea76c71929788ab20e17759eac115798f9aef27",
+    "name": " \u0010Wrapped Injeolmi",
+    "symbol": " \u0004WIJM"
+  },
+  {
+    "address": "0x175d9dfd6850aa96460e29bc0cead05756965e91",
+    "name": " \bStarname",
+    "symbol": " \u0004WIOV"
+  },
+  {
+    "address": "0x3b79a28264fc52c7b4cea90558aa0b162f7faf57",
+    "name": " \fWrapped MEMO",
+    "symbol": " \u0005wMEMO"
+  },
+  {
+    "address": "0xbd356a39bff2cada8e9248532dd879147221cf76",
+    "name": " \tWOM Token",
+    "symbol": " \u0003WOM"
+  },
+  {
+    "address": "0x3405a1bd46b85c5c029483fbecf2f3e611026e45",
+    "name": " \u0007WOWswap",
+    "symbol": " \u0003WOW"
+  },
+  {
+    "address": "0xe4174143f0d6b1ebc0e25e1acd975c8f9fd06539",
+    "name": " \u0015Wrapped aRIA Currency",
+    "symbol": " \u0004WRIA"
+  },
+  {
+    "address": "0x622236bb180256b6ae1a935dae08dc0356141632",
+    "name": " \u0012Mirror Write Token",
+    "symbol": " \u0005WRITE"
+  },
+  {
+    "address": "0x6faa5742cf34494841d4129eb0c7885273726a67",
+    "name": " \u000eWallstreetbets",
+    "symbol": " \u0003WSB"
+  },
+  {
+    "address": "0x2b9ac6dc32d91215afb6757d88afadfb1b456c86",
+    "name": " \u000bWyreBitcoin",
+    "symbol": " \u0005WyBTC"
+  },
+  {
+    "address": "0xd7c9f0e536dc865ae858b0c0453fe76d13c3beac",
+    "name": " \u000eXAI Stablecoin",
+    "symbol": " \u0003XAI"
+  },
+  {
+    "address": "0x68749665ff8d2d112fa859aa293f07a622782f38",
+    "name": " \u000bTether Gold",
+    "symbol": " \u0004XAUt"
+  },
+  {
+    "address": "0xcc94faf235cc5d3bf4bed3a30db5984306c86abc",
+    "name": " \u0007xBTRFLY",
+    "symbol": " \u0007xBTRFLY"
+  },
+  {
+    "address": "0x36ac219f90f5a6a3c77f2a7b660e3cc701f68e25",
+    "name": " \u000fCoinMetro Token",
+    "symbol": " \u0003XCM"
+  },
+  {
+    "address": "0x471ea49dd8e60e697f4cac262b5fafcc307506e4",
+    "name": " \u0006xcRMRK",
+    "symbol": " \u0006xcRMRK"
+  },
+  {
+    "address": "0x71eeba415a523f5c952cc2f06361d5443545ad28",
+    "name": " \u0004XDAO",
+    "symbol": " \u0004XDAO"
+  },
+  {
+    "address": "0x72b886d09c117654ab7da13a14d603001de0b777",
+    "name": " \u0005XDEFI",
+    "symbol": " \u0005XDEFI"
+  },
+  {
+    "address": "0x0aed8a59bbaf98460d3b35490f577d5fec083323",
+    "name": " \u0010Xenoanthropology",
+    "symbol": " \u0004XENO"
+  },
+  {
+    "address": "0x20e62b11c6d855ad8025eb900ab532ec0ffeb643",
+    "name": " \nMSHE Test ",
+    "symbol": " \u0005$XMMT"
+  },
+  {
+    "address": "0x3e5d9d8a63cc8a88748f229999cf59487e90721e",
+    "name": " \tMetalSwap",
+    "symbol": " \u0003XMT"
+  },
+  {
+    "address": "0x56123908aca89bf60ce9659ae9f4589e46c8d2cf",
+    "name": " \u0005Mushe",
+    "symbol": " \u0004$XMU"
+  },
+  {
+    "address": "0x3ac31979fb379e753e13f6936befc85425ea6481",
+    "name": " \u0006Fealty",
+    "symbol": " \u0006xPOWER"
+  },
+  {
+    "address": "0x665ff8faa06986bd6f1802fa6c1d2e7d780a7369",
+    "name": " \u0006xVADER",
+    "symbol": " \u0006xVADER"
+  },
+  {
+    "address": "0x5f2de1593e7e297c56dfb10d60e356a937dc4939",
+    "name": " \u000byfone.trade",
+    "symbol": " \u0003YET"
+  },
+  {
+    "address": "0xed324e10e9ca6797412a1b7d1666594fc73eea50",
+    "name": " \u000fyficoin.finance",
+    "symbol": " \u0003YFC"
+  },
+  {
+    "address": "0x0eac9bb695be3e4b86d751cdc36716a75afdb7b2",
+    "name": " \u000byfgold.link",
+    "symbol": " \u0003YFD"
+  },
+  {
+    "address": "0xf4bcc9537e4a6ff9d13a92b6273cc2349b659242",
+    "name": " \u000fyfstake.network",
+    "symbol": " \u0003YFK"
+  },
+  {
+    "address": "0xb6c7a20044d38d8b8ac2791c30351579b65f0803",
+    "name": " \u000eyfking.network",
+    "symbol": " \u0004YFKG"
+  },
+  {
+    "address": "0x7ea33cadd5a0a7264b7727909ef49b2f90692a01",
+    "name": " \u000fyfipork.finance",
+    "symbol": " \u0003YFP"
+  },
+  {
+    "address": "0x442dc4dbb08e8a2c4dc8c28cc2c98369aecccd26",
+    "name": " \u000fyfipool.finance",
+    "symbol": " \u0003YFP"
+  },
+  {
+    "address": "0xbe053abff9a8cad24296102ba4fe83c1ee709062",
+    "name": " \u000eyfired.finance",
+    "symbol": " \u0003YFR"
+  },
+  {
+    "address": "0xcf6085096a1ac5ccdbc4e53ea5b62d23cf29f962",
+    "name": " \u0011yfistable.finance",
+    "symbol": " \u0003YFS"
+  },
+  {
+    "address": "0x0f6e71454c39126baa89ed8dc36e3d4bc5d06f3d",
+    "name": " \u000fyfworld.network",
+    "symbol": " \u0004YFWN"
+  },
+  {
+    "address": "0xf55a93b613d172b86c2ba3981a849dae2aecde2f",
+    "name": " \u0003YFX",
+    "symbol": " \u0003YFX"
+  },
+  {
+    "address": "0x30bb8d13047204ca2ab8f94d4c96e9dab85bac28",
+    "name": " \u0004YUAN",
+    "symbol": " \u0004YUAN"
+  },
+  {
+    "address": "0x4a3e164684812dfb684ac36457e7fa805087c68e",
+    "name": " \u0004YUAN",
+    "symbol": " \u0004YUAN"
+  },
+  {
+    "address": "0x909e34d3f6124c324ac83dcca84b74398a6fa173",
+    "name": " \n$ZKP Token",
+    "symbol": " \u0004$ZKP"
+  },
+  {
+    "address": "0xb06110da6077a492641f0eb960e74b3d4e9a8428",
+    "name": " \u000eBased Protocol",
+    "symbol": " \u0003卐"
+  },
+  {
+    "address": "0x5283d291dbcf85356a21ba090e6db59121208b44",
+    "name": " \u0004Blur",
+    "symbol": " \u0004BLUR"
+  },
+  {
+    "address": "0x1abaea1f7c830bd89acc67ec4af516284b1bc33c",
+    "name": " \tEuro Coin",
+    "symbol": " \u0004EURC"
+  },
+  {
+    "address": "0x8457ca5040ad67fdebbcc8edce889a335bc0fbfb",
+    "name": " \u000eAltLayer Token",
+    "symbol": " \u0003ALT"
+  }
+]

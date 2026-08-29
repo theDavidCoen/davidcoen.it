@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <script>
+    (function () {
+      var theme = localStorage.getItem("davidcoen_theme");
+      if (theme === "light" || theme === "dark") {
+        document.documentElement.setAttribute("data-theme", theme);
+      }
+    })();
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nostr event inspector | DAVIDCOEN.IT Resources</title>
+  <link rel="stylesheet" href="/resources/shared/site.css">
+</head>
+<body>
+  <main class="wrap">
+    <div id="tool-header"></div>
+    <section class="card">
+      <label for="input">Event JSON or note1 / nevent1 / nprofile1 bech32</label>
+      <textarea id="input" placeholder='{"id":"…","pubkey":"…","created_at":0,"kind":1,"tags":[],"content":"…","sig":"…"}'></textarea>
+      <button type="button" id="inspectBtn">Inspect</button>
+      <div id="result" class="result" hidden></div>
+    </section>
+  </main>
+  <script src="/resources/shared/site.js"></script>
+  <script type="module" src="/resources/nostr-event/app.js"></script>
+  <script src="/resources/shared/theme-toggle.js" defer></script>
+</body>
+</html>
