@@ -1,5 +1,5 @@
 # Example system nginx vhost (alternative to Docker).
-# Prefer deploy/portable-tor/docker-compose.yml on 192.168.1.104.
+# Prefer deploy/portable-tor/docker-compose.yml on the homelab portable.
 
 server {
     listen 127.0.0.1:8088;

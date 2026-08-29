@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
-"""Deploy static davidcoen.it to clearnet (FTP) and Tor copy on portable (.104).
+"""Deploy static davidcoen.it to clearnet (FTP) and Tor copy on homelab portable.
 
 Clearnet hosting stays on shared hosting. The portable only gets a static mirror
 served via Tor (see deploy/portable-tor/).
 
 Credentials: FileZilla sitemanager (same as scripts/migrate-deploy.py).
 Onion address: deploy/onion-hostname (one line, no scheme) after first Tor setup.
+Portable target: PORTABLE_HOST and PORTABLE_DIR environment variables.
 """
 
 from __future__ import annotations
@@ -14,6 +15,7 @@ import argparse
 import base64
 import ftplib
 import io
+import os
 import subprocess
 import sys
 import xml.etree.ElementTree as ET
@@ -21,8 +23,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 REMOTE_ROOT = "/public_html"
-PORTABLE_HOST = "david@192.168.1.104"
-PORTABLE_DIR = "~/davidcoen-tor"
+PORTABLE_HOST = os.environ.get("PORTABLE_HOST", "david@homelab-portable")
+PORTABLE_DIR = os.environ.get("PORTABLE_DIR", "~/davidcoen-tor")
 ONION_FILE = ROOT / "deploy" / "onion-hostname"
 
 STATIC_PATHS = [
@@ -227,7 +229,7 @@ def main() -> int:
         )
 
     if do_portable:
-        print("=== portable Tor copy (.104) ===")
+        print(f"=== portable Tor copy ({PORTABLE_HOST}) ===")
         if args.stack:
             sync_compose_stack()
         rsync_portable()

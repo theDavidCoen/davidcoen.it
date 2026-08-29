@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
-# One-shot: sync stack + static files to 192.168.1.104 and start Tor mirror.
+# One-shot: sync stack + static files to the homelab portable and start Tor mirror.
 set -euo pipefail
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
-HOST="${PORTABLE_HOST:-david@192.168.1.104}"
+HOST="${PORTABLE_HOST:-david@homelab-portable}"
 DIR="${PORTABLE_DIR:-~/davidcoen-tor}"
 
 echo "=== sync compose + html to ${HOST}:${DIR} ==="

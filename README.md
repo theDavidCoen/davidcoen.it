@@ -2,7 +2,7 @@
 
 Static personal site at [davidcoen.it](https://davidcoen.it), with legacy WordPress preserved under `/legacy/` for existing content and admin.
 
-A **static Tor mirror** runs on homelab portable (`192.168.1.104`). Clearnet hosting is unchanged (shared hosting).
+A **static Tor mirror** runs on the homelab portable. Clearnet hosting is unchanged (shared hosting).
 
 ## Stack
 
@@ -25,7 +25,7 @@ Production cutover completed **2026-07-20**.
 
 | | |
 |--|--|
-| Host | `192.168.1.104` (`~/davidcoen-tor`, Docker: nginx + Tor) |
+| Host | homelab portable (`~/davidcoen-tor`, Docker: nginx + Tor) |
 | Onion | `http://pbe365sjbt5iycvku6no7zwxw7lcspflaucwiudqzkxvrvcbboxyykad.onion/` |
 | Scope | Static pages only (no WordPress) |
 | Uptime | Only while the portable is awake/online |
@@ -51,7 +51,14 @@ python3 scripts/deploy.py
 | Target | Method |
 |--------|--------|
 | Clearnet (shared hosting) | FTP (FileZilla sitemanager) |
-| Portable Tor copy | `rsync` over SSH → `david@192.168.1.104:~/davidcoen-tor/html/` |
+| Portable Tor copy | `rsync` over SSH → `$PORTABLE_HOST:$PORTABLE_DIR/html/` |
+
+Set deploy targets via environment (or your shell profile):
+
+```bash
+export PORTABLE_HOST=david@homelab-portable   # SSH target for the portable
+export PORTABLE_DIR=~/davidcoen-tor           # remote stack path (optional)
+```
 
 Useful flags: `--clearnet-only`, `--portable-only`, `--stack` (also sync compose files).
 
@@ -75,7 +82,7 @@ Configuration examples for the shared-hosting setup:
 | [`deploy/index.php.example`](deploy/index.php.example) | Front-end WordPress bootstrap at site root |
 | [`deploy/wp-config-snippet.example`](deploy/wp-config-snippet.example) | `WP_HOME` / `WP_SITEURL`, memory, cookie paths |
 | [`deploy/mu-plugins/davidcoen-admin-fix.php.example`](deploy/mu-plugins/davidcoen-admin-fix.php.example) | Admin URL fixes, editor memory relief |
-| [`deploy/portable-tor/`](deploy/portable-tor/) | Docker nginx + Tor Hidden Service on `.104` |
+| [`deploy/portable-tor/`](deploy/portable-tor/) | Docker nginx + Tor Hidden Service on the portable |
 
 One-off migration script (already run on production): [`scripts/migrate-deploy.py`](scripts/migrate-deploy.py).
 
@@ -106,4 +113,4 @@ External and legacy WordPress links (news, blog posts, categories) are kept in `
 
 - `backups/` is gitignored (contains server snapshots and secrets)
 - Do not commit live `wp-config.php` or FTP credentials
-- Tor private keys stay in the Docker volume on `.104` — never commit them
+- Tor private keys stay in the Docker volume on the portable — never commit them

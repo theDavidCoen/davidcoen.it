@@ -1,4 +1,4 @@
-# Static davidcoen.it Tor mirror on homelab portable (192.168.1.104).
+# Static davidcoen.it Tor mirror on homelab portable (see PORTABLE_HOST).
 # Clearnet davidcoen.it stays on shared hosting — this stack is onion-only.
 
 services:
