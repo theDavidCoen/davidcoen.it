@@ -41,6 +41,9 @@ RewriteRule ^wp-login\.php$ legacy/wp-login.php [L]
 RewriteCond %{THE_REQUEST} \s/legacy/?[\s?] [NC]
 RewriteRule ^legacy/?$ / [R=301,L]
 
+# Lightning addresses (pay@ / donate@ / tips@davidcoen.it) → BTCPay Server
+RewriteRule ^\.well-known/lnurlp/(pay|donate|tips)/?$ https://btcpay.davidcoen.it/.well-known/lnurlp/$1 [R=301,L]
+
 RewriteCond %{REQUEST_FILENAME} -f [OR]
 RewriteCond %{REQUEST_FILENAME} -d
 RewriteRule ^ - [L]
