@@ -1,6 +1,9 @@
 const HALVING_INTERVAL = 210000;
 const GENESIS_SUBSIDY = 50;
-const NODE_STATS_URL = 'https://btcpay.davidcoen.it/api/public/chain-stats';
+const NODE_STATS_URLS = [
+  '/resources/countdown/node-stats.php',
+  'https://btcpay.davidcoen.it/api/public/chain-stats',
+];
 
 ResourcesSite.mountToolHeader({
   title: 'Bitcoin difficulty and halving countdown',
@@ -115,24 +118,32 @@ function renderSnapshot() {
 }
 
 async function loadNodeStats() {
-  const data = await ResourcesSite.fetchJson(NODE_STATS_URL);
-  const height = Number(data.height);
-  if (!Number.isFinite(height) || height <= 0) throw new Error('Node stats missing height.');
-  return {
-    sourceLabel: data.synced === false ? 'local node (syncing)' : 'local node (BTCPay)',
-    height,
-    diffAt: Number(data.estimatedRetargetDate) || Date.now(),
-    diffProgress: Number(data.progressPercent) || 0,
-    difficultyChange: Number(data.difficultyChange) || 0,
-    remainingDiffBlocks: Number(data.remainingBlocks) || 0,
-    nextRetargetHeight: Number(data.nextRetargetHeight) || 0,
-    previousRetarget: Number(data.previousRetarget) || 0,
-    timeAvg: Number(data.timeAvg) > 0 ? Number(data.timeAvg) : 600000,
-    hashrate: formatHashrate(Number(data.hashrate)),
-    difficulty: Number(data.difficulty) > 0
-      ? Number(data.difficulty).toLocaleString('en-US', { maximumFractionDigits: 0 })
-      : 'n/a',
-  };
+  let lastErr = null;
+  for (const url of NODE_STATS_URLS) {
+    try {
+      const data = await ResourcesSite.fetchJson(url);
+      const height = Number(data.height);
+      if (!Number.isFinite(height) || height <= 0) continue;
+      return {
+        sourceLabel: data.synced === false ? 'local node (syncing)' : 'local node (BTCPay)',
+        height,
+        diffAt: Number(data.estimatedRetargetDate) || Date.now(),
+        diffProgress: Number(data.progressPercent) || 0,
+        difficultyChange: Number(data.difficultyChange) || 0,
+        remainingDiffBlocks: Number(data.remainingBlocks) || 0,
+        nextRetargetHeight: Number(data.nextRetargetHeight) || 0,
+        previousRetarget: Number(data.previousRetarget) || 0,
+        timeAvg: Number(data.timeAvg) > 0 ? Number(data.timeAvg) : 600000,
+        hashrate: formatHashrate(Number(data.hashrate)),
+        difficulty: Number(data.difficulty) > 0
+          ? Number(data.difficulty).toLocaleString('en-US', { maximumFractionDigits: 0 })
+          : 'n/a',
+      };
+    } catch (err) {
+      lastErr = err;
+    }
+  }
+  throw lastErr || new Error('Node stats unavailable');
 }
 
 async function loadMempoolStats() {

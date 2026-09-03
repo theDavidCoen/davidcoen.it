@@ -187,8 +187,11 @@ class Handler(BaseHTTPRequestHandler):
         if origin in ALLOWED_ORIGINS:
             self.send_header("Access-Control-Allow-Origin", origin)
             self.send_header("Vary", "Origin")
-            self.send_header("Access-Control-Allow-Methods", "GET")
+            self.send_header("Access-Control-Allow-Methods", "GET, OPTIONS")
+            self.send_header("Access-Control-Allow-Headers", "Content-Type")
             self.send_header("Access-Control-Max-Age", "3600")
+            # davidcoen.it is public; btcpay.davidcoen.it often resolves to LAN at home.
+            self.send_header("Access-Control-Allow-Private-Network", "true")
 
     def _send(self, code: int, payload: dict) -> None:
         body = json.dumps(payload, separators=(",", ":")).encode("utf-8")

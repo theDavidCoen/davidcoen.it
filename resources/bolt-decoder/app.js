@@ -130,17 +130,26 @@ async function renderLnurlEndpoint(labelRows, url) {
   return html;
 }
 
+function cellText(value) {
+  if (value == null || value === '') return '—';
+  const s = String(value);
+  if (s.length > 40 || /^[0-9a-fA-F]{32,}$/.test(s)) {
+    return `<code>${ResourcesSite.escape(s)}</code>`;
+  }
+  return ResourcesSite.escape(s);
+}
+
 function renderBolt11(raw) {
   const d = decodeBolt11(raw);
   const amountSection = d.sections.find((s) => s.name === 'amount');
   const rows = [
     ['Type', 'BOLT11 invoice'],
-    ['Network', d.network?.bech32 || '—'],
+    ['Network', cellText(d.network?.bech32 || '—')],
     ['Amount', amountSection ? msatDisplay(amountSection.value * 1000) : 'Any amount'],
-    ['Description', d.sections.find((s) => s.name === 'description')?.value || '—'],
-    ['Payment hash', d.sections.find((s) => s.name === 'payment_hash')?.value || '—'],
-    ['Expiry (s)', d.expiry || '—'],
-    ['Timestamp', d.timestamp ? new Date(d.timestamp * 1000).toISOString() : '—'],
+    ['Description', cellText(d.sections.find((s) => s.name === 'description')?.value || '—')],
+    ['Payment hash', cellText(d.sections.find((s) => s.name === 'payment_hash')?.value || '—')],
+    ['Expiry (s)', cellText(d.expiry || '—')],
+    ['Timestamp', d.timestamp ? cellText(new Date(d.timestamp * 1000).toISOString()) : '—'],
     ['Signature', d.signature ? 'present' : '—'],
   ];
   return ResourcesSite.table(rows) + `<pre>${ResourcesSite.escape(JSON.stringify(d, null, 2))}</pre>`;
