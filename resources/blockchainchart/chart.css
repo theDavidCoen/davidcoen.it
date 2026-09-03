@@ -1,0 +1,20 @@
+.range-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin: 0.85rem 0 0.5rem;
+}
+
+.chart-wrap {
+  position: relative;
+  height: min(62vh, 440px);
+  margin: 1rem 0;
+  border: 1px solid var(--border);
+  padding: 0.65rem 0.5rem 0.35rem;
+}
+
+@media (max-width: 600px) {
+  .chart-wrap {
+    height: 280px;
+  }
+}

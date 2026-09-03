@@ -385,6 +385,51 @@ table.data th {
   }
 }
 
+.wrap-wide {
+  --max: 56rem;
+}
+
+button.is-active {
+  color: var(--bg);
+  background: var(--fg);
+}
+
+.panel {
+  margin: 0 0 1.25rem;
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--border);
+}
+
+.stat-value {
+  font-size: clamp(1.55rem, 3.6vw, 2.25rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.15;
+  margin: 0.25rem 0 0.15rem;
+}
+
+.stat-label {
+  color: var(--muted);
+  font-size: 0.92rem;
+  margin: 0;
+}
+
+.meter {
+  height: 0.5rem;
+  background: var(--border);
+  border-radius: 999px;
+  overflow: hidden;
+  margin: 0.65rem 0 0.35rem;
+}
+
+.meter > span {
+  display: block;
+  height: 100%;
+  background: var(--fg);
+  width: 0;
+}
+
 /* Legacy tool helpers */
 .center { text-align: center; }
 
@@ -392,7 +437,11 @@ code {
   font-family: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, monospace;
   font-size: 0.9em;
 }
-  body { font-size: 17px; }
+
+@media (max-width: 600px) {
+  body {
+    font-size: 17px;
+  }
 
   .wrap {
     width: min(calc(100% - 1.5rem), var(--max));

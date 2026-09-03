@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
   <meta charset="utf-8">
   <script>
     (function () {
@@ -10,66 +10,40 @@
       }
     })();
   </script>
-    <title>Bitcoin Difficulty and Halving Countdown</title>
-    <link rel="stylesheet" href="/resources/shared/site.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bitcoin difficulty &amp; halving countdown | DAVIDCOEN.IT Resources</title>
+  <link rel="stylesheet" href="/resources/shared/site.css?v=20260903-tools">
+  <link rel="stylesheet" href="/resources/countdown/countdown.css?v=20260903-tools">
 </head>
 <body>
-  <main class="wrap">
+  <main class="wrap wrap-wide">
     <div id="tool-header"></div>
-    
-    <p id="difficulty-countdown"></p>
-    <h1>Estimated Difficulty Change</h1>
-    <p id="difficulty-change"></p>
-    <h1>Bitcoin Halving Countdown</h1>
-    <p id="halving-countdown"></p>
-
-    <script>
-      // Bitcoin block time is 10 minutes
-      const blockTime = 10 * 60 * 1000;
-      
-      // Halving interval in blocks
-      const halvingInterval = 210000;
-
-      // Calculate the dates for the next difficulty adjustment and halving
-      const currentTime = new Date().getTime();
-      
-      // Use CoinGecko API to retrieve the data
-      fetch("https://api.coingecko.com/api/v3/coins/bitcoin")
-        .then(response => response.json())
-        .then(data => {
-          const blocksTillDifficulty = data.block_time_in_minutes * 60 / 10;
-          const difficultyAdjustmentTime = currentTime + blocksTillDifficulty * blockTime;
-          
-          const nextHalvingBlock = data.last_blocks[0].height + halvingInterval;
-          const blocksTillHalving = nextHalvingBlock - data.last_blocks[0].height;
-          const halvingTime = currentTime + blocksTillHalving * blockTime;
-          
-          // Set the text for the countdown to the next difficulty adjustment
-          document.getElementById("difficulty-countdown").innerHTML =
-            "Time until next difficulty adjustment: " +
-            (difficultyAdjustmentTime - currentTime) / 1000 +
-            " seconds";
-          
-          // Set the text for the estimated difficulty change
-          document.getElementById("difficulty-change").innerHTML =
-            "Estimated change in difficulty: " + data.difficulty_change_percentage + "%";
-          
-          // Set the text for the countdown to the next halving
-          document.getElementById("halving-countdown").innerHTML =
-            "Time until next halving: " +
-            (halvingTime - currentTime) / 1000 +
-            " seconds";
-        });
-    </script>
+    <p class="muted">Next difficulty retarget and subsidy halving. Live estimates from mempool.space.</p>
+    <p id="status" class="muted">Loading…</p>
+    <div id="panels" hidden>
+      <div class="grid-2">
+        <section class="panel">
+          <h2>Difficulty adjustment</h2>
+          <p id="diffCountdown" class="stat-value">…</p>
+          <p id="diffEta" class="muted"></p>
+          <div class="meter" id="diffMeter" role="progressbar" aria-valuemin="0" aria-valuemax="100"><span></span></div>
+          <p id="diffProgress" class="muted"></p>
+          <div id="diffTable"></div>
+        </section>
+        <section class="panel">
+          <h2>Halving</h2>
+          <p id="halvingCountdown" class="stat-value">…</p>
+          <p id="halvingEta" class="muted"></p>
+          <div class="meter" id="halvingMeter" role="progressbar" aria-valuemin="0" aria-valuemax="100"><span></span></div>
+          <p id="halvingProgress" class="muted"></p>
+          <div id="halvingTable"></div>
+        </section>
+      </div>
+      <p class="muted">Block time is estimated from the current difficulty epoch. Halving is every 210,000 blocks.</p>
+    </div>
   </main>
   <script src="/resources/shared/site.js"></script>
-  <script>
-    ResourcesSite.mountToolHeader({
-      title: 'Bitcoin Difficulty Adjustment Countdown',
-      clientSide: true,
-    });
-  </script>
+  <script src="/resources/countdown/app.js?v=20260903-tools"></script>
   <script src="/resources/shared/theme-toggle.js" defer></script>
 </body>
-</html>
 </html>

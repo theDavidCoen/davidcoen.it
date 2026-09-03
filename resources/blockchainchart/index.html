@@ -10,93 +10,33 @@
       }
     })();
   </script>
-	<title>Bitcoin Blockchain Size Chart</title>
-	<!-- Include the Chart.js library -->
-	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-	<!-- Set the chart width and height to fill the screen -->
-	<style>
-		canvas {
-			display: block;
-			width: 100vw;
-			height: 100vh;
-		}
-	</style>
-  <link rel="stylesheet" href="/resources/shared/site.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bitcoin blockchain size chart | DAVIDCOEN.IT Resources</title>
+  <link rel="stylesheet" href="/resources/shared/site.css?v=20260903-tools">
+  <link rel="stylesheet" href="/resources/blockchainchart/chart.css?v=20260903-tools">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+  <script src="https://cdn.jsdelivr.net/npm/luxon@3"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-luxon@1"></script>
 </head>
 <body>
-  <main class="wrap">
+  <main class="wrap wrap-wide">
     <div id="tool-header"></div>
-    <!-- Create a canvas element to hold the chart -->
-	<canvas id="myChart"></canvas>
-	<!-- Load the data and create the chart -->
-	<script>
-		// Define the Blockchain.com API endpoint and parameters
-		var endpoint = 'https://api.blockchain.info/charts/blocks-size?cors=true';
-		var params = {
-			format: 'json',
-			timespan: '1year'
-		};
-
-		// Fetch the data from the API
-		fetch(endpoint + '&' + new URLSearchParams(params))
-			.then(response => response.json())
-			.then(data => {
-				// Format the data for the chart
-				var chartData = {
-					labels: [],
-					datasets: [{
-						label: 'Bitcoin Blockchain Size',
-						data: [],
-						borderColor: 'rgba(255, 99, 132, 1)',
-						fill: false
-					}]
-				};
-				data.values.forEach(item => {
-					chartData.labels.push(new Date(item.x * 1000));
-					chartData.datasets[0].data.push(item.y / 1e6); // Convert bytes to MB
-				});
-
-				// Create the chart using Chart.js
-				var ctx = document.getElementById('myChart').getContext('2d');
-				var chart = new Chart(ctx, {
-					type: 'line',
-					data: chartData,
-					options: {
-						scales: {
-							xAxes: [{
-								type: 'time',
-								time: {
-									unit: 'month',
-									displayFormats: {
-										month: 'MMM YYYY'
-									}
-								},
-								scaleLabel: {
-									display: true,
-									labelString: 'Time'
-								}
-							}],
-							yAxes: [{
-								scaleLabel: {
-									display: true,
-									labelString: 'Blockchain Size (MB)'
-								}
-							}]
-						}
-					}
-				});
-			})
-			.catch(error => console.error(error));
-	</script>
+    <p class="muted">Total size of Bitcoin block headers and transactions, from Blockchain.com.</p>
+    <p id="headline" class="stat-value">Loading…</p>
+    <p id="subhead" class="muted"></p>
+    <p class="range-row" role="group" aria-label="Time range">
+      <button type="button" data-span="1year">1 year</button>
+      <button type="button" data-span="5years">5 years</button>
+      <button type="button" data-span="all" class="is-active">All time</button>
+    </p>
+    <p id="status" class="muted"></p>
+    <div class="chart-wrap">
+      <canvas id="sizeChart" aria-label="Bitcoin blockchain size over time"></canvas>
+    </div>
+    <p class="muted">Source: Blockchain.com charts API. Values in GB (1000 MB).</p>
   </main>
   <script src="/resources/shared/site.js"></script>
-  <script>
-    ResourcesSite.mountToolHeader({
-      title: 'Bitcoin Blockchain Size Chart',
-      clientSide: true,
-    });
-  </script>
+  <script src="/resources/blockchainchart/app.js?v=20260903-tools"></script>
   <script src="/resources/shared/theme-toggle.js" defer></script>
 </body>
-</html>
 </html>
