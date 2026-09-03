@@ -1,5 +1,6 @@
 const HALVING_INTERVAL = 210000;
 const GENESIS_SUBSIDY = 50;
+const NODE_STATS_URL = 'https://btcpay.davidcoen.it/api/public/chain-stats';
 
 ResourcesSite.mountToolHeader({
   title: 'Bitcoin difficulty and halving countdown',
@@ -113,48 +114,83 @@ function renderSnapshot() {
   renderTick();
 }
 
+async function loadNodeStats() {
+  const data = await ResourcesSite.fetchJson(NODE_STATS_URL);
+  const height = Number(data.height);
+  if (!Number.isFinite(height) || height <= 0) throw new Error('Node stats missing height.');
+  return {
+    sourceLabel: data.synced === false ? 'local node (syncing)' : 'local node (BTCPay)',
+    height,
+    diffAt: Number(data.estimatedRetargetDate) || Date.now(),
+    diffProgress: Number(data.progressPercent) || 0,
+    difficultyChange: Number(data.difficultyChange) || 0,
+    remainingDiffBlocks: Number(data.remainingBlocks) || 0,
+    nextRetargetHeight: Number(data.nextRetargetHeight) || 0,
+    previousRetarget: Number(data.previousRetarget) || 0,
+    timeAvg: Number(data.timeAvg) > 0 ? Number(data.timeAvg) : 600000,
+    hashrate: formatHashrate(Number(data.hashrate)),
+    difficulty: Number(data.difficulty) > 0
+      ? Number(data.difficulty).toLocaleString('en-US', { maximumFractionDigits: 0 })
+      : 'n/a',
+  };
+}
+
+async function loadMempoolStats() {
+  const [diff, heightText, mining] = await Promise.all([
+    ResourcesSite.fetchJson('https://mempool.space/api/v1/difficulty-adjustment'),
+    fetch('https://mempool.space/api/blocks/tip/height').then(async (res) => {
+      if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);
+      return res.text();
+    }),
+    ResourcesSite.fetchJson('https://mempool.space/api/v1/mining/hashrate/3d').catch(() => null),
+  ]);
+  const height = Number(heightText);
+  if (!Number.isFinite(height) || height <= 0) throw new Error('Could not read chain tip height.');
+  return {
+    sourceLabel: 'mempool.space (node unreachable)',
+    height,
+    diffAt: Number(diff.estimatedRetargetDate) || Date.now() + Number(diff.remainingTime || 0),
+    diffProgress: Number(diff.progressPercent) || 0,
+    difficultyChange: Number(diff.difficultyChange) || 0,
+    remainingDiffBlocks: Number(diff.remainingBlocks) || 0,
+    nextRetargetHeight: Number(diff.nextRetargetHeight) || 0,
+    previousRetarget: Number(diff.previousRetarget) || 0,
+    timeAvg: Number(diff.timeAvg) > 0 ? Number(diff.timeAvg) : 600000,
+    hashrate: formatHashrate(Number(mining?.currentHashrate)),
+    difficulty: Number(mining?.currentDifficulty) > 0
+      ? Number(mining.currentDifficulty).toLocaleString('en-US', { maximumFractionDigits: 0 })
+      : 'n/a',
+  };
+}
+
 async function load() {
   const status = document.getElementById('status');
   status.className = 'muted';
-  status.textContent = 'Loading from mempool.space…';
+  status.textContent = 'Loading from local Bitcoin node…';
   try {
-    const [diff, heightText, mining] = await Promise.all([
-      ResourcesSite.fetchJson('https://mempool.space/api/v1/difficulty-adjustment'),
-      fetch('https://mempool.space/api/blocks/tip/height').then(async (res) => {
-        if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);
-        return res.text();
-      }),
-      ResourcesSite.fetchJson('https://mempool.space/api/v1/mining/hashrate/3d').catch(() => null),
-    ]);
-    const height = Number(heightText);
-    if (!Number.isFinite(height) || height <= 0) throw new Error('Could not read chain tip height.');
-    const timeAvg = Number(diff.timeAvg) > 0 ? Number(diff.timeAvg) : 600000;
-    const nextHalvingHeight = (Math.floor(height / HALVING_INTERVAL) + 1) * HALVING_INTERVAL;
-    const remainingHalvingBlocks = Math.max(0, nextHalvingHeight - height);
-    const eraStart = Math.floor(height / HALVING_INTERVAL) * HALVING_INTERVAL;
+    let epoch;
+    try {
+      epoch = await loadNodeStats();
+    } catch {
+      status.textContent = 'Local node unreachable, falling back to mempool.space…';
+      epoch = await loadMempoolStats();
+    }
+    const timeAvg = epoch.timeAvg;
+    const nextHalvingHeight = (Math.floor(epoch.height / HALVING_INTERVAL) + 1) * HALVING_INTERVAL;
+    const remainingHalvingBlocks = Math.max(0, nextHalvingHeight - epoch.height);
+    const eraStart = Math.floor(epoch.height / HALVING_INTERVAL) * HALVING_INTERVAL;
     snapshot = {
-      diffAt: Number(diff.estimatedRetargetDate) || Date.now() + Number(diff.remainingTime || 0),
-      diffProgress: Number(diff.progressPercent) || 0,
-      difficultyChange: Number(diff.difficultyChange) || 0,
-      remainingDiffBlocks: Number(diff.remainingBlocks) || 0,
-      nextRetargetHeight: Number(diff.nextRetargetHeight) || 0,
-      previousRetarget: Number(diff.previousRetarget) || 0,
-      timeAvg,
-      hashrate: formatHashrate(Number(mining?.currentHashrate)),
-      difficulty: Number(mining?.currentDifficulty) > 0
-        ? Number(mining.currentDifficulty).toLocaleString('en-US', { maximumFractionDigits: 0 })
-        : 'n/a',
-      height,
-      nextHalvingHeight,
+      ...epoch,
       remainingHalvingBlocks,
+      nextHalvingHeight,
       halvingAt: Date.now() + remainingHalvingBlocks * timeAvg,
-      halvingProgress: ((height - eraStart) / HALVING_INTERVAL) * 100,
-      currentSubsidy: subsidyAt(height),
+      halvingProgress: ((epoch.height - eraStart) / HALVING_INTERVAL) * 100,
+      currentSubsidy: subsidyAt(epoch.height),
       nextSubsidy: subsidyAt(nextHalvingHeight),
     };
     renderSnapshot();
     document.getElementById('panels').hidden = false;
-    status.textContent = `Height ${height.toLocaleString('en-US')} · mempool.space`;
+    status.textContent = `Height ${epoch.height.toLocaleString('en-US')} · ${epoch.sourceLabel}`;
     clearInterval(tickTimer);
     tickTimer = setInterval(renderTick, 1000);
   } catch (err) {

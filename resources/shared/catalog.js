@@ -26,7 +26,7 @@ window.RESOURCES_CATALOG = [
       { name: 'Bitcoin regret calculator', href: '/resources/bitcoinregret/', desc: 'How much BTC you would have saved by not spending USD in a given year.', tags: ['bitcoin', 'fun'], client: true, network: true },
       { name: 'Bitcoin power law chart', href: '/resources/power-law/', desc: 'Santostasi power law model with live price and rainbow bands.', tags: ['bitcoin', 'chart'], client: true, network: true },
       { name: 'Bitcoin blockchain size chart', href: '/resources/blockchainchart/', desc: 'Historical Bitcoin blockchain size chart.', tags: ['bitcoin', 'chart'], client: true, network: true },
-      { name: 'Bitcoin difficulty & halving countdown', href: '/resources/countdown/', desc: 'Difficulty adjustment and halving countdown.', tags: ['bitcoin', 'halving'], client: true, network: true },
+      { name: 'Bitcoin difficulty & halving countdown', href: '/resources/countdown/', desc: 'Difficulty adjustment and halving countdown from the local BTCPay Bitcoin node.', tags: ['bitcoin', 'halving'], client: true, network: true },
       { name: 'Bitcoind console commands', href: '/resources/bitcoinclicommand/', desc: 'Searchable bitcoin-cli reference.', tags: ['bitcoin', 'cli'], client: true },
       { name: 'Block version tool', href: '/resources/blockversiontool/', desc: 'Decode block version bits (BIP-9).', tags: ['bitcoin'], client: true },
       { name: 'OP_RETURN for Electrum', href: '/resources/opreturnelectrum/', desc: 'Build Electrum Pay To fields with OP_RETURN.', tags: ['bitcoin', 'electrum'], client: true },
@@ -74,6 +74,7 @@ window.RESOURCES_CATALOG = [
   {
     category: 'General utilities',
     items: [
+      { name: 'Universal Decoder for Human Readable Address', href: '/resources/universal-address-decoder/', desc: 'Decode LN Address, BIP 353, FIO, ENS, Unstoppable Domains, SNS, Zano aliases, and Dash usernames.', tags: ['address', 'ens', 'ln-address', 'bip353', 'fio'], client: true, network: true },
       { name: 'QR code generator', href: '/resources/qrcodegenerator/', desc: 'Simple client-side QR codes.', tags: ['qr'], client: true },
       { name: 'Country IBAN information', href: '/resources/ibanchecker/', desc: 'IBAN format examples by country.', tags: ['iban'], client: true },
       { name: 'HTML to raw code converter', href: '/resources/rawhtml/', desc: 'Escape HTML for preformatted display.', tags: ['html'], client: true },

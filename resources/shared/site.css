@@ -340,15 +340,24 @@ button:focus-visible {
   padding: 0.65rem 0.85rem;
   border: 1px solid var(--border);
   background: color-mix(in srgb, var(--fg) 4%, var(--bg));
+  overflow-x: auto;
+  max-width: 100%;
+  min-width: 0;
 }
 
 .result pre {
   overflow-x: auto;
+  max-width: 100%;
   font-size: 0.85rem;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 table.data {
   width: 100%;
+  max-width: 100%;
+  table-layout: fixed;
   border-collapse: collapse;
   font-size: 0.92rem;
   margin: 0.5rem 0;
@@ -360,11 +369,19 @@ table.data td {
   padding: 0.4rem 0.55rem;
   text-align: left;
   vertical-align: top;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 table.data th {
   background: color-mix(in srgb, var(--fg) 6%, var(--bg));
   width: 30%;
+}
+
+table.data td code {
+  display: inline;
+  overflow-wrap: anywhere;
+  word-break: break-all;
 }
 
 .status-pill { font-weight: bold; }
@@ -436,6 +453,13 @@ button.is-active {
 code {
   font-family: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, monospace;
   font-size: 0.9em;
+  overflow-wrap: anywhere;
+  word-break: break-all;
+}
+
+.card {
+  max-width: 100%;
+  min-width: 0;
 }
 
 @media (max-width: 600px) {

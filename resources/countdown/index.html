@@ -18,7 +18,7 @@
 <body>
   <main class="wrap wrap-wide">
     <div id="tool-header"></div>
-    <p class="muted">Next difficulty retarget and subsidy halving. Live estimates from mempool.space.</p>
+    <p class="muted">Next difficulty retarget and subsidy halving. Estimates from the Bitcoin node on this BTCPay Server.</p>
     <p id="status" class="muted">Loading…</p>
     <div id="panels" hidden>
       <div class="grid-2">
@@ -39,11 +39,11 @@
           <div id="halvingTable"></div>
         </section>
       </div>
-      <p class="muted">Block time is estimated from the current difficulty epoch. Halving is every 210,000 blocks.</p>
+      <p class="muted">Block time is estimated from the current difficulty epoch on the local node. Halving is every 210,000 blocks. If the node is offline the page falls back to mempool.space.</p>
     </div>
   </main>
   <script src="/resources/shared/site.js"></script>
-  <script src="/resources/countdown/app.js?v=20260903-tools"></script>
+  <script src="/resources/countdown/app.js?v=20260903-node"></script>
   <script src="/resources/shared/theme-toggle.js" defer></script>
 </body>
 </html>

@@ -1,0 +1,19 @@
+[Unit]
+Description=Public Bitcoin chain stats from local BTCPay bitcoind
+After=docker.service network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/david/apps/btcpay-chain-stats
+Environment=LISTEN_HOST=172.22.0.1
+Environment=LISTEN_PORT=18767
+Environment=BITCOIN_CLI=/home/david/btcpayserver-docker/bitcoin-cli.sh
+ExecStart=/usr/bin/python3 /home/david/apps/btcpay-chain-stats/chain_stats.py
+Restart=always
+RestartSec=5
+Nice=10
+MemoryMax=64M
+
+[Install]
+WantedBy=default.target
