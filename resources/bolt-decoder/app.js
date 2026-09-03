@@ -3,8 +3,8 @@ import { decodeBolt12, verifyBolt12Signature } from 'https://esm.sh/bolt12-ts@0.
 import { bech32 } from 'https://esm.sh/@scure/base@1.2.6';
 
 ResourcesSite.mountToolHeader({
-  title: 'BOLT11 / LNURL / offer decoder',
-  subtitle: 'Decode Lightning invoices, LNURL bech32 strings, and BOLT12 offers.',
+  title: 'BOLT11 / LNURL / LN Address / offer decoder',
+  subtitle: 'Decode Lightning invoices, Lightning Addresses, LNURL bech32 strings, and BOLT12 offers.',
   clientSide: true,
   network: true,
 });
@@ -26,10 +26,108 @@ function decodeLnurlBech32(value) {
   return { prefix, url };
 }
 
-async function fetchLnurlMeta(url) {
+/** LUD-16: user@domain → https://domain/.well-known/lnurlp/user */
+function parseLightningAddress(value) {
+  const trimmed = value.trim();
+  const match = trimmed.match(/^([a-zA-Z0-9._%+\-]+)@([a-zA-Z0-9.\-]+\.[a-zA-Z]{2,})$/);
+  if (!match) return null;
+  const [, user, domain] = match;
+  const url = `https://${domain.toLowerCase()}/.well-known/lnurlp/${encodeURIComponent(user)}`;
+  return { address: `${user}@${domain.toLowerCase()}`, user, domain: domain.toLowerCase(), url };
+}
+
+function isLnurlpHttps(value) {
+  try {
+    const u = new URL(value);
+    return (u.protocol === 'https:' || u.protocol === 'http:') && /\/\.well-known\/lnurlp\/[^/]+\/?$/i.test(u.pathname);
+  } catch {
+    return false;
+  }
+}
+
+async function fetchJson(url) {
   const res = await fetch(url, { headers: { Accept: 'application/json' } });
   if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);
-  return res.json();
+  return { url: res.url || url, json: await res.json() };
+}
+
+/**
+ * Resolve LNURL-p JSON. Same-origin → cross-origin 301 (e.g. davidcoen.it → btcpay)
+ * breaks fetch() redirect following in browsers; follow Location manually instead.
+ */
+async function fetchLnurlMeta(url) {
+  let res;
+  try {
+    res = await fetch(url, { headers: { Accept: 'application/json' }, redirect: 'manual' });
+  } catch (e) {
+    // Fall back to automatic follow (works when the host itself is CORS-enabled).
+    return fetchJson(url);
+  }
+
+  if (res.type === 'opaqueredirect' || res.status === 0) {
+    return fetchJson(url);
+  }
+
+  if ([301, 302, 303, 307, 308].includes(res.status)) {
+    const loc = res.headers.get('Location');
+    if (!loc) throw new Error(`${res.status} redirect without Location`);
+    const next = new URL(loc, url).href;
+    return fetchJson(next);
+  }
+
+  if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);
+  return { url: res.url || url, json: await res.json() };
+}
+
+function renderLnurlPayMeta(meta) {
+  const rows = [];
+  if (meta.tag) rows.push(['Tag', ResourcesSite.escape(String(meta.tag))]);
+  if (meta.callback) {
+    rows.push([
+      'Callback',
+      `<a href="${ResourcesSite.escape(meta.callback)}" target="_blank" rel="noopener">${ResourcesSite.escape(meta.callback)}</a>`,
+    ]);
+  }
+  if (meta.minSendable != null) rows.push(['Min sendable', msatDisplay(meta.minSendable)]);
+  if (meta.maxSendable != null) rows.push(['Max sendable', msatDisplay(meta.maxSendable)]);
+  if (meta.commentAllowed != null) rows.push(['Comment allowed', String(meta.commentAllowed)]);
+  if (meta.allowsNostr != null) rows.push(['Allows Nostr', meta.allowsNostr ? 'yes' : 'no']);
+  if (meta.nostrPubkey) rows.push(['Nostr pubkey', `<code>${ResourcesSite.escape(meta.nostrPubkey)}</code>`]);
+  if (meta.metadata) {
+    try {
+      const parsed = typeof meta.metadata === 'string' ? JSON.parse(meta.metadata) : meta.metadata;
+      if (Array.isArray(parsed)) {
+        for (const entry of parsed) {
+          if (Array.isArray(entry) && entry.length >= 2) {
+            rows.push([ResourcesSite.escape(String(entry[0])), ResourcesSite.escape(String(entry[1]))]);
+          }
+        }
+      }
+    } catch {
+      rows.push(['Metadata', ResourcesSite.escape(String(meta.metadata))]);
+    }
+  }
+  return rows.length ? ResourcesSite.table(rows) : '';
+}
+
+async function renderLnurlEndpoint(labelRows, url) {
+  let html = ResourcesSite.table(labelRows);
+  try {
+    const { url: fetchedUrl, json: meta } = await fetchLnurlMeta(url);
+    if (fetchedUrl && fetchedUrl !== url) {
+      html += ResourcesSite.table([
+        [
+          'Fetched from',
+          `<a href="${ResourcesSite.escape(fetchedUrl)}" target="_blank" rel="noopener">${ResourcesSite.escape(fetchedUrl)}</a>`,
+        ],
+      ]);
+    }
+    html += '<h3>LNURL-pay metadata</h3>' + renderLnurlPayMeta(meta);
+    html += `<h3>Live JSON</h3><pre>${ResourcesSite.escape(JSON.stringify(meta, null, 2))}</pre>`;
+  } catch (e) {
+    html += `<p class="muted">Could not fetch URL (CORS or offline): ${ResourcesSite.escape(e.message)}</p>`;
+  }
+  return html;
 }
 
 function renderBolt11(raw) {
@@ -128,17 +226,46 @@ async function decodeInput() {
 
     if (/^ln(url|urlc|urlw|urlx)[0-9]/i.test(value)) {
       const { prefix, url } = decodeLnurlBech32(value);
-      let html = ResourcesSite.table([
-        ['Type', `LNURL (${prefix})`],
-        ['Decoded URL', `<a href="${ResourcesSite.escape(url)}" target="_blank" rel="noopener">${ResourcesSite.escape(url)}</a>`],
-      ]);
-      try {
-        const meta = await fetchLnurlMeta(url);
-        html += `<h3>Live JSON</h3><pre>${ResourcesSite.escape(JSON.stringify(meta, null, 2))}</pre>`;
-      } catch (e) {
-        html += `<p class="muted">Could not fetch URL (CORS or offline): ${ResourcesSite.escape(e.message)}</p>`;
-      }
-      result.innerHTML = html;
+      result.innerHTML = await renderLnurlEndpoint(
+        [
+          ['Type', `LNURL (${prefix})`],
+          ['Decoded URL', `<a href="${ResourcesSite.escape(url)}" target="_blank" rel="noopener">${ResourcesSite.escape(url)}</a>`],
+        ],
+        url,
+      );
+      return;
+    }
+
+    const lnAddress = parseLightningAddress(value);
+    if (lnAddress) {
+      result.innerHTML = await renderLnurlEndpoint(
+        [
+          ['Type', 'Lightning Address (LUD-16)'],
+          ['Address', ResourcesSite.escape(lnAddress.address)],
+          [
+            'Resolved LNURL-p',
+            `<a href="${ResourcesSite.escape(lnAddress.url)}" target="_blank" rel="noopener">${ResourcesSite.escape(lnAddress.url)}</a>`,
+          ],
+        ],
+        lnAddress.url,
+      );
+      return;
+    }
+
+    if (isLnurlpHttps(value)) {
+      const resolved = new URL(value);
+      const user = decodeURIComponent(resolved.pathname.replace(/\/+$/, '').split('/').pop());
+      result.innerHTML = await renderLnurlEndpoint(
+        [
+          ['Type', 'LNURL-p HTTPS endpoint'],
+          ['User', ResourcesSite.escape(user)],
+          [
+            'URL',
+            `<a href="${ResourcesSite.escape(resolved.href)}" target="_blank" rel="noopener">${ResourcesSite.escape(resolved.href)}</a>`,
+          ],
+        ],
+        resolved.href,
+      );
       return;
     }
 
@@ -152,7 +279,8 @@ async function decodeInput() {
       return;
     }
 
-    result.innerHTML = '<p class="status-bad">Unrecognized format. Supported: BOLT11 (lnbc…), BOLT12 (lno/lnr/lni…), LNURL bech32, lightning: URI.</p>';
+    result.innerHTML =
+      '<p class="status-bad">Unrecognized format. Supported: BOLT11 (lnbc…), BOLT12 (lno/lnr/lni…), LNURL bech32, Lightning Address (user@domain), LNURL-p HTTPS URL, lightning: URI.</p>';
   } catch (e) {
     result.innerHTML = `<p class="status-bad">${ResourcesSite.escape(e.message)}</p>`;
   }

@@ -3,10 +3,13 @@
 DirectoryIndex index.html index.php
 
 # Cache static assets (Pingdom / browser performance)
+# CSS/JS: short TTL — catalog.js and shared resources change often; use ?v= bust when needed.
+# Images: long TTL + immutable.
 <IfModule mod_expires.c>
 ExpiresActive On
-ExpiresByType text/css "access plus 1 year"
-ExpiresByType application/javascript "access plus 1 year"
+ExpiresByType text/css "access plus 1 hour"
+ExpiresByType application/javascript "access plus 1 hour"
+ExpiresByType text/javascript "access plus 1 hour"
 ExpiresByType image/jpeg "access plus 1 year"
 ExpiresByType image/png "access plus 1 year"
 ExpiresByType image/webp "access plus 1 year"
@@ -16,8 +19,11 @@ ExpiresByType text/html "access plus 1 hour"
 </IfModule>
 
 <IfModule mod_headers.c>
-<FilesMatch "\.(css|js|jpg|jpeg|png|gif|webp|svg|ico)$">
+<FilesMatch "\.(jpg|jpeg|png|gif|webp|svg|ico)$">
 Header set Cache-Control "public, max-age=31536000, immutable"
+</FilesMatch>
+<FilesMatch "\.(css|js)$">
+Header set Cache-Control "public, max-age=3600, must-revalidate"
 </FilesMatch>
 # Tor Browser suggestion — replace ONION_HOST_PLACEHOLDER via scripts/deploy.py
 Header always set Onion-Location "http://ONION_HOST_PLACEHOLDER%{REQUEST_URI}s"
@@ -41,8 +47,8 @@ RewriteRule ^wp-login\.php$ legacy/wp-login.php [L]
 RewriteCond %{THE_REQUEST} \s/legacy/?[\s?] [NC]
 RewriteRule ^legacy/?$ / [R=301,L]
 
-# Lightning addresses (pay@ / donate@ / tips@davidcoen.it) → BTCPay Server
-RewriteRule ^\.well-known/lnurlp/(pay|donate|tips)/?$ https://btcpay.davidcoen.it/.well-known/lnurlp/$1 [R=301,L]
+# Lightning addresses (pay@ / donate@ / tips@ / payments@davidcoen.it) → BTCPay Server
+RewriteRule ^\.well-known/lnurlp/(pay|donate|tips|payments)/?$ https://btcpay.davidcoen.it/.well-known/lnurlp/$1 [R=301,L]
 
 RewriteCond %{REQUEST_FILENAME} -f [OR]
 RewriteCond %{REQUEST_FILENAME} -d

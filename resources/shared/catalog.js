@@ -13,7 +13,7 @@ window.RESOURCES_CATALOG = [
     items: [
       { name: 'Bitcoin transaction explorer', href: '/resources/explorer/', desc: 'Decode raw TX hex and inspect transactions via mempool.space.', tags: ['bitcoin', 'tx', 'explorer'], client: true, network: true },
       { name: 'TX / PSBT inspector', href: '/resources/tx-psbt-inspector/', desc: 'Parse raw transaction hex and base64 PSBTs.', tags: ['bitcoin', 'psbt', 'tx'], client: true },
-      { name: 'BOLT11 / LNURL / offer decoder', href: '/resources/bolt-decoder/', desc: 'Decode Lightning invoices, LNURL payloads, and BOLT12 offers.', tags: ['lightning', 'bolt11', 'lnurl'], client: true, network: true },
+      { name: 'BOLT11 / LNURL / LN Address / offer decoder', href: '/resources/bolt-decoder/', desc: 'Decode Lightning invoices, Lightning Addresses, LNURL payloads, and BOLT12 offers.', tags: ['lightning', 'bolt11', 'lnurl', 'ln-address'], client: true, network: true },
       { name: 'Ian Coleman BIP39 tool', href: '/resources/bip39-standalone.html', desc: 'Generate and inspect BIP39 mnemonics (offline-capable standalone page).', tags: ['bip39', 'seed', 'iancoleman'], client: true, sensitive: true },
       { name: 'Last BIP39 word calculator', href: '/resources/bip39-last-word/', desc: 'Find valid checksum words for an incomplete mnemonic.', tags: ['bip39', 'seed'], client: true, sensitive: true },
       { name: 'BIP39 wordlist checker', href: '/resources/bip39wordlist/', desc: 'English BIP39 word list and validity checker.', tags: ['bip39'], client: true },
