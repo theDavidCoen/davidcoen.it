@@ -2,9 +2,10 @@ window.RESOURCES_CATALOG = [
   {
     category: 'Status & services',
     items: [
-      { name: 'Service status dashboard', href: '/resources/relay-health/', desc: 'NIP-11, WebSocket, and paywall checks for Nostr relays.', tags: ['nostr', 'relay', 'health'], client: true, network: true },
+      { name: 'Relay health checker', href: '/resources/relay-health/', desc: 'NIP-11, WebSocket, and paywall checks for Nostr relays.', tags: ['nostr', 'relay', 'health'], client: true, network: true },
       { name: 'Service status dashboard', href: 'https://status.davidcoen.it/', desc: 'BTCPay, relay, and homelab uptime.', tags: ['status', 'btcpay', 'relay'], network: true, client: false },
       { name: "David Coen's BTCPay Server", href: 'https://btcpay.davidcoen.it/', desc: 'Free non-custodial payment processor.', tags: ['btcpay', 'bitcoin'], network: true, client: false },
+      { name: 'Mempool explorer', href: 'https://mempool.davidcoen.it/', desc: 'Self-hosted mempool.space on the BTCPay Bitcoin node (live mempool and recent blocks).', tags: ['bitcoin', 'mempool'], network: true, client: false },
       { name: 'Nostr relay + paywall', href: 'https://relay.davidcoen.it/', desc: 'Public relay with Lightning paywall access.', tags: ['nostr', 'relay', 'lightning'], network: true, client: false },
     ],
   },
