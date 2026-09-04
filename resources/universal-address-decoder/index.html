@@ -19,17 +19,17 @@
     <div id="tool-header"></div>
     <section class="card">
       <label for="input">Human-readable address</label>
-      <textarea id="input" rows="3" placeholder="pay@domain · ₿user@domain · name.eth · name.crypto · name.sol · handle@wallet · @alias · name.dash"></textarea>
+      <textarea id="input" rows="3" placeholder="pay@domain · ₿user@domain · name.eth · name.crypto · name.sol · handle@wallet · @alias · name.dash · name.zcash"></textarea>
       <button type="button" id="decodeBtn">Decode</button>
       <p class="muted" style="margin-top:0.75rem;font-size:0.95rem">
-        Detects and resolves: Lightning Address (LUD-16), BIP&nbsp;353, FIO, ENS, Unstoppable Domains, SNS (.sol), Zano aliases, Dash Platform usernames.
+        Detects and resolves: Lightning Address (LUD-16), BIP&nbsp;353, FIO, ENS, Unstoppable Domains, SNS (.sol), Zano aliases, Dash Platform usernames, Zcash Names (.zcash).
         Resolution uses public APIs from your browser; some providers may block CORS.
       </p>
       <div id="result" class="result" hidden></div>
     </section>
   </main>
   <script src="/resources/shared/site.js"></script>
-  <script type="module" src="/resources/universal-address-decoder/app.js?v=20260903-fix1"></script>
+  <script type="module" src="/resources/universal-address-decoder/app.js?v=20260904-zcash"></script>
   <script src="/resources/shared/theme-toggle.js" defer></script>
 </body>
 </html>

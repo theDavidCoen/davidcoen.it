@@ -75,7 +75,7 @@ window.RESOURCES_CATALOG = [
   {
     category: 'General utilities',
     items: [
-      { name: 'Universal Decoder for Human Readable Address', href: '/resources/universal-address-decoder/', desc: 'Decode LN Address, BIP 353, FIO, ENS, Unstoppable Domains, SNS, Zano aliases, and Dash usernames.', tags: ['address', 'ens', 'ln-address', 'bip353', 'fio'], client: true, network: true },
+      { name: 'Universal Decoder for Human Readable Address', href: '/resources/universal-address-decoder/', desc: 'Decode LN Address, BIP 353, FIO, ENS, Unstoppable Domains, SNS, Zano aliases, Dash usernames, and Zcash Names.', tags: ['address', 'ens', 'ln-address', 'bip353', 'fio', 'zcash'], client: true, network: true },
       { name: 'QR code generator', href: '/resources/qrcodegenerator/', desc: 'Simple client-side QR codes.', tags: ['qr'], client: true },
       { name: 'Country IBAN information', href: '/resources/ibanchecker/', desc: 'IBAN format examples by country.', tags: ['iban'], client: true },
       { name: 'HTML to raw code converter', href: '/resources/rawhtml/', desc: 'Escape HTML for preformatted display.', tags: ['html'], client: true },

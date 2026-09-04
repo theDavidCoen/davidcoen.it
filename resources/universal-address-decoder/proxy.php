@@ -29,6 +29,16 @@ const UPSTREAMS = [
         'method' => 'POST',
         'content_type' => 'application/json',
     ],
+    'zcash' => [
+        'url' => 'https://main.zcashnames.com',
+        'method' => 'POST',
+        'content_type' => 'application/json',
+    ],
+    'zcash_alt' => [
+        'url' => 'https://light.zcash.me/zns-mainnet-test',
+        'method' => 'POST',
+        'content_type' => 'application/json',
+    ],
 ];
 
 function fail(int $code, string $message): void

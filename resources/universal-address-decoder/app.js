@@ -1,6 +1,6 @@
 ResourcesSite.mountToolHeader({
   title: 'Universal Decoder for Human Readable Address',
-  subtitle: 'Detect and resolve Lightning Addresses, BIP 353, FIO, ENS, Unstoppable Domains, SNS, Zano aliases, and Dash usernames.',
+  subtitle: 'Detect and resolve Lightning Addresses, BIP 353, FIO, ENS, Unstoppable Domains, SNS, Zano aliases, Dash usernames, and Zcash Names.',
   clientSide: true,
   network: true,
 });
@@ -73,6 +73,7 @@ function detectCandidates(raw) {
   if (lower.endsWith('.eth')) out.push('ens');
   if (lower.endsWith('.sol') || lower.endsWith('.sns')) out.push('sns');
   if (lower.endsWith('.dash')) out.push('dash');
+  if (lower.endsWith('.zcash')) out.push('zcash');
   if (UD_TLDS.has(tld) || (at && UD_TLDS.has(tldOf(at.domain)))) out.push('ud');
 
   if (at) {
@@ -462,6 +463,75 @@ async function resolveDash(value) {
     '<p class="muted">Dash usernames need a DAPI/gRPC gateway for live resolve. Detection works; live identity lookup is limited from a static page.</p>';
 }
 
+const ZCASH_RPCS = [
+  'https://main.zcashnames.com',
+  'https://light.zcash.me/zns-mainnet-test',
+];
+
+async function resolveZcash(value) {
+  let name = stripPrefixes(value).toLowerCase();
+  if (name.startsWith('@')) name = name.slice(1);
+  if (name.endsWith('.zcash')) name = name.slice(0, -'.zcash'.length);
+  if (!/^[a-z0-9]([a-z0-9-]{0,61}[a-z0-9])?$/.test(name)) {
+    throw new Error('Zcash name must be lowercase alphanumeric (optional hyphens), shown as name.zcash');
+  }
+  const display = `${name}.zcash`;
+  const rows = [
+    ['Type', 'Zcash Name (ZNS)'],
+    ['Name', esc(display)],
+    ['Docs', link('https://www.zcashnames.com/docs', 'zcashnames.com/docs')],
+    ['Profile', link(`https://zcash.me/${encodeURIComponent(name)}`, `zcash.me/${name}`)],
+  ];
+  const payload = { jsonrpc: '2.0', id: 1, method: 'resolve', params: [name] };
+  let lastErr = null;
+  let data = null;
+  for (const url of ZCASH_RPCS) {
+    try {
+      data = await fetchJson(url, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify(payload),
+      });
+      rows.push(['Indexer', link(url)]);
+      break;
+    } catch (e) {
+      lastErr = e;
+    }
+  }
+  if (!data) {
+    try {
+      data = await proxyJson('zcash', payload);
+      rows.push(['Indexer', 'via same-origin proxy → main.zcashnames.com']);
+    } catch (e) {
+      return section('Zcash Name', rows) + errNote(lastErr || e);
+    }
+  }
+  if (data.error) {
+    return section('Zcash Name', rows) + errNote(new Error(JSON.stringify(data.error)));
+  }
+  const result = data.result;
+  if (result == null) {
+    rows.push(['Result', 'name not registered']);
+    return section('Zcash Name', rows, `<pre>${esc(JSON.stringify(data, null, 2))}</pre>`);
+  }
+  // Exact name lookup returns a single object; address reverse lookup returns an array.
+  const entries = Array.isArray(result) ? result : [result];
+  for (const entry of entries) {
+    if (entry.name) rows.push(['Registered name', esc(`${entry.name}.zcash`)]);
+    if (entry.address) rows.push(['Unified address', code(entry.address)]);
+    if (entry.height != null) rows.push(['Height', esc(String(entry.height))]);
+    if (entry.txid) rows.push(['Txid', code(entry.txid)]);
+    if (entry.last_action) rows.push(['Last action', esc(entry.last_action)]);
+    if (entry.nonce != null) rows.push(['Nonce', esc(String(entry.nonce))]);
+    if (entry.pubkey) rows.push(['Owner pubkey', code(entry.pubkey)]);
+    if (entry.listing) {
+      rows.push(['Listed for sale', 'yes']);
+      if (entry.listing.price != null) rows.push(['List price (zats)', esc(String(entry.listing.price))]);
+    }
+  }
+  return section('Zcash Name', rows, `<pre>${esc(JSON.stringify(result, null, 2))}</pre>`);
+}
+
 const RESOLVERS = {
   ln: resolveLn,
   bip353: resolveBip353,
@@ -471,6 +541,7 @@ const RESOLVERS = {
   sns: resolveSns,
   zano: resolveZano,
   dash: resolveDash,
+  zcash: resolveZcash,
 };
 
 const LABELS = {
@@ -482,6 +553,7 @@ const LABELS = {
   sns: 'SNS',
   zano: 'Zano Alias',
   dash: 'Dash Username',
+  zcash: 'Zcash Name',
 };
 
 async function decodeInput() {
@@ -495,7 +567,7 @@ async function decodeInput() {
 
   const candidates = detectCandidates(raw);
   if (!candidates.length) {
-    result.innerHTML = '<p class="status-bad">Unrecognized format. Try user@domain, ₿user@domain, name.eth, name.crypto, name.sol, handle@edge, @alias, or name.dash.</p>';
+    result.innerHTML = '<p class="status-bad">Unrecognized format. Try user@domain, ₿user@domain, name.eth, name.crypto, name.sol, handle@edge, @alias, name.dash, or name.zcash.</p>';
     return;
   }
 
